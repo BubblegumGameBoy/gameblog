@@ -1,0 +1,555 @@
+<style>
+h2.section-head {
+  font-size: 118% !important;
+  font-weight: bold !important;
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important;
+  border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important;
+  font-weight: bold !important;
+  border-left: 5px solid #555555 !important;
+  padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  background-color: #f9f9f9 !important;
+}
+.point-box {
+  border: 1px solid #dddddd;
+  padding: 15px 18px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box {
+  background: #fffde6;
+  border: 1px solid #e8d44d;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.8;
+}
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.story-box {
+  background: #f7f9fc; border-left: 4px solid #555555;
+  padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0;
+}
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.data-table th {
+  background: #555555;
+  color: #333333;
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: bold;
+}
+.data-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 1.7;
+  background: #fff;
+  vertical-align: top;
+}
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] {
+  background: #f5f5f5;
+  color: #333333;
+  font-weight: bold;
+  white-space: nowrap;
+  vertical-align: top;
+}
+.faq-list dt {
+  font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px;
+  border-left: 4px solid #555555; font-size: 14.5px;
+}
+.faq-list dd {
+  padding: 10px 14px 14px 18px; margin: 0; font-size: 14px;
+  line-height: 1.85; border-bottom: 1px solid #eee;
+}
+.shop-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 22px 0;
+}
+.shop-btn {
+  flex: 1 1 0;
+  min-width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #555555;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: bold;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all 0.18s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+}
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label {
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  margin-right: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td {
+    display: block; width: 100%; box-sizing: border-box;
+  }
+  .data-table tr {
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  .data-table td {
+    display: flex;
+    align-items: flex-start;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 13px;
+  }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    font-size: 11px;
+    color: #666;
+    background: #f5f5f5;
+    min-width: 70px;
+    max-width: 70px;
+    flex-shrink: 0;
+    padding: 2px 8px 2px 0;
+    margin-right: 10px;
+    border-right: 2px solid #dddddd;
+    line-height: 1.6;
+  }
+  .data-table th[scope="row"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 10px;
+    font-size: 11px;
+    color: #666;
+    background: #f5f5f5;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+</style>
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム）が含まれます。
+</p>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "スペースキー連打ゲームはスマホでも遊べますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ほとんどのブラウザゲームはスマホのタップで代用可能です。A Real MeやFlappy BirdのWeb版はスマホに対応しています。Chrome Dinoはスマホ版Chromeでも遊べますが、スペースキー操作は画面タップに変わります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スペースキー連打の平均・世界記録はどのくらい？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一般的なプレイヤーの平均CPSは6.5〜7程度です。世界記録はエヴァン・Hが保持しており、5秒間で58回（CPS 11.6）を達成しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A Real Meのスペースキー連打はセーブできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ゲームから離れても進行状況はブラウザに保存されます。ただしブラウザのキャッシュをクリアするとリセットされる場合があります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スペースキー連打はオフラインでもプレイできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ブラウザゲームは基本的にオンライン環境が必要です。唯一の例外がChrome Dino Gameで、これはオフラインでも完全に動作します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どのスペースキー連打ゲームから始めればいい？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "迷ったらまず放置系のA Real Meがおすすめです。時間や体力を選ばず誰でも楽しめます。速度や記録に興味が出てきたらcpstest.orgなどの速度測定系を試してみてください。"
+      }
+    }
+  ]
+}
+</script>
+</p>
+<!-- ============================================================
+     冒頭フック（結論ボックスは置かない）
+     ============================================================ -->
+<p>100兆。</p>
+<p>先日、私のPCの画面にこの数字が表示されました。宝くじの当選金でも、どこかの国家予算でもありません。スペースキーが押された回数です。もちろん私の指が100兆回動いたわけではなく、画面の中の「石」や「ナイフ」や「生物兵器」たちが、私の代わりに不眠不休でキーを叩き続けた結果なのですが。</p>
+<p>スペースキー連打ゲーム。名前のとおり、ただスペースキーを連打するだけのブラウザゲームです。現実でやった方が面白いことなんて山ほどあるのに、なぜ人はこれを起動してしまうのか。そして気づくと30分溶けているのか。</p>
+<p>この記事では、累計50時間以上をスペースキーに捧げた私が、無料で遊べるスペースキー連打ゲームを7本紹介します。まず放置系の最高傑作を1本、画面写真つきでじっくりレビューして、そのあと速度測定系・アクション系を含む6本を一気にまとめます。世界記録や平均CPS、連打を速くするコツも後半に載せているので、記録を狙いたい人はそちらもどうぞ。</p>
+<p>[:contents]</p>
+<!-- ============================================================
+     イントロ：種類説明
+     ============================================================ -->
+<h2 class="section-head">スペースキー連打ゲームとは？種類を知ると10倍楽しい</h2>
+<p>2026年現在、「スペースキー連打ゲーム」と検索すると山ほどのブラウザゲームがヒットします。でも実は、ひとくちに「スペースキー連打ゲーム」といっても<span style="font-weight: bold;">大きく3つの種類</span>に分かれます。</p>
+<table class="data-table">
+<thead>
+<tr><th>種類</th><th>内容</th><th>向いている人</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="種類"><span style="font-weight: bold;">① 放置系・アイドル系</span></td>
+<td data-label="内容">ポイントでアップグレードを買い、自動化で数字を伸ばす</td>
+<td data-label="向いている人">じっくり育てたい人・作業BGMにしたい人</td>
+</tr>
+<tr>
+<td data-label="種類"><span style="font-weight: bold;">② 速度測定系（CPS測定）</span></td>
+<td data-label="内容">制限時間内に何回押せるかを計測する</td>
+<td data-label="向いている人">記録更新・友達と競いたい人</td>
+</tr>
+<tr>
+<td data-label="種類"><span style="font-weight: bold;">③ アクション系</span></td>
+<td data-label="内容">スペースキーでキャラをジャンプ・操作する</td>
+<td data-label="向いている人">反射神経を使いたい人</td>
+</tr>
+</tbody>
+</table>
+<p>自分がどのタイプか分かっていると、ゲーム選びで失敗しません。それでは、まず私が一番ハマった放置系の最高傑作から紹介します。</p>
+<!-- ============================================================
+     第1位：A Real Me 超詳細レビュー
+     ============================================================ -->
+<h2 class="section-head">【第1位・超詳細レビュー】スペースキー連打 by A Real Me｜放置系の最高傑作</h2>
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 30%;">URL</th><td><a href="https://www.arealme.com/spacebar-clicker/ja/" target="_blank" rel="noopener">https://www.arealme.com/spacebar-clicker/ja/</a></td></tr>
+<tr><th scope="row">タイプ</th><td>放置系アイドルゲーム</td></tr>
+<tr><th scope="row">料金</th><td>無料・登録不要</td></tr>
+<tr><th scope="row">中毒性</th><td>★★★★★</td></tr>
+</tbody>
+</table>
+<h3 class="sub-head">なぜ私たちは「数字が増える」だけで興奮するのか</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="クッキークリッカー">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206111307.png" width="512" height="287" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">クッキークリッカー</figcaption>
+</figure>
+<p>世の中はAIだの自動化だのと騒がしいですが、皆さんの指先は元気ですか？ 私は最近、ある種の「デジタルな苦行」に没頭していました。高尚な映画を見るでもなく、積みゲーを崩すでもなく、ただひたすらにPCのスペースキーを連打する。そんな時間を過ごしていたのです。</p>
+<p>今回紹介するのは「スペースキー連打」という、タイトルそのままのブラウザゲームです。ルールは至ってシンプル。スペースキーを押す、あるいは画面上のスペースバーをクリックする。それだけ。</p>
+<p><span style="font-weight: bold;">これ以上ないほど単純で、これ以上ないほど虚無的。しかし、一度始めると止められない。</span></p>
+<p>かつて「Cookie Clicker」が全人類の生産性を低下させたように、人間には「数字が増える」という現象そのものにドーパミンを放出するバグが備わっているようです。</p>
+<p>今日は、私が指の腱鞘炎と引き換えに得た、ついつい時間を溶かした中毒ゲーに関して紹介してみようと思います。</p>
+<p>その名も<a href="https://www.arealme.com/spacebar-clicker/ja/" target="_blank" rel="noopener">スペースキー連打ゲーム - A Real Me</a></p>
+<h3 class="sub-head">原始時代から始まる「暴力」の歴史</h3>
+<p>ゲームを開始すると、画面には巨大なスペースキーが表示されます。カチッ、カチッ。押すたびに数字が増えていく。最初は自分の指だけが頼りです。物理的なキーボードの打鍵音が部屋に響き、なんとも言えない労働の喜びを感じます笑</p>
+<p>しかし、すぐに指は限界を迎えます。そこで登場するのが「アップグレード」です。貯まったポイントを使って、自動でクリックしてくれる味方を購入するわけです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="どんどん増えていく">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103044.png" width="1200" height="511" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">どんどん増えていく</figcaption>
+</figure>
+<p>数字が増えていく様子は快感です。しかし、よく見てください。強化アイテムのラインナップが不穏すぎる。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="石、ナイフとか">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103331.png" width="1200" height="475" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">石、ナイフとか</figcaption>
+</figure>
+<p>「石」、「ナイフ」。<br />なぜスペースキーを押すために凶器が必要なのか。これは恐らく、人類の文明進化のメタファーなのでしょう。最初は石器で叩き、やがて鋭利な刃物で効率を上げる。<span style="font-weight: bold;">「生産性の向上」とは、すなわち「より強力な武器を持つこと」である。</span>そんな製作者の皮肉なメッセージが感じ取れます。</p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103441.png" width="1200" height="590" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<p>画面上のスペースバーに群がる小さなアイコンたち。これらが私の代わりに、24時間不眠不休でキーを叩き続けてくれる。私はただ、それを眺めながら次のアップグレードを待つ「管理者」へと変貌しました。この時点で、ゲーム性は「アクション」から「リソース管理」へとシフトします。</p>
+<h3 class="sub-head">桁が変わる瞬間、脳が焼ける</h3>
+<p>気づけばスコアは8万を超えていました。もはや自分の指で叩くことに意味はありません。自動化されたシステムが叩き出す毎秒のスコアが、私の手動入力を遥かに凌駕しているからです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="気づいたら8万">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103510.png" width="1200" height="520" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">気づいたら8万</figcaption>
+</figure>
+<p>そして、アップグレードの内容も石器時代から一気に近代へと飛びます。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="弾丸とか">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103923.png" width="1200" height="446" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">弾丸とか</figcaption>
+</figure>
+<p>「弾丸」。スペースキーを叩くのになぜ弾丸が必要なのか、そんな疑問を抱くこと自体がナンセンスです。効率のためには火薬の力さえ借りる。目的のためには手段を選ばない、資本主義の成れの果てのような光景がここにあります。</p>
+<p>さらに放置すること数分。桁は一気に跳ね上がり、200万の大台へ。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="気づいたら200万">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206103942.png" width="1200" height="104" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">気づいたら200万</figcaption>
+</figure>
+<p>ここまで来ると、画面上の数字の変化を目で追うのが難しくなってきます。数字が流れる滝を見ているような、ある種のトリップ状態。そして登場する「重火器」。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="重火器系">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206104241.png" width="1200" height="682" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">重火器系</figcaption>
+</figure>
+<p>このあたりで私は確信しました。<span style="font-weight: bold;">このゲームは、スペースキーを叩いているのではない。「スペースキーという概念」を武力で制圧しようとしているのだと。</span></p>
+<h3 class="sub-head">世界崩壊レベルのインフレ、そして「兆」へ</h3>
+<p>1000万を超えたあたりから、ゲームの様相は完全にSF、あるいはディストピア映画になります。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="気づいたら1千万に">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206104302.png" width="1200" height="414" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">気づいたら1千万に</figcaption>
+</figure>
+<p>爆弾が登場し、規模が局地戦から戦略レベルへと拡大していきます。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="爆弾系、どんどん規模が">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206104630.png" width="1200" height="461" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">爆弾系、どんどん規模がでかくなっていく・・・</figcaption>
+</figure>
+<p>そして3億突破。ここまでの所要時間、おそらく30分程度でしょうか。現代人の金銭感覚を麻痺させるには十分なスピードです。私たちの日常で「3億」なんて数字を見ることはまずありませんが、この画面の中では「はした金」でしかありません。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="指数関数的に増えてくる。3億突破">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206104701.png" width="1200" height="410" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">指数関数的に増えてくる。3億突破</figcaption>
+</figure>
+<p>どんどん、次はどんな兵器が解放されるのか楽しみになってきます笑</p>
+<p>そして登場したのが「Biohazard（バイオハザード）」・・！</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="世界終わりそう（バイオハザードとか）">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206105005.png" width="1200" height="463" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">世界終わりそう</figcaption>
+</figure>
+<p>生物兵器を使ってまでスペースキーを押したいのか。いや、これはもう手段が目的化している典型です。クリック数を稼ぐために世界を汚染し、文明をリスクに晒す。なんだか笑えなくなってきました。現実世界の企業活動も、突き詰めればこれと同じことをしているのではないか？ そんな社会派な問いかけすら頭をよぎります（考えすぎですが）。</p>
+<p>そして、ついにその時は訪れました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="ONE TRILLION">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206105028.png" width="717" height="107" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">一兆・・・だと・・・</figcaption>
+</figure>
+<p><span style="font-weight: bold;">ONE TRILLION。</span><br />日本語で言えば「1兆」。<br />1,000,000,000,000回。もはや個人の一生をかけても到達不可能な回数です。それを私は、昼下がりのコーヒー片手に達成してしまった。この「達成感」と「徒労感」が入り混じった複雑な感情こそ、クリッカーゲームの真骨頂でしょう。</p>
+<h3 class="sub-head">そして、静寂（ギブアップ）へ</h3>
+<p>1兆を超えてもゲームは終わりません。数字は冷徹に、無限に増え続けます。しかし、私の精神力が先に限界を迎えました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="この辺でギブアップ">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206110110.png" width="1200" height="318" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">この辺でギブアップ</figcaption>
+</figure>
+<p>最終的な到達点は「100 Trillion（100兆）」。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="100トリリオンまできました">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206110158.png" width="862" height="111" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">100トリリオンまできました</figcaption>
+</figure>
+<p>国家予算をも軽く超えるこの数字を見届けたとき、私はそっとブラウザを閉じました。達成感？ いえ、残ったのは心地よい疲労感と、「自分はいったい何をやっていたんだろう」という賢者タイムにも似た哲学的な問いだけ。</p>
+<p><span style="font-weight: bold;">結論、無料でできるのに、めっちゃ楽しめました！！！笑</span></p>
+<p><a href="https://www.arealme.com/spacebar-clicker/ja/" target="_blank" rel="noopener">スペースキー連打 - 2026年お正月アップデート提供中！数百万人のプレイヤーが信頼！</a></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fwww.arealme.com%2Fspacebar-clicker%2Fja%2F" title="スペースキー連打 - 2026年お正月アップデート提供中！数百万人のプレイヤーが信頼！" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe></p>
+<!-- ============================================================
+     ★開発者枠：SPACEBAR BOSS RUSH（自作ゲーム）
+     ============================================================ -->
+<h2 class="section-head">【番外編】ハマりすぎて、自分で連打ゲームを作ってしまった話</h2>
+<p>ここで一つ、白状させてください。</p>
+<p>100兆まで行ってブラウザを閉じたあの日、私の中に小さな不満が残っていました。数字は無限に増える。でも、<span style="font-weight: bold;">「倒すべき相手」がいない</span>。せっかく石からナイフ、弾丸、生物兵器まで揃えた軍団がいるのに、彼らはただスペースキーを叩いているだけ。この戦力、どこかにぶつけられないのか。</p>
+<p>探しても見つからなかったので、作りました。自分で。</p>
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 30%;">タイトル</th><td>SPACEBAR BOSS RUSH（スペースバー・ボスラッシュ）</td></tr>
+<tr><th scope="row">タイプ</th><td>放置系クリッカー × ボスラッシュ</td></tr>
+<tr><th scope="row">料金</th><td>無料・インストール不要・登録不要</td></tr>
+<tr><th scope="row">対応環境</th><td>PC・スマホ（タップ連打対応）</td></tr>
+<tr><th scope="row">ボリューム</th><td>ボス11体・ユニット13種・転生システム</td></tr>
+</tbody>
+</table>
+<p>仕組みは連打ゲーの王道そのまま。スペースキー（スマホはタップ）でボスを攻撃し、ゴールドを貯めて仲間を雇うと攻撃が自動化され、放置している間も軍団がボスを狩り続けてくれます。違うのは、<span style="font-weight: bold;">増えた数字がそのまま「ボスを倒す力」になる</span>こと。A Real Meで感じた「この数字、何に使うんだろう」という虚無に、私なりの答えを出したつもりです。ボスは11体、終盤には進行をリセットする代わりにゴールド獲得が永続2倍になる「転生」も用意しました。クリッカーゲーム好きが作ったクリッカーゲームなので、中毒性の設計には自信があります笑</p>
+<p>下の記事ではゲーム画面をそのまま埋め込んであるので、その場ですぐ遊べます。攻略のヒントとよくある質問も載せています。自作ゲームの宣伝で恐縮ですが、無料なので騙されたと思って一度ボスを殴ってみてください。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F06%2F12%2F144156" title="スペースキー連打ゲーム：ボスを倒して自動化していこう【ブラウザ・スマホ対応】 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe></p>
+<p>すぐ遊びたい人はこちらからどうぞ → <a href="https://bubblegumgameboy.github.io/spacebar-clicker/" target="_blank" rel="noopener">SPACEBAR BOSS RUSH を今すぐプレイ（無料）</a></p>
+<!-- ============================================================
+     世界記録・平均CPS・速くするコツ
+     ============================================================ -->
+<h2 class="section-head">【完全ガイド】スペースキー連打の世界記録・平均・速くするコツ</h2>
+<h3 class="sub-head">世界記録はどのくらい？</h3>
+<p>スペースバー連打の<span style="font-weight: bold;">世界記録はエヴァン・Hが保持</span>しており、5秒間でスペースバーを<span style="font-weight: bold;">58回</span>叩きました。これはCPS（1秒あたりのクリック数）に換算すると<span style="font-weight: bold;">11.6</span>という驚異的な数字です。</p>
+<table class="data-table">
+<thead>
+<tr><th>レベル</th><th>CPS（1秒あたり）</th><th>目安</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="レベル">世界記録</td>
+<td data-label="CPS"><span style="font-weight: bold;">11.6</span></td>
+<td data-label="目安">エヴァン・H（5秒間58回）</td>
+</tr>
+<tr>
+<td data-label="レベル">上位プレイヤー</td>
+<td data-label="CPS"><span style="font-weight: bold;">9〜10</span></td>
+<td data-label="目安">かなりの練習が必要</td>
+</tr>
+<tr>
+<td data-label="レベル">一般平均</td>
+<td data-label="CPS"><span style="font-weight: bold;">6.5〜7</span></td>
+<td data-label="目安">多くのプレイヤーの平均値</td>
+</tr>
+<tr>
+<td data-label="レベル">初心者</td>
+<td data-label="CPS"><span style="font-weight: bold;">4〜5</span></td>
+<td data-label="目安">これでも十分楽しめる</td>
+</tr>
+</tbody>
+</table>
+<p>ちなみにA Real Meのような<span style="font-weight: bold;">放置系ゲームは自分のCPSがほぼ関係ない</span>のが最大の長所です。指が遅くても、アップグレードの自動化が全部やってくれる。誰でも1兆に到達できるのはそのためです笑</p>
+<h3 class="sub-head">スペースキー連打を速くする3つのコツ</h3>
+<p>速度測定系ゲームで記録を伸ばしたい人向けに、プロ級のテクニックを3つ紹介します。</p>
+<p><span style="font-weight: bold;">コツ① ハーフウェイホールド（最速テクニック）</span><br />中指でスペースキーを半押し状態に保ちながら、人差し指で素早く叩く方法です。キーの戻りを待たずに連打できるため、練習すれば<span style="font-weight: bold;">CPS 8前後</span>が狙えます。まずはここから試してみてください。</p>
+<p><span style="font-weight: bold;">コツ② 2〜3本指の交互打ち</span><br />人差し指・中指・薬指を交互にスペースキーに当てる方法。1本指より疲労が分散し、長時間でも高速を維持できます。60秒モードなどの持久戦で特に有効です。</p>
+<p><span style="font-weight: bold;">コツ③ キーボードを変える（確実な投資）</span><br />メカニカルキーボードの赤軸・銀軸はアクチュエーションポイント（押し込みの深さ）が浅く、連打に最適です。私も普通のメンブレンから赤軸に変えたとき、同じ指なのに明らかに連打が軽くなって驚きました。本気で記録を狙うなら、検討の価値は十分あります。中古でよければメルカリに状態の良いゲーミングキーボードがけっこう流れています。</p>
+<div class="shop-buttons">
+<span class="shop-btn-label">赤軸・銀軸</span>
+<a href="https://www.amazon.co.jp/s?k=%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+<a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+<a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B2%E3%83%BC%E3%83%9F%E3%83%B3%E3%82%B0%E3%82%AD%E3%83%BC%E3%83%9C%E3%83%BC%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+<!-- ============================================================
+     ゲーム比較まとめ
+     ============================================================ -->
+<h2 class="section-head">【比較まとめ】他にも遊べる！無料スペースキーゲーム6選</h2>
+<p>「スペースキー連打」はインフレ放置系の最高傑作ですが、世の中にはもっとストイックな、あるいは別のベクトルでスペースキーを酷使するゲームが存在します。A Real Meと一緒に楽しめる「スペースキーの墓場」を6本まとめて紹介します。</p>
+<table class="data-table">
+<thead>
+<tr><th>ゲーム名</th><th>タイプ</th><th>中毒性</th><th>特徴</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">A Real Me</span>（1位）</td>
+<td data-label="タイプ">放置系</td>
+<td data-label="中毒性">★★★★★</td>
+<td data-label="特徴">石→核兵器の文明進化が最高</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">cpstest.org</span></td>
+<td data-label="タイプ">速度測定</td>
+<td data-label="中毒性">★★★★☆</td>
+<td data-label="特徴">世界ランキングに挑戦できる</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">ガガゲーム版</span></td>
+<td data-label="タイプ">速度測定</td>
+<td data-label="中毒性">★★★★☆</td>
+<td data-label="特徴">S〜Dのランク評価が燃える</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">Chrome Dino</span></td>
+<td data-label="タイプ">アクション</td>
+<td data-label="中毒性">★★★★☆</td>
+<td data-label="特徴">オフラインOK・Chrome標準搭載</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">Flappy Bird</span></td>
+<td data-label="タイプ">アクション</td>
+<td data-label="中毒性">★★★★★</td>
+<td data-label="特徴">怒りと快感を繰り返す悪魔ゲー</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">マイタイピング版</span></td>
+<td data-label="タイプ">純粋連打</td>
+<td data-label="中毒性">★★★☆☆</td>
+<td data-label="特徴">スコアが記録されて成長が見える</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">Cookie Clicker</span></td>
+<td data-label="タイプ">放置系</td>
+<td data-label="中毒性">★★★★★</td>
+<td data-label="特徴">放置ゲームの元祖・必ハマり</td>
+</tr>
+<tr>
+<td data-label="ゲーム名"><span style="font-weight: bold;">SPACEBAR BOSS RUSH</span>（自作）</td>
+<td data-label="タイプ">放置系×ボス戦</td>
+<td data-label="中毒性">★★★★★（自称）</td>
+<td data-label="特徴">連打でボス討伐・転生あり・スマホ対応</td>
+</tr>
+</tbody>
+</table>
+<h3 class="sub-head">2. cpstest.org｜速度測定系の定番・世界ランキングに挑戦</h3>
+<p><span style="font-weight: bold;">URL：</span> <a href="https://cpstest.org/ja/spacebar-clicker/" target="_blank" rel="noopener">https://cpstest.org/ja/spacebar-clicker/</a></p>
+<p>A Real Meがのんびり放置を楽しむゲームなら、こちらは「<span style="font-weight: bold;">己の実力を数字で叩き出す</span>」タイプ。制限時間内に何回スペースキーを押せるかを計測し、最大20種類のアップグレードをアンロックしながら世界ランキングで他プレイヤーと競えます。記録を更新するたびに鳥肌が立つのが最大の魅力です。<br /><span style="font-weight: bold;">おすすめ：</span>友達と記録を競いたい人・ランキング上位を狙いたい人</p>
+<h3 class="sub-head">3. ガガゲーム版スペースキー連打アルティメイト｜ランク評価が熱い</h3>
+<p><span style="font-weight: bold;">URL：</span> <a href="https://game.gagalog.com/action/12208" target="_blank" rel="noopener">https://game.gagalog.com/action/12208</a></p>
+<p>「10秒・30秒・60秒」の3モードで連打速度を測定し、終わると<span style="font-weight: bold;">S〜Dのランク評価</span>が表示される爽快なゲームです。リアルタイムでCPSも表示されるため自分の成長が可視化でき、コンボシステムで一定リズムを保つとスコアが跳ね上がります。<br /><span style="font-weight: bold;">おすすめ：</span>自分の実力値を知りたい人・短時間でサクッと遊びたい人</p>
+<h3 class="sub-head">4. Chrome Dino Game（恐竜ゲーム）｜オフラインの永遠の名作</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="Chrome Dino">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206111950.png" width="911" height="280" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">Chrome Dino</figcaption>
+</figure>
+<p>ネット回線が切れた時に現れる、あのドット絵の恐竜です。ブラウザのアドレスバーに <code>chrome://dino</code> と打ち込めば、いつでも彼に会えます。スペースキーでジャンプ、しゃがみ（下キー）だけの操作ですが、速度が上がってきた時の緊張感は異常。これも立派な「スペースキーゲー」の王道です。<br /><span style="font-weight: bold;">おすすめ：</span>ネット環境なしで遊びたい人・シンプルな反射神経ゲームが好きな人</p>
+<h3 class="sub-head">5. Flappy Bird（Web版）｜全人類をイライラさせた悪魔の鳥</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="フラピ">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260206/20260206112122.png" width="622" height="682" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption class="mceEditable">フラピ</figcaption>
+</figure>
+<p>かつてスマホ画面を叩き割りそうになった、あの悪魔の鳥がブラウザでも健在です。スペースキーを押すと少し浮き、放すと落ちる。この絶妙な慣性制御に、全人類がイラつかされました。A Real Meのように「数字を積み上げる」快感ではなく、「<span style="font-weight: bold;">ゼロからやり直す理不尽さ</span>」と向き合うゲームです。精神修行としてどうぞ。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fflappybird.io%2F" title="Play Flappy Bird" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe></p>
+<h3 class="sub-head">6. マイタイピング スペースキー連打｜シンプルにスコアを記録したい人へ</h3>
+<p><span style="font-weight: bold;">URL：</span> <a href="https://typing.twi1.me/game/363472" target="_blank" rel="noopener">https://typing.twi1.me/game/363472</a></p>
+<p>タイピング練習サイト「マイタイピング」のスペースキー連打専用ゲームです。余計な要素は一切なし、純粋な連打数だけを競います。アカウントを作ればスコアが記録されるため、<span style="font-weight: bold;">過去の自分と毎回戦える</span>のが地味に熱いです。<br /><span style="font-weight: bold;">おすすめ：</span>タイピング練習をしている人・シンプルにスコアを積み上げたい人</p>
+<h3 class="sub-head">7. Cookie Clicker｜放置ゲームの元祖・A Real Meが好きなら必ハマり</h3>
+<p><span style="font-weight: bold;">URL：</span> <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" rel="noopener">https://orteil.dashnet.org/cookieclicker/</a></p>
+<p>厳密にはスペースキーゲームではありませんが、A Real Meを楽しめた人は<span style="font-weight: bold;">100%ハマります</span>。なぜなら A Real Me のゲームシステムの「先祖」がこのクッキークリッカーだからです。クッキーを焼いて施設を買い、気づけば「クッキーを1兆枚」焼いている。2013年にリリースされ今でも更新が続く、アイドルゲームの金字塔です。</p>
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<h2 class="section-head">よくある質問（FAQ）</h2>
+<dl class="faq-list">
+<dt>Q. スペースキー連打ゲームはスマホでも遊べますか？</dt>
+<dd>ほとんどのブラウザゲームはスマホのタップで代用可能です。A Real MeやFlappy BirdのWeb版はスマホに対応しています。自作のSPACEBAR BOSS RUSHもタップ連打に対応済みです。Chrome Dinoはスマホ版Chromeでも遊べますが、スペースキー操作は画面タップに変わります。</dd>
+<dt>Q. スペースキー連打の平均・世界記録はどのくらい？</dt>
+<dd>一般的なプレイヤーの平均CPSは6.5〜7程度です。世界記録はエヴァン・Hが保持しており、5秒間で58回（CPS 11.6）を達成しています。</dd>
+<dt>Q. A Real Meのスペースキー連打、セーブはできますか？</dt>
+<dd>はい。ゲームから離れても進行状況はブラウザに保存されます。ただしブラウザのキャッシュをクリアするとリセットされる場合があるので注意してください。</dd>
+<dt>Q. スペースキー連打で腱鞘炎にならないようにするには？</dt>
+<dd>長時間のプレイは禁物です。30分ごとに手首のストレッチをはさみましょう。最も現実的な「腱鞘炎対策」は、A Real MeやCookie Clickerのような放置・自動化系への移行です。自動化が手の代わりに打ってくれるので、指はほぼ休めます（経験談）。</dd>
+<dt>Q. スペースキー連打はオフラインでもプレイできますか？</dt>
+<dd>ブラウザゲームは基本的にオンライン環境が必要です。唯一の例外がChrome Dino Gameで、これはオフラインでも完全に動作します。</dd>
+<dt>Q. どのゲームから始めればいい？</dt>
+<dd>迷ったらまずA Real Meからどうぞ。放置系なので時間や体力を選ばず、どんな人でも「1兆」という非現実的なゴールまで楽しめます。速度や記録に興味が出てきたらcpstest.orgやガガゲーム版を試してみてください。</dd>
+</dl>
+<!-- ============================================================
+     まとめ
+     ============================================================ -->
+<h2 class="section-head">まとめ：あなたに合うスペースキー連打ゲームはどれ？</h2>
+<ul>
+<li><span style="font-weight: bold;">とにかく時間を溶かしたい・放置派</span> → A Real Me / Cookie Clicker</li>
+<li><span style="font-weight: bold;">記録を競いたい・速度派</span> → cpstest.org / ガガゲーム版</li>
+<li><span style="font-weight: bold;">手軽にサクッと遊びたい</span> → Chrome Dino / マイタイピング版</li>
+<li><span style="font-weight: bold;">ドMな人・精神修行派</span> → Flappy Bird</li>
+<li><span style="font-weight: bold;">連打に「目的」が欲しい人</span> → <a href="https://babblegum.hatenablog.com/entry/2026/06/12/144156">SPACEBAR BOSS RUSH（自作・無料）</a></li>
+</ul>
+<p>どれも無料。どれも中毒性あり。<span style="font-weight: bold;">指先の健康だけには気をつけながら</span>、ぜひ試してみてください。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F12%2F23%2F154838" title="タイピングゲームおすすめ7選！検定1級の私が断言する「実戦で指が覚醒する」神ゲーまとめ - バブルガムの雑記ブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe> <iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F12%2F30%2F073509" title="【商品レビュー】無限ひっこぬきピクミンは中毒性がヤバい？500回抜いてわかった「ASMR」とデメリット - バブルガムの雑記ブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe></p>
