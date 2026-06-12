@@ -1,0 +1,253 @@
+<style>
+  h2.section-head { font-size: 118% !important; font-weight: bold !important; background-color: #555555 !important; color: #ffffff !important; padding: 10px 14px !important; border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important; box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff; margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important; }
+  h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
+  .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+  .note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+  .yosou-box { background: #f0f7ff; border: 1px solid #a9c8e0; border-radius: 6px; padding: 15px 18px; margin: 20px 0; }
+  .yosou-box .yosou-title { font-weight: bold; font-size: 14px; color: #2c5d7d; margin-bottom: 8px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #f9f9f9; }
+  .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+  .shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+  .shop-btn { flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important; font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center; transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+  .shop-btn-amazon { background: #FF9900; }
+  .shop-btn-rakuten { background: #BF0000; }
+  .shop-btn-mercari { background: #FF0211; }
+  .shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+  .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+  .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+  .kanren-block { background-color: #f9f9f9; padding: 14px 16px; border-left: 5px solid #555555; margin: 22px 0; border-radius: 0 4px 4px 0; }
+  .kanren-block p { margin: 0; padding: 4px 0; font-size: 14px; }
+  .kanren-block .kanren-label { font-weight: bold; color: #555; font-size: 13px; }
+  .kanren-block a { font-weight: bold; color: #2277aa; }
+  figure { margin: 16px 0; } figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; text-align: center; }
+  .video-wrap { position: relative; width: 100%; max-width: 560px; margin: 16px auto; }
+  .video-wrap::before { content: ""; display: block; padding-top: 56.25%; }
+  .video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  img { max-width: 100%; height: auto; }
+  @media (max-width: 520px) {
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+    .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .data-table td { display: flex; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; white-space: normal; word-break: break-word; }
+    .data-table td:last-child { border-bottom: none; }
+    .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 84px; max-width: 84px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; }
+    .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; }
+    .data-table tr:nth-child(even) td { background: #fff; }
+    .shop-buttons { gap: 6px; } .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; } .shop-btn-label { display: none; }
+  }
+  ul, ol { padding-left: 1.5em; } li { margin-bottom: 6px; line-height: 1.8; } p { margin-bottom: 1.4em; line-height: 1.8; } a { color: #2277aa; }
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ぽこあポケモンのエキスパンションパスはいつ配信ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "無料アップデート（Ver.2.0.0）と有料エキスパンションパス第1弾「ブクブク うみぞこの街」は、どちらも2026年8月配信予定です。第2弾は2026年冬、第3弾は2027年の予定。パス自体の購入は2026年6月10日から可能です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "水中に潜るのは無料ですか、有料ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "水中に潜るための新わざ「ダイビング」は無料アップデートで全員が使えます。ただし第1弾の水中の街「ブクブク うみぞこの街」へ行くには有料エキスパンションパスが必要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "エキスパンションパスの値段はいくらですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "4,400円（税込）です。第1弾から第3弾までの追加コンテンツがすべて含まれます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "今のセーブデータは引き継げますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "引き継げます。今プレイしている街のデータをそのまま使って追加コンテンツを遊べます。新しくデータを作り直す必要はありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "早期購入特典のレアポケメタルはいつまでもらえますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "早期購入特典のレアポケメタル30個は2027年8月31日までにパスを購入した人が対象です。メタモンだらけもようのレシピはパス購入者全員の特典です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "水中の街にはどんなポケモンが出ますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "発表映像では、マナフィ、アシマリ、ミズゴロウ、ヘイガニなど水タイプのポケモンが確認できました。詳しい内容は続報待ちです。"
+      }
+    }
+  ]
+}
+</script>
+</p>
+<p>来ました。発売日からずっと遊び続けているぽこあポケモン（ぽこポケ）に、ついに大型アップデートとエキスパンションパスが発表されました。2026年6月9日のNintendo Directでの発表です。</p>
+<p>しかも目玉は、街づくりの舞台が水中に広がるという、予想の斜め上の方向。正直、海の底に街を作れる日が来るとは思っていませんでした。発表映像を見ながら、頭の中ではもう海底の区画整理が始まっています。</p>
+<p>この記事では発表内容を一通り整理したうえで、配信日までにやっておくべき準備、パスを買うべきかどうかの判断、そしてまだ中身が発表されていない第2弾・第3弾に何が来るのかを、発売初日からやり込んできたプレイヤーの視点で考察します。</p>
+<div class="video-wrap"><iframe src="https://www.youtube.com/embed/zvC7ZUMyAIU" title="ぽこ あ ポケモン エキスパンションパス" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" id="widget2"></iframe></div>
+<p>[:contents]</p>
+<h2 class="section-head">発表内容まとめ：無料アプデと有料パスの2本立て</h2>
+<p>今回の発表は、誰でも遊べる無料アップデートと、別売りの有料エキスパンションパスの2本立てです。まず全体像を表で押さえておきます。</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th style="width: 34%;" scope="row">発表日</th>
+<td>2026年6月9日（Nintendo Direct）</td>
+</tr>
+<tr>
+<th scope="row">無料アップデート</th>
+<td>Ver.2.0.0、2026年8月配信予定。新わざ「ダイビング」で水中行動が可能に</td>
+</tr>
+<tr>
+<th scope="row">有料パス</th>
+<td>ぽこ あ ポケモン エキスパンションパス、4,400円（税込）</td>
+</tr>
+<tr>
+<th scope="row">パス販売開始</th>
+<td>2026年6月10日から購入可能</td>
+</tr>
+<tr>
+<th scope="row">第1弾</th>
+<td>ブクブク うみぞこの街、2026年8月配信予定</td>
+</tr>
+<tr>
+<th scope="row">第2弾</th>
+<td>2026年冬配信予定。新機能追加（内容は未発表）</td>
+</tr>
+<tr>
+<th scope="row">第3弾</th>
+<td>2027年配信予定。新たな街の追加（内容は未発表）</td>
+</tr>
+<tr>
+<th scope="row">セーブデータ</th>
+<td>今のデータをそのまま引き継いで遊べる</td>
+</tr>
+<tr>
+<th scope="row">購入特典</th>
+<td>メタモンだらけもようのレシピ（購入者全員）、レアポケメタル30個（2027年8月31日までの早期購入特典）</td>
+</tr>
+</tbody>
+</table>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094339.png" alt="ぽこあポケモン 水中を泳ぐメタモン" width="982" height="472" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>新わざ「ダイビング」で、ついに水中へ。街づくりの舞台が海底まで広がる</figcaption>
+</figure>
+<p>注目してほしいのは第2弾と第3弾の書き分けです。第2弾は「新機能」、第3弾は「新たな街」。公式はこの骨格だけ先に見せています。この2つの言葉が、後半の考察の重要な手がかりになります。</p>
+<h2 class="section-head">無料アップデート：新わざ「ダイビング」で水中に潜れる</h2>
+<p>まず嬉しいのは、水中に潜ること自体は無料アップデート（Ver.2.0.0）でできるようになる点です。パスを買わなくても、新わざ「ダイビング」は全員が使えます。</p>
+<p>これまでのメタモンは水中に長く潜れませんでした。ダイビングを覚えると水中で自由に行動できるようになり、探索はもちろん、水中での建築や環境整備にも対応するとのこと。地上だけだった街づくりの舞台が、海の底まで一気に広がります。草を植えて、家を建てて、ポケモンを呼ぶ。いつものぽこポケの遊びが水中でできると考えるだけで、もう楽しい。</p>
+<div class="note-box"><span class="note-label">補足：</span>無料アプデとパス第1弾はどちらも2026年8月配信予定です。パスは6月10日から先行して購入だけできる状態なので、慌てて買わなくても大丈夫。配信までじっくり検討できます。</div>
+<h2 class="section-head">第1弾「ブクブク うみぞこの街」：解放条件と今からやるべき準備</h2>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094935.png" alt="ぽこあポケモン エキスパンションパスの配信予定。第1弾はブクブクうみぞこの街" width="1200" height="596" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>公式が示したパスの配信予定。第1弾はブクブク うみぞこの街</figcaption>
+</figure>
+<p>有料パスの第1弾が、水中の新しい街「ブクブク うみぞこの街」です。ダイビングで潜って遊ぶ水中の街で、ここでしか出会えない家具・コーデ・ポケモンが用意されています。</p>
+<h3 class="sub-head">解放条件：いきなり水中の街には行けない</h3>
+<p>注意したいのは、パスを買えばすぐ水中の街へ行けるわけではないことです。第1弾を始める条件は次の3つ。</p>
+<ol>
+<li>本編「ドンヨリうみべの街」のおねがいごと「さらに環境レベルを上げよう」をクリアする</li>
+<li>無料アップデート（Ver.2.0.0）を適用する</li>
+<li>新わざ「ダイビング」を覚える</li>
+</ol>
+<p>つまり、本編を途中で止めている人は、8月の配信までにドンヨリうみべの街を進めておくのが正解です。配信日に「まず本編からか・・」とならずに、初日から海底に直行できます。</p>
+<h3 class="sub-head">パス購入特典：メタモン好きは特典だけで揺れる</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094847.png" alt="ぽこあポケモン 新家具 メタモンだらけもよう（有料コンテンツ特典）" width="1200" height="586" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>パス購入特典の「メタモンだらけもよう」。メタモン好きにはたまらない</figcaption>
+</figure>
+<p>パスを買うと、購入者全員に新家具「メタモンだらけもよう」のレシピが付いてきます。さらに2027年8月31日までに買えば、早期購入特典としてレアポケメタル30個も。正直、メタモンだらけもようは特典だけでも欲しいデザインです。部屋中をメタモンにする予定の人、私以外にもいるはず。</p>
+<h2 class="section-head">水中で出会えそうなポケモンたち（映像で確認できた範囲）</h2>
+<p>発表映像には、水中の街にいそうなポケモンたちが映り込んでいました。ここからは映像で確認できた範囲の情報です。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094806.png" alt="ぽこあポケモン 映像に登場したマナフィ" width="977" height="427" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>映像で一番目を引いた、幻のポケモン マナフィ</figcaption>
+</figure>
+<p>個人的に一番「おっ」となったのが、幻のポケモン、マナフィです。水中というテーマにこれ以上ないほどぴったりな上に、幻のポケモンが絡むとなると、水中の街には何かストーリー的な仕掛けがありそうです。どんな出会い方になるのか、今から気になっています。</p>
+<p>ほかにもアシマリ、ミズゴロウ、ヘイガニといったおなじみの顔ぶれが確認できました。水ポケモン好きには間違いなく嬉しいアップデートです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094629.png" alt="ぽこあポケモン 水タイプのアシマリ" width="791" height="427" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>アシマリ。水中の街に映えそう</figcaption>
+</figure>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094704.png" alt="ぽこあポケモン 水タイプのミズゴロウ" width="857" height="467" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ミズゴロウ。水陸どちらでも絵になる人気者</figcaption>
+</figure>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094728.png" alt="ぽこあポケモン みずタイプのヘイガニ" width="862" height="447" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ヘイガニ。水辺の常連が水中でも</figcaption>
+</figure>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260610/20260610094416.png" alt="ぽこあポケモン いっかねずみの新家具" width="287" height="226" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>新家具も多数。水中ならではのコーデや内装が楽しみ</figcaption>
+</figure>
+<h2 class="section-head">エキスパンションパスは買うべきか？タイプ別の判断基準</h2>
+<p>4,400円という価格をどう見るか。発売以来遊び続けている立場から、プレイ状況別に正直なところを書きます。</p>
+<p><span style="font-weight: bold;">今もぽこポケを遊んでいる人</span>：買って損はないと思います。第3弾まで全部入りで4,400円、今の街のデータをそのまま引き継げて、水中という新しい遊びの軸が加わる。第1弾だけでもボリュームがありそうなので、長く遊ぶつもりならコスパは悪くありません。私は初日に買いました。</p>
+<p><span style="font-weight: bold;">最近起動していない人・本編を途中で止めている人</span>：急がなくて大丈夫です。まず8月の無料アプデでダイビングだけ試して、水中の遊びが気に入ったらパスを買えばいい。早期購入特典の期限は2027年8月31日までと長いので、様子見のデメリットはほぼありません。</p>
+<p><span style="font-weight: bold;">本体ごとこれからの人</span>：本編だけでも十分遊べるゲームなので、まずは本編から。パスは水中に魅力を感じてからで遅くないです。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0GPWTN9YR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41HLm0ssucL._SL500_.jpg" class="hatena-asin-detail-image" alt="【任天堂ライセンス商品】デコレーションポーチ for Nintendo Switch™ 2 METAMON【ワッペン4個付属】" title="【任天堂ライセンス商品】デコレーションポーチ for Nintendo Switch™ 2 METAMON【ワッペン4個付属】" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0GPWTN9YR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">【任天堂ライセンス商品】デコレーションポーチ for Nintendo Switch™ 2 METAMON【ワッペン4個付属】</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>ホリ</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0GPWTN9YR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="shop-buttons">
+<span class="shop-btn-label">メタモングッズ</span>
+<a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A1%E3%82%BF%E3%83%A2%E3%83%B3%E3%83%9D%E3%83%BC%E3%83%81%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+<a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%A1%E3%82%BF%E3%83%A2%E3%83%B3+%E3%83%9D%E3%83%BC%E3%83%81" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリで探す</a>
+</div>
+<h2 class="section-head">【考察】第2弾「新機能」と第3弾「新たな街」を予想する</h2>
+<p>ここからがこの記事の本題です。公式が出しているのは「第2弾は2026年冬に新機能」「第3弾は2027年に新たな街」という骨格だけ。中身は一切発表されていません。だからこそ、発売初日からやり込んできたプレイヤーとして、手元の材料で予想してみます。</p>
+<h3 class="sub-head">手がかりは第1弾の構造：無料の「わざ」が有料の「街」の鍵になる</h3>
+<p>第1弾の仕組みをよく見ると、きれいな構造があります。無料アプデで新わざ（ダイビング）を覚え、その移動手段が有料の新しい街（うみぞこ）への入り口になる。新しい移動手段で行動範囲が広がり、そこに新エリアが開く。どうぶつの森の海開きアップデートとも重なる、スローライフ系の王道拡張パターンです。</p>
+<p>この構造を当てはめると、「第2弾＝新機能」は単発のおまけ機能ではなく、<span style="font-weight: bold;">第3弾の「新たな街」へつながる新わざ・新移動手段</span>である可能性が高いと見ています。ダイビングがうみぞこの街の鍵だったように、第2弾の新機能が第3弾の街の鍵になる。配信順までそう読めるように並んでいます。</p>
+<h3 class="sub-head">第2弾の予想：冬配信×氷タイプ不足。雪と氷が来る</h3>
+<div class="yosou-box">
+<div class="yosou-title">予想の根拠：ぽこポケは氷タイプが手薄、そして第2弾は「冬」配信</div>
+発売以来やり込んで気づいたのですが、ぽこポケに登場するポケモンはタイプに偏りがあって、氷タイプがかなり少ないんです。第1弾の水中で水タイプを大量補充してきた流れを考えると、次は手薄なタイプを埋めにくるのが自然。そして公式スケジュール上、第2弾の配信は2026年冬。季節と品揃えの穴が、きれいに一致します。
+</div>
+<p>具体的には、雪を降らせる・凍らせるといった寒冷地系の新機能や、氷の上を移動できる新わざあたりを予想しています。これが第3弾の街への移動手段を兼ねるなら、雪山や流氷の海へ続く伏線になる。水の次に氷という広げ方なら、ダイビングで増えた水中マップとの地続き感も出せます。氷タイプ不足という、遊び込んだ人ほど気づく穴を運営が埋めにくるのではないでしょうか。</p>
+<h3 class="sub-head">第3弾の予想：人間の街、そしてロケット団？</h3>
+<p>第3弾は公式が「新たな街」と明言しているので、問題はどんな街か。ここは少し攻めた予想をします。</p>
+<p>これまでの街が自然テーマ（うみべ、うみぞこ、そして予想どおりなら雪と氷）で続くとして、パスの締めくくりは毛色を変えて<span style="font-weight: bold;">人間の街</span>が来るのではないかと見ています。ぽこポケの世界はポケモンたちの暮らしが中心ですが、ポケモンシリーズにはもともと人間社会という軸がある。最後の最後に人間の文明が関わる街を持ってきて、そこにロケット団のような存在が絡む展開があれば激アツです。</p>
+<p>願望が半分混じっているのは認めます。ただ、第3弾はパス全体のフィナーレ。ストーリー的な盛り上がりを仕込むならここしかない、というのは理屈としても通るはずです。</p>
+<div class="note-box"><span class="note-label">念のため：</span>第2弾・第3弾について公式が発表しているのは配信時期と「新機能」「新たな街」という枠組みだけです。上の中身はすべて筆者の予想です。続報が出たら、この記事に追記していきます。</div>
+<h2 class="section-head">よくある質問</h2>
+<dl class="faq-list">
+<dt>ぽこあポケモンのアップデートはいつ配信ですか</dt>
+<dd>無料アップデート（Ver.2.0.0）と有料エキスパンションパス第1弾は、どちらも2026年8月配信予定です。第2弾は2026年冬、第3弾は2027年の予定。パス自体の購入は2026年6月10日から可能です。</dd>
+<dt>水中に潜るのは無料ですか、有料ですか</dt>
+<dd>水中に潜るための新わざ「ダイビング」は、無料アップデートで全員が使えます。ただし第1弾の水中の街「ブクブク うみぞこの街」へ行くには有料エキスパンションパスが必要です。</dd>
+<dt>エキスパンションパスの値段は</dt>
+<dd>4,400円（税込）です。第1弾から第3弾までの追加コンテンツがすべて含まれます。</dd>
+<dt>今のセーブデータは引き継げますか</dt>
+<dd>引き継げます。今プレイしている街のデータをそのまま使って追加コンテンツを遊べます。新しくデータを作り直す必要はありません。</dd>
+<dt>早期購入特典はいつまでですか</dt>
+<dd>レアポケメタル30個の早期購入特典は、2027年8月31日までにパスを購入した人が対象です。新家具「メタモンだらけもよう」のレシピは期限なしの購入者全員特典です。</dd>
+<dt>水中の街にはどんなポケモンが出ますか</dt>
+<dd>発表映像では、マナフィ、アシマリ、ミズゴロウ、ヘイガニなど水タイプのポケモンが確認できました。特にマナフィは幻のポケモンで、どんな形で登場するのか注目です。詳しくは続報待ちです。</dd>
+</dl>
+<h2 class="section-head">まとめ：8月が待ちきれない</h2>
+<p>ぽこあポケモンのエキスパンションパスは、街づくりの舞台を水中まで広げる大型拡張でした。無料アプデのダイビングで誰でも水中に潜れて、パスを買えば水中の街で新しいポケモンたちに出会える。発売初日からこのゲームと暮らしてきた身としては、8月が待ちきれません。それまでにドンヨリうみべの街のおねがいごとだけは済ませておきましょう。</p>
+<p>そして個人的な本命は、まだ見ぬ第2弾と第3弾です。冬配信×氷タイプ不足から読む雪と氷の新機能、フィナーレを飾る人間の街とロケット団。当たっていれば相当熱いし、外れても、続報を待ちながらあれこれ予想する時間こそ、長く遊んでいるゲームの醍醐味だと思っています。続報が出たら、この記事に追記していきます！</p>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/03/07/133503">【ぽこあ レビュー】発売以来ハマり続けている理由</a></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/03/16/153001">【Switch/Switch2】2026年おすすめゲーム25選</a></p>
+</div>
