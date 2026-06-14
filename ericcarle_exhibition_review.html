@@ -29,7 +29,7 @@
     .compare-table tr { border: 1px solid #dddddd; border-radius: 5px; margin-bottom: 12px; overflow: hidden; }
     .compare-table td[data-label] { display: flex; align-items: flex-start; padding: 8px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; line-height: 1.7; }
     .compare-table td[data-label]:last-child { border-bottom: none; }
-    .compare-table td[data-label]::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 72px; max-width: 72px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; }
+    .compare-table td[data-label]::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 78px; max-width: 78px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; }
     .compare-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 12px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; white-space: normal; }
     .shop-buttons { gap: 6px; } .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; } .shop-btn-label { display: none; }
   }
@@ -38,19 +38,14 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ExhibitionEvent",
-  "name": "エリック・カール展 はじまりは、はらぺこあおむし",
-  "startDate": "2026-04-25",
-  "endDate": "2026-07-26",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "image": "https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152356.jpg",
-  "location": {
-    "@type": "Place",
-    "name": "東京都現代美術館",
-    "address": { "@type": "PostalAddress", "addressLocality": "江東区", "addressRegion": "東京都", "addressCountry": "JP" }
-  },
-  "offers": { "@type": "Offer", "price": "2300", "priceCurrency": "JPY", "availability": "https://schema.org/InStock" }
+  "@type": "Book",
+  "name": "はらぺこあおむし",
+  "author": { "@type": "Person", "name": "エリック・カール" },
+  "translator": { "@type": "Person", "name": "もりひさし" },
+  "publisher": { "@type": "Organization", "name": "偕成社" },
+  "inLanguage": "ja",
+  "datePublished": "1976",
+  "image": "https://m.media-amazon.com/images/I/51whMHyBcuL._SL500_.jpg"
 }
 </script>
 <script type="application/ld+json">
@@ -60,27 +55,32 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "はらぺこあおむしのテーマは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "成長と変化、そして希望です。小さなあおむしがたくさん食べて、さなぎになり、やがて美しいちょうへと生まれ変わる。今がうまくいかなくても変われる、という前向きな生命の物語です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "はらぺこあおむしの対象年齢は？",
+      "acceptedAnswer": { "@type": "Answer", "text": "出版社の偕成社では4歳ごろからとされています。ただし絵とリズムが単純で、赤ちゃんから小学生まで幅広く楽しめます。曜日や数を学びはじめる時期にも向いています。" }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ食べ物のページに穴があいているのですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "作者エリック・カールが、机でホールパンチを使っていたときに思いついた仕掛けです。穴は子どもの指が通るサイズで、あおむしが食べた跡を指でたどって遊べます。食べる量が増えるほどページの幅も広がっていきます。" }
+    },
+    {
+      "@type": "Question",
       "name": "エリック・カール展の所要時間はどのくらいですか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "じっくり見て1時間半ほどが目安です。原画をていねいに見たり、フォトスポットで写真を撮ったり、グッズ売り場を回ると2時間近くになることもあります。" }
+      "acceptedAnswer": { "@type": "Answer", "text": "じっくり見て1時間半ほどが目安です。原画をていねいに見たり、写真を撮ったり、グッズ売り場を回ると2時間近くになることもあります。" }
     },
     {
       "@type": "Question",
-      "name": "子連れやベビーカーでも大丈夫ですか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "会場の東京都現代美術館はベビーカーでの移動に配慮があり、小さな子ども連れでも回りやすい展覧会です。展示の解説は多言語や手話にも対応していました。小学生以下は観覧無料です。" }
+      "name": "エリック・カール展は子連れやベビーカーでも大丈夫ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "会場の東京都現代美術館はベビーカーでも回りやすく、小さな子ども連れの家族も多くいました。解説は多言語にも対応しています。小学生以下は観覧無料です。" }
     },
     {
       "@type": "Question",
-      "name": "チケットは当日でも買えますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "日時指定制のため、事前予約が安心です。混雑する土日や祝日は希望の時間が埋まりやすいので、行く日が決まっているなら早めの予約をおすすめします。" }
-    },
-    {
-      "@type": "Question",
-      "name": "大人だけで行っても楽しめますか？",
-      "acceptedAnswer": { "@type": "Answer", "text": "むしろ大人にこそおすすめです。一冊ごとに込められたテーマや、エリック・カールがたどった人生を知ると、子どものころに読んだ絵本がまったく違って見えてきます。" }
-    },
-    {
-      "@type": "Question",
-      "name": "東京のあとも開催されますか？",
+      "name": "エリック・カール展は東京のあとも開催されますか？",
       "acceptedAnswer": { "@type": "Answer", "text": "巡回展です。東京（2026年4月25日〜7月26日）のあと、福岡県立美術館（2026年10月23日〜12月20日）、あべのハルカス美術館（2027年3月20日〜5月9日）でも開催予定です。" }
     }
   ]
@@ -90,15 +90,151 @@
 <p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
 ※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム）が含まれます。
 </p>
-<p>清澄白河の美術館を出るころ、なぜか少しだけ泣きそうになっていました。見に行ったのは、子どものころに何度も読んだ「はらぺこあおむし」の展覧会です。正直に言うと、最初は子ども向けのかわいい展示だろうと、わりと軽く考えていました。</p>
-<p>ところが、違ったんです。エリック・カールの絵本は、ただカラフルでかわいいだけじゃない。一冊一冊に、はっきりとしたテーマがある。そのことに気づいた瞬間、見慣れたはずのあおむしの絵が、まったく別のものに見えてきました。</p>
-<p>先に言ってしまうと、これは子どもよりも、大人のための展覧会でした。この記事は、開催中の「エリック・カール展 はじまりは、はらぺこあおむし」へ実際に足を運んだ感想レポートです。会場の様子、所要時間、子連れで行けるか、グッズや図録のことまで、写真つきで正直に書きます。そして後半では、大人が読んでこそ沁みる、カールの絵本の話を。</p>
+<p>「はらぺこあおむし」を、大人になってからちゃんと読み返したことはありますか。</p>
+<p>先日、子どものころに何度もめくったあの絵本の展覧会に行って、私は不意打ちを食らいました。ただカラフルでかわいいだけだと思っていたあの一冊が、実は「希望」という、とてつもなく大きなテーマを抱えた物語だったと気づいたからです。</p>
+<p>この記事は、はらぺこあおむしを大人の目線で読み解く解説です。あらすじやテーマ、対象年齢、なぜ半世紀も世界中で読み継がれているのかを、できるだけていねいに。そのうえで、実際にエリック・カール展へ足を運んで原画を見て、作者の人生を知って、はじめて腑に落ちたことも書きます。</p>
+<p>先に結論を言ってしまうと、はらぺこあおむしは、子どもよりも大人にこそ刺さる絵本でした。</p>
 <figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152356.jpg" alt="エリック・カール展のポスター" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>建物の外に掲げられた、展覧会のポスター</figcaption>
+<figcaption>その気づきをくれた、エリック・カール展のポスター</figcaption>
 </figure>
 <p>[:contents]</p>
-<div class="h4-block">エリック・カール展「はじまりは、はらぺこあおむし」の基本情報</div>
-<p>まずは行く前に知っておきたい情報から。今回の展覧会は、はらぺこあおむしの日本語版50周年を記念した大回顧展で、約180点が並びます。原画だけでなく、グラフィックデザイナー時代の仕事や、制作に使ったコラージュの素材まで見られるのが見どころです。</p>
+<div class="h4-block">はらぺこあおむしとは｜あらすじと基本情報</div>
+<p>まずは、絵本そのものをおさらいします。はらぺこあおむしは、アメリカの絵本作家エリック・カールが1969年に発表した作品です。日本では1976年に偕成社から、もりひさしさんの訳で出版されました。つまり2026年で、日本語版はちょうど50周年になります。</p>
+<table class="compare-table">
+<tbody>
+<tr><th scope="row" style="width: 32%;">作者</th><td>エリック・カール</td></tr>
+<tr><th scope="row">訳</th><td>もりひさし</td></tr>
+<tr><th scope="row">出版社</th><td>偕成社</td></tr>
+<tr><th scope="row">刊行</th><td>原書1969年／日本語版1976年（2026年で50周年）</td></tr>
+<tr><th scope="row">対象年齢</th><td>4歳ごろから（赤ちゃんから小学生まで幅広く）</td></tr>
+<tr><th scope="row">特徴</th><td>食べ物のページの穴あき、ページの幅が段階的に広がるしかけ絵本</td></tr>
+</tbody>
+</table>
+<p>あらすじは、たぶん多くの人がうっすら覚えているはずです。日曜日の朝、葉っぱの上の小さな卵から、はらぺこのあおむしが生まれます。月曜日にりんごを1個、火曜日になしを2個、と曜日ごとに食べる数を増やし、土曜日にはケーキやアイス、サラミにすいかまで食べ過ぎて、お腹を壊してしまう。日曜日に葉っぱを1枚食べて元気を取り戻すと、あおむしはさなぎになり、しばらく眠ったあと、美しいちょうになって飛び立ちます。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/4033280103?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51whMHyBcuL._SL500_.jpg" class="hatena-asin-detail-image" alt="はらぺこあおむし" title="はらぺこあおむし" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/4033280103?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">はらぺこあおむし</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/4033280103?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="h4-block">はらぺこあおむしのテーマは「希望」｜大人が読むと刺さる理由</div>
+<p>子どものころは、ただ「あおむしがいっぱい食べて、ちょうになる話」だと思っていました。でも、大人になって読み返すと、ここには明確なテーマがあります。成長と、変化と、希望です。</p>
+<p>小さくて弱いあおむしが、食べて、眠って、まったく違う姿に生まれ変わる。これは「今がうまくいかなくても、人はちゃんと変われる」という、とてつもなく前向きなメッセージだったんです。仕事や子育てで少し疲れているときに読むと、不思議と励まされる。あおむしが葉っぱを食べて回復するくだりなんて、休むことの大切さそのものに見えてきます。</p>
+<p>しかも、この絵本はそれを説教くさく語りません。曜日の流れ、1から5までの数、果物や食べ物の名前。子どもが自然に学べる要素をちりばめながら、生き物が姿を変えていく生命のサイクルを、ページをめくるだけで体験させてくれる。学びと物語と希望が、軽やかに同居しているのがすごいところです。</p>
+<div class="h4-block">なぜ半世紀も読み継がれるのか｜色と、穴あきのしかけの秘密</div>
+<p>世界中で読まれ、日本でも50年。これだけ愛される理由を、展覧会で原画を見て、自分なりに腑に落ちました。鍵は「色」と「しかけ」です。</p>
+<div class="h5-block">指が通る穴は、ホールパンチから生まれた</div>
+<p>はらぺこあおむしといえば、食べ物のページにあいた小さな穴。実はこの仕掛け、エリック・カールが机でホールパンチを使っていたときにひらめいたものなのだそうです。最初の案は本をかじる虫の話で、編集者の助言であおむし（やがてちょうになる虫）に変わったといいます。</p>
+<p>穴は、子どもの指がちょうど通るサイズに作られています。あおむしが食べた跡を指でたどれる。さらに、食べる量が増えるほどページの幅も少しずつ広がっていく。読む子どもの手と、物語の進み方が、しかけを通してつながっているんです。グラフィックデザイナー出身のカールらしい、考え抜かれた設計でした。</p>
+<div class="h5-block">あの鮮やかな色は、どこから来たのか</div>
+<p>もうひとつが色です。カールの絵は、薄い紙にアクリル絵の具で色をつけ、それを切り貼りするコラージュで作られています。印刷では均されてしまう絵の具のかすれや筆あとが、原画だとそのまま残っていて、色が呼吸しているように見える。あの赤や緑の力強さの正体は、ここにありました。</p>
+<p>そして、この大胆な色づかいには、カールの人生そのものが関わっています。それは記事の後半で。</p>
+<div class="h4-block">はらぺこあおむしだけじゃない｜エリック・カールが絵本に込めたテーマ</div>
+<p>展覧会で一番おどろいたのが、これです。カールの絵本は一冊ごとに、はっきりとしたテーマを持って作られていました。展示で示されていたテーマを、作品とあわせて並べてみます。</p>
+<table class="compare-table">
+<thead>
+<tr><th>絵本</th><th>エリック・カールが込めたテーマ</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="絵本">はらぺこあおむし</td><td data-label="テーマ">希望。食べて、眠って、やがて美しく生まれ変わる</td></tr>
+<tr><td data-label="絵本">くもさん おへんじ どうしたの？</td><td data-label="テーマ">働くこと。誰に誘われても、黙々と巣を張り続ける</td></tr>
+<tr><td data-label="絵本">だんまり こおろぎ</td><td data-label="テーマ">愛。鳴けなかったこおろぎが、ある出会いの果てに、初めて音を奏でる</td></tr>
+<tr><td data-label="絵本">さびしがりやのほたる</td><td data-label="テーマ">居場所。本当の仲間を探して、光をたよりに飛び続ける</td></tr>
+</tbody>
+</table>
+<p>「くもさん おへんじ どうしたの？」は、働くことの物語です。馬や牛が次々に遊びに誘っても、くもは一度も返事をせず、ただ黙々と巣を張り続ける。最後に立派な巣を完成させる姿は、大人になって読むと、なんだか自分の仕事と重なって沁みます。</p>
+<p>「だんまり こおろぎ」は、生まれたばかりのこおろぎが主人公です。出会う虫みんなに羽をこすって返事をしようとするのに、どうしても音が出ない。それが物語の最後、一匹のこおろぎに出会ったとき、はじめて鳴き声が響く。出会いがその子の声を引き出す、という意味で、たしかに愛の話でした。</p>
+<p>「さびしがりやのほたる」は、居場所の物語。ほたるが仲間を求めて、電球やろうそく、動物の目の光に近づいては違う、をくり返し、最後に本物のほたるの群れにたどり着きます。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/403328270X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51JWx0A1n7L._SL500_.jpg" class="hatena-asin-detail-image" alt="くもさん おへんじ どうしたの (エリック・カールの絵本)" title="くもさん おへんじ どうしたの (エリック・カールの絵本)" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/403328270X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">くもさん おへんじ どうしたの (エリック・カールの絵本)</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/403328270X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/403237130X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51XwmZg6hQL._SL500_.jpg" class="hatena-asin-detail-image" alt="ボードブック だんまりこおろぎ (音のでるボードブック)" title="ボードブック だんまりこおろぎ (音のでるボードブック)" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/403237130X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">ボードブック だんまりこおろぎ (音のでるボードブック)</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/403237130X?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/4032371407?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51FdvYUMHrL._SL500_.jpg" class="hatena-asin-detail-image" alt="さびしがりやのほたる: 光る絵本" title="さびしがりやのほたる: 光る絵本" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/4032371407?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">さびしがりやのほたる: 光る絵本</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/4032371407?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="h5-block">気づけば、五感に語りかけてくる</div>
+<p>これらの絵本は、英語では「The Very ～」で始まるシリーズとして親しまれています。並べてみて、はっとしました。テーマだけでなく、しかけも一冊ずつ違って、結果として読者の五感に訴えてくるんです。</p>
+<table class="compare-table">
+<thead>
+<tr><th>絵本</th><th>しかけ</th><th>うったえる感覚</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="絵本">はらぺこあおむし</td><td data-label="しかけ">食べ物の穴あき、広がるページ</td><td data-label="感覚">見て、さわって</td></tr>
+<tr><td data-label="絵本">くもさん おへんじ どうしたの？</td><td data-label="しかけ">盛り上がって指で触れる巣</td><td data-label="感覚">さわって</td></tr>
+<tr><td data-label="絵本">だんまり こおろぎ</td><td data-label="しかけ">最後のページで本物の鳴き声が鳴る</td><td data-label="感覚">聞いて</td></tr>
+<tr><td data-label="絵本">さびしがりやのほたる</td><td data-label="しかけ">最後のページでほたるが光る</td><td data-label="感覚">見て</td></tr>
+</tbody>
+</table>
+<p>読む子どもが、指でさわり、音を聞き、光を見る。絵本が一方的に語るのではなく、子どもの体をそっと巻き込んでくる。カールが「五感シリーズ」と銘打ったわけではないようですが、一冊ずつ仕掛けを工夫し続けた結果、こうなった。この積み重ねこそ、長く愛される理由なのだと思います。</p>
+<div class="h4-block">大人の目線で見ると、もっとおもしろい｜遊び心と自由</div>
+<p>展覧会では、思わず笑ってしまったコーナーもありました。ありえないことばかりを描いた絵です。ねずみがねこを連れて歩いていたり、魚が鳥かごの中にいたり。常識をくるっとひっくり返すこの遊び心は、子どもよりむしろ大人に効きます。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152503.jpg" alt="ありえないことをテーマにした絵。ねずみがねこを連れていたり、魚が鳥かごにいたりする" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>あべこべの世界。この自由さが、カールらしい</figcaption>
+</figure>
+<p>この「ありえなさ」を楽しむ感覚は、絵本「ごちゃまぜカメレオン」にもつながっています。ほかの動物にあこがれて体の一部をどんどん取り込み、最後はぐちゃぐちゃになってしまうカメレオン。自分のままがいちばん、というメッセージを、笑いながら受け取れる一冊です。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/4033486305?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41aqz21ImqL._SL500_.jpg" class="hatena-asin-detail-image" alt="ごちゃまぜカメレオン" title="ごちゃまぜカメレオン" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/4033486305?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">ごちゃまぜカメレオン</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/4033486305?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="h4-block">展覧会で知った、すべての「はじまり」｜エリック・カールの人生</div>
+<p>ここからは、実際に展覧会へ行って深く知れた話です。はらぺこあおむしのあの色が、どこから来たのか。会場を回って、ようやく腑に落ちました。</p>
+<div class="h5-block">禁じられた絵が、色との出会いだった</div>
+<p>エリック・カールは1929年生まれ。少年時代をドイツで過ごしました。当時のドイツでは、ピカソやパウル・クレー、カンディンスキーといった画家たちの作品が「退廃芸術」とされ、公には見られないものになっていました。</p>
+<p>そんな時代に、ある美術の先生がこっそりと、これらの絵の複製を見せてくれたのだそうです。その鮮やかな色彩に、少年カールは衝撃を受けた。後年の、あの大胆な色づかいの原点が、禁じられた絵との出会いにあった。それを知ったとき、はらぺこあおむしの赤や緑が、急に重みを持って見えてきました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152403.jpg" alt="再現されたエリック・カールのアトリエ" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>再現されたアトリエ。色とりどりの薄紙が、あの絵の素になります</figcaption>
+</figure>
+<div class="h5-block">青い馬と、手仕事のコラージュ</div>
+<p>心に残ったのが、絵本「えをかくかくかく」にまつわる話です。これは、画家フランツ・マルクが描いた「青い馬」へのオマージュなのだとか。馬は青くたっていい。現実とは違う色で描いてもいい。そんな自由を子どもに手渡す一冊です。</p>
+<p>「ちいさいたね」の展示では、絵の具を霧のように細かく飛ばす技法が紹介されていました。あの繊細な質感は、こうして生まれていたのかと納得します。一枚の絵の裏に、気の遠くなるような手仕事がある。原画の前に立つと、それがまっすぐ伝わってきました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152521.jpg" alt="はらぺこあおむしの原画" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>近づくと、薄紙を重ねたコラージュのあとがよく見えます</figcaption>
+</figure>
+<div class="h5-block">上着と革靴の、小さな習慣</div>
+<p>地味だけれど一番好きだったのが、このコーナー。カールが制作のときに着ていた作業用の上着と革靴が展示されていました。これを身につけることで、仕事に向かう気持ちが整ったのだといいます。世界中で愛される絵本も、こういう小さな習慣の積み重ねから生まれている。なんだか、勇気をもらいました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152443.jpg" alt="エリック・カールが制作時に着ていた上着と革靴" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>制作時に着ていたという上着と革靴。これを着ると仕事モードに切り替わったそうです</figcaption>
+</figure>
+<div class="h4-block">エリック・カール展「はじまりは、はらぺこあおむし」基本情報</div>
+<p>ここからは、実際に行ってみたい人へ向けた情報です。今回の展覧会は、はらぺこあおむしの日本語版50周年を記念した大回顧展で、約180点が並びます。原画だけでなく、グラフィックデザイナー時代の仕事や、制作に使ったコラージュの素材まで見られるのが見どころです。</p>
 <p>そして大事なのが、これは巡回展だということ。東京で見逃しても、このあと福岡と大阪に来ます。</p>
 <table class="compare-table">
 <thead>
@@ -120,63 +256,31 @@
 <tr><th scope="row">チケット</th><td>日時指定制（事前予約がおすすめ）</td></tr>
 </tbody>
 </table>
-<div class="supplement-box"><div class="sup-title">補足</div>福岡・大阪会場の観覧料や開館時間は、現時点では未発表のものがあります。それぞれの会期が近づいたら各美術館の公式情報を確認してください。この記事は東京会場の体験をもとにしています。</div>
-<div class="h4-block">実際に行ってわかった、所要時間・混雑・子連れのこと</div>
-<p>ここからが、行った人にしか書けないところ。公式サイトには載っていない、肌で感じた情報をまとめます。</p>
-<div class="h5-block">所要時間は1時間半。でも写真を撮ると伸びる</div>
-<p>展示をていねいに見て、だいたい1時間半でした。ただ、これはあくまで目安です。原画の前で立ち止まったり、フォトスポットで写真を撮ったり、最後のグッズ売り場でじっくり選んだりすると、あっという間に2時間近くになります。私は完全に後者でした。時間に余裕をもって行くのがおすすめです。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152538.jpg" alt="エリック・カール展の入口" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>展示室の入口。ここから、色の世界が始まります</figcaption>
+<div class="supplement-box">
+<div class="sup-title">補足</div>
+福岡・大阪会場の観覧料や開館時間は、現時点では未発表のものがあります。それぞれの会期が近づいたら各美術館の公式情報を確認してください。この記事は東京会場の体験をもとにしています。</div>
+<div class="h5-block">所要時間・子連れ・フォトスポット</div>
+<p>展示をていねいに見て、だいたい1時間半でした。ただ、原画の前で立ち止まったり、写真を撮ったり、グッズ売り場でじっくり選んだりすると、あっという間に2時間近くになります。時間に余裕をもって行くのがおすすめです。</p>
+<p>会場の東京都現代美術館は、ベビーカーでも回りやすい造りでした。小さな子ども連れの家族も多く、肩ひじ張らずに楽しめる雰囲気です。展示の解説が多言語にも対応していたのが印象的で、誰でも入りやすい配慮を感じました。小学生以下は観覧無料なので、家族で行くハードルも低いです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152544.jpg" alt="会場内部の案内表示。複数言語に対応している" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>多言語に対応した案内。こういう配慮はうれしい</figcaption>
 </figure>
-<div class="h5-block">子連れでも安心。多言語と手話にも対応</div>
-<p>会場の東京都現代美術館は、ベビーカーでも回りやすい造りでした。小さな子ども連れの家族も多く、肩ひじ張らずに楽しめる雰囲気です。展示の解説が多言語や手話にも対応していたのが印象的で、誰でも入りやすい配慮を感じました。小学生以下は観覧無料なので、家族で行くハードルも低いです。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152544.jpg" alt="会場内部の案内表示。複数言語や手話に対応している" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>多言語や手話に対応した案内。こういう配慮はうれしい</figcaption>
+<p>会場には写真を撮れるスポットもあります。なかでも目を引いたのが、大きな青い月。これは絵本「パパ、お月さまとって！」がモチーフになっています。パパが娘のために長いはしごをのぼって月をとりにいく、あの幻想的なお話の世界に、自分が入り込めるようになっていました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152531.jpg" alt="青い月のフォトスポット。絵本パパお月さまとってがモチーフ" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>青い月のフォトスポット。「パパ、お月さまとって！」の世界です</figcaption>
 </figure>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152531.jpg" alt="青い月のフォトスポット" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>フォトスポットの青い月。絵本「パパ、お月さまとって！」を思い出します</figcaption>
-</figure>
-<div class="h4-block">はらぺこあおむしだけじゃない。絵本に隠れた4つのテーマ</div>
-<p>この展覧会で一番びっくりしたのが、これです。エリック・カールの絵本は、それぞれにちゃんとテーマがある。会場を回りながら、私はこんなふうに受け取りました。あくまで私の読み方ですが、知ってから読み返すと、ぜんぜん違う本に見えてきます。</p>
-<table class="compare-table">
-<thead>
-<tr><th>絵本</th><th>私が受け取ったテーマ</th></tr>
-</thead>
-<tbody>
-<tr><td data-label="絵本">はらぺこあおむし</td><td data-label="テーマ">希望。食べて、眠って、やがて美しく生まれ変わる</td></tr>
-<tr><td data-label="絵本">くもさん おへんじ どうしたの？</td><td data-label="テーマ">働くこと。誰に何を言われても、黙々と糸を張り続ける</td></tr>
-<tr><td data-label="絵本">だんまり こおろぎ</td><td data-label="テーマ">愛。鳴けなかったこおろぎが、最後にたった一度だけ</td></tr>
-<tr><td data-label="絵本">さびしがりやのほたる</td><td data-label="テーマ">居場所。本当の仲間を探して、光をたよりに飛び続ける</td></tr>
-</tbody>
-</table>
-<p>はらぺこあおむしが希望の話だというのは、言われてみれば当たり前なのに、子どものころは気づきませんでした。たくさん食べて、さなぎになって、ちょうになる。あれは「今がうまくいかなくても、ちゃんと変われる」という、とてつもなく前向きな物語だったんです。</p>
-<p>「くもさん おへんじ どうしたの？」が働くことの話、というのも沁みました。話しかけられても返事をせず、ただひたすら巣を張り続けるくも。大人になって読むと、ちょっと自分と重なります。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152510.jpg" alt="はらぺこあおむしの原画" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>はらぺこあおむしの原画。印刷では出ない、紙の質感に見入りました</figcaption>
-</figure>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152521.jpg" alt="はらぺこあおむしの原画" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>近づくと、薄紙を重ねたコラージュのあとがよく見えます</figcaption>
-</figure>
-<p>もうひとつ、思わず笑ったコーナーがありました。ありえないことばかりを描いた絵です。ねずみがねこを連れて歩いていたり、魚が鳥かごの中にいたり。常識をくるっとひっくり返す遊び心は、子どもよりむしろ大人に効きます。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152503.jpg" alt="ありえないことをテーマにした絵。ねずみがねこを連れていたり、魚が鳥かごにいたりする" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>あべこべの世界。この自由さが、カールらしい</figcaption>
-</figure>
-<div class="h4-block">すべての はじまり。デザイナーから絵本作家になるまで</div>
-<p>展覧会のタイトルは「はじまりは、はらぺこあおむし」。でも会場を回ると、本当のはじまりはもっと前にあったことがわかります。</p>
-<div class="h5-block">禁じられた絵が、色との出会いだった</div>
-<p>エリック・カールは1929年生まれ。少年時代をドイツで過ごしました。当時のドイツでは、ピカソやパウル・クレー、カンディンスキーといった画家たちの作品が「退廃芸術」とされ、公には見られないものになっていました。</p>
-<p>そんな時代に、ある美術の先生がこっそりと、これらの絵の複製を見せてくれたのだそうです。その鮮やかな色彩に、少年カールは衝撃を受けた。後年の、あの大胆な色づかいの原点が、禁じられた絵との出会いにあった。この事実を知ったとき、はらぺこあおむしの赤や緑が、急に重みを持って見えました。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152403.jpg" alt="再現されたエリック・カールのアトリエ" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>再現されたアトリエ。色とりどりの薄紙が、作品の素になります</figcaption>
-</figure>
-<div class="h5-block">青い馬と、コラージュという手仕事</div>
-<p>もうひとつ心に残ったのが、絵本「えをかくかくかく」にまつわる話です。これは、画家フランツ・マルクが描いた「青い馬」へのオマージュなのだとか。馬は青くたっていい。現実とは違う色で描いてもいい。そんな自由を子どもに手渡す一冊です。</p>
-<p>カールの絵の作り方も、間近で知ると驚きます。薄い紙にアクリル絵の具で色をつけ、筆やスポンジでさまざまな模様をつくる。それを切って、貼って、一枚の絵にしていく。気の遠くなるような手仕事です。「ちいさいたね」の展示では、絵の具を霧のように細かく飛ばす技法が紹介されていて、あの繊細な質感はこうして生まれるのかと納得しました。</p>
-<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152443.jpg" alt="エリック・カールが制作時に着ていた上着と革靴" width="900" height="1200" loading="lazy" class="hatena-fotolife" itemprop="image" />
-<figcaption>制作時に着ていたという上着と革靴。これを身につけると、仕事モードに切り替わったそうです</figcaption>
-</figure>
-<p>このコーナーが、地味だけれど一番好きでした。作業用の上着と革靴。これを身につけることで、仕事に向かう気持ちが整ったのだといいます。世界中で愛される絵本も、こういう小さな習慣の積み重ねから生まれている。なんだか、勇気をもらいました。</p>
-<div class="h4-block">お土産も大充実。会場限定グッズと図録</div>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/4033282807?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51jTFWPxfFL._SL500_.jpg" class="hatena-asin-detail-image" alt="パパ、お月さまとって！" title="パパ、お月さまとって！" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/4033282807?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">パパ、お月さまとって！</a></p>
+<ul class="hatena-asin-detail-meta">
+<li><span class="hatena-asin-detail-label">作者:</span>エリック・カール</li>
+<li>偕成社</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/4033282807?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<div class="h5-block">お土産も大充実。グッズと図録</div>
 <p>展覧会の楽しみといえば、最後のグッズ売り場。ここがまた、見事に物欲を刺激してくる空間でした。</p>
 <figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260613/20260613152417.jpg" alt="絵が飛び出すはらぺこあおむし仕様のカレンダー" width="1200" height="900" loading="lazy" class="hatena-fotolife" itemprop="image" />
 <figcaption>絵が飛び出すしかけのカレンダー。これは欲しくなります</figcaption>
@@ -191,8 +295,8 @@
 <figcaption>やさしい英語の入ったグッズも。英語の入り口にもなりそうです</figcaption>
 </figure>
 <p>図録も魅力的でした。表紙は、はらぺこあおむしが食べたものにちなんで、緑（はっぱ）、赤（りんご）、黄色（オレンジ）の3色展開。出品作がオールカラーで載っていて、年表や全絵本リスト、専門家のエッセイまで入っています。会場の余韻を家に持ち帰れる一冊なので、迷ったら買って後悔しないと思います。</p>
-<div class="h4-block">家でも、はらぺこあおむしを。絵本の選び方</div>
-<p>展覧会で原画を見たあとは、無性に絵本そのものが読みたくなります。はらぺこあおむしには、実はいくつかの版があって、誰が読むかで選ぶと失敗しません。</p>
+<div class="h4-block">家でも読みたい｜はらぺこあおむしの版の選び方</div>
+<p>原画を見たあとは、無性に絵本そのものが読みたくなります。はらぺこあおむしには、実はいくつかの版があって、誰が読むかで選ぶと失敗しません。</p>
 <table class="compare-table">
 <thead>
 <tr><th>版</th><th>特徴</th><th>こんな人に</th></tr>
@@ -204,27 +308,26 @@
 </tbody>
 </table>
 <p>はじめての一冊なら、しかけを楽しめる通常版が間違いないです。まだ本を乱暴に扱う年ごろの子には、丈夫なボードブック版。プレゼントや読み聞かせの場では、大きなビッグブック版が映えます。古本でも状態の良いものがよく出回っているので、まずは中身を確かめたい人はメルカリで探すのもありです。</p>
-<div class="shop-buttons">
-<span class="shop-btn-label">はらぺこあおむし</span>
-<a href="https://www.amazon.co.jp/s?k=%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
-<a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
-<a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
-</div>
-<div class="recommend-box"><div class="rec-title">展覧会のあとに読みたい一冊</div>えをかくかくかく（フランツ・マルクの青い馬へのオマージュ）も、展示を見たあとだと味わいが変わります。「自由に描いていい」という、カールからのメッセージがまっすぐ伝わってくる絵本です。</div>
+<div class="shop-buttons"><span class="shop-btn-label">はらぺこあおむし</span> <a href="https://www.amazon.co.jp/s?k=%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%81%AF%E3%82%89%E3%81%BA%E3%81%93%E3%81%82%E3%81%8A%E3%82%80%E3%81%97" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="recommend-box">
+<div class="rec-title">展覧会のあとに読みたい一冊</div>
+「えをかくかくかく」（フランツ・マルクの青い馬へのオマージュ）も、展示を見たあとだと味わいが変わります。自由に描いていい、というカールからのメッセージが、まっすぐ伝わってくる絵本です。</div>
 <div class="h4-block">よくある質問</div>
 <dl class="faq-list">
-<dt>所要時間はどのくらいですか</dt>
-<dd>じっくり見て1時間半ほどが目安です。写真を撮ったりグッズを選んだりすると、2時間近くになることもあります。時間に余裕をもって行くと安心です。</dd>
+<dt>はらぺこあおむしのテーマは何ですか</dt>
+<dd>成長と変化、そして希望です。小さなあおむしがたくさん食べて、さなぎになり、やがて美しいちょうへと生まれ変わる。今がうまくいかなくても変われる、という前向きな生命の物語です。</dd>
+<dt>はらぺこあおむしの対象年齢は</dt>
+<dd>出版社の偕成社では4歳ごろからとされています。ただし絵とリズムが単純で、赤ちゃんから小学生まで幅広く楽しめます。曜日や数を学びはじめる時期にも向いています。</dd>
+<dt>なぜ食べ物のページに穴があいているのですか</dt>
+<dd>作者エリック・カールが、机でホールパンチを使っていたときに思いついた仕掛けです。穴は子どもの指が通るサイズで、あおむしが食べた跡を指でたどって遊べます。食べる量が増えるほどページの幅も広がります。</dd>
+<dt>エリック・カール展の所要時間はどのくらいですか</dt>
+<dd>じっくり見て1時間半ほどが目安です。写真を撮ったりグッズを選んだりすると、2時間近くになることもあります。</dd>
 <dt>子連れ・ベビーカーでも大丈夫ですか</dt>
-<dd>会場の東京都現代美術館はベビーカーでも回りやすく、小さな子ども連れの家族も多くいました。解説は多言語や手話にも対応しています。小学生以下は観覧無料です。</dd>
-<dt>チケットは当日でも買えますか</dt>
-<dd>日時指定制のため、事前予約が安心です。土日や祝日は希望の時間が埋まりやすいので、日程が決まっているなら早めの予約をおすすめします。</dd>
-<dt>大人だけで行っても楽しめますか</dt>
-<dd>むしろ大人にこそおすすめです。一冊ごとのテーマやエリック・カールの人生を知ると、子どものころに読んだ絵本がまったく違って見えてきます。</dd>
+<dd>会場の東京都現代美術館はベビーカーでも回りやすく、小さな子ども連れの家族も多くいました。解説は多言語にも対応しています。小学生以下は観覧無料です。</dd>
 <dt>東京のあとも開催されますか</dt>
 <dd>巡回展です。東京のあと、福岡県立美術館（2026年10月23日〜12月20日）、あべのハルカス美術館（2027年3月20日〜5月9日）でも開催予定です。</dd>
 </dl>
 <div class="h4-block">まとめ</div>
-<p>子ども向けだと思って入った展覧会で、まさか自分の胸の方が動かされるとは思いませんでした。はらぺこあおむしは希望の話で、エリック・カールの色は、禁じられた絵との出会いから生まれていた。そういう背景を知ってから絵本を開くと、同じページが、まるで初めて読むように新しく見えます。</p>
-<p>東京会場は2026年7月26日まで。このあと福岡と大阪にも巡回します。小さなお子さんと一緒でも、大人ひとりでも、どちらの行き方でも満たされる展覧会です。帰り道にそっと絵本を一冊買って、あの色をもう一度たどってみてください。きっと、子どものころには見えなかったものが見えてきます。</p>
+<p>はらぺこあおむしは、子どものための絵本だと思っていました。でも、テーマが「希望」だと知り、あの色が禁じられた絵との出会いから生まれたと知り、五感に語りかける仕掛けの工夫を知ると、まるで初めて読む本のように見えてきます。大人になった今こそ、もう一度ページをめくってほしい一冊です。</p>
+<p>展覧会に足を運べる人は、ぜひ原画の前に立ってみてください。東京会場は2026年7月26日まで、そのあと福岡と大阪へ巡回します。むずかしければ、家で絵本を開くだけでも十分です。あの小さなあおむしが、きっとまた何かを連れてきてくれます。</p>
 <!-- 関連記事（読書ブログ内の該当記事URLが決まったら、はてなブログのembedカードをここに貼ってください） -->
