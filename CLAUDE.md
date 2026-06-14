@@ -14,7 +14,8 @@
 | メルカリアンバサダーafid | 6396715167 |
 | メルカリ招待コード | YRCNMN（新規ユーザー向け500P付与） |
 | ブログエンジン | はてなブログ（HTML直書き） |
-| AdSense | 未通過（再申請準備中） |
+| 広告（ゲームブログ） | Google AdSense（設置済み・自動挿入含む） |
+| 広告（読書ブログ） | 忍者AdMax（AdSenseは断念。詳細は「読書ブログ 広告設定」セクション） |
 
 ブログのトーン：一人称・体験談ベース、ジャンル横断、ですます調
 
@@ -475,6 +476,46 @@ p { margin-bottom: 1.4em; }
 4. Page Title / og:title / post description の提案
 5. 使用したメルカリ検索キーワードの一覧報告（メルカリリンクを入れた場合）
 6. Search Console再申請のリマインド（修正記事の場合）
+
+---
+
+## 読書ブログ 広告設定（忍者AdMax）
+
+読書ブログ（bubble-books.com）はAdSenseを断念し、忍者AdMaxで運用。AdSenseと近い配置（上部・記事中・記事下）を、忍者の固定300×250枠で再現している。ゲームブログ（AdSense・自動挿入あり）はこのルールの対象外。
+
+### 仕組み
+- 全枠 300×250 固定（スマホ枠も自動リサイズはOFF。自動リサイズONだと引き伸ばしで画面外にはみ出すため）。
+- PC枠とスマホ枠を別々に発行し、`.ad-pc` / `.ad-sp` のCSSクラスで出し分ける（レスポンシブデザインONのため、はてなのスマホ設定では分けられずCSSメディアクエリで切り替える）。ブレークポイント768px。
+- 忍者のコードは `document.write` 形式（`https://adm.shinobi.jp/s/...`）。**JavaScriptで後から差し込むとページが真っ白になるため、JSによる自動挿入は不可**。各設置箇所はHTMLに直接置く（＝はてなの設定欄に貼る、または記事本文に手書きで貼る）。
+
+### 出し分けCSS（デザインCSSに設置済み）
+```css
+.ad-pc, .ad-sp { margin: 10px auto; max-width: 100%; overflow: hidden; text-align: center; }
+.ad-pc *, .ad-sp * { max-width: 100% !important; height: auto; }
+.ad-sp { display: none !important; }
+.ad-pc { display: block !important; }
+@media (max-width: 768px) { .ad-pc { display: none !important; } .ad-sp { display: block !important; } }
+body { overflow-x: hidden; }
+```
+
+### 設置箇所と広告枠コード（すべて300×250）
+| 場所 | はてなの設定欄 | PC枠 | スマホ枠 |
+|---|---|---|---|
+| 上部 | デザイン→タイトル下 | c1d7c4a0d92c80adf8fe294b3c1fe1ee | a343bbcce2b38f6cb633a4c92961ead3 |
+| 記事中 | 記事本文の中盤（手動） | 7c9a81a539ef983b45b19cfad013be51 | 1d5e3772cec504863530913df0da0399 |
+| 記事下 | デザイン→記事→記事下 | a063363829686955e87d27a93b72515f | 2008f460c30901c78ac43ecd71169a62 |
+
+### ★執筆ルール：読書ブログの記事には記事中広告を1つ入れる
+読書ブログ（bubble-books.com）向けの記事HTMLを出力するときは、本文の中盤（自然な区切り＝中ほどの見出しの直前あたり）に、下のブロックを**1か所だけ**入れる。読みやすさ優先なので入れすぎない。ゲームブログ記事には入れない（AdSenseが自動挿入するため）。
+```html
+<div class="ad-pc" style="margin:30px auto;">
+<script src="https://adm.shinobi.jp/s/7c9a81a539ef983b45b19cfad013be51"></script>
+</div>
+<div class="ad-sp" style="margin:30px auto;">
+<script src="https://adm.shinobi.jp/s/1d5e3772cec504863530913df0da0399"></script>
+</div>
+```
+注意：はてなには「HTML編集モード」で貼る（見たままモードだと`<script>`が消されることがある）。`.ad-pc`/`.ad-sp`のCSSはブログ側に設置済みなので、記事HTML側にこのCSSを足す必要はない。
 
 ---
 
