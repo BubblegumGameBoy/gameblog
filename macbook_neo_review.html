@@ -1,0 +1,284 @@
+<style>
+h2.section-head {
+  font-size: 118%; font-weight: bold;
+  background-color: #555555; color: #ffffff;
+  padding: 10px 14px;
+  border-top: 4px solid #aaaaaa; border-bottom: 4px solid #aaaaaa;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px; margin-bottom: 20px; border-left: none;
+}
+h3.sub-head {
+  font-size: 108%; font-weight: bold;
+  border-left: 5px solid #555555; padding: 10px 0 10px 15px;
+  margin-top: 36px; margin-bottom: 16px; background-color: #f9f9f9;
+}
+.k-conclusion-box {
+  background: #f0f7ff; border: 2px solid #4a90b8; border-radius: 6px;
+  padding: 18px 20px; margin: 20px 0 28px 0;
+}
+.k-conclusion-box .k-conclusion-title {
+  font-weight: bold; font-size: 16px; color: #2277aa;
+  margin-bottom: 12px; border-bottom: 1px solid #c0d8e8; padding-bottom: 8px;
+}
+.point-box {
+  border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0;
+  border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.point-box .point-title { color: #333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.spec-table, .compare-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 18px 0; }
+.spec-table th, .compare-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.spec-table td, .compare-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.spec-table tr:nth-child(even) td, .compare-table tr:nth-child(even) td { background: #f9f9f9; }
+.compare-table .highlight { background: #f0f7f4 !important; font-weight: bold; }
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn { flex: 1 1 0; min-width: 120px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important; font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center; transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+figure { margin: 16px 0; } figure img { max-width: 100%; height: auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; } li { margin-bottom: 6px; line-height: 1.8; } p { margin-bottom: 1.4em; }
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; } .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; } .shop-btn-label { display: none; }
+  .spec-table thead, .compare-table thead { display: none; }
+  .spec-table, .spec-table tbody, .spec-table tr, .spec-table td,
+  .compare-table, .compare-table tbody, .compare-table tr, .compare-table td { display: block; width: 100%; box-sizing: border-box; }
+  .spec-table tr, .compare-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .spec-table td, .compare-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .spec-table td::before, .compare-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 90px; max-width: 90px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+}
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Apple MacBook Neo 13インチ（2026）",
+  "brand": { "@type": "Brand", "name": "Apple" },
+  "description": "A18 Proチップ搭載、13インチLiquid Retina、8GB統合メモリ、256GB/512GB SSD",
+  "review": {
+    "@type": "Review",
+    "name": "MacBook Neoレビュー：9万円台で激変したブログ執筆環境と、神すぎるiPhoneミラーリング機能",
+    "reviewBody": "MacBook Neoをブログ執筆・写真整理・iPhone連携で使い倒したレビュー。A18 Pro搭載9万円台のエントリーMacの本音評価。",
+    "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5" },
+    "author": { "@type": "Person", "name": "バブルガム" }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "MacBook Neoの日本価格はいくら？", "acceptedAnswer": { "@type": "Answer", "text": "通常価格は¥99,800（256GB）と¥114,800（512GB・Touch ID付き）。学生・教職員向けの教育ストアでは¥84,800（256GB）から購入できます。" } },
+    { "@type": "Question", "name": "MacBook NeoはMacBook Airと何が違う？", "acceptedAnswer": { "@type": "Answer", "text": "MacBook Airより8万円以上安く（256GBモデル比）、チップがM5ではなくA18 Pro（iPhone 16 Proと同世代）。トレードオフはバックライトキーボードなし、MagSafeなし、Touch IDが512GBモデルのみ、外部ディスプレイ1台まで、ファンレスのため高負荷時に処理が抑えられる点。普段使いなら十分な性能です。" } },
+    { "@type": "Question", "name": "MacBook Neoはブログ執筆に向いている？", "acceptedAnswer": { "@type": "Answer", "text": "向いています。ファンレスで完全無音、iPhoneミラーリングでスマホの写真をMac上で直接扱えるためブログのワークフローが速く、バッテリーも長持ちします。" } },
+    { "@type": "Question", "name": "MacBook Neoの256GBと512GB、どっちを買うべき？", "acceptedAnswer": { "@type": "Answer", "text": "写真や動画素材を扱うなら512GB推奨。Touch IDが付き、容量に余裕が出て、価格差は約1.5万円です。日常使い中心で外部ストレージを併用するなら256GBでも足ります。" } },
+    { "@type": "Question", "name": "MacBook Neoのバックライトキーボードはある？", "acceptedAnswer": { "@type": "Answer", "text": "ありません。コスト削減のため省略されています。キーカラーが白系なので視認性はある程度ありますが、暗い環境での作業には不便に感じることがあります。" } },
+    { "@type": "Question", "name": "iPhoneミラーリングはどのiPhoneで使える？", "acceptedAnswer": { "@type": "Answer", "text": "macOS Sequoiaで登場した機能で、MacBook Neoは新しいmacOS Tahoeを搭載しているので最初から使えます。iPhone側はiOS 18に対応した機種（iPhone XS・XR以降）が必要です。" } }
+  ]
+}
+</script>
+</p>
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト）が含まれます。</p>
+<p>ブログを書く人なら、たぶん分かってもらえます。スマホで撮った写真を、記事に使うためにPCへ移す。あの地味なひと手間が、毎回じわっとストレスになる。ケーブルを挿すか、クラウドを経由するか。どちらにしても、ほんの少し面倒くさい。</p>
+<p>その小さな面倒を、1台で消してくれたのがMacBook Neoでした。9万円台の、いちばん安いMac。正直ナメていたのに、iPhoneとの連携が想像の上を行って、ブログの画像まわりの作業時間が体感3分の1になりました。ゲーミングPCでブログを書いてきた私が、この小さなMacに乗り換えた話です。</p>
+<div class="k-conclusion-box">
+<div class="k-conclusion-title">先に結論：9万円台で買える「はじめてのMac」として完成度が高い</div>
+<ul>
+<li>256GBモデル<span style="font-weight: bold;">¥99,800</span>、512GBモデル¥114,800、教育ストアなら¥84,800から</li>
+<li>iPhoneミラーリングが想像以上に便利。スマホ写真からブログ画像までのワークフローが激変</li>
+<li>ファンレスで完全無音。バッテリーは公称16時間、実測でも朝から夜までの作業に耐える</li>
+<li>バックライトキーボードなし、MagSafeなしという妥協点はあるが、価格を考えれば許容範囲</li>
+<li>Macを初めて買う人、Windowsから乗り換える人には今いちばんの選択肢</li>
+</ul>
+</div>
+<div class="shop-buttons"><span class="shop-btn-label">MacBook Neo</span> <a href="https://www.amazon.co.jp/dp/B0GRTJMGBR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazonで見る</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FApple%2520MacBook%2520Neo%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天で見る</a></div>
+<p>[:contents]</p>
+<h2 class="section-head">なぜMacBook Neoを買ったのか</h2>
+<p>これまで私は、ゴリゴリのゲーミングPCでブログを書いていました。性能に不満はありません。ただ、iPhoneで撮った写真を記事に使うたび、USBケーブルで転送するか、Googleフォト経由で取り込むか。どちらも地味にひと手間で、その小さな摩擦が毎日積もっていく感覚がありました。</p>
+<p>そこに現れたのがMacBook Neoです。iPhoneと同じA18 Proチップを積んでいる。つまりAppleのエコシステムとの連携が、これまで以上に滑らかになるのではないか。そう思ったのが、購入の直接のきっかけでした。¥99,800という価格もMacBook Airよりずっと安く、Macを試したい、乗り換えたいという気持ちを後押ししてくれました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401132219.png" alt="MacBook Neo 開封画面" width="1200" height="516" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<h2 class="section-head">MacBook Neoのスペックと価格</h2>
+<table class="spec-table">
+<thead>
+<tr><th>項目</th><th>256GBモデル</th><th>512GBモデル</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="項目"><span style="font-weight: bold;">日本価格（税込）</span></td><td data-label="256GB"><span style="font-weight: bold;">¥99,800</span></td><td data-label="512GB">¥114,800</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">学生・教職員価格</span></td><td data-label="256GB">¥84,800</td><td data-label="512GB">¥99,800</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">チップ</span></td><td colspan="2" data-label="共通">Apple A18 Pro（6コアCPU・5コアGPU・16コアNeural Engine）</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">メモリ</span></td><td colspan="2" data-label="共通">8GB統合メモリ（固定・変更不可）</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">ディスプレイ</span></td><td colspan="2" data-label="共通">13インチ Liquid Retina（2408×1506 / 500nits / 10億色。P3広色域・True Toneは非対応）</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">バッテリー</span></td><td colspan="2" data-label="共通">最大16時間（動画再生）。Wi-Fiブラウジングは約11時間</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">重量</span></td><td colspan="2" data-label="共通">1.23kg</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">ポート</span></td><td colspan="2" data-label="共通">USB-C × 2（左:USB3・映像出力対応 / 右:USB2）、3.5mmジャック</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">Touch ID</span></td><td data-label="256GB">なし</td><td data-label="512GB"><span style="font-weight: bold;">あり</span></td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">カラー</span></td><td colspan="2" data-label="共通">シルバー・ブラッシュ・シトラス・インディゴ（4色）</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">冷却</span></td><td colspan="2" data-label="共通">ファンレス（完全無音）</td></tr>
+<tr><td data-label="項目"><span style="font-weight: bold;">OS</span></td><td colspan="2" data-label="共通">macOS Tahoe（Apple Intelligence対応）</td></tr>
+</tbody>
+</table>
+<p>私は256GBモデルを買いましたが、正直に言うと<span style="font-weight: bold;">512GBモデルをおすすめ</span>します。理由は3つ。Touch IDが付くこと、ブログ用の写真や動画は意外と容量を食うこと、そして差額が約1.5万円と、後悔するよりずっと安いことです。実際、店頭で聞いたら512GBは先に品切れでした。需要は明らかに上位モデルに向いています。</p>
+<h2 class="section-head">デザインと質感｜10万円以下に見えないアルミ筐体</h2>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401132935.png" alt="MacBook Neo 本体正面" width="938" height="720" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>アルミニウム筐体なので、見た目も手触りもしっかりしています。10万円以下のWindowsノートにありがちなプラスチック感がゼロ。MacBook Proを触ったことがある人なら、ああ、これと同じ質感だ、と感じるはずです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401133247.png" alt="MacBook Neo カラーバリエーション" width="1058" height="608" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>カラーは4色。個人的にはインディゴ（青）とシトラス（黄色）が良かった。これまでのMacBookにはなかった遊び心があり、デスクに置くだけで気分が上がります。ブラッシュ（薄いピンク系）は誰でも使えるパステルトーンで、外で広げても浮きません。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401133407.png" alt="MacBook Neo キーボード" width="881" height="745" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>キーボードは本体カラーに合わせた配色です。唯一の欠点はバックライトがないこと。暗い場所での作業が多い人は、ここだけ注意してください。とはいえキーが白系なので、完全な暗闇でなければそこまで困りません。</p>
+<h2 class="section-head">iPhoneミラーリングがブログ執筆を激変させた</h2>
+<p>これが購入の決め手であり、使ってみて最も感動した部分です。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401133957.png" alt="MacBook Neo iPhoneミラーリング" width="1137" height="847" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<h3 class="sub-head">スマホ写真からブログ画像までが、3ステップから1ステップに</h3>
+<p>これまでのブログ執筆ワークフローは、こんな感じでした。</p>
+<div class="bad-box">
+<div class="bad-title">MacBook Neoを買う前の手間</div>
+<ol style="margin: 0;">
+<li>スマホでスクショや写真を用意する</li>
+<li>Google Driveに写真をアップロードする</li>
+<li>PC側でGoogle Driveを開き、画像をダウンロードする</li>
+<li>ブログ編集画面で画像をアップロードする</li>
+</ol>
+</div>
+<p>1記事あたり10〜15枚の画像を使うので、これだけで毎回30分は溶けていました。</p>
+<div class="good-box">
+<div class="good-title">MacBook Neo導入後</div>
+<ol style="margin: 0;">
+<li>Macで「iPhoneミラーリング」を起動する</li>
+<li>スマホの写真をそのままドラッグ＆ドロップする</li>
+<li>そのままブログにアップロードする</li>
+</ol>
+</div>
+<p>Google Drive経由が完全に消えました。<span style="font-weight: bold;">作業時間は体感で3分の1以下</span>。Mac上でiPhoneの画面が普通に動かせて、写真アプリの画像をMacのデスクトップやはてなブログの編集画面に直接ドラッグできます。</p>
+<div class="note-box"><span class="note-label">補足：</span>iPhoneミラーリングはmacOS Sequoiaで登場した機能です。MacBook Neoはより新しいmacOS Tahoeを搭載しているので、買ってすぐに使えました。iPhone側はiOS 18に対応した機種（iPhone XS・XR以降）が必要です。</div>
+<h3 class="sub-head">Continuity Camera｜iPhoneがウェブカメラになる</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401134358.png" alt="Continuity Camera機能" width="982" height="622" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>MacBook Neoには1080pのカメラが付いていますが、iPhoneの高性能カメラと比べると画質は控えめです。そこで便利なのがContinuity Camera。iPhoneをワイヤレスでウェブカメラとして使える機能で、オンライン会議のときだけiPhoneに画を任せる、という使い方ができます。</p>
+<h3 class="sub-head">Handoff｜iPhoneで書きかけた下書きをMacで続きから</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401134454.png" alt="Handoff機能" width="885" height="538" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>iPhoneで書きかけたメモやメールを、Macで続きから開ける機能です。電車で思いついたネタをiPhoneで下書きして、家に帰ってMacで仕上げる。この引き継ぎが地味に効きます。</p>
+<h2 class="section-head">実際に使って分かった良い点・惜しい点</h2>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401134617.png" alt="MacBook Neoでの作業風景" width="1200" height="443" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<div class="good-box">
+<div class="good-title">良かった点</div>
+<ul style="margin: 0;">
+<li><span style="font-weight: bold;">ファンレスで完全無音</span>：外でも家でも音が気にならない。想像以上に快適</li>
+<li><span style="font-weight: bold;">バッテリーが本当にもつ</span>：朝から晩まで使っても充電切れの心配が少ない</li>
+<li><span style="font-weight: bold;">立ち上がりが速い</span>：フタを開けると数秒で使える</li>
+<li><span style="font-weight: bold;">画面がきれい</span>：Liquid Retinaは文字もくっきりで長時間でも楽</li>
+<li><span style="font-weight: bold;">iPhone連携がシームレス</span>：写真ワークフローが劇的に改善した</li>
+<li><span style="font-weight: bold;">¥99,800で買えるアルミ筐体Mac</span>：この価格でこの質感は他にない</li>
+</ul>
+</div>
+<div class="bad-box">
+<div class="bad-title">惜しかった点</div>
+<ul style="margin: 0;">
+<li><span style="font-weight: bold;">バックライトキーボードなし</span>：暗い場所での作業はつらい</li>
+<li><span style="font-weight: bold;">MagSafeなし</span>：ケーブルを引っかけると本体ごと引っ張られる</li>
+<li><span style="font-weight: bold;">Touch IDが512GBモデルのみ</span>：256GBだと毎回パスワード入力が必要</li>
+<li><span style="font-weight: bold;">USB2ポートが片方のみ</span>：外付けSSDは左側に挿さないと遅い</li>
+<li><span style="font-weight: bold;">外部ディスプレイは1台・4K/60Hzまで</span>：デュアルディスプレイ環境には不向き</li>
+<li><span style="font-weight: bold;">メモリ8GB固定</span>：ブラウザのタブを大量に開くと重くなることも</li>
+</ul>
+</div>
+<h2 class="section-head">MacBook Air M5との比較｜8万円超の差はどこにある？</h2>
+<table class="compare-table">
+<thead>
+<tr><th>比較項目</th><th>MacBook Neo</th><th>MacBook Air M5</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">価格（最小構成）</span></td><td class="highlight" data-label="Neo">¥99,800</td><td data-label="Air M5">¥184,800</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">チップ</span></td><td data-label="Neo">A18 Pro</td><td data-label="Air M5">M5</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">メモリ</span></td><td data-label="Neo">8GB固定</td><td class="highlight" data-label="Air M5">16GB〜</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">バックライトキーボード</span></td><td data-label="Neo">なし</td><td class="highlight" data-label="Air M5">あり</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">MagSafe</span></td><td data-label="Neo">なし</td><td class="highlight" data-label="Air M5">あり</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">Touch ID</span></td><td data-label="Neo">512GBのみ</td><td class="highlight" data-label="Air M5">全モデル</td></tr>
+<tr><td data-label="比較項目"><span style="font-weight: bold;">外部ディスプレイ</span></td><td data-label="Neo">1台・4K/60Hzまで</td><td class="highlight" data-label="Air M5">最大2台</td></tr>
+</tbody>
+</table>
+<p>結論は明快です。Macを初めて買う、ブログや日常作業がメイン、価格を抑えたい。そういう人ならMacBook Neo。複数ディスプレイで使いたい、メモリを増やしたい、バックライトとMagSafeは必須。そういう人ならMacBook Air M5です。</p>
+<p>8万円超の価格差で買えるのは、メモリ16GB、MagSafe、バックライトキーボード、全モデルTouch ID、外部ディスプレイ2台対応。これらが絶対に必要かどうかで判断してください。私の用途（ブログ執筆＋写真＋iPhone連携）では、その差を埋めるほどの必要性は感じませんでした。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0GR1T11D6?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41gS7SS9hSL._SL500_.jpg" class="hatena-asin-detail-image" alt="Apple 2026 MacBook Air M5チップ搭載13インチノートブック" title="Apple 2026 MacBook Air M5チップ搭載13インチノートブック" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0GR1T11D6?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">Apple 2026 MacBook Air M5チップ搭載13インチノートブック</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>Apple(アップル)</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0GR1T11D6?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<h2 class="section-head">ディスプレイ・パフォーマンス・バッテリーの実力</h2>
+<h3 class="sub-head">ディスプレイ｜ノッチなしのLiquid Retina</h3>
+<p>MacBook Proのようなノッチがない、すっきりした画面です。2408×1506、500nits、10億色のLiquid Retinaで、写真チェックや動画視聴は十分快適。True ToneやP3広色域には対応しないため、上位機種と比べると色の再現は劣りますが、普段使いで不満を感じる場面はほとんどありませんでした。</p>
+<h3 class="sub-head">パフォーマンス｜文章・ブラウザ・写真整理は快適</h3>
+<p>A18 ProはiPhone 16 Proと同世代のチップ。Webブラウジング、YouTube、Safariのタブ20〜30個、メモアプリの同時起動くらいなら、まったくストレスがありませんでした。写真の取り込みや軽い現像も問題なし。</p>
+<p>ただしファンレスなので、高負荷が続くと処理が抑えられることがあります。4K動画の長時間書き出しや、重い処理を同時に走らせるのは苦手。とはいえ、ブログ・日常業務・動画視聴の範囲で困る場面はほぼありませんでした。</p>
+<h3 class="sub-head">バッテリー｜本当に一日もつ</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260401/20260401134920.png" alt="MacBook Neo 充電" width="850" height="607" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>朝9時から夜10時まで使い続けても、軽作業中心なら20〜30%残っていました。充電器を持ち歩かなくていい安心感は地味に大きい。MagSafeがないのでUSB-C充電ですが、小型のアダプタやモバイルバッテリーと組み合わせれば外出先でも困りません。</p>
+<h2 class="section-head">こんな人に向く・上位機種を選ぶべき人</h2>
+<div class="good-box">
+<div class="good-title">MacBook Neoに向いている人</div>
+<ul style="margin: 0;">
+<li><span style="font-weight: bold;">iPhoneユーザーで初めてMacを買う人</span>：ミラーリング・AirDrop・Handoffの恩恵が最大</li>
+<li><span style="font-weight: bold;">Windowsから乗り換えたい人</span>：¥99,800は入門機として手を出しやすい</li>
+<li><span style="font-weight: bold;">ブログ・文章作成・写真整理がメインの人</span>：この用途なら性能は十分すぎる</li>
+<li><span style="font-weight: bold;">静かな環境にこだわる人</span>：ファンレスで本当に無音</li>
+<li><span style="font-weight: bold;">学生</span>：教育ストアで¥84,800。長く使えるサブ機にも</li>
+</ul>
+</div>
+<div class="bad-box">
+<div class="bad-title">MacBook Air M5以上を選ぶべき人</div>
+<ul style="margin: 0;">
+<li><span style="font-weight: bold;">デュアルディスプレイで作業する人</span>：Neoは外部ディスプレイ1台・4K/60Hzまで</li>
+<li><span style="font-weight: bold;">メモリ16GB以上が必要な人</span>：Neoは8GB固定</li>
+<li><span style="font-weight: bold;">バックライトキーボードが必須の人</span>：暗い場所での作業が多いなら要検討</li>
+<li><span style="font-weight: bold;">4K動画の長時間書き出しをする人</span>：ファンレスの熱処理が課題になる</li>
+<li><span style="font-weight: bold;">Final Cut Proなどでクリエイティブ作業をヘビーに行う人</span></li>
+</ul>
+</div>
+<h2 class="section-head">よくある質問（FAQ）</h2>
+<dl class="faq-list">
+<dt>MacBook Neoの日本価格はいくら？</dt>
+<dd>通常価格は¥99,800（256GB）と¥114,800（512GB・Touch ID付き）。学生・教職員向けの教育ストアでは¥84,800（256GB）から購入できます。</dd>
+<dt>MacBook NeoはMacBook Airと何が違う？</dt>
+<dd>MacBook Airより8万円以上安く（256GBモデル比）、チップがM5ではなくA18 Pro（iPhone 16 Proと同世代）です。トレードオフはバックライトキーボードなし、MagSafeなし、Touch IDが512GBモデルのみ、外部ディスプレイ1台まで、ファンレスのため高負荷時に処理が抑えられる点。普段使いなら十分な性能です。</dd>
+<dt>MacBook Neoはブログ執筆に向いている？</dt>
+<dd>かなり向いています。ファンレスで完全無音、iPhoneミラーリングでスマホの写真をMac上で直接扱えるのが快適。私の場合、写真からブログ画像までの所要時間が3分の1以下になりました。</dd>
+<dt>256GBと512GB、どっちを買うべき？</dt>
+<dd>写真や動画素材を扱うなら512GB推奨です。Touch IDが付き、容量に余裕が出て、差額は約1.5万円。日常使い中心で外部ストレージを併用するなら256GBでも足ります。店頭では512GBが先に品切れになっていました。</dd>
+<dt>バックライトキーボードはある？</dt>
+<dd>ありません。コスト削減で省略されています。キーが白系なので視認性はある程度ありますが、暗い環境では不便に感じることがあります。</dd>
+<dt>iPhoneミラーリングはどのiPhoneで使える？</dt>
+<dd>macOS Sequoiaで登場した機能で、MacBook Neoは新しいmacOS Tahoe搭載なので最初から使えます。iPhone側はiOS 18に対応した機種（iPhone XS・XR以降）が必要です。</dd>
+</dl>
+<h2 class="section-head">まとめ｜「はじめてのMac」として完成度が高い</h2>
+<p>MacBook Neoは、削りに削った廉価版ではなく、ターゲットを明確に絞った完成度の高いMacでした。ブログ・写真・日常業務・iPhone連携を軸に使うなら、¥99,800はむしろ安いくらいです。</p>
+<p>私の場合、iPhoneで撮った写真を即座にブログに使いたい、というずっと抱えていた小さなストレスが、これ一台で消えました。それだけで買った価値があったと感じています。バックライトキーボードとMagSafeがない点は妥協が要りますが、はじめてMacを買う、Windowsから乗り換える、予算を抑えて本物のMacが欲しい。そういう状況なら、今この瞬間に買って後悔しない一台です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">MacBook Neo</span> <a href="https://www.amazon.co.jp/dp/B0GRTJMGBR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazonで見る</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FApple%2520MacBook%2520Neo%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天で見る</a></div>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0GRTJMGBR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/31I1NP4LOWL._SL500_.jpg" class="hatena-asin-detail-image" alt="Apple 2026 MacBook Neo A18 Proチップ搭載13インチ" title="Apple 2026 MacBook Neo" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0GRTJMGBR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">Apple 2026 MacBook Neo A18 Proチップ搭載13インチノートブック</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>Apple(アップル)</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0GRTJMGBR?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>あわせて読みたい。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F26%2F161844" title="【2026年最新版】HyperX SoloCast 2 レビュー。1万以下で購入できるマイクが想像以上のコスパだった。【PC,PS5】 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/26/161844">babblegum.hatenablog.com</a></cite></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F04%2F14%2F102533" title="【eMeet C960 レビュー】買って後悔。在宅、仕事用途には向かない理由 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/04/14/102533">babblegum.hatenablog.com</a></cite></p>
