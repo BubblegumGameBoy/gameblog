@@ -1,0 +1,354 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "なぞのゴーグルはどこで入手できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "パサパサ荒野の街の環境レベル3を達成すると、ポケモンセンター横のパソコンのショップに追加されます。ポケメタルで購入できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "なぞのゴーグルで建築や採取はできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "できません。ゴーグルモードは見学専用です。写真撮影は可能なので3Dプリンター目的の素材収集に使えます。建築・採取をしたい場合は、ポケモンセンター横のパソコンから参加する通常の方法を使います。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "公式クラウド島の最新情報はどこで確認できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ぽこあポケモン公式X（@pocketmonsters）やゲーム内のお知らせで定期的に発表されます。期間限定の島があるため、こまめな確認をおすすめします。"
+      }
+    }
+  ]
+}
+</script>
+<style>
+h2.section-head {
+  font-size: 118% !important;
+  font-weight: bold !important;
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important;
+  border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important;
+  font-weight: bold !important;
+  border-left: 5px solid #555555 !important;
+  padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+.info-box {
+  background: #f7f9fc;
+  border-left: 4px solid #555555;
+  border-radius: 0 4px 4px 0;
+  padding: 12px 16px;
+  margin: 16px 0;
+  font-size: 14px;
+  line-height: 1.9;
+}
+.official-label {
+  display: inline-block;
+  background: #e8f0fe;
+  color: #1a73e8;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.deadline-label {
+  display: inline-block;
+  background: #fce8e8;
+  color: #c0392b;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+.compare-table th { background: #555555; color: #333333; padding: 9px 13px; text-align: left; font-weight: bold; white-space: nowrap; }
+.compare-table td { padding: 9px 13px; border-bottom: 1px solid #e0e0e0; vertical-align: top; line-height: 1.7; background: #ffffff; color: #222; }
+.compare-table td:first-child { white-space: nowrap; font-weight: bold; width: 60px; }
+.compare-table tr:nth-child(even) td { background: #f9f9f9; }
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn {
+  flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important;
+  font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center;
+  transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+@media (max-width: 480px) {
+  .compare-table { font-size: 13px; }
+  .compare-table th, .compare-table td { padding: 7px 9px; }
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+</style>
+
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト）が含まれます。
+</p>
+
+<div class="warn-box">
+<span class="warn-label">⚠️ 期限間近</span>IKEAコラボの公式クラウド島は<span style="font-weight: bold;">2026年6月30日（火）まで</span>の期間限定公開です。気になる方はお早めに。
+</div>
+
+[:contents]
+
+<p>なぞのゴーグルを手に入れた最初の日、試しに公式が公開している島を全部巡ってみました。住所と説明がそろっているので、クラウド島見学の入門として一番ラクな方法だと思っています。</p>
+
+<p>公式島は任天堂（または開発チーム）が選んでいるだけあって、クオリティに外れがない。期間限定のものも混じっているので、この記事では現在入れるものを整理しておきます。</p>
+
+<h2 id="goggle" class="section-head">なぞのゴーグル：クラウド島の見学専用ツール</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328165324.jpg" alt="なぞのゴーグル" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>なぞのゴーグル。住所を入力するだけで他のプレイヤーの島に入れる</figcaption>
+</figure>
+
+<p>なぞのゴーグルは、クラウド島を「見学専用モード」で訪れるためのアイテムです。ポケモンセンター横のパソコンから参加する通常の方法と違い、建築や採取はできませんが、島の中を自由に歩き回れます。</p>
+
+<p>見学だけなら、ホストが不在でも24時間いつでも入れます。あいことばが不要な島であれば、住所だけで入れます。</p>
+
+<div class="point-box">
+<div class="point-title">なぞのゴーグルでできること・できないこと</div>
+<ul style="margin: 0; padding-left: 1.5em;">
+<li>島の中を自由に歩き回る（見学）→ できる</li>
+<li>カメラで島のアイテムを撮影する → できる（3Dプリンターでの複製に使える）</li>
+<li>建築・採取・ポケモンとの交流 → できない</li>
+<li>他のプレイヤーとの会話・共同作業 → できない</li>
+</ul>
+<p style="margin: 10px 0 0 0; font-size: 13px; color: #666;">撮影したアイテム写真は自分の島に持ち帰ってポケモンセンターの3Dプリンターで複製できます。素材収集目的でのゴーグル見学が一番の活用法です。</p>
+</div>
+
+<h3 class="sub-head">なぞのゴーグルの入手方法</h3>
+
+<p>パサパサ荒野の街の環境レベルを3まで上げると、ポケモンセンター横のパソコンのショップに「なぞのゴーグル」が追加されます。ポケメタルで購入できます。</p>
+
+<p>環境レベルが足りない場合は先に街の整備を進めてから確認してください。</p>
+
+<h3 class="sub-head">なぞのゴーグルの使い方</h3>
+
+<table class="compare-table">
+<tbody>
+<tr>
+<th>STEP</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>1</td>
+<td>なぞのゴーグルを入手する（上記の入手方法を参照）</td>
+</tr>
+<tr>
+<td>2</td>
+<td>もちもの画面からなぞのゴーグルを選んでAボタンで使う</td>
+</tr>
+<tr>
+<td>3</td>
+<td>住所の入力画面が表示されるので、見学したい島の住所を入力</td>
+</tr>
+<tr>
+<td>4</td>
+<td>入力完了でバーチャルモードに移行、島の中を自由に歩ける</td>
+</tr>
+</tbody>
+</table>
+
+<div class="note-box">
+<span class="note-label">補足：</span>通常のマルチプレイ（実際に参加して建築もできる方法）はポケモンセンター横のパソコン→「通信であそぶ」→「クラウド島であそぶ」から入れます。Nintendo Switch Online（有料）への加入はどちらの方法でも必須です。
+</div>
+
+<h2 id="official" class="section-head">公式公開クラウド島 現在の一覧</h2>
+
+<p>ぽこあポケモンの公式が選んで公開している島です。なぞのゴーグルで住所を入力するだけで入れます。常設のものと期間限定のものがあり、期限付きは終了すると入れなくなります。</p>
+
+<h3 id="islands-developer" class="sub-head">① Developer Island｜PXQC G03S <span class="official-label">常設</span></h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163517.jpg" alt="Developer Island モンスターボール型の建造物" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>正面に構える巨大なモンスターボール型の建造物</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163521.jpg" alt="Developer Island モンスターボールの建造物 横から" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>横から見ると形状の再現精度がわかる</figcaption>
+</figure>
+
+<p>開発チームが作った島で、正面に巨大なモンスターボールを模した建造物が立っています。近づくとスケール感に圧倒されます。クラウド島の建築限界を試しているような、「ここまで作れるのか」と実感できる場所です。</p>
+
+<div class="info-box">
+<span style="font-weight: bold;">じゅうしょ：</span>PXQC G03S<br />
+<span style="font-weight: bold;">あいことば：</span>不要<br />
+<span style="font-weight: bold;">公開期限：</span>常設<br />
+<span style="font-weight: bold;">みどころ：</span>モンスターボール型の巨大建造物。建築の限界を体感できる
+</div>
+
+<h3 id="islands-eiko" class="sub-head">② EIKO島｜QBRK 7FVM <span class="official-label">常設</span></h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163822.jpg" alt="EIKO島 玉座エリア入口" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>入口を進むと現れる玉座エリア</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163826.jpg" alt="EIKO島 玉座を下から見上げた構図" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>玉座を下から見上げると建築の高さと奥行きが伝わる</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163829.jpg" alt="EIKO島 ゲート前" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ゲート前。対称性のある構造で写真映えする</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328163833.jpg" alt="EIKO島 内部の様子" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>内部も細かく作り込まれている。3Dプリンター目当てでも素材のバリエーションが豊富</figcaption>
+</figure>
+
+<p>王国・玉座をコンセプトにした島で、縦方向の建築が見事です。対称性のある構造が美しくて、カメラで撮るとどこからでも絵になる。3Dプリンター用の素材収集でも、純粋な建築インスピレーション目的でも楽しめます。</p>
+
+<div class="info-box">
+<span style="font-weight: bold;">じゅうしょ：</span>QBRK 7FVM<br />
+<span style="font-weight: bold;">あいことば：</span>不要<br />
+<span style="font-weight: bold;">公開期限：</span>常設<br />
+<span style="font-weight: bold;">みどころ：</span>王国・玉座コンセプト。縦方向の建築が見事、写真映えする
+</div>
+
+<h3 id="islands-sashihara" class="sub-head">③ さしはら島｜MGL4 83P4 <span class="official-label">公式掲載</span> <span class="deadline-label">期限：2026年8月12日まで</span></h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328170243.jpg" alt="さしはら島 ビーチ沿いの家の前" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ビーチに沿った家の前。建物の配置がのびのびしている</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328170247.jpg" alt="さしはら島 ポケモンセンター近くの景色" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ポケモンセンター近くの景色。少しスペイン感がある</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328170251.jpg" alt="さしはら島 ビーチの椅子に座っているキャラクター" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ビーチに置かれた椅子に座ってみた。ずっとここにいたくなる</figcaption>
+</figure>
+
+<p>のんびりした雰囲気のビーチ系の島です。建物の配置がゆったりしていて、「暮らしている」感じがある。建築の参考というより、ゲームの空気を味わいたいときに来たい場所です。ビーチの椅子に座ってみると、ゲームの中でもちゃんとくつろいでいる感覚が生まれるのがぽこあポケモンの面白いところ。</p>
+
+<div class="info-box">
+<span style="font-weight: bold;">じゅうしょ：</span>MGL4 83P4<br />
+<span style="font-weight: bold;">あいことば：</span>不要<br />
+<span style="font-weight: bold;">公開期限：</span>2026年8月12日（水）まで<br />
+<span style="font-weight: bold;">みどころ：</span>ビーチ・のんびり系。ゲームの空気感を純粋に楽しみたい人に
+</div>
+
+<h3 id="islands-ikea" class="sub-head">④ IKEAアイランド（公式コラボ島） <span class="official-label">公式掲載</span> <span class="deadline-label">期限：2026年6月30日まで</span></h3>
+
+<div class="warn-box">
+<span class="warn-label">⚠️ 残り約2週間</span>IKEAアイランドは<span style="font-weight: bold;">2026年6月30日（火）</span>で公開終了です。住所はゲーム内お知らせまたは公式Xで確認してください。
+</div>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260404/20260404072544.png" alt="IKEAアイランド 上空から" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>上空から見ると、IKEAらしいスウェーデン感がある</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260404/20260404072654.png" alt="IKEAアイランド 家の構成" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>IKEAっぽい家の構成。実店舗のコーディネート感覚</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260404/20260404072639.png" alt="IKEAアイランド ショールームのような家具配置" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>家具の配置がリアル店舗のショールームっぽい。インテリアの参考にもなる</figcaption>
+</figure>
+
+<p>IKEAとの公式コラボで登場したクラウド島です。家具の配置の仕方がリアル店舗のショールームそのもので、インテリアの参考にもなります。3Dプリンター目的でも、雰囲気を楽しむだけでも満足できます。6月30日で終了なので、気になる方は早めに。</p>
+
+<div class="info-box">
+<span style="font-weight: bold;">じゅうしょ：</span>ゲーム内お知らせ・公式X（@pocketmonsters）で確認<br />
+<span style="font-weight: bold;">あいことば：</span>不要<br />
+<span style="font-weight: bold;">公開期限：</span>2026年6月30日（火）まで<br />
+<span style="font-weight: bold;">みどころ：</span>IKEAショールーム感覚の家具配置。インテリア建築インスピレーション向け
+</div>
+
+<h3 id="islands-yummy" class="sub-head">⑤ Yummy Yummy島｜03X3 H83D <span class="official-label">公式掲載</span></h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260429/20260429190524.png" alt="Yummy Yummy島" width="778" height="446" loading="lazy" class="hatena-fotolife" itemprop="image" />
+</figure>
+
+<p>ご飯・食べ物をモチーフにした島です。作者のコイルでの観光を推奨しているので、島に入ったらまずコイルを使った移動を試してみてください。</p>
+
+<div class="info-box">
+<span style="font-weight: bold;">じゅうしょ：</span>03X3 H83D<br />
+<span style="font-weight: bold;">あいことば：</span>不要<br />
+<span style="font-weight: bold;">公開期限：</span>常設<br />
+<span style="font-weight: bold;">みどころ：</span>ご飯モチーフの島。コイルでの観光推奨
+</div>
+
+<div class="note-box">
+<span class="note-label">最新情報：</span>公式クラウド島は定期的に追加・更新されます。新しい島は公式X（@pocketmonsters）やゲーム内のお知らせで発表されるので、こまめにチェックしてみてください。
+</div>
+
+<h2 id="faq" class="section-head">よくある質問</h2>
+
+<dl class="faq-list">
+<dt>なぞのゴーグルはどこで入手できますか？</dt>
+<dd>パサパサ荒野の街の環境レベル3を達成すると、ポケモンセンター横のパソコンのショップに追加されます。ポケメタルで購入できます。環境レベルが足りない場合は先に街の整備を進めましょう。</dd>
+
+<dt>なぞのゴーグルで建築や採取はできますか？</dt>
+<dd>できません。ゴーグルモードは見学専用です。写真撮影は可能なので、3Dプリンターのアイテム複製目的で使う人が多いです。建築・採取をしたい場合は、ポケモンセンター横のパソコンから参加する通常の方法を使います。Nintendo Switch Online への加入はどちらも必須です。</dd>
+
+<dt>公式クラウド島の最新情報はどこで確認できますか？</dt>
+<dd>ぽこあポケモン公式X（@pocketmonsters）やゲーム内のお知らせで定期的に発表されます。期間限定の島は終了すると入れなくなるので、こまめな確認をおすすめします。</dd>
+</dl>
+
+<h2 id="next" class="section-head">プレイヤーが作ったおすすめ島はこちら</h2>
+
+<p>公式島の次は、プレイヤーが作ったおすすめ島を巡ってみてください。Only Upゲームの再現島・全アイテムコンプ島・和風×レックウザ島など、公式とはまた違うレベルのものがそろっています。住所一覧もまとめています。</p>
+
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F28%2F171536" title="【ぽこあポケモン】おすすめクラウド島 住所一覧・感想まとめ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">Nintendo Switch Online</span>
+  <a href="https://www.amazon.co.jp/dp/B07HGFSLSD?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon（12ヶ月）</a>
+  <a href="https://www.amazon.co.jp/dp/B07HG6HC3H?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon（3ヶ月）</a>
+</div>
