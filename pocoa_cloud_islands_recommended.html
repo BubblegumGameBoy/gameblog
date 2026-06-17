@@ -1,0 +1,456 @@
+<style>
+  h2.section-head {
+    font-size: 118% !important;
+    font-weight: bold !important;
+    background-color: #555555 !important;
+    color: #ffffff !important;
+    padding: 10px 14px !important;
+    border-top: 4px solid #aaaaaa !important;
+    border-bottom: 4px solid #aaaaaa !important;
+    box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+    margin-top: 56px !important;
+    margin-bottom: 24px !important;
+    border-left: none !important;
+  }
+  h3.sub-head {
+    font-size: 108% !important;
+    font-weight: bold !important;
+    border-left: 5px solid #555555 !important;
+    padding: 10px 0 10px 15px !important;
+    margin-top: 48px !important;
+    margin-bottom: 16px !important;
+    background-color: #f9f9f9 !important;
+  }
+  .point-box {
+    border: 1px solid #dddddd;
+    padding: 15px 18px;
+    margin: 24px 0;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .toc-wrap {
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 16px 20px;
+    margin: 28px 0;
+    background: #fafafa;
+  }
+  .toc-wrap .toc-title { font-weight: bold; font-size: 14px; color: #333; margin-bottom: 10px; }
+  .toc-wrap ol { padding-left: 1.5em; margin: 0; }
+  .toc-wrap li { font-size: 14px; line-height: 2; margin-bottom: 0; }
+  .toc-wrap a { color: #555; text-decoration: none; }
+  .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  .compare-table th { background: #555555; color: #333333; padding: 9px 13px; text-align: left; font-weight: bold; white-space: nowrap; }
+  .compare-table td { padding: 9px 13px; border-bottom: 1px solid #e0e0e0; vertical-align: top; line-height: 1.7; background: #ffffff; color: #222; }
+  .compare-table td:first-child { white-space: nowrap; font-weight: bold; width: 60px; }
+  .compare-table tr:nth-child(even) td { background: #f9f9f9; }
+  .info-box {
+    background: #f7f9fc;
+    border-left: 4px solid #555555;
+    border-radius: 0 4px 4px 0;
+    padding: 12px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+    line-height: 1.9;
+  }
+  .official-label {
+    display: inline-block;
+    background: #e8f0fe;
+    color: #1a73e8;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 3px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+  figure { margin: 16px 0; }
+  figure img { max-width: 100%; height: auto; }
+  figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+  ul { padding-left: 1.5em; }
+  li { margin-bottom: 6px; line-height: 1.8; }
+  p { margin-bottom: 1.4em; }
+  .nso-price-section { margin: 48px 0 32px; }
+  .nso-heading {
+    font-size: 118%;
+    font-weight: bold;
+    background-color: #555555;
+    color: #ffffff;
+    padding: 10px 14px;
+    border-top: 4px solid #aaaaaa;
+    border-bottom: 4px solid #aaaaaa;
+    box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+    margin-top: 56px;
+    margin-bottom: 24px;
+  }
+  .nso-alert {
+    background: #fff8e1;
+    border: 1px solid #f9a825;
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 20px 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #333;
+  }
+  .nso-alert .nso-alert-title { font-weight: bold; font-size: 15px; color: #e65100; margin-bottom: 6px; }
+  .nso-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .nso-table thead th { background: #555555; color: #fff; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .nso-table tbody td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; vertical-align: middle; line-height: 1.7; background: #fff; }
+  .nso-table tbody tr:nth-child(even) td { background: #f9f9f9; }
+  .nso-table .price-old { color: #888; text-decoration: line-through; font-size: 13px; }
+  .nso-table .price-new { color: #c0392b; font-weight: bold; }
+  .nso-table .price-diff { color: #c0392b; font-size: 12px; }
+  .nso-tip {
+    background: #f0f4ff;
+    border-left: 4px solid #555555;
+    border-radius: 0 5px 5px 0;
+    padding: 13px 16px;
+    margin: 20px 0;
+    font-size: 13.5px;
+    line-height: 1.85;
+    color: #333;
+  }
+  .nso-tip .nso-tip-title { font-weight: bold; color: #333; margin-bottom: 6px; font-size: 14px; }
+  @media (max-width: 480px) {
+    .compare-table { font-size: 13px; }
+    .compare-table th, .compare-table td { padding: 7px 9px; }
+  }
+  @media (max-width: 520px) {
+    .nso-table thead { display: none; }
+    .nso-table, .nso-table tbody, .nso-table tr, .nso-table td { display: block; width: 100%; box-sizing: border-box; }
+    .nso-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .nso-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .nso-table td:last-child { border-bottom: none; }
+    .nso-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+    .nso-table tbody tr:nth-child(even) td { background: #fff; }
+  }
+</style>
+
+<div class="point-box">
+<div class="point-title">この記事でわかること</div>
+<ul>
+<li>空にレックウザが浮かぶ和風島「ねんりんしま」をはじめ、おすすめ非公式島9選の住所・感想・スクショ</li>
+<li>Only Up再現島・全アイテムコンプ島・看板素材島など、目的別の個性的な島を網羅</li>
+<li>写真を撮って3Dプリンターで複製する方法</li>
+<li>筆者の島（収容所）の住所も公開中</li>
+<li>行き方・なぞのゴーグルの使い方・公式島一覧は<a href="[公式クラウド島記事URL]">専用記事</a>で詳しく</li>
+</ul>
+</div>
+
+<nav class="toc-wrap">
+<div class="toc-title">もくじ</div>
+<ol>
+<li><a href="#about">クラウド島とは：他の人の島に遊びにいける</a></li>
+<li><a href="#howto">行き方：2つの方法</a></li>
+<li><a href="#unofficial">おすすめ島9選（プレイヤー作）</a></li>
+<li><a href="#official">公式公開島</a></li>
+</ol>
+</nav>
+
+<p>クラウド島をただ作るだけじゃもったいない。</p>
+
+<p>ぽこあポケモンには、他のプレイヤーが作った島に見学に行ける仕組みがあります。住所さえ知っていれば、あいことばなしで入れる島もある。世界中のプレイヤーが作り込んだ島を巡るのが、このゲームのもう一つの楽しみ方です。</p>
+
+<p>この記事では実際に行ってみた島のスクショと感想をまとめます。住所一覧もそのまま使えます。</p>
+
+<h2 id="about" class="section-head">クラウド島とは：他の人の島に遊びにいける</h2>
+
+<p>クラウド島は、ぽこあポケモンのオンラインマルチプレイ専用の島です。ストーリーの街とは完全に別の空間で、最大4人で協力しながら島を一から作り上げていきます。</p>
+
+<p>クラウド島の大きな特徴は「住所さえ知っていれば誰でも入れる」という点です。ホストが不在でも24時間入れます。見知らぬプレイヤーの島に遊びにいくことも、自分の島を公開して見てもらうこともできます。</p>
+
+<p>他の人の島を見ることで得られるのは、建築のインスピレーションだけではありません。自分の島にはまだない家具やアイテムを写真に撮り、3Dプリンターで複製できます。</p>
+
+<div class="point-box">
+<div class="point-title">アイテムを写真に撮って複製する方法</div>
+<ol style="padding-left: 1.5em; margin: 0;">
+<li>カメラ（−ボタン）を起動する</li>
+<li>Yボタンで「オブジェクトモード」に切り替える（画面に「アイテム」と表示されていることを確認）</li>
+<li>複製したいアイテムを撮影する</li>
+<li>ポケモンセンターの3Dプリンターに写真を入れ、ポケメタルを支払う</li>
+</ol>
+<p style="margin: 10px 0 0 0; font-size: 13px; color: #666;">※撮った写真はタブレットなどの看板にも使えます。看板島（後述）などで世界観に合った文字素材を撮影しておくと便利です。</p>
+<p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">※「いにしえのもの」リストは複製品では埋められないため、必要なものは要確認。</p>
+</div>
+
+<h2 id="howto" class="section-head">行き方：2つの方法</h2>
+
+<p>クラウド島への入室方法は、大きく2通りあります。ポケモンセンター横のパソコンから参加するマルチプレイ（建築・採取が全部できる）と、なぞのゴーグルを使った見学専用モードです。どちらもNintendo Switch Online（有料）への加入が必須で、連れていけるポケモンは1匹まで。</p>
+
+<p>詳しい手順・なぞのゴーグルの入手方法は、公式島とあわせて下の記事でまとめています。</p>
+
+<!-- 公式クラウド島記事を公開後、[公式クラウド島記事URL] を実際のURLに差し替えてください -->
+<iframe src="https://hatenablog-parts.com/embed?url=[公式クラウド島記事URL]" title="ぽこあポケモン 公式クラウド島 一覧・住所まとめ｜なぞのゴーグルの使い方" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<h2 id="unofficial" class="section-head">おすすめ島9選（プレイヤー作）</h2>
+
+<p>プレイヤーが自分で作って公開している島のレポートです。全てあいことば不要で入れます。</p>
+
+<h3 id="islands-nenrin" class="sub-head">① ねんりんしま｜GR3WBCC3</h3>
+
+<p>和風建築の島に来たら、空にレックウザがいた。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260617/20260617140658.png" alt="ねんりんしま 入口の神社" width="1200" height="668" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>入口に神社。出だしから和の世界観が徹底されている</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260617/20260617141116.png" alt="ねんりんしま 空中から見たレックウザと島全体" width="1200" height="681" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>上を見上げるとブロックで組まれたレックウザが浮かんでいる。これが最大の見せ場</figcaption>
+</figure>
+
+<p>いえたろ（<a href="https://twitter.com/ietarotktk" target="_blank" rel="noopener">@ietarotktk</a>）さんが半径55ブロックの円回廊に和風建築を詰め込んで作った島です。入口の神社、建物の中に広がる畳の部屋、五重の塔を思わせる多層建築。それだけでも圧倒されますが、ふと空を見上げると、ブロックで組まれたレックウザが浮かんでいます。この発見のためだけに来る価値がある島です。なぞのゴーグル推奨。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>GR3WBCC3<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">参加方法：</span>なぞのゴーグル推奨<br /><span style="font-weight: bold;">みどころ：</span>半径55ブロックの円回廊に詰め込まれた和風建築と、空中に浮かぶブロック製レックウザ<br /><span style="font-weight: bold;">作者：</span><a href="https://twitter.com/ietarotktk" target="_blank" rel="noopener">@ietarotktk</a>（いえたろ）</div>
+
+<!-- ねんりんしまの単体記事を公開後、[ねんりんしまの記事URL] を実際のURLに差し替えてください -->
+<iframe src="https://hatenablog-parts.com/embed?url=[ねんりんしまの記事URL]" title="ぽこあポケモン ねんりんしま（GR3WBCC3）見学レポート：和風×ブロックのレックウザ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<h3 id="islands-onlyup" class="sub-head">② PokonlyUP!島｜NDFQ8XN5</h3>
+
+<p>まずこれを紹介したい。クラウド島でここまでやるか、という島です。「Only Up」というゲームをご存知でしょうか。ひたすら上を目指してアセットを登り続ける、落ちたら終わりのゲームです。その体験をぽこあポケモンのクラウド島で完全再現したのがこの島で、地面から限界高度まで20ステージが積み上がっています。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260415/20260415084045.png" alt="下から見上げる画像。壮大。OnlyUPっぽい" width="1200" height="678" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>下から見上げると、頂上が霞む高さ。これが全部登るステージになっている</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260415/20260415084129.png" alt="家具の上をのぼっていく様子" width="1200" height="686" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>家具や素材を足場にして登っていく。ポケモンの技を使い分けるのがポイント</figcaption>
+</figure>
+
+<p>使える技はころがる・なみのり・たきのぼりの3つ。落ちたときのかっくうは条件付きでOK、でんじふゆうは禁止という独自ルールが設けられています。見学するだけでも構造に圧倒されますが、実際に参加して登り切れるか挑戦してみてほしい島です。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>NDFQ8XN5<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>Only Up系の登山ゲームをぽこあで完全再現。20ステージ。技ルールあり<br /><span style="font-weight: bold;">作者：</span><a href="https://twitter.com/penguin_uts1" target="_blank" rel="noopener">@penguin_uts1</a></div>
+
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F04%2F15%2F091725" title="【ぽこあポケモン】クラウド島でOnly Upを再現した島がすごすぎた。体験レビュー。 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<h3 id="islands-mixed" class="sub-head">③ Mixed ビルドアイランド｜JNWQ Y9Y1</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328164150.jpg" alt="Mixed島 住宅街エリア（オランダっぽい雰囲気）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>住宅街エリア。オランダっぽい雰囲気が出ている</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328164238.jpg" alt="Mixed島 高台から見下ろした全体像" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>高台から見下ろすとこんな感じ。いろんな建築スタイルが混在している</figcaption>
+</figure>
+
+<p>「Mixed」の名前の通り、いろんな建築スタイルが混在していて、テーマを絞らずに作った自由さが逆に楽しい。「次に何があるかわからない」ワクワク感がある島です。複数のプレイヤーが思い思いに作ったんだろうな、というのが伝わってきます。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>JNWQ Y9Y1<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>混在する建築スタイル。次に何があるかわからない探索感</div>
+
+<h3 id="islands-rocket" class="sub-head">④ Rocket warehouse｜V3F7 MYHL</h3>
+
+<p>コンセプトは「全生息地をそろえた島」。ただし、その全てが地下にあります。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328174615.jpg" alt="全生息地、地面から" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>全体見るとこんな感じ。ポケモン生息地、詰め込みセットです</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328174619.jpg" alt="ロケット団のドア" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>ロケット団のドア。ここを入ると仕掛けのあるエレベーターが現れる</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328174623.jpg" alt="地下エリア" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>地下にはメタモンのクッションも。ピカチュウの椅子に座りながら眺める</figcaption>
+</figure>
+
+<p>ロケット団のドアを入ると、仕掛けのあるエレベーターが現れます。これは文章で説明するより実際に入って体験してほしい。「どうやって作ったんだ」と声が出るレベルの仕組みです。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>V3F7 MYHL<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>全生息地が地下に集結。ロケット団ドアのエレベーターは必体験</div>
+
+<h3 id="islands-meru" class="sub-head">⑤ めるのやつ｜6DXL PD6F</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328180301.jpg" alt="噴水がすごい" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>まず目に入るのが噴水。よくみたら花もポケモンになってます</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328180304.jpg" alt="ピクセルアートのピカチュウ" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>ピクセルアートのピカチュウ。ブロックを一つずつ並べてここまで再現している</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260328/20260328180308.jpg" alt="水の柱みたいな家具" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>水の柱のような家具（？）も。なんの素材か気になって3Dプリンター目当てで来ても十分</figcaption>
+</figure>
+
+<p>全体的に「見せ場」が多くて、島を一周するだけで発見が続きます。3Dプリンターの素材収集目的でも十分楽しめる島です。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>6DXL PD6F<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>噴水・ピクセルアート・水表現。3Dプリンター複製の素材収集にも◎<br /><span style="font-weight: bold;">作者：</span>@Mel_shota</div>
+
+<h3 id="islands-popo" class="sub-head">⑥ ぽぽ島｜RRWF8H35</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407130912.png" alt="お城　下から見上げる" width="1200" height="673" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>正面から見上げるとこんな感じ。ぽこあポケモンでここまで作れるのかと驚く</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407131048.png" alt="み　島" width="1200" height="667" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>成長中の島。次に来たときの変化が楽しみになる</figcaption>
+</figure>
+
+<p>まず目に飛び込んでくるのが、圧倒的なスケールの城です。ぽこあポケモンでここまでの完成度の建物が作れるのか、と素直に驚きます。周囲はまだ発展途上のエリアもあるのですが、「今まさに作られている島」という空気感があって、次に来たときにどう変わっているか楽しみになります。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>RRWF8H35<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>圧巻のスケールの城。発展途上の部分も含めて、成長中の島を見届けたくなる</div>
+
+<h3 id="islands-bagu" class="sub-head">⑦ 筆者の島（収容所）｜TX699DP0</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260315/20260315164141.jpg" alt="筆者の島 鳥籠エリア（収容所）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>鳥籠。入ってきたフレンドの反応が二極化します</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260314/20260314193435.jpg" alt="収容所 地下エリア" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>地下もあります。気づいたら数時間経っていた</figcaption>
+</figure>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260314/20260314193445.jpg" alt="メタモン（サイコパスな表情）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>この顔をしているメタモンが、収容所の管理をしています</figcaption>
+</figure>
+
+<p>ポケモンを特定の囲いに配置すると動けなくなる仕様を使って、完全に収容所を作りました。入ってきたフレンドの反応が「面白い」か「ひどい」かのどちらか。地下への入口は島の中央付近にあります。ここまで作り込むつもりはなかったのに、気づいたら数時間経っていた。これがぽこあポケモンの恐ろしいところです。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>TX699DP0<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>サイコパスメタモン監修のポケモン収容所・地下エリア</div>
+
+<h3 id="islands-kanban" class="sub-head">⑧ 看板島｜CS8PGM1V</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260505/20260505151537.png" alt="看板島" width="895" height="710" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<figcaption>ポケパークカントーのイーブイカフェ・フレンドリィショップ・ポケモンセンター・オーキド研究所などの看板を再現</figcaption>
+</figure>
+
+<p>ポケモンの世界観で使われている看板を集めた、少し変わったコンセプトの島です。ポケパークカントーのイーブイカフェの文字・カントーのフレンドリィショップ・ポケモンセンター・ガラル地方の動画サイト（ポケチューブ）・オーキド研究所など、実際のポケモンの世界の看板が並んでいます。</p>
+
+<p>見学が目的というより、素材収集が主な用途の島です。なぞのゴーグルで入ってカメラ（オブジェクトモード）で看板を撮影し、3Dプリンターで複製することで自分の島でも使えます。撮った写真はタブレットにも使えるので、世界観を大切にした建築をしたい人にとっては宝の島です。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>CS8PGM1V<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">みどころ：</span>ポケモン世界の看板素材を収集できる。タブレット・建築の世界観づくりに活用可<br /><span style="font-weight: bold;">作者：</span><a href="https://twitter.com/kuroi_wioru" target="_blank" rel="noopener">@kuroi_wioru</a></div>
+
+<h3 id="islands-itemcomp" class="sub-head">⑨ アイテムコンプ島｜CGPV5RN4</h3>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260505/20260505152107.png" alt="アイテムコンプ島" width="1200" height="683" loading="lazy" title="" class="hatena-fotolife" itemprop="image" />柄・生息地・植物・レアアイテムが網羅された、3Dプリンター目的で訪れる島として最強クラスの場所です。なぞのゴーグルで入って写真を撮るだけで、ほぼ全種のアイテムを複製できます。</p>
+
+<p>収録内容は柄98種類（通常38・レア60）、生息地208種類（モジャンボはかせ以外全種）、花40種類・いけがき21種類・木6種類、おおきなおとしもの37種類、コレクレー交換品、壊れたアイテム、イベント系アイテム、全ぬいぐるみアイテムなど。生息地は番号順に整理されているので、自分に足りない番号を調べながら効率よく回れます。</p>
+
+<div class="info-box"><span style="font-weight: bold;">じゅうしょ：</span>CGPV5RN4<br /><span style="font-weight: bold;">あいことば：</span>不要<br /><span style="font-weight: bold;">参加方法：</span>なぞのゴーグル推奨<br /><span style="font-weight: bold;">みどころ：</span>柄・生息地・植物・レアアイテムがほぼ全種そろう。3Dプリンター素材収集の聖地<br /><span style="font-weight: bold;">作者：</span><a href="https://twitter.com/syumiPokemon" target="_blank" rel="noopener">@syumiPokemon</a></div>
+
+<h2 id="official" class="section-head">公式公開島 <span class="official-label">公式掲載</span></h2>
+
+<p>ぽこあポケモンの公式が選んで紹介している島は、別の記事でまとめています。なぞのゴーグルの使い方・入手方法もあわせて解説しています。期限付きの島もあるので早めに確認してください。</p>
+
+<!-- 公式クラウド島記事を公開後、[公式クラウド島記事URL] を実際のURLに差し替えてください -->
+<iframe src="https://hatenablog-parts.com/embed?url=[公式クラウド島記事URL]" title="ぽこあポケモン 公式クラウド島 一覧・住所まとめ｜なぞのゴーグルの使い方" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0GPWYQXZV?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41yyTvtgsiL._SL500_.jpg" class="hatena-asin-detail-image" alt="ぽこ あ ポケモン ぷっくり ハイブリッドポーチ" title="ぽこ あ ポケモン ぷっくり ハイブリッドポーチ" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0GPWYQXZV?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">【任天堂ライセンス商品】ぽこ あ ポケモン ぷっくり ハイブリッドポーチ for Nintendo Switch™ 2【Switch2本体とゲームカードが収納できる】</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>ホリ</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0GPWYQXZV?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+
+<div class="nso-price-section">
+<div class="nso-heading">【6月末まで】Nintendo Switch とオンラインの月額料金が7月から値上がりします…</div>
+<div class="nso-alert">
+<div class="nso-alert-title">⚠️ 2026年7月1日（水）より料金改定</div>
+任天堂が Nintendo Switch Online の価格改定を発表しました。対象は国内の全プラン。12ヶ月プランだと個人で600円、ファミリーで1,300円の値上がりになります。<br /><br /><span style="font-weight: bold;">6月末までに購入した利用券は旧価格が適用されます。</span>しかも利用券は最大3年分（1,095日）まで買い溜め可能なので、今のうちにまとめ買いしておくのが得策です。</div>
+<table class="nso-table">
+<thead>
+<tr>
+<th>プラン</th>
+<th>現在の価格</th>
+<th>7月以降</th>
+<th>差額</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="プラン">個人プラン 1ヶ月</td>
+<td class="price-old" data-label="現在">306円</td>
+<td class="price-new" data-label="7月以降">400円</td>
+<td class="price-diff" data-label="差額">+94円</td>
+</tr>
+<tr>
+<td data-label="プラン">個人プラン 3ヶ月</td>
+<td class="price-old" data-label="現在">815円</td>
+<td class="price-new" data-label="7月以降">1,000円</td>
+<td class="price-diff" data-label="差額">+185円</td>
+</tr>
+<tr>
+<td data-label="プラン">個人プラン 12ヶ月</td>
+<td class="price-old" data-label="現在">2,400円</td>
+<td class="price-new" data-label="7月以降">3,000円</td>
+<td class="price-diff" data-label="差額">+600円</td>
+</tr>
+<tr>
+<td data-label="プラン">ファミリープラン 12ヶ月</td>
+<td class="price-old" data-label="現在">4,500円</td>
+<td class="price-new" data-label="7月以降">5,800円</td>
+<td class="price-diff" data-label="差額">+1,300円</td>
+</tr>
+<tr>
+<td data-label="プラン">個人＋追加パック 12ヶ月</td>
+<td class="price-old" data-label="現在">4,900円</td>
+<td class="price-new" data-label="7月以降">5,900円</td>
+<td class="price-diff" data-label="差額">+1,000円</td>
+</tr>
+<tr>
+<td data-label="プラン">ファミリー＋追加パック 12ヶ月</td>
+<td class="price-old" data-label="現在">8,900円</td>
+<td class="price-new" data-label="7月以降">9,900円</td>
+<td class="price-diff" data-label="差額">+1,000円</td>
+</tr>
+</tbody>
+</table>
+<div class="nso-tip">
+<div class="nso-tip-title">買い溜めのポイント</div>
+急ぎ12か月分買っておきました。利用券は加入中でも追加購入できます。ただし合算の利用期間が最大1,095日（約3年）までという上限があるので、12ヶ月券をまとめ買いするなら3枚までが現実的なライン。3枚で2,400円×3＝7,200円、これが旧価格で確保できる最大の節約額です。</div>
+<p>年間だと差額が大きいので、早めに動いておくと安心です。Switch2も、値上げ前に品切れ、転売屋が動くと考えられます。Amazonでもまだ旧価格で販売されているので、こちらもご確認ください。</p>
+<p>✳︎他にもBigカメラで見かけたので店頭販売も見てみるといいかもしれません。</p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B07HG6HC3H?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41bzzJqXfNL._SL500_.jpg" class="hatena-asin-detail-image" alt="Nintendo Switch Online 利用券(個人プラン3か月)|オンラインコード版" title="Nintendo Switch Online 利用券(個人プラン3か月)|オンラインコード版" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B07HG6HC3H?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">Nintendo Switch Online 利用券(個人プラン3か月)|オンラインコード版</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B07HG6HC3H?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B07HGFSLSD?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41q-wK4BACL._SL500_.jpg" class="hatena-asin-detail-image" alt="Nintendo Switch Online利用券(個人プラン12か月)|オンラインコード版" title="Nintendo Switch Online利用券(個人プラン12か月)|オンラインコード版" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B07HGFSLSD?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">Nintendo Switch Online利用券(個人プラン12か月)|オンラインコード版</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B07HGFSLSD?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+</div>
+
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0DX1BC3R8?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41UV4DQe9iL._SL500_.jpg" class="hatena-asin-detail-image" alt="Nintendo Switch 2(日本語・国内専用)" title="Nintendo Switch 2(日本語・国内専用)" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0DX1BC3R8?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">Nintendo Switch 2(日本語・国内専用)</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0DX1BC3R8?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
