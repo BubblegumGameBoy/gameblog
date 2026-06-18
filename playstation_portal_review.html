@@ -1,0 +1,296 @@
+<style>
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.verdict-box { border: 2px solid #555555; background: #fafafa; padding: 16px 20px; margin: 24px 0; border-radius: 5px; }
+.verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
+.star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; padding: 9px 12px; border-bottom: 1px solid #e0e0e0; text-align: left; }
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn {
+  flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important;
+  font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center;
+  transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+@media (max-width: 520px) {
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+</style>
+
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム）が含まれます。
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Product",
+    "name": "PlayStation Portal リモートプレーヤー",
+    "brand": { "@type": "Brand", "name": "Sony Interactive Entertainment" },
+    "category": "ゲーム機 / リモートプレーヤー"
+  },
+  "author": { "@type": "Person", "name": "バブルガム" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4", "bestRating": "5", "worstRating": "1" },
+  "reviewBody": "PlayStation Portalを2年間ほぼ毎日使ったレビュー。テレビが1台しかない家庭での寝転びプレイやながら作業に最適。一方でUIが複雑なゲームや腰を据えてやり込むタイプには向かない。"
+}
+</script>
+</p>
+
+<p>夜、リビングのテレビは家族に取られている。今日はもうPS5は無理か。数年前までなら、そこで諦めていました。</p>
+
+<p>でも今は、寝室のベッドにごろんと寝転んだまま、手元の8インチ画面でPS5のゲームを起動しています。テレビの取り合いから解放された。これだけで、私にとってPlayStation Portalは買った価値がありました。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260618/20260618130529.png" alt="使用感のあるPlayStation Portalの起動画面" width="920" height="425" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>2年間ほぼ毎日使った我が家のPS Portal。ホコリも使用感もそのまま。それくらい生活に溶け込んでいます</figcaption>
+</figure>
+
+<p>発売は2023年11月。当初は「リモートプレイ専用機なのに3万円は高い」と賛否が分かれたデバイスでした。あれから2年、ほぼ毎日使い倒した今だからこそ言える、よかった点・正直イマイチな点、そして何より「どんなゲームに向いて、どんなゲームに向かないか」を、実体験ベースで書いていきます。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">PS Portal</span>
+  <a href="https://www.amazon.co.jp/s?k=PlayStation+Portal&tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FPlayStation%2520Portal%2F&link_type=text&ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&keyword=PlayStation+Portal" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<p>[:contents]</p>
+
+<h2 class="section-head">PlayStation Portalとは（スペックと値段）</h2>
+
+<p>ざっくり言うと、DualSenseコントローラーを左右に割って、その真ん中に8インチの液晶をはめ込んだような形状のデバイスです。これ単体ではゲームを遊べません。家のPS5にWi-Fi経由でつなぎ、その映像を手元に飛ばして遊ぶ「リモートプレイ専用機」というのが基本的な立ち位置です。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260618/20260618131431.png" alt="PlayStation Portalを平面から見た写真。本体の厚みがわかる" width="990" height="382" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>横から見るとこの厚み。コントローラー部分があるぶん、薄いタブレットのようにはいきません</figcaption>
+</figure>
+
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 32%;">発売日</th><td>2023年11月15日</td></tr>
+<tr><th scope="row">メーカー</th><td>ソニー・インタラクティブエンタテインメント</td></tr>
+<tr><th scope="row">サイズ</th><td>約 幅29.5 × 高さ11 × 厚さ4.5 cm</td></tr>
+<tr><th scope="row">重さ</th><td>約529g</td></tr>
+<tr><th scope="row">ディスプレイ</th><td>8インチ液晶（1920×1080 / 最大60fps）</td></tr>
+<tr><th scope="row">バッテリー</th><td>4370mAh（満充電 約2.5時間 / 連続使用 約4〜8時間）</td></tr>
+<tr><th scope="row">接続</th><td>Wi-Fi必須。家のPS5へのリモートプレイ、またはPS Plusプレミアムのクラウドストリーミング</td></tr>
+<tr><th scope="row">価格</th><td>39,980円（2026年4月改定）</td></tr>
+</tbody>
+</table>
+
+<div class="note-box"><span class="note-label">値段に注意：</span>発売当初は29,980円でしたが、2026年4月の改定で39,980円になりました。1万円の値上げです。「リモプ機に4万円」をどう見るかは、後半の「向き不向き」を読んでから判断してもらえればと思います。</div>
+
+<p>有機ELではなく液晶ですが、発色はかなり鮮やかで、ベゼル（画面のフチ）が細いぶん8インチ以上に大きく感じます。グラフィックの綺麗なPS5タイトルを寝転んで眺めるだけでも、それなりに満足感があります。</p>
+
+<h2 class="section-head">2年使ってわかった、向いてるゲーム・疲れるゲーム</h2>
+
+<p>この記事で一番伝えたいのがここです。PS Portalは万能機ではありません。2年間いろんなゲームを遊んできて、はっきり「相性のいいゲーム」と「相性の悪いゲーム」に分かれました。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260618/20260618131510.png" alt="PlayStation Portalのゲーム選択画面。Slay the Spire、NTE、ドラクエなどが並ぶ" width="777" height="542" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>我が家のホーム画面。デフォルメ系やターン制は相性◎、一人称・UIゲーは正直しんどい</figcaption>
+</figure>
+
+<h3 class="sub-head">相性◎：片手間・ながら・毎日のログボ消化</h3>
+
+<p>一番ありがたみを感じるのが、こういう遊び方です。</p>
+
+<p>たとえば「NTE」のような、毎日ログインボーナスやデイリーがある基本無料ゲー。これをやるためだけに、わざわざテレビをつけてPS5を起動してゲームを立ち上げて、という一連の作業は正直しんどい。PS Portalなら、ベッドの上でPSボタンを押すだけで数秒後にはゲームが始まっています。<span style="font-weight: bold;">この「起動のだるさゼロ」が、毎日触るゲームと相性抜群</span>なんです。</p>
+
+<p>「ドラクエ」のレベル上げのような、半分手を動かしていれば進む流れ作業系も得意分野。テレビで別の番組を見ながら、手元でコツコツ周回。この「ながらプレイ」の快適さは、小型一体型ならではのメリットだと感じます。</p>
+
+<ul>
+<li>「Slay the Spire」などターン制で、入力のシビアさがないゲーム</li>
+<li>「NTE」など毎日のデイリー・ログボ消化が必要な基本無料ゲー</li>
+<li>「ドラクエ」のレベル上げ・周回といった、ながら作業向きのゲーム</li>
+<li>朝起きてすぐ、布団の中でパッと触りたいデフォルメ系</li>
+</ul>
+
+<h3 class="sub-head">相性△：がっつりやり込む・UIゲー・一人称</h3>
+
+<p>逆にダメだったのが、腰を据えてがっつりやり込むタイプのゲームです。</p>
+
+<p>特に「キングダムカム・デリバランス」のような、文字情報が多くUIが作り込まれたゲームとは相性最悪でした。8インチの画面では細かい文章が読みにくく、メニューを行き来するだけで疲れてしまう。一人称視点のゲームも、寝転んだ姿勢だと没入感がそがれてしまうのか、どうも乗り切れない。そして長時間握っていると、やはり約529gという本体の重さがじわじわ効いてきます。</p>
+
+<div class="note-box"><span class="note-label">遅延について：</span>よく心配される入力遅延ですが、2年使って「遅延でゲームにならない」と感じたことはほぼありません。それより現実的な弱点は、Wi-Fi回線が不安定なときに一時的にグラフィックが粗くなること。遅延よりも回線品質のほうが体感に効きます。なので、家のPS5は有線LAN接続にしておくのがおすすめです。</p>
+
+<h2 class="section-head">2年使ってよかった点</h2>
+
+<div class="good-box">
+<div class="good-title">PS Portalのよかったところ</div>
+<ul style="margin: 0;">
+<li>テレビが家族に占有されていても、別の部屋・ベッドでPS5が遊べる</li>
+<li>起動が速く、ボタンを押すだけで数秒でゲームに入れる</li>
+<li>8インチ液晶が想像以上に綺麗で、近くで見るぶん没入感がある</li>
+<li>「ながら作業」「ログボ消化」のストレスが激減する</li>
+</ul>
+</div>
+
+<p>我が家はテレビが1台しかありません。だからこそ、このデバイスの恩恵は大きかった。テレビの取り合いという日常の小さなストレスが消えただけで、ゲームを触る回数そのものが増えました。ちょっとした空き時間に、サッと起動してサッと遊ぶ。この手軽さが、2年経っても色あせない一番の魅力です。</p>
+
+<h2 class="section-head">正直イマイチだった点</h2>
+
+<div class="bad-box">
+<div class="bad-title">気になったところ</div>
+<ul style="margin: 0;">
+<li>バッテリー持ちは正直微妙。長時間遊ぶと足りなくなる</li>
+<li>長時間プレイだと本体の重さが効いてくる</li>
+<li>Wi-Fi回線が不安定だとグラフィックが落ちることがある</li>
+<li>リモプ機能が主役なのに、値上げで4万円近くになった</li>
+</ul>
+</div>
+
+<p>一番のクセはバッテリーです。がっつり遊ぶと充電が持たないので、私は「遊び終わったら充電器に置く」のがすっかり習慣になりました。スマホと同じ感覚で、使ったら戻す。これさえルーティン化できれば困りませんが、ズボラな人はプレイ中に切れて悲しい思いをするかもしれません。</p>
+
+<h2 class="section-head">クラウドストリーミングとキャリングケースの話</h2>
+
+<p>2025年11月から、PS Portalはクラウドストリーミングに対応しました。PS Plusプレミアム限定ですが、家のPS5の電源を入れなくても、対象のPS5タイトルをクラウド経由で遊べる機能です。発売当初の「PS5がないと使えない」という前提が、ここで少し崩れました。</p>
+
+<p>正直に言うと、私自身はこの機能をほとんど使っていません。家にPS5があるので、いつものリモートプレイで事足りてしまうからです。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260618/20260618131346.png" alt="PlayStation Portal専用キャリングケース" width="962" height="712" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>外に持ち出す用に買ったキャリングケース。ただ、これが意外と重い</figcaption>
+</figure>
+
+<p>外でクラウドストリーミングを使うつもりでキャリングケースも買いました。でも、持ち運んでみると意外と重い。しかもキャンプ先などに持っていっても、結局そこにWi-Fi回線がなければ遊べないので、用途はかなり限られます。<span style="font-weight: bold;">クラウド対応が本当に効いてくるのは、PS5本体を持っていない人</span>でしょう。PS5なし＋PS Plusプレミアム＋PS Portalという組み合わせなら、選択肢として十分アリだと思います。</p>
+
+<h2 class="section-head">一緒に使っているアクセサリ</h2>
+
+<p>2年使う中で、これは付けてよかった・買ってよかったと思うものを紹介します。</p>
+
+<h3 class="sub-head">スティックの肉球カバー</h3>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260618/20260618130606.png" alt="肉球パッドを付けたPlayStation Portal" width="496" height="627" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>スティックに肉球カバー。理由はシンプルに、肉球が好きだから</figcaption>
+</figure>
+
+<p>スティックに付けている肉球型のカバー。実用というより、単純に肉球が好きだから付けています。とはいえ滑り止めにもなるので、見た目も操作感もちょっと得した気分。安いので気分転換におすすめです。</p>
+
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0FD38CXTQ?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/41ul8SKq-PL._SL500_.jpg" class="hatena-asin-detail-image" alt="FineGood スティックカバー 肉球" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0FD38CXTQ?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" target="_blank" rel="sponsored noopener">FineGood 【ps4 ps5対応】 スティックカバー 滑り止め保護カバー(16個セット) 猫手 肉球 ジョイスティックカバー</a></p>
+<ul class="hatena-asin-detail-meta"><li>FineGood</li></ul>
+<a href="https://www.amazon.co.jp/dp/B0FD38CXTQ?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+
+<h3 class="sub-head">画面保護フィルム</h3>
+
+<p>画面はむき出しだと不安なので、保護フィルムは早めに貼っておくのがおすすめです。私は店頭で勢いで買ってしまい商品名を忘れてしまったのですが、選ぶならソニーライセンス品が安心。下のホリのものは映り込みを抑えるARコート付きで、貼りやすさにも定評があります。</p>
+
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0DXTRTN2V?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51QY9p4nKZL._SL500_.jpg" class="hatena-asin-detail-image" alt="ホリ きれ見えフィルム for PlayStation Portal" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0DXTRTN2V?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" target="_blank" rel="sponsored noopener">ホリ きれ見えフィルム for PlayStation Portal リモートプレーヤー</a></p>
+<ul class="hatena-asin-detail-meta"><li>HORI（ソニーライセンス商品）</li></ul>
+<a href="https://www.amazon.co.jp/dp/B0DXTRTN2V?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+
+<h3 class="sub-head">キャリングケース</h3>
+
+<p>持ち出すなら専用ケースもあると安心です。先述のとおり外で使う機会は私は少なめでしたが、収納や保管時のキズ防止としては持っておいて損はありません。</p>
+
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0CGHSC8D7?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/61sFt6Qd5JL._SL500_.jpg" class="hatena-asin-detail-image" alt="PlayStation Portal 専用キャリングケース" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0CGHSC8D7?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" target="_blank" rel="sponsored noopener">PlayStation Portal 専用 ハードケース 収納バッグ キャリングケース</a></p>
+<ul class="hatena-asin-detail-meta"><li>耐衝撃・防塵ハードシェル</li></ul>
+<a href="https://www.amazon.co.jp/dp/B0CGHSC8D7?tag=bubblegumkk0d-22&linkCode=osi&th=1&psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+
+<h2 class="section-head">結論：こんな人には最高、こんな人には向かない</h2>
+
+<div class="verdict-box">
+<div class="verdict-title">総合評価：<span class="star-rating">★★★★☆</span>（4.0 / 5.0）</div>
+<p style="margin: 0;">2年間ほぼ毎日使った結論は「買ってよかった」。人を選ぶデバイスではあるものの、ハマる人にはもう手放せない一台です。テレビが足りない家庭には特に刺さります。</p>
+</div>
+
+<p style="font-weight: bold;">おすすめできる人</p>
+<ul>
+<li>家にテレビが1台しかない／取り合いになる人</li>
+<li>ベッドやソファで寝転んでPS5を遊びたい人</li>
+<li>ドラクエの周回など「ながら作業」が多い人</li>
+<li>NTEのような基本無料ゲーのログボ・デイリーを毎日こなす人</li>
+<li>すでにPS5を持っている人（これが大前提）</li>
+</ul>
+
+<p style="font-weight: bold;">あまりおすすめしない人</p>
+<ul>
+<li>腰を据えて高難度・対戦ゲームをやり込むのがメインの人</li>
+<li>キングダムカムやオブリビオンのような、UIが複雑で文字の多い一人称ゲーが中心の人</li>
+<li>PS5を持っていない人（ただしPS Plusプレミアムのクラウド前提なら選択肢にはなる）</li>
+</ul>
+
+<p>4万円近くという価格は、正直に言えば「リモプ機」と割り切るには高いです。それでも、私は2年間ほぼ毎日使い続けて、一度も後悔していません。テレビの前に縛られず、好きな場所で寝転んでPS5を遊ぶ。その自由を買えたと思えば、十分に元は取れたと感じています。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">PS Portal</span>
+  <a href="https://www.amazon.co.jp/s?k=PlayStation+Portal&tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FPlayStation%2520Portal%2F&link_type=text&ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&keyword=PlayStation+Portal" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<p>新品は4万円近くしますが、メルカリには状態の良い中古がよく流れています。少しでも安く試したいなら、中古から入るのも十分アリです。</p>
+
+<h2 class="section-head">よくある質問</h2>
+
+<dl class="faq-list">
+<dt>PS5がないと使えませんか？</dt>
+<dd>基本はリモートプレイ専用機なのでPS5が必要です。ただし2025年11月からPS Plusプレミアム限定でクラウドストリーミングに対応し、PS5本体がなくても対象タイトルを遊べるようになりました。</dd>
+<dt>スマホとコントローラーで代用できるのでは？</dt>
+<dd>できますが、PS Portalは一体型で起動が速く、画面も大きい。寝転んだまま数秒で遊び始められる快適さは別物、というのが2年使った実感です。</dd>
+<dt>バッテリーはどれくらい持ちますか？</dt>
+<dd>公称で約4〜8時間ですが、がっつり遊ぶと足りなくなります。私は遊び終わったら充電器に戻すのが習慣になりました。</dd>
+<dt>中古でも大丈夫ですか？</dt>
+<dd>新品が4万円近いので中古需要は高めです。メルカリなどに状態の良い出物が流れています。購入時は動作確認と、前の持ち主のアカウント紐付けが解除済みかを確認すると安心です。</dd>
+</dl>
