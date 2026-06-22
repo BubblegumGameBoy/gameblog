@@ -1,0 +1,150 @@
+<style>
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+</style>
+
+<p>深夜にサイトのCSSをいじっていて、ふと手が止まりました。自分が作ったゲームが、それぞれバラバラのURLに散らばっている。クリッカーはここ、タイピングはあっち。単体ではちゃんと遊べるのに、まとめて「ここに来れば全部ある」という場所がない。</p>
+
+<p>それが、地味にずっと気になっていたんです。</p>
+
+<p>というわけで、作りました。<a href="https://bubblegumgameboy.com/" target="_blank" rel="noopener">bubblegumgameboy.com</a>。ブラウザでそのまま遊べる、自作ゲームの置き場です。インストールもアカウント登録もいりません。開いたら、もう遊べます。</p>
+
+<iframe src="https://hatenablog-parts.com/embed?url=https://bubblegumgameboy.com/" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<p>普段はC#でゲームを作っているのですが、こちらはもっと肩の力を抜いた、HTMLで軽く遊べるものを置く場所にしています。せっかく公開したので、何があるサイトなのか、自分の口から軽く紹介させてください。</p>
+
+[:contents]
+
+<h2 class="section-head">そもそも、どんなサイトなのか</h2>
+
+<p>ひとことで言うと、個人で作ったブラウザゲームを並べた、小さなポータルです。トップを開くと、いちおしのゲームがどんと出てきて、その下に新着情報、ほかのゲーム一覧、と続きます。8bitっぽいドット絵のハートや、ファミコンのメッセージウィンドウ風の枠を散らした、ちょっと懐かしい見た目にしました。</p>
+
+<p>大事にしたのは、とにかく敷居を低くすること。何かを遊ぶのに「まず会員登録」とか「アプリをダウンロード」とか、あの一拍が個人的にすごく苦手で。だからここは、リンクを踏んだ瞬間に遊び始められる作りにしています。スマホからでもPCからでも、開けばそのまま。</p>
+
+<div class="point-box">
+<p class="point-title">Bubblegum Game の基本</p>
+<ul>
+<li>ブラウザだけで遊べる(インストール不要)</li>
+<li>無料・アカウント登録なし</li>
+<li>クリッカー1本＋タイピング2本を公開中</li>
+<li>おまけで「裏サイト」もこっそり1ページ</li>
+</ul>
+</div>
+
+<h2 class="section-head">いちおしは「ボスラッシュ クリッカー」</h2>
+
+<p>トップで一番大きく出しているのが、このボスラッシュ クリッカーです。正直、自分でも一番遊んでしまっているのがこれ。</p>
+
+<p>ジャンルとしては放置系のクリッカー。次々と現れるボスを、クリック(スマホならタップ)で削っていきます。最初は自分の指だけが頼りなんですが、稼いだ資源で武器を強化したり、戦ってくれる兵士を増やしたりしていくと、だんだん攻撃が自動化されていく。気づけば、画面から手を離していても自分の軍団が勝手にボスを狩り続けている。あの「育ってきたな」という手応えが、クリッカーの一番おいしいところだと思っています。</p>
+
+<p>登場するボスは30体以上。最初のうちはサクサク倒せても、奥に進むほど固くなるので、どこに資源を振るかを少し考える楽しさも出てきます。難しく考えなくても、置きっぱなしにしておくだけで進むのが放置系のいいところ。PCでもスマホでも遊べます。</p>
+
+<iframe src="https://hatenablog-parts.com/embed?url=https://bubblegumgameboy.com/games/clicker.html" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
+
+<p>攻略のコツみたいなものはサイト内の記事にも書いているので、ある程度進んで手が止まったら、のぞいてみてください。</p>
+
+<h2 class="section-head">指がよろこぶ、タイピング2本</h2>
+
+<p>クリッカーのほかに、タイピングゲームを2本置いています。どちらも、打鍵のテンポが気持ちいいことを軸に作りました。タイピングって、上達そのものより「カタカタ打ってるリズム」が楽しいんですよね。</p>
+
+<h3 class="sub-head">ポップコーンタイピング</h3>
+
+<p>弾けるポップコーンを、表示された文字でリズムよく打ち抜いていくゲームです。ポンポン弾ける感じが、打っていて単純に気持ちいい。むずかしいルールはないので、ローマ字入力の練習がてら触るのにも向いています。お子さんのタイピング入門にもいいかもしれません。</p>
+
+<h3 class="sub-head">ソルジャータイピング</h3>
+
+<p>こちらはミリタリー風の見た目で、タイプして敵を倒していくタイプ。同じタイピングでも、ポップコーンののんびりした感じとは違って、もう少し「撃ち合っている」緊張感があります。打鍵が決まったときのテンポの良さは随一です。</p>
+
+<div class="note-box">
+<span class="note-label">メモ：</span>タイピングの2本はキーボードで遊ぶゲームなので、いまのところPC向けです。スマホで開くなら、まずはクリッカーがおすすめ。
+</div>
+
+<p>3本まとめると、こんな感じです。</p>
+
+<table class="data-table">
+<thead>
+<tr><th>ゲーム</th><th>ジャンル</th><th>対応端末</th><th>ひとことで言うと</th></tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="ゲーム">ボスラッシュ クリッカー</td>
+<td data-label="ジャンル">放置系クリッカー</td>
+<td data-label="対応端末">PC・スマホ</td>
+<td data-label="ひとこと">兵士を増やして自動化、置いとくだけで育つ</td>
+</tr>
+<tr>
+<td data-label="ゲーム">ポップコーンタイピング</td>
+<td data-label="ジャンル">タイピング</td>
+<td data-label="対応端末">PC</td>
+<td data-label="ひとこと">弾けるポップコーンを打ち抜く爽快系。練習にも</td>
+</tr>
+<tr>
+<td data-label="ゲーム">ソルジャータイピング</td>
+<td data-label="ジャンル">タイピング</td>
+<td data-label="対応端末">PC</td>
+<td data-label="ひとこと">タイプして戦う、テンポ重視のミリタリー風</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="section-head">おまけの「裏サイト」が、わりと本気</h2>
+
+<p>これはもう完全に趣味なんですが、サイトの片隅に裏サイトを1ページ仕込んでいます。ナビの端で緑色に明滅している「裏サイト」のリンク。あれです。</p>
+
+<p>中身は、2ch風のオカルト掲示板。丑三つ掲示板という名前で、深夜の実況スレの空気を再現しています。看板スレが、きさらぎ駅へのオマージュで作った「ささなき駅」という自作の実況体験。気づいたら降りたことのない駅に向かっていて、スレの住人と一緒に「これ、やばくないか」となっていく、あの感じです。</p>
+
+<div class="story-box">
+<p class="story-title">ささなき駅って？</p>
+<p style="margin:0;">ネットの怪談で語り継がれてきた、帰れなくなる無人駅の話。その空気を借りて、文章は全部こちらで書き下ろしました。ゲームの合間に、深夜のテンションでどうぞ。</p>
+</div>
+
+<p>ゲームを遊びに来たついでに見つけてもらえると、ちょっと得した気分になるんじゃないかと思います。明るいドット絵のトップページとの落差も含めて、楽しんでもらえたら。</p>
+
+<h2 class="section-head">作っている人と、これからのこと</h2>
+
+<p>運営しているのはバブルガム、つまり私です。かなりのゲーマーで、普段はC#でゲーム開発をしています。そっちは少し腰を据えて作るものなので、このサイトには逆に、肩の力を抜いてサクッと遊べるものを置いていこうと思っています。</p>
+
+<p>更新のペースは、だいたい月2回くらいを見込んでいます。新しいゲームを足したり、攻略記事を書いたり。気が向いたら裏サイトのスレも増やすかもしれません。ブックマークやお気に入りに入れておいてもらえると、地味にめちゃくちゃ励みになります。</p>
+
+<p>遊んだゲームのレビューや、開発の裏話みたいなものは、このゲームブログのほうで引き続き書いていきます。サイトとブログ、両方をのんびり育てていくつもりなので、よかったら両方のぞいてみてください。</p>
+
+<p>まずは、いちばん上のリンクからクリッカーでも触ってみてもらえると、うれしいです。</p>
+
+<iframe src="https://hatenablog-parts.com/embed?url=https://bubblegumgameboy.com/" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
