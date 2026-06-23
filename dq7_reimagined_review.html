@@ -1,0 +1,317 @@
+<style>
+  h2.section-head { font-size: 118% !important; font-weight: bold !important; background-color: #555555 !important; color: #ffffff !important; padding: 10px 14px !important; border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important; box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff; margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important; }
+  h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
+  .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+  .note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+  .warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+  .warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+  .good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+  .bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+  .story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+  .story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #f9f9f9; }
+  .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+  .verdict-box { border: 2px solid #555555; border-radius: 6px; padding: 16px 20px; margin: 24px 0; background: #fafafa; }
+  .verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
+  .star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+  .mercari-box { background: #fff8f3; border: 1px solid #f0c8a0; border-radius: 6px; padding: 16px 18px; margin: 20px 0; }
+  .mercari-box .mercari-title { font-weight: bold; font-size: 15px; color: #b8501a; margin-bottom: 10px; }
+  .mercari-code { display: inline-block; background: #ffffff; border: 2px dashed #b8501a; border-radius: 4px; padding: 6px 14px; margin: 4px 0; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; color: #b8501a; letter-spacing: 2px; }
+  .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+  .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+  .shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+  .shop-btn { flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important; font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center; transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+  .shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+  .shop-btn-amazon { background: #FF9900; }
+  .shop-btn-rakuten { background: #BF0000; }
+  .shop-btn-mercari { background: #FF0211; }
+  .shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+  figure { margin: 16px 0; text-align: center; } figure img { max-width: 100%; height: auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+  ul { padding-left: 1.5em; } li { margin-bottom: 6px; line-height: 1.8; } p { margin-bottom: 1.4em; }
+  @media (max-width: 520px) {
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+    .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .data-table td:last-child { border-bottom: none; }
+    .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+    .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+    .data-table tr:nth-child(even) td { background: #ffffff; }
+    .shop-buttons { gap: 6px; }
+    .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+    .shop-btn-label { display: none; }
+  }
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "VideoGame",
+    "name": "ドラゴンクエストVII Reimagined",
+    "alternateName": "ドラクエ7 リイマジンド",
+    "gamePlatform": ["PlayStation 5", "Nintendo Switch", "Nintendo Switch 2", "Xbox Series X|S", "PC"],
+    "applicationCategory": "Game",
+    "publisher": { "@type": "Organization", "name": "スクウェア・エニックス" },
+    "datePublished": "2026-02-05"
+  },
+  "author": { "@type": "Person", "name": "バブルガム" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "7", "bestRating": "10", "worstRating": "1" },
+  "reviewBody": "PS1「エデンの戦士たち」のリメイク。テンポと遊びやすさは歴代トップクラスだが、難易度が全体に低く、最高難度でもほぼ自動戦闘で裏ボスまで到達できてしまう。映像（ドールルック）・オーケストラ・フルボイスは高品質。初プレイ層には強くおすすめできる一方、歯ごたえや濃いキャラドラマを求める人には手応え不足。世間のメタスコアは83前後だが、体感はそれより辛め。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "ドラクエ7 リイマジンドは簡単すぎてつまらない？", "acceptedAnswer": { "@type": "Answer", "text": "標準の「バッチリ冒険」はかなりぬるめです。歯ごたえが欲しいなら「いばらの道だぜ」を選び、自由にせっていで敵だけ強化して経験値・ゴールドはむしろ絞るのがおすすめ。経験値とゴールドを多めにすると、最高難度でも自動戦闘でクリア後の裏ボスまで倒せてしまうほど緩くなります。" } },
+    { "@type": "Question", "name": "原作・3DS版が未プレイでも楽しめる？", "acceptedAnswer": { "@type": "Answer", "text": "むしろ未プレイの人に最適です。テンポが良く操作も親切で、予備知識ゼロでも置いていかれません。原作の70時間が約半分に圧縮され、忙しい大人でも遊び切れる構成になっています。" } },
+    { "@type": "Question", "name": "クリア時間はどれくらい？", "acceptedAnswer": { "@type": "Answer", "text": "メインストーリーで約30〜35時間、やり込み込みで70時間ほどが目安です。原作の約半分に時短されています。" } },
+    { "@type": "Question", "name": "削除された要素は？追加要素は？", "acceptedAnswer": { "@type": "Answer", "text": "カジノ・移民の町・世界ランキング協会・モンスターパーク・モンスター職が削除され、クレージュ・リートルード・プロビナのシナリオもカットされました。モンスターの心はアクセサリーに変更。代わりに新しい寄り道として闘技場が追加されています。" } },
+    { "@type": "Question", "name": "どの機種で買うのがいい？", "acceptedAnswer": { "@type": "Answer", "text": "映像と快適さ重視ならPS5かSwitch2、携帯して遊ぶならSwitch2、PCならSteamが選択肢です。価格はどの機種も通常版8,778円で共通なので、持っているハードとプレイスタイルで選べば失敗しません。" } }
+  ]
+}
+</script>
+</p>
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム、メルカリ招待プログラム）が含まれます。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260623/20260623160823.png" alt="ドラクエ7 リイマジンド イベント中。スライム4匹" width="1200" height="673" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>難易度は最高にしたはずだった</figcaption>
+</figure>
+
+<p>最高難度の「いばらの道だぜ」を選んだはずでした。なのに、コントローラーをほとんど握り直さないまま、気づけば画面には裏ボスが沈んでいく演出が流れていました。エンディングどころか、クリア後のいちばん奥まで。自分の指は、ほとんど何もしていないのに。</p>
+
+<p>これが「ドラゴンクエストVII Reimagined（リイマジンド）」を遊び切って、いちばん最初に残った感情です。正直に言えば、爽快感より先に来たのは小さな戸惑いでした。こんなに親切で、こんなに快適で、こんなに手がかからなくていいのか、と。</p>
+
+<p>私はドラクエ7はおろか、原作のPS1版も3DS版も触ったことのない、まっさらな7作目です。思い入れも先入観もありません。その立場で正直に評価すると、遊びやすさは歴代でもトップクラス。ただしその快適さと引き換えに、手応えは歴代でいちばん薄いかもしれない。世間の評価はメタスコア83前後で、決して低くない。でも私の体感は、それより一段だけ辛めです。なぜそう感じたのか、最後まで遊んだ立場で順番に書いていきます。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">気になったら</span>
+  <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<p>[:contents]</p>
+
+<h2 class="section-head">ドラクエ7 リイマジンドとは｜発売日・価格・対応機種・クリア時間</h2>
+
+<p>本作は2000年に出たPS1の名作「ドラゴンクエストVII エデンの戦士たち」を、現代の技術で作り直したリメイクです。リメイクではなく、あえて「リイマジンド（再構築）」と名乗っているのが象徴的で、過去作を上書きするというより、新しいプレイヤーを迎え入れるための柔らかさがあります。まず基本情報を整理します。</p>
+
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 30%;">タイトル</th><td>ドラゴンクエストVII Reimagined（ドラクエ7 リイマジンド）</td></tr>
+<tr><th scope="row">発売日</th><td>2026年2月5日（木）※Steam版のみ2月6日 午前2時</td></tr>
+<tr><th scope="row">対応機種</th><td>PS5／Switch／Switch2／Xbox Series X|S／Steam（PC）</td></tr>
+<tr><th scope="row">価格</th><td>通常版 8,778円／デジタルデラックス版 10,978円（税込・全機種共通）</td></tr>
+<tr><th scope="row">ジャンル</th><td>RPG（PS1「エデンの戦士たち」のリメイク）</td></tr>
+<tr><th scope="row">クリア時間</th><td>メイン約30〜35時間／やり込み込みで約70時間</td></tr>
+<tr><th scope="row">難易度</th><td>4段階＋自由カスタム（メニューからいつでも変更可）</td></tr>
+<tr><th scope="row">メタスコア</th><td>83前後（世間的には高評価）</td></tr>
+<tr><th scope="row">私的評価</th><td>7.0 / 10（初プレイなら8、歯ごたえ重視なら6に振れる）</td></tr>
+</tbody>
+</table>
+
+<p>デジタルデラックス版には追加DLCと、発売48時間前から本編を遊べるアーリーアクセス権が付きます。価格はどの機種でも同じなので、すでに持っているハードで選んで損はありません。「リメイク」という言葉がFF7のように作品ごとに違う意味を持つ時代になりましたが、本作の「再構築」は、骨組みを残して見せ方と遊びやすさだけを2026年の基準に作り替えた、という言葉どおりの仕上がりでした。</p>
+
+<h2 class="section-head">正直レビュー｜遊びやすさは過去最高、でも「手応え」は歴代でいちばん薄い</h2>
+
+<p>結論を先に言ってしまいます。本作は、ドラクエに初めて触れる人にとっては、ほぼ理想形です。テンポが速く、迷わず、止まらない。その一方で、シリーズをやり込んできた人が期待する「冒険のひりつき」は、意図的なほどに抜かれています。良さと物足りなさが、同じ一枚のコインの裏表になっている。それが本作のいちばんの個性です。</p>
+
+<div class="good-box">
+<div class="good-title">遊んでよかったと感じた点</div>
+<ul>
+<li>テンポが劇的に改善。移動も戦闘も謎解きも、とにかく止まらない</li>
+<li>ドールルックと呼びたくなる、人形のように作り込まれた美しいビジュアル</li>
+<li>主人公にまで声がついたフルボイス化と、オーケストラの生演奏</li>
+<li>難易度を細かく選べて、誰でも最後（裏ボス）までたどり着ける親切設計</li>
+</ul>
+</div>
+
+<div class="bad-box">
+<div class="bad-title">最後まで引っかかった点</div>
+<ul>
+<li>標準だと簡単すぎて、ほぼ自動戦闘で終わる。緊張感がほとんどない</li>
+<li>仲間たちが主役になる場面が少なく、物語が静かすぎる</li>
+<li>同じ島を過去と現在で往復する構造が、終盤はやや冗長に感じる</li>
+</ul>
+</div>
+
+<p>この記事は、難易度を最高の「いばらの道だぜ」にしつつ、経験値とゴールドだけは多めにする、というちぐはぐな設定で、ほぼ自動戦闘のままクリア後まで遊んだ体験がベースになっています。原作との比較ではなく、いま初めて触る人の目線で、どこが効いていて、どこが惜しいのかを書きます。</p>
+
+<h2 class="section-head">戦闘と難易度｜評価が割れる最大のポイント</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260623/20260623160856.png" alt="ドラクエ7 リイマジンド モンスター出現と戦闘画面" width="1132" height="666" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>戦闘の手触り自体は、文句なく気持ちいい</figcaption>
+</figure>
+
+<p>ターン制バトルの手触りそのものは、安心して食べられる定番の味です。バフを重ね、相手の守備力を下げて総攻撃する。シリーズが長い時間をかけて磨いてきた段取りが、ここでもきれいに機能しています。プレイ感覚に不満はありません。</p>
+
+<p>問題は、その定番がほとんど発動しないまま終わってしまうこと。難易度は4種類から選べます。</p>
+
+<table class="data-table">
+<thead><tr><th>難易度</th><th>特徴</th><th>向いている人</th></tr></thead>
+<tbody>
+<tr><td data-label="難易度">楽ちんプレイ</td><td data-label="特徴">フィールドの敵が襲ってこなくなる。戦闘と育成を最小限にできる</td><td data-label="向いている人">物語だけをサクッと追いたい人</td></tr>
+<tr><td data-label="難易度">バッチリ冒険</td><td data-label="特徴">標準。経験値もゴールドも増減なしの、本来のバランス</td><td data-label="向いている人">迷ったらこれ。基準にしたい人</td></tr>
+<tr><td data-label="難易度">いばらの道だぜ</td><td data-label="特徴">敵が強くなり、全項目が厳しめになる高難度</td><td data-label="向いている人">歯ごたえと戦略性が欲しい人</td></tr>
+<tr><td data-label="難易度">自由にせってい</td><td data-label="特徴">敵の強さ・獲得経験値・ゴールド・戦闘後の回復を個別に調整</td><td data-label="向いている人">自分でバランスを作り込みたい人</td></tr>
+</tbody>
+</table>
+
+<p>親切なのは間違いありません。でも正直に言うと、楽ちんプレイは簡単すぎ、標準も簡単、いばらの道だぜでようやく「まあまあ」。そして経験値やゴールドを多めにもらえるオプションが用意されている時点で、つい頼ってしまうんですよね。ここに本作の落とし穴があります。</p>
+
+<p>結果として私は、最高難度なのに実入りだけ甘い、という妙な設定で旅を続けました。そして基本的に自動戦闘を眺めているだけで、エンディングを越え、クリア後の裏ボスまで倒し切ってしまった。レベル上げらしいレベル上げに費やしたのは、全体で1時間半ほど。それすら必須ではありませんでした。本気で苦戦したのは終盤のボス一体だけ。しかもラスボスですらありません。ゲームの長さに対して、緊張する時間があまりにも短い。手応えの薄さは、ここに尽きます。</p>
+
+<div class="note-box"><span class="note-label">歯ごたえが欲しい人へ：</span>おすすめは「いばらの道だぜ」を選んだうえで、自由にせっていに切り替えて敵だけを強化し、経験値とゴールドはむしろ絞る設定です。実入りを甘くした瞬間に緊張感が消えるので、あえて辛くしておくと本来の駆け引きが戻ってきます。</div>
+
+<h3 class="sub-head">職業システムは深い。でも「掘る理由」がぬるさに殺される</h3>
+
+<p>戦闘まわりの新要素は、よく出来ています。2つの職業を同時にこなせる「かけもち」、戦闘中に感情が高まると発動できる必殺技枠の「職業とくせい（バースト）」、神殿に戻らずどこでも転職できる「ダーマの水晶」。組み合わせの幅は広く、本来ならいくらでも遊べるシステムです。</p>
+
+<p>ところが、難易度が低いせいで、その深みを掘り下げる動機がまるで湧いてきません。一度決めた役割のまま、最後まで一切いじらずに終わってしまいました。緻密な仕組みが、ぬるさのせいで宝の持ち腐れになっている。せっかくの目玉が、難易度設計に足を引っ張られているのは、本当にもったいないところです。</p>
+
+<h2 class="section-head">ストーリーと世界の構造｜石版で島を取り戻すループ</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260623/20260623160940.png" alt="ドラクエ7 リイマジンド ダークパレスの美しい映像" width="1200" height="674" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>断片を一つずつ拾っていく構造は、序盤ほど効いている</figcaption>
+</figure>
+
+<div class="story-box">
+<div class="story-title">どんな物語か</div>
+<p>エスタード島という小さな島の漁村から物語は始まります。謎の石版を組み合わせて過去へ飛び、いつの間にか消えてしまった島々を救い、現在へ復活させていく。巨大な悪をいきなり止めるのではなく、壊れた世界に何が起きたのかを一つずつ解き明かす。シリーズでも飛び抜けて野心的な枠組みです。</p>
+</div>
+
+<p>石版を見つけて島を取り戻すループそのものは、強い中毒性があります。次の石版はどこだ、と常に先を見たくなる。最初のうちは、新しい断片を見つけるたびのミステリー感や、自分の行動が現在の世界を作り直していく重みに、素直に感動しました。ここは本作のいちばんの発明だと思います。</p>
+
+<h3 class="sub-head">新ストーリーと「物語の分岐」が追加された</h3>
+
+<p>リイマジンドでは、削った要素のぶんを、オリジナルには無かった新ストーリーと分岐に回しています。ウッドパルナ、レブレサック、ルーメン、ラグラーズなどで、選択によって結末が変わる仕掛けが用意されました。たとえばウッドパルナでは人形を渡すかどうかでボスの強さが変わり、ラグラーズでは大人になったキーファをラストの戦いに連れて行くかを選べます。連れて行けば、彼はラストダンジョンで5人目の仲間として合流し、専用のエピローグまで見られる。別ルート目当てに周回したくなる、現代的なリプレイ性です。</p>
+
+<p>このキーファ関連の追加は、シリーズファンにはかなり刺さるはずです。原作で唐突に語られたあの離脱に、今作はようやく感情のけじめをつけてくれました。仲間が物語の主役になる、本作では数少ない瞬間でもあります。</p>
+
+<h3 class="sub-head">それでも「感情移入のしにくさ」は残る</h3>
+
+<p>各島が独立した短編として機能し、直しては次へ進む。この構造は魅力的な一方で、プレイ時間が積み重なるほど、メインパーティーそのものの掘り下げが恋しくなりました。名もなき島々を静かに修復していく、平和維持のようなアイデアは尊い。けれど感情的には響ききらない。会話は豊富でも、英雄たち自身の葛藤や成長に、もっと光を当ててほしかったというのが本音です。キャラの成長を物語の軸に据えた「ドラクエ11」と比べると、本作は世界観を優先していて、意図的に控えめ、ときに静かすぎる。物語が悪いわけではなく、温度が低いのです。</p>
+
+<h2 class="section-head">ボリュームとテンポ｜時短は正義。でも「広く感じる錯覚」がある</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260611/20260611095147.png" alt="ドラクエ7 リイマジンド 水の描写が美しいマップ" width="932" height="622" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>移動のストレスは、ほぼ消えている</figcaption>
+</figure>
+
+<p>テンポ改善は、本作いちばんの実用的な進化です。ミニマップが付き、戦闘はオートバトルと高速化で一気に軽くなり、フィールドもコンパクトにまとまっている。移動も戦闘も謎解きも、とにかく軽快です。原作の約70時間が半分近くまで圧縮されても、物語の芯はしっかり残っている。忙しい大人でも遊び切れる。これは本当に大きな美点で、ここだけは手放しで褒められます。</p>
+
+<h3 class="sub-head">削除された要素（買う前に知っておきたい）</h3>
+
+<p>時短の代償として、いくつかの寄り道が削られました。やり込み派ほど引っかかる部分なので、先に一覧で出しておきます。</p>
+
+<table class="data-table">
+<thead><tr><th>要素</th><th>リイマジンドでの扱い</th></tr></thead>
+<tbody>
+<tr><td data-label="要素">カジノ</td><td data-label="扱い">廃止。ラッキーパネルだけ形を変えて一部に収録</td></tr>
+<tr><td data-label="要素">移民の町・世界ランキング協会</td><td data-label="扱い">廃止。他プレイヤーとの通信要素もまとめてなくなった</td></tr>
+<tr><td data-label="要素">モンスターパーク</td><td data-label="扱い">廃止。戦闘後にモンスターがなつく要素もなし</td></tr>
+<tr><td data-label="要素">モンスター職</td><td data-label="扱い">廃止。代わりに「モンスターの心」がアクセサリーとして使える</td></tr>
+<tr><td data-label="要素">クレージュ・リートルード・プロビナ</td><td data-label="扱い">シナリオごと削除（本筋と関わりの薄い寄り道として整理）</td></tr>
+<tr><td data-label="要素">闘技場（新規追加）</td><td data-label="扱い">勝ち進むと豪華景品。歴代モンスターや強敵とも戦える</td></tr>
+</tbody>
+</table>
+
+<p>クレージュは毒で豹変した村人たち、リートルードは同じ一日を繰り返す町、プロビナは黄金の女神像をめぐる物語でした。どれも語りどころのあるエピソードだったので、消えたこと自体は寂しい。ただ「物語の密度を上げるための整理」と捉えれば、筋は通っています。削った容量を新ストーリーと分岐に回しているわけで、判断そのものは理解できます。</p>
+
+<h3 class="sub-head">「実際より広く感じる」構造のからくり</h3>
+
+<p>石版で島を復活させるループには、もう一つ裏の顔があります。問題を解決する過去と、結果を確かめる現在で、同じ島を二度訪れる必要があるんですね。タイムトラベルの表現としては美しい。でも同じ場所を行き来し、似たリズムを繰り返すことで、ゲームが実際よりも巨大で広大に錯覚する仕掛けにもなっています。個々の空間はわりとこぢんまりしていて、スケール感は地理的な広さではなく、構造と反復から生まれている。ここはプレイヤーの耐性で評価が割れるところで、私はクレジットが近づく頃には、正直そろそろ終わってほしいと感じていました。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">底値を狙うなら</span>
+  <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<h2 class="section-head">グラフィック・音楽・声優｜ここは文句なし。フルボイスが効く</h2>
+
+<p>アートディレクションは、本作が最も輝く部分です。近年のHD-2D路線ではなく、人形のように手作り感のある3Dモデルで世界を作り込み、鳥山明さんのアイコニックなデザインに新しい命を与えています。レトロでもなく、ルーツを捨てたわけでもない、タイムレスな質感。鮮やかでカラフルな、ジオラマのような環境は、最初から最後まで視覚的なご褒美でした。映像のきれいさだけは、最初の一場面から一貫して裏切られません。</p>
+
+<p>音楽も同じくらい効いています。オーケストラの生演奏が、控えめなストーリー場面に感情の重みを足してくれる。そしてシリーズで初めて付いたボイス。キーファを宮野真守さんが演じ、主人公にまで声がつきました。平坦になりがちな会話に体温が宿り、ドラクエらしい温かみを確実に底上げしています。本作の物語が静かすぎると感じる人ほど、このフルボイス化に救われるはずです。声の力で、ぎりぎり感情がつながる場面が何度もありました。</p>
+
+<p>キャラの好みは正直に書きます。封印されていた古代の戦士メルビンは、地に足のついた賢さが本作の控えめなトーンによく合う、個人的なハイライト。ガボは出しゃばらずグループに軽さを与えてくれるお気に入り。一方でマリベルは、常に否定的で仲間をけなすので、終盤はややうんざりしました。摩擦役としてトーンには合っているのですが、私は楽しみきれなかった。こういう好き嫌いがはっきり出るのも、キャラに声がついたからこそです。</p>
+
+<h2 class="section-head">こんな人におすすめ／合わないかもしれない人</h2>
+
+<div class="good-box">
+<div class="good-title">おすすめできる人</div>
+<ul>
+<li>JRPG初心者、または久しぶりにドラクエに戻ってくる人</li>
+<li>原作・3DS版が未プレイで、予備知識ゼロから始めたい人</li>
+<li>忙しくて、名作を時短でしっかり味わいたい人</li>
+<li>映像と音楽、フルボイスの心地よさを重視する人</li>
+</ul>
+</div>
+
+<div class="bad-box">
+<div class="bad-title">合わないかもしれない人</div>
+<ul>
+<li>歯ごたえのある戦闘、勝ち取る達成感を求める歯ごたえ重視派</li>
+<li>濃いキャラドラマや、主人公たちの成長譚を期待している人</li>
+<li>カジノや移民の町など、寄り道のやり込みが目的だった原作ファン</li>
+<li>レベル上げや育成の手応えそのものを楽しみたい人</li>
+</ul>
+</div>
+
+<p>面白いのは、この二つのリストが、ほとんど同じ特徴の裏表だということです。初心者にとっての親切さは、熟練者にとってのぬるさ。静かな物語は、ある人には心地よく、ある人には物足りない。自分がどちら側かで、評価は二点くらい平気で動きます。</p>
+
+<h2 class="section-head">まとめ｜2026年の「居心地のいい」リメイク、その光と影</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260623/20260623160634.png" alt="ドラクエ7 リイマジンド エンディングのクレジットロール" width="1200" height="677" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>クレジットを見ながら、満足と物足りなさが半分ずつ残った</figcaption>
+</figure>
+
+<p>いまのJRPGがシネマティックな超大作や壮大なキャラクター劇に傾く中で、本作はそれを追いません。静かで、控えめで、居心地のいい物語。破壊ではなく修復に焦点を当て、宇宙規模ではなく小さな島々を丁寧に描くことには、確かな価値があります。問題は、その居心地のよさが、そのまま手応えの薄さと表裏一体になっていること。心地よさを取りにいった結果、ひりつきを手放した。それが本作の正体だと思います。</p>
+
+<p>難易度を選べるおかげで、誰でも裏ボスまでたどり着ける。けれど、その親切さゆえに、私は最後まで本気を出す必要がありませんでした。経験値アップやレベル上げの作業すら、本当は楽しさの一部だったりするのに、それを使わない選択を取りづらい設計でもある。結果、自動戦闘で全部が終わってしまった。評価が割れる核心は、間違いなくここです。</p>
+
+<div class="verdict-box">
+<div class="verdict-title">総合評価</div>
+<p><span class="star-rating">★★★☆☆</span> 7.0 / 10（初プレイなら8、歯ごたえ重視なら6。平均して7）</p>
+<p>古き良きドラクエの設計思想を、新しい世代へ橋渡しする一作としては見事です。過剰に膨らませず、骨組みを保ったまま、表現と快適さだけを磨き上げている。映像・音楽・フルボイスの心地よさは本物で、JRPGをこれから始める人には心からおすすめできます。ただし、歯ごたえや濃いドラマ、勝ち取る達成感を求める人にとっては、最後まで本気を出せないもどかしさが残るはず。星を落としたのは、その手応えの薄さゆえ。気になっているなら、自分の手応えの好みと相談して選ぶのが正解です。</p>
+</div>
+
+<div class="mercari-box">
+<div class="mercari-title">中古でもう少し安く始めたい人へ</div>
+<p>発売から時間が経ち、メルカリには中古のパッケージ版が出回り始めています。少しでも安く試したいなら、まず中古を覗いてみるのも手です。メルカリ未登録の方は、新規登録時に下の招待コードを入力すると、買い物に使えるポイントがもらえます。</p>
+<p>招待コード <span class="mercari-code">YRCNMN</span>（新規登録で500ポイント付与）</p>
+</div>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">中古も視野に</span>
+  <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A87+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<h2 class="section-head">よくある質問（FAQ）</h2>
+<dl class="faq-list">
+<dt>簡単すぎてつまらないと聞いたけど、実際どう？</dt>
+<dd>標準のバッチリ冒険はかなりぬるめです。歯ごたえが欲しいなら、いばらの道だぜを選んだうえで、自由にせっていで敵だけを強化し、経験値とゴールドはむしろ絞るのがおすすめ。私のように実入りを多めにすると、最高難度でも自動戦闘でクリア後の裏ボスまで倒せてしまうほど緩くなります。手応えは自分で作りにいく必要があります。</dd>
+<dt>原作・3DS版が未プレイでも楽しめる？</dt>
+<dd>むしろ未プレイの人に最適です。テンポが良く操作も親切で、予備知識ゼロでも置いていかれません。原作の約70時間が半分近くまで圧縮されているので、はじめてのドラクエ7として最高の状態だと思います。</dd>
+<dt>クリア時間はどれくらい？</dt>
+<dd>メインで約30〜35時間、やり込み込みで70時間ほどが目安です。原作の約半分に時短されていて、忙しくても遊び切れるボリュームになっています。</dd>
+<dt>削除された要素と、追加された要素は？</dt>
+<dd>カジノ・移民の町・世界ランキング協会・モンスターパーク・モンスター職が削除され、クレージュ・リートルード・プロビナのシナリオもカットされました。モンスターの心はアクセサリーに変更。代わりに新しい寄り道として闘技場が追加され、歴代モンスターや強敵と戦えます。</dd>
+<dt>どの機種で買うのがいい？</dt>
+<dd>映像と快適さ重視ならPS5かSwitch2、携帯して遊ぶならSwitch2、PCならSteamです。価格はどの機種も通常版8,778円で共通なので、持っているハードとプレイスタイルで選べば失敗しません。</dd>
+</dl>
