@@ -109,7 +109,7 @@ SEO対策は「やりすぎない」ことが、結果的に最もSEOに効く�
 
 ### はてなブログ固有の記法
 
-- 目次：`[:contents]`
+- 目次：`[:contents]`（レビュー・体験談・日記など読み物系の記事には入れない。流れで読ませたいため。目次を使うのは攻略・比較・手順・まとめなど情報/実用記事のみ）
 - 内部リンク埋め込み：iframeのembedカード形式
   ```html
   <iframe src="https://hatenablog-parts.com/embed?url=[URL]" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe>
