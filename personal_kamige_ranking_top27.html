@@ -1,0 +1,604 @@
+<style>
+/* ===== 見出し ===== */
+h2.section-head {
+  font-size: 118% !important;
+  font-weight: bold !important;
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important;
+  border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important;
+  font-weight: bold !important;
+  border-left: 5px solid #555555 !important;
+  padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  background-color: #f9f9f9 !important;
+}
+/* ===== ボックス ===== */
+.point-box {
+  border: 1px solid #dddddd;
+  padding: 15px 18px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box {
+  background: #fffde6;
+  border: 1px solid #e8d44d;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.8;
+}
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.story-box {
+  background: #f7f9fc; border-left: 4px solid #555555;
+  padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0;
+}
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+/* ===== 機種ラベル ===== */
+.game-info {
+  font-size: 12px; color: #666; margin: 0 0 12px 0;
+  display: inline-block; background: #f5f5f5; padding: 4px 10px;
+  border-radius: 4px; border: 1px solid #e0e0e0;
+}
+/* ===== 関連リンク ===== */
+.kanren-block {
+  background-color: #f9f9f9; padding: 14px 16px;
+  border-left: 5px solid #555555; margin: 22px 0; border-radius: 0 4px 4px 0;
+}
+.kanren-block p { margin: 0; padding: 4px 0; font-size: 14px; }
+.kanren-block .kanren-label { font-weight: bold; color: #555; font-size: 13px; }
+.kanren-block a { font-weight: bold; color: #2277aa; }
+/* ===== アフィリエイトボタン ===== */
+.shop-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 22px 0;
+}
+.shop-btn {
+  flex: 1 1 0;
+  min-width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #555555;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: bold;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all 0.18s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+}
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label {
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  margin-right: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+/* ===== 本文 ===== */
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; text-align: center; }
+img { max-width: 100%; height: auto; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; line-height: 1.8; }
+</style>
+
+<p>先日、ゲーム仲間と通話しながら「今年の覇権どれよ？」という話になって、気づいたら明け方まで語り倒していました。お互い財布も睡眠時間も犠牲にして、それでも「あれは外せない」「いや、こっちが上だ」と一歩も譲らない。</p>
+
+<p>2025年から2026年前半にかけては、それくらい豊作でした。当初はインディーをじっくり掘るつもりだったのに、大手デベロッパーの本気がことごとく刺さって、気づけば有名タイトルが上位を埋め尽くす結果に。嬉しい誤算です。</p>
+
+<p>この記事は、いわゆる売上ランキングや点数の寄せ集めではありません。私が実際に数十時間から数百時間プレイして、心に残った作品だけを並べた、完全に個人的な神ゲーTOP27です。忖度はしていません。だからこそ、どこかの一本があなたの「次にやるゲーム」になればいいなと思って書いています。</p>
+
+<p>ジャンルや機種で迷っている方は、こちらのまとめも合わせてどうぞ。</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F16%2F153001" title="【Switch2】2026年おすすめゲームランキング22選。スローライフ・RPG・アクション別に厳選 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/03/16/153001">babblegum.hatenablog.com</a></cite></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F11%2F141716" title="【Steam】協力ゲーム39選。VC必須ホラーからじっくりサバイバルまで(Co-op)【2026年最新版】 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/11/141716">babblegum.hatenablog.com</a></cite></p>
+
+<p>なお、過去作や旧世代タイトルはAmazon・楽天で在庫が薄いことも多いので、各作品にメルカリ（中古）への導線も付けておきました。「定価で買うほどでは…」という積みゲー予備軍にも、中古ならわりと手が届きます。</p>
+
+<p>[:contents]</p>
+
+<h2 class="section-head">TOP3：個人的ゲーム・オブ・ザ・イヤー</h2>
+
+<p>まずは、一番脳汁が出た3本から。順位は迷いに迷いましたが、最終的には「衝撃の大きさ」で決めました。</p>
+
+<h3 class="sub-head">第1位：Clair Obscur: Expedition 33（コマンドRPGの常識を壊した一本）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251203/20251203180053.png" alt="Clair Obscur Expedition 33 のバトル画面" width="455" height="213" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>耽美的なアートワークが全編を貫く</figcaption>
+</figure>
+
+<p>栄えある1位は、文句なしでこれです。</p>
+
+<p>正直に言うと、今年いちばんプレイ時間を費やしたのは2位のデス・ストランディング2でした。それでも本作を上に置いたのは、コマンドバトルRPGの革新という一点で、衝撃が勝ったから。</p>
+
+<p>基本はターン制RPGです。でも、敵の攻撃に合わせてタイミングよくボタンを押すと回避やパリィができる。つまりコマンドを選んで眺めるだけのバトルではなく、アクションゲームのような緊張感がずっと続きます。最初は正直ナメていました。「ターン制でしょ？」と。完全に認識を改めさせられました。</p>
+
+<p>そして何より、フランスのスタジオらしいベル・エポック（良き時代）をモチーフにした耽美的なアートワーク。UIひとつ取ってもセンスの塊で、画面を見ているだけで脳が震える。こういう「手触り」と「美意識」の両立は、なかなかお目にかかれません。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Clair+Obscur+Expedition+33+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FClair%2BObscur%2BExpedition%2B33%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Clair+Obscur+Expedition+33" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第2位：DEATH STRANDING 2: ON THE BEACH（バーチャル歩荷の境地）</h3>
+
+<p><span class="game-info">対応機種：PS5</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204095409.png" alt="デス・ストランディング2 荷物を背負って歩くシーン" width="397" height="222" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>一歩ごとの「物理的な重み」が伝わってくる</figcaption>
+</figure>
+
+<p>小島監督、またやってくれましたね。</p>
+
+<p>前作同様、ベースは荷物を運ぶゲームです。ただ今作は地形変化のダイナミズムが段違い。洪水、山火事、地震といった災害級の天候変化がリアルタイムで起きて、さっきまで安全だったルートが一瞬で地獄になります。</p>
+
+<p>最近、私はリアルでも登山やキャンプをするようになったのですが、本作はまさにバーチャル歩荷（ぼっか）。一歩一歩を踏みしめる重みの表現に、乗り物や国道建設といったインフラ整備の自由度も加わって、より「世界に手を入れている」感覚が強くなりました。疲れた夜、BGMを聞きながら荒廃した世界をただ歩く時間が、なぜか妙に落ち着く。気づくと没頭しています。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=DEATH+STRANDING+2&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FDEATH%2BSTRANDING%2B2%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=DEATH+STRANDING+2" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/07/152418">【ネタバレなし感想】前作挫折者でも「DEATH STRANDING 2」をクリアできた理由をぶっちゃける！</a></p>
+</div>
+
+<h3 class="sub-head">第3位：ASTRO BOT（触覚で遊ぶ、という新発明）</h3>
+
+<p><span class="game-info">対応機種：PS5</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204095541.png" alt="ASTRO BOT のステージ" width="1163" height="646" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>愛らしい見た目とは裏腹に、隠しステージは硬派</figcaption>
+</figure>
+
+<p>前作のVR版も衝撃でしたが、今回のフルボリューム版はソニーの本気を見せつけられました。</p>
+
+<p>特筆すべきはDualSenseコントローラーを極限まで活かしたハプティックフィードバック。氷の上を滑るツルツル感、砂利道を歩くザリザリ感、雨粒が傘に当たる感触まで、指先を通じてリアルに伝わってきます。触覚で遊ぶという新しい体験のデザイン。ここまで作り込まれると、もう一つの発明だと思います。</p>
+
+<p>ビジュアルの愛らしさとは裏腹に、隠しステージの難易度は極めて硬派。アクションゲーマーとしての腕も試される、間口は広く奥は深い傑作でした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=ASTRO+BOT+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FASTRO%2BBOT%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=ASTRO+BOT" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h2 class="section-head">第4位〜第13位：話題の神ゲー＆スルメゲー</h2>
+
+<h3 class="sub-head">第4位：黒神話：悟空（UE5の真価を見せた中華アクション）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204095657.png" alt="黒神話：悟空 の戦闘シーン" width="1136" height="617" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>如意棒を使った変幻自在の攻撃が爽快</figcaption>
+</figure>
+
+<p>Unreal Engine 5の真価を見せつけた一本。中華ファンタジーの圧倒的な空気感もさることながら、アクションの手触りが抜群です。如意棒を使った変幻自在の攻撃、そして定身術（敵の動きを止める）などの法術を組み合わせる戦略性が熱い。</p>
+
+<p>ソウルライクとして比較されがちですが、個人的にはゴッド・オブ・ウォーに近い爽快感もあると感じました。敵のモーションや妖怪図鑑のテキストに至るまで、開発者の執念がにじむ一作です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E9%BB%92%E7%A5%9E%E8%A9%B1+%E6%82%9F%E7%A9%BA&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E9%25BB%2592%25E7%25A5%259E%25E8%25A9%25B1%2B%25E6%2582%259F%25E7%25A9%25BA%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E9%BB%92%E7%A5%9E%E8%A9%B1+%E6%82%9F%E7%A9%BA" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第5位：プラグマタ（ハッキング×シューティング、どこにも似ていない手触り）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / Nintendo Switch 2 / PC</span></p>
+
+<!-- 画像プレースホルダー：プラグマタのスクリーンショット（fotolife）をここに挿入してください（例：月面施設／ディアナとヒュー） -->
+
+<p>発表から5年。何度も延期されて、正直もう出ないんじゃないかと半分諦めていました。それがフタを開けてみれば、今年いちばん新しいと唸らされた一本に化けていました。</p>
+
+<p>戦闘がとにかく独特です。主人公ヒューが銃で敵を狙うのと同時に、相棒のアンドロイド少女ディアナがハッキングを担当する。照準を合わせるとグリッド状のパズル（ハッキングマトリックス）が浮かび、それを解くと敵の盾を無効化したり弱点をさらけ出したりできます。指でエイムしながら、頭ではパズルを解いている。この同時進行の感覚は、本当にどこにも似ていません。シューティングが苦手な私でも、難易度のさじ加減が絶妙で最後まで気持ちよく遊べました。</p>
+
+<p>そしてグラフィック。今年プレイした中でも頭一つ抜けています。月面施設の中に、ニューヨークのタイムズスクエアや自然のバイオームが広がっていく作り込みが圧巻。明るくて楽観的で、悲しくないお父さんという新鮮な造形のヒューと、無邪気なディアナの二人旅も妙に沁みます。ディアナの着せ替えが地味に楽しくて、これだけで周回したくなるほど。</p>
+
+<p>正直、一生遊べる系ではありません。10時間ちょっとでスッと終わります。でも、その密度がいい。ダレずに駆け抜けて、満足したまま余韻に浸れる。バイオハザードは好きだけどホラーの緊張感はちょっと苦手、という人にこそ、私はまずこれを勧めたい。5年待った甲斐がありました。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%97%E3%83%A9%E3%82%B0%E3%83%9E%E3%82%BF+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%25E3%2583%259E%25E3%2582%25BF%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%97%E3%83%A9%E3%82%B0%E3%83%9E%E3%82%BF" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/05/12/155132">プラグマタ レビュー・感想</a></p>
+</div>
+
+<h3 class="sub-head">第6位：仁王3（Team NINJAの集大成、戦国死にゲーの到達点）</h3>
+
+<p><span class="game-info">対応機種：PS5 / PC（Steam）</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260316/20260316102104.png" alt="仁王3 のフィールド" width="595" height="312" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>シリーズ初のオープンフィールドを採用</figcaption>
+</figure>
+
+<p>前作から約6年。Team NINJAが仁王2やライズオブローニンで積み上げてきたDNAを、すべてぶち込んだ集大成です。</p>
+
+<p>シリーズ初のオープンフィールドが採用され、サムライとニンジャのスタイルを瞬時に切り替えながら広大なフィールドを駆け回る体験が新鮮。気力管理と武器相性を考え抜く硬派な死にゲーの手触りはそのままに、歴史上の偉人たちと共闘・死闘しながら時代を旅するストーリー演出が熱い。ハクスラ要素の沼の深さも相変わらずで、1周クリアしてから本当のゲームが始まる設計です。アクションRPGとしては今年トップクラスの完成度でした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://amzn.to/3NH9a6p" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://a.r10.to/h8Ln8o" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E4%BB%81%E7%8E%8B3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第7位：ELDEN RING（死にゲーの間口を広げた金字塔）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260422/20260422084424.png" alt="ELDEN RING の狭間の地" width="1200" height="634" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>広大な狭間の地を自分のペースで探索できる</figcaption>
+</figure>
+
+<p>ダークソウルシリーズのフロム・ソフトウェアと、George R.R. Martinが組んだオープンワールド死にゲーの金字塔。</p>
+
+<p>広大な狭間の地を自由に探索しながら、自分のペースでボスに挑めるのが従来シリーズとの最大の違いです。詰まったら別エリアを探索して強くなってから戻れる。この設計が、死にゲー初心者への間口を一気に広げました。それでいてボスの理不尽な強さと、倒せた時の達成感はフロムらしさそのもの。DLCのShadow of the Erdtree込みでのボリュームと密度は、今なお業界トップクラスです。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%A8%E3%83%AB%E3%83%87%E3%83%B3%E3%83%AA%E3%83%B3%E3%82%B0+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2582%25A8%25E3%2583%25AB%25E3%2583%2587%25E3%2583%25B3%25E3%2583%25AA%25E3%2583%25B3%25E3%2582%25B0%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%A8%E3%83%AB%E3%83%87%E3%83%B3%E3%83%AA%E3%83%B3%E3%82%B0" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第8位：Baldur's Gate 3（時間が溶ける、自由すぎるRPG）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204095830.png" alt="Baldur's Gate 3 の会話シーン" width="1200" height="649" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>選択肢ひとつで世界の運命が分岐する</figcaption>
+</figure>
+
+<p>これ、軽々しく人に勧められないゲームです。なぜなら、時間が溶けすぎるから。</p>
+
+<p>選択肢ひとつで世界の運命が分岐し、NPCの生死から街の存亡までが変わります。自由度が高い、という言葉では片付けられないほど、プレイヤーの数だけ違う物語が生まれる。TRPG（テーブルトークRPG）のルールがベースなので最初はシステムに戸惑いましたが、慣れてくると樽を投げて敵を倒す、会話だけでボスを追い込むといった、なんでもありな攻略の泥沼にハマっていきます。これは沼です。覚悟して入ってください。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Baldur%27s+Gate+3&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FBaldur%27s%2BGate%2B3%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Baldur%27s+Gate+3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/11/14/183448">【序盤 挫折】バルダーズゲート3が「つまらない」と感じた私。10時間苦行の末に「神ゲーの正体」に気づくまで。</a></p>
+</div>
+
+<h3 class="sub-head">第9位：ELDEN RING: Nightreign（協力特化の新しい死にゲー）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204101237.png" alt="ELDEN RING Nightreign の協力プレイ" width="1200" height="648" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>最初から最後までフレンドとシームレスに探索できる</figcaption>
+</figure>
+
+<p>同じエルデンリングの名を冠していますが、こちらは協力プレイに完全特化した別物です。これまでの召喚サインのような一時的な共闘ではなく、広大なフィールドを最初から最後までフレンドと一緒に探索できるシームレスな体験が実装されました。</p>
+
+<p>難易度はマルチ前提のため極悪。でも、強敵に挑むMMO的な楽しさを、あのフロムのアクションで味わえるのが画期的です。ソロで心を折られた人も、仲間となら越えられる壁がある。そんな新しい死にゲーの形でした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=ELDEN+RING+NIGHTREIGN&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FELDEN%2BRING%2BNIGHTREIGN%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=ELDEN+RING+NIGHTREIGN" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/12/08/185024">ELDEN RING: Nightreign レビュー・感想</a></p>
+</div>
+
+<h3 class="sub-head">第10位：Stellar Blade（手触りも世界観も、そして衣装も）</h3>
+
+<p><span class="game-info">対応機種：PS5 / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204101354.png" alt="Stellar Blade の戦闘" width="1185" height="640" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>荒廃した地球を舞台にした美しいアクション</figcaption>
+</figure>
+
+<p>マイルドなソウルライクとして、アクション初心者から上級者まで楽しめるバランスが絶妙でした。</p>
+
+<p>ジャストガードと回避を駆使する戦闘は、成功時のカキンというSEとエフェクトが気持ちよく、中毒性があります。ニーア オートマタの影響を強く受けた荒廃した地球の世界観も美しい。そして何より、主人公イヴの衣装（ナノスーツ）のバリエーションが豊富です。制作陣の叡智とフェティシズムが爆発していて、着せ替えを楽しむだけでも元が取れるクオリティでした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Stellar+Blade&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FStellar%2BBlade%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Stellar+Blade" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第11位：Marvel's Spider-Man 2（エンタメの王道を突き進む爽快感）</h3>
+
+<p><span class="game-info">対応機種：PS5 / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260316/20260316101951.png" alt="Marvel's Spider-Man 2 のスイング" width="1190" height="646" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>広大なニューヨークを縦横無尽に駆け回る</figcaption>
+</figure>
+
+<p>インソムニアック・ゲームズが贈る、PS5の看板タイトルのひとつ。マイルスとピーターの二大スパイダーマンを切り替えながら、広大なニューヨークを縦横無尽に駆け回る爽快感はシリーズ最高水準です。</p>
+
+<p>ブラック・スーツが解放されてからのヴェノム・パワーを使った攻撃的なコンボが気持ちよく、ウェブウィングによる滑空で移動の自由度も段違い。ストーリーの感情的な厚みも健在で、ヒーロー映画の中にいる感覚がずっと続きます。エンタメの王道を突き進む、万人にオススメできる一本です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://amzn.to/4ru6qHz" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://a.r10.to/h5l2YB" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%83%91%E3%82%A4%E3%83%80%E3%83%BC%E3%83%9E%E3%83%B3+PS5" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/04/02/121718">Marvel's Spider-Man 2 レビュー・感想</a></p>
+</div>
+
+<h3 class="sub-head">第12位：Monster Hunter Wilds（狩猟体験の進化、シリーズ最高峰）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204101516.png" alt="Monster Hunter Wilds の狩猟シーン" width="582" height="631" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ロードを挟まない完全シームレスなフィールド</figcaption>
+</figure>
+
+<p>狩猟体験の進化という点で、間違いなくシリーズ最高峰です。</p>
+
+<p>最大の特徴は、ロードを挟まない完全シームレスなフィールドと、モンスターのリアルな生態系。群れからはぐれた個体が他の肉食獣に狙われたり、天候変化で行動が変わったりと、生きている世界に介入する感覚が強化されました。新システムの集中モードによる傷口への集中攻撃も爽快で、武器ごとのアクションの深みも増しています。発売直後はボリューム不足で賛否が割れた本作ですが、アップデートでかなり改善されました。今から始めるなら、むしろ良いタイミングです。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Monster+Hunter+Wilds&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FMonster%2BHunter%2BWilds%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Monster+Hunter+Wilds" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/11/20/104254">【モンハンワイルズ評価】中古1000円で買える今が始めどき。アプデで改善した「モンハン」らしさ。</a></p>
+</div>
+
+<h3 class="sub-head">第13位：バイオハザード レクイエム（30周年、緩急の天才的設計）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260316/20260316102324.png" alt="バイオハザード レクイエム" width="1142" height="621" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>新主人公グレースと、おなじみレオンの二人体制</figcaption>
+</figure>
+
+<p>バイオシリーズ生誕30周年記念のナンバリング最新作（バイオ9相当）。待望のレオン復帰作でもあり、ファンとして感慨深いものがありました。</p>
+
+<p>最大の特徴は、新主人公でFBI分析官のグレースと、おなじみレオンという性格の全く異なる二人でゲームプレイが切り替わる構成です。グレースパートは弾薬・回復が乏しく、ゾンビを避けながら進む王道ホラー。レオンパートはRE:4譲りの爽快なアクションでゾンビをなぎ倒す快感。グレースでビビって、レオンで発散する。この緩急の設計にまんまとやられました。原点のラクーン事件をモチーフにした恐怖演出と、30周年らしいファンへのご褒美感は最高です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://amzn.to/4sLTSfs" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://a.r10.to/hP4t4q" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%90%E3%82%A4%E3%82%AA%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%89+%E3%83%AC%E3%82%AF%E3%82%A4%E3%82%A8%E3%83%A0" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h2 class="section-head">第14位〜第22位：名作・スルメゲーたち</h2>
+
+<h3 class="sub-head">第14位：モンスターハンターストーリーズ3（絆システムの完成形）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / Nintendo Switch / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407100809.png" alt="モンスターハンターストーリーズ3" width="605" height="313" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ライダーとしてモンスターと絆を結ぶRPG</figcaption>
+</figure>
+
+<p>モンハンの世界観を活かしたRPGシリーズの最新作。ハンターではなくライダーとしてモンスターと絆を結び、一緒に戦う体験がシリーズの核心ですが、今作でその完成度がさらに上がりました。</p>
+
+<p>育成の幅、ストーリーの厚み、絆システムの奥深さ。すべてにおいて前作を超えています。ワイルズと同じモンスターが別の文脈で出てくる面白さもあり、両作をプレイしているとニヤリとするシーンが多数。モンハンが好きな人にもRPGが好きな人にも刺さる、珠玉の一本です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA3&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25A2%25E3%2583%25B3%25E3%2582%25B9%25E3%2582%25BF%25E3%2583%25BC%25E3%2583%258F%25E3%2583%25B3%25E3%2582%25BF%25E3%2583%25BC%25E3%2582%25B9%25E3%2583%2588%25E3%2583%25BC%25E3%2583%25AA%25E3%2583%25BC%25E3%2582%25BA3%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/03/04/161623">モンスターハンターストーリーズは1からやるべき？【クリア後レビュー】</a></p>
+</div>
+
+<h3 class="sub-head">第15位：ファンタジーライフ i（ゆるく、でも深いスローライフRPG）</h3>
+
+<p><span class="game-info">対応機種：Nintendo Switch / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407100857.png" alt="ファンタジーライフ i" width="1200" height="662" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ライフを自由に変えて気ままに暮らす</figcaption>
+</figure>
+
+<p>ライフと呼ばれる職業を自由に変えながら、農業・釣り・戦闘・錬金術などを気ままに楽しむスローライフRPGの最新作。Level-5らしい丁寧なチュートリアルと温かみのある世界観はそのままに、システムが大幅に進化しました。</p>
+
+<p>特にフレンドとのマルチプレイが快適になったのが大きい。各自が違うライフを担当して分業するスタイルが楽しく、気づけば今日はみんなで農業しようという謎の充実感に包まれます。ゆるく、でも深く遊べる一本です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2595%25E3%2582%25A1%25E3%2583%25B3%25E3%2582%25BF%25E3%2582%25B8%25E3%2583%25BC%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%2595%2BSwitch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95i" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/09/151841">ファンタジーライフ i レビュー・感想</a></p>
+</div>
+
+<h3 class="sub-head">第16位：真・三國無双 ORIGINS（原点回帰した大規模バトルの迫力）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407101009.png" alt="真・三國無双 ORIGINS" width="1190" height="643" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>戦場の混沌をリアルに再現した大規模バトル</figcaption>
+</figure>
+
+<p>無双シリーズの原点回帰にして、グラフィックと戦闘システムが現代水準に生まれ変わった一本です。</p>
+
+<p>数百体の敵をなぎ倒す爽快感は健在。それに加えて、今作は戦場の混沌をリアルに再現した大規模バトルの迫力が段違いです。霧の中から敵軍が押し寄せてくる演出は、かつての無双にはなかったスペクタクル感があります。三国志の世界観が好きな方には、特に刺さるはずです。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E7%9C%9F%E4%B8%89%E5%9C%8B%E7%84%A1%E5%8F%8C+ORIGINS+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%259C%259F%25E4%25B8%2589%25E5%259C%258B%25E7%2584%25A1%25E5%258F%258C%2BORIGINS%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E7%9C%9F%E4%B8%89%E5%9C%8B%E7%84%A1%E5%8F%8C+ORIGINS" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第17位：紅の砂漠（じわじわ味が出るオープンワールド）</h3>
+
+<p><span class="game-info">対応機種：PS5 / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260407/20260407101116.png" alt="紅の砂漠 のフィールド" width="1200" height="647" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ロアの深さに引き込まれる骨太なRPG</figcaption>
+</figure>
+
+<p>Pearl Abyss（黒い砂漠の開発元）が放つオープンワールドアクションRPG。長い開発期間を経てリリースされた本作は、その待ち時間を納得させるクオリティに仕上がっていました。</p>
+
+<p>荒廃した砂漠の世界を舞台に、主人公がひとつの傭兵団を率いながら激動の時代を生き抜くストーリーが骨太。アクションの手触りと映像の迫力は、AAA作品の中でも上位に食い込みます。世界観の作り込みがとにかく濃く、ロアの深さに引き込まれました。発売当初は賛否両論でしたが、プレイすればするほど味がしてくるゲーム。オープンワールド好きなら必見のタイトルです。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E7%B4%85%E3%81%AE%E7%A0%82%E6%BC%A0+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%25B4%2585%25E3%2581%25AE%25E7%25A0%2582%25E6%25BC%25A0%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E7%B4%85%E3%81%AE%E7%A0%82%E6%BC%A0" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第18位：ペルソナ3 リロード（結末を知っていても涙腺が崩壊する）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102055.png" alt="ペルソナ3 リロード" width="1200" height="665" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ペルソナ5水準のスタイリッシュなUIで蘇る</figcaption>
+</figure>
+
+<p>オリジナル版を遊び尽くした身としても、今回のリメイクには感動しました。ペルソナ5水準のスタイリッシュなUIと、再構築された3Dモデルで描かれる影時間。追加DLCのEpisode Aegisも含め、ストーリーの重厚さは色褪せません。結末を知っていても涙腺が崩壊する、青春RPGの金字塔です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A3+%E3%83%AA%E3%83%AD%E3%83%BC%E3%83%89+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%259A%25E3%2583%25AB%25E3%2582%25BD%25E3%2583%258A3%2B%25E3%2583%25AA%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2589%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%9A%E3%83%AB%E3%82%BD%E3%83%8A3+%E3%83%AA%E3%83%AD%E3%83%BC%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第19位：メタファー：リファンタジオ（ペルソナ班が挑んだ、ファンタジーRPGの新基準）</h3>
+
+<p><span class="game-info">対応機種：PS5 / PS4 / Xbox Series X|S / PC（Switch2版は2026年11月〜）</span></p>
+
+<!-- 画像プレースホルダー：メタファー：リファンタジオのスクリーンショット（fotolife）をここに挿入してください -->
+
+<p>ペルソナ3の流れで、もう一本。同じアトラスのペルソナ班（橋野桂監督ら）が、本気でファンタジーRPGに挑んだのがこれです。</p>
+
+<p>アーキタイプと呼ばれるジョブの組み合わせが、とにかく止まらない。次はこの型を試したい、が延々と続いて夜が溶けます。フィールドのアクションとコマンドバトルを地続きにしたファスト＆スクワッドの戦闘もテンポが良く、雑魚はシームレスに、強敵はじっくりと、流れるように切り替わる。メニューを開くだけで楽しい、あの病的にカッコいいUIも健在です。</p>
+
+<p>そして何より、恐怖と向き合うことで人は変われるのか、という骨太なテーマ。現実の不安と地続きの世界観が、ずっしり刺さってきます。鎧戦車での仲間との旅路もペルソナ譲りの濃さで、気づけば全員に情が移っていました。序盤のMP枯渇のしんどさや、移動中のロードなど、人を選ぶ部分は正直あります。でも、そこを越えたら完全に沼。ここ数年のRPGで、いちばん熱中した一本でした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A1%E3%82%BF%E3%83%95%E3%82%A1%E3%83%BC+%E3%83%AA%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%82%AA&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25A1%25E3%2582%25BF%25E3%2583%2595%25E3%2582%25A1%25E3%2583%25BC%2B%25E3%2583%25AA%25E3%2583%2595%25E3%2582%25A1%25E3%2583%25B3%25E3%2582%25BF%25E3%2582%25B8%25E3%2582%25AA%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%A1%E3%82%BF%E3%83%95%E3%82%A1%E3%83%BC+%E3%83%AA%E3%83%95%E3%82%A1%E3%83%B3%E3%82%BF%E3%82%B8%E3%82%AA" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/10/104533">メタファー：リファンタジオ レビュー・感想</a></p>
+</div>
+
+<h3 class="sub-head">第20位：FINAL FANTASY VII REBIRTH（旧作ファンが夢見た光景）</h3>
+
+<p><span class="game-info">対応機種：PS5</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102206.png" alt="FINAL FANTASY VII REBIRTH" width="1200" height="648" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>広大なワールドマップをチョコボで駆け巡る</figcaption>
+</figure>
+
+<p>広大なワールドマップをチョコボで駆け巡る開放感は、旧作ファンが夢見た光景そのものでした。連携アクションによる戦闘の爽快感はRPG屈指。ミニゲームの量については賛否が分かれましたが、それを差し引いても、忘らるる都までの旅路を描ききった開発陣の熱量には脱帽です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=FF7+REBIRTH&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FFF7%2BREBIRTH%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=FF7+REBIRTH" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第21位：Kingdom Come: Deliverance II（ゲームというよりシミュレーター）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox Series X|S / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204101705.png" alt="Kingdom Come Deliverance II" width="1200" height="502" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>中世ボヘミアの生活を狂気的なこだわりで再現</figcaption>
+</figure>
+
+<p>中世ボヘミアの生活を、狂気的なまでのこだわりで再現したRPGの続編です。魔法もドラゴンも登場しません。あるのは、空腹、汚れ、怪我、そして身分差といった現実だけ。主人公ヘンリーはただの鍛冶屋の息子で、剣を振るうのも最初は下手くそです。でも、そのままならなさこそが本作の魅力。ゲームというよりシミュレーターに近い、没入感の塊でした。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Kingdom+Come+Deliverance+II&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FKingdom%2BCome%2BDeliverance%2BII%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Kingdom+Come+Deliverance+2" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/11/25/172048">【KDC2レビュー】キングダムカム・デリバランスはつまらないのか。ロールプレイしてこそ沼にハマれる神ゲーと感じられるまでの軌跡</a></p>
+</div>
+
+<h3 class="sub-head">第22位：Palworld（可愛さと労働の世知辛さが同居する）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102256.png" alt="Palworld の拠点" width="1185" height="636" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>パルを労働力として活用するサバイバルクラフト</figcaption>
+</figure>
+
+<p>パルと呼ばれる生物を捕獲し、戦わせるだけでなく、拠点の労働力としても活用するサバイバルクラフトゲーム。話題性先行かと思いきや、建築・自動化・探索のループが非常に丁寧で、気づけば拠点のライン工場の最適化に数時間を費やしています。可愛さと労働の世知辛さが同居する、独特のプレイ感は唯一無二です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Palworld+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FPalworld%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Palworld" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h2 class="section-head">第23位〜第27位：まだまだ推せるゲームたち</h2>
+
+<h3 class="sub-head">第23位：ARMORED CORE VI（思考と工夫で乗り越える快感）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / Xbox One・Series / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260316/20260316102417.png" alt="ARMORED CORE VI" width="791" height="418" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>機体をパーツごとカスタマイズして挑む</figcaption>
+</figure>
+
+<p>フロム・ソフトウェアが贈るメカアクションの復活作。機体をパーツごとにカスタマイズして自分だけの兵器を組み上げ、ミッションに挑むループが中毒性抜群。失敗するたびに次は足回りを変えよう、武器の組み合わせを変えたら勝てるかもと試行錯誤が止まりません。思考と工夫で乗り越えていく快感は唯一無二です。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://amzn.to/415i3cX" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://a.r10.to/hPHSQi" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=ARMORED+CORE+6" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第24位：Split Fiction（仲の良い友人と遊んでほしい協力ゲー）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102801.png" alt="Split Fiction の画面分割プレイ" width="1193" height="652" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>画面分割を利用したギミックが秀逸</figcaption>
+</figure>
+
+<p>It Takes Twoのような二人協力プレイ必須のジャンルに現れた新星。画面分割を利用したギミックが秀逸で、一人が過去、一人が未来を操作して因果関係を修正するといったパズル要素が脳を刺激します。パートナーと声を掛け合わないと絶対にクリアできない仕様なので、仲の良い友人と遊ぶことを強く推奨します。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Split+Fiction&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FSplit%2BFiction%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Split+Fiction" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/23/152726">「A Way Out」にハマってHazelight 制作のゲーム「It Takes Two」「Split Fiction」をプレイした話</a></p>
+</div>
+
+<h3 class="sub-head">第25位：ロマンシング サガ2 リベンジオブザセブン（歴史の重みを3Dで再現）</h3>
+
+<p><span class="game-info">対応機種：PS4 / PS5 / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102846.png" alt="ロマンシング サガ2 リベンジオブザセブン" width="1200" height="657" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>皇帝継承システムによる歴史の重み</figcaption>
+</figure>
+
+<p>皇帝継承システムによる歴史の重みを3Dで完全再現。戦闘にはタイムライン要素が加わり、敵の行動順を見極めて連携を叩き込む戦略性が増しています。難易度は相変わらず高めですが、全滅しても能力を引き継げる救済措置もあり、試行錯誤が楽しいバランスに仕上がっています。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0+%E3%82%B5%E3%82%AC2+%E3%83%AA%E3%83%99%E3%83%B3%E3%82%B8%E3%82%AA%E3%83%96%E3%82%B6%E3%82%BB%E3%83%96%E3%83%B3+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%25AD%25E3%2583%259E%25E3%2583%25B3%25E3%2582%25B7%25E3%2583%25B3%25E3%2582%25B0%2B%25E3%2582%25B5%25E3%2582%25AC2%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B7%E3%83%B3%E3%82%B0%E3%82%B5%E3%82%AC2+%E3%83%AA%E3%83%99%E3%83%B3%E3%82%B8%E3%82%AA%E3%83%96%E3%82%B6%E3%82%BB%E3%83%96%E3%83%B3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第26位：牧場物語 ワンダフルライフ（人生の老いをテーマにした異色作）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102353.png" alt="牧場物語 ワンダフルライフ" width="1192" height="643" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>時間経過と老いをテーマにした牧場物語</figcaption>
+</figure>
+
+<p>人生の時間経過と老いをテーマにした、異色の牧場物語のリメイク。結婚し、子供が生まれ、自分も村人も年を取っていく。ただ作物を育てるだけでなく、限られた人生の中で誰とどう過ごすかを問いかけてくる作品です。今でも遜色なく楽しめます。個人的には、音楽がほのぼのしていて好き。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E7%89%A7%E5%A0%B4%E7%89%A9%E8%AA%9E+%E3%83%AF%E3%83%B3%E3%83%80%E3%83%95%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%95+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E7%2589%25A7%25E5%25A0%25B4%25E7%2589%25A9%25E8%25AA%259E%2B%25E3%2583%25AF%25E3%2583%25B3%25E3%2583%2580%25E3%2583%2595%25E3%2583%25AB%25E3%2583%25A9%25E3%2582%25A4%25E3%2583%2595%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E7%89%A7%E5%A0%B4%E7%89%A9%E8%AA%9E+%E3%83%AF%E3%83%B3%E3%83%80%E3%83%95%E3%83%AB%E3%83%A9%E3%82%A4%E3%83%95" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">第27位：ドラゴンクエストI＆II HD-2D版（ロト三部作の原点が蘇る）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Xbox / PC</span></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251204/20251204102940.png" alt="ドラゴンクエストI＆II HD-2D版" width="1200" height="646" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>美しいドット絵と3D背景の融合で蘇った原点</figcaption>
+</figure>
+
+<p>ロト三部作の原点が、美しいドット絵と3D背景の融合で蘇りました。特にIの、たった一人で竜王に挑む孤独感の表現が素晴らしい。いばらの道（高難易度）でプレイしましたが、しっかりレベルを上げ、薬草を買い込まないと雑魚敵にすら撲殺されるバランス調整が、冒険しているという実感を与えてくれました。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88I%26II+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2589%25E3%2583%25A9%25E3%2582%25B4%25E3%2583%25B3%25E3%2582%25AF%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%2588I%26II%2BPS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88I%26II+HD-2D" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<h3 class="sub-head">番外編：ドラゴンクエストVII リイマジンド（こちらは神ゲーではない。でも、手は止まらなかった）</h3>
+
+<p><span class="game-info">対応機種：PS5 / Nintendo Switch 2 / Nintendo Switch / Xbox Series X|S / Steam</span></p>
+
+<!-- 画像プレースホルダー：ドラゴンクエストVII リイマジンドのスクリーンショット（fotolife）をここに挿入してください -->
+
+<p>ロト三部作つながりで、もう一本だけ正直に書いておきます。同じ時期に出たドラゴンクエストVII リイマジンド。これは、神ゲーとは言いません。</p>
+
+<p>ロト三部作のHD-2Dリメイク（I・IIや、その前のIII）と比べると、手応えが正直あと一歩でした。標準難易度だと、ほぼ自動戦闘で進んでしまう場面も多い。ただ、これはたぶん私がコア層に寄りすぎているせいでもあります。テンポは歴代でもトップクラスに快適で、ドールルックの温かいビジュアルとフルボイス化も相まって、とにかく止まらない。軽く触るつもりが、気づけば40時間を超えていました。なんだかんだ、手は止まらなかったわけです。</p>
+
+<p>だからこう言いたい。RPGはやりたい、でもドット絵のリメイクよりもっと今風の3Dで遊びたい。そういう人にはむしろこっちが合います。原点をドットの手触りで噛みしめたいならI＆II、快適な3Dの大冒険を浴びたいならVII。その選び方でいいと思います。</p>
+
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%887+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2589%25E3%2583%25A9%25E3%2582%25B4%25E3%2583%25B3%25E3%2582%25AF%25E3%2582%25A8%25E3%2582%25B9%25E3%2583%25887%2B%25E3%2583%25AA%25E3%2582%25A4%25E3%2583%259E%25E3%2582%25B8%25E3%2583%25B3%25E3%2583%2589%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%887+%E3%83%AA%E3%82%A4%E3%83%9E%E3%82%B8%E3%83%B3%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/06/23/191046">ドラゴンクエストVII リイマジンド レビュー・感想</a></p>
+</div>
+
+<h2 class="section-head">まとめ：豊作すぎた一年を振り返って</h2>
+
+<p>以上、完全に個人的な神ゲーTOP27でした。改めて並べてみると、本当に豊作です。年明けにも仁王3やバイオハザード レクイエムといった強力タイトルが続いて、財布と睡眠時間が壊滅的なことになっています。</p>
+
+<p>気になった一本があれば、新品にこだわらず中古から入るのも全然アリです。特に過去作や賛否の割れたタイトルは、メルカリだと驚くほど安く手に入ることがあります。私もモンハンワイルズは中古でサクッと買い直しました。</p>
+
+<p>あなたの今年のベストゲームは何でしたか。Switchメインで遊んでいる方向けのまとめも用意していますので、よければそちらも覗いてみてください。</p>
+
+<div class="note-box"><span class="note-label">補足：</span>本記事は2026年6月時点での筆者のプレイ感想に基づいています。アップデートや追加DLCで、現在の評価とは印象が変わっている作品もあるかもしれません。</div>
+
+<hr style="margin: 30px 0; border: 0; border-top: 1px solid #eee;" />
+
+<p style="font-size: 13px; color: #888;">画像出典・参照：各ゲーム公式サイト、Steamストアページ、公式トレーラー</p>
