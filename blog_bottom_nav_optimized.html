@@ -233,13 +233,42 @@ document.addEventListener('DOMContentLoaded', function() {
       .catch(function() { return ''; });
   }
 
-  function build() {
+  // --- 1) 先に枠（スケルトン）を入れてスペースを確保する（CLS対策）---
+  // 既存の .recommended-card / .recommended-thumb のCSSが大きさを決めるので、
+  // 後からデータを流し込んでもレイアウトがズレない。失敗時は枠ごと撤去する。
+  var comments = document.querySelector('.comment-box');
+  var entryFooter = document.querySelector('.entry-footer');
+
+  var section = document.createElement('div');
+  section.className = 'recommended-articles';
+  section.style.visibility = 'hidden';  // 埋まるまで非表示（場所だけ確保される）
+  var skeleton = '<h3 class="recommended-title"><i class="fa-solid fa-star"></i> あなたへのおすすめ</h3><div class="recommended-grid">';
+  for (var s = 0; s < 4; s++) {
+    skeleton += '<a class="recommended-card" href="#" tabindex="-1"><div class="recommended-thumb"></div><div class="recommended-text"></div></a>';
+  }
+  skeleton += '</div>';
+  section.innerHTML = skeleton;
+
+  if (comments && comments.parentNode) {
+    comments.parentNode.insertBefore(section, comments);
+  } else if (entryFooter && entryFooter.parentNode) {
+    entryFooter.parentNode.insertBefore(section, entryFooter.nextSibling);
+  } else {
+    return;
+  }
+
+  function removeSection() {
+    if (section && section.parentNode) section.parentNode.removeChild(section);
+  }
+
+  // --- 2) 確保した枠にデータを流し込む ---
+  function fill() {
     getEntries()
       .then(function(entries) {
         entries = entries.filter(function(entry) {
           return entry.href.indexOf(currentPath) === -1;
         });
-        if (entries.length === 0) return;
+        if (entries.length === 0) { removeSection(); return; }
 
         var picked = entries.slice().sort(function() { return 0.5 - Math.random(); }).slice(0, 4);
 
@@ -247,39 +276,36 @@ document.addEventListener('DOMContentLoaded', function() {
           return getOgImage(article.href).then(function(img) {
             return { title: article.title, href: article.href, image: img };
           });
-        })).then(function(articlesWithImages) {
-          var section = document.createElement('div');
-          section.className = 'recommended-articles';
-          var html2 = '<h3 class="recommended-title"><i class="fa-solid fa-star"></i> あなたへのおすすめ</h3><div class="recommended-grid">';
-
-          articlesWithImages.forEach(function(article) {
-            html2 += '<a class="recommended-card" href="' + article.href + '">';
-            html2 += '<div class="recommended-thumb"' + (article.image ? ' style="background-image:url(' + article.image + ')"' : '') + '></div>';
-            html2 += '<div class="recommended-text">' + article.title + '</div></a>';
+        })).then(function(list) {
+          var cards = section.querySelectorAll('.recommended-card');
+          list.forEach(function(article, idx) {
+            var card = cards[idx];
+            if (!card) return;
+            card.setAttribute('href', article.href);
+            card.removeAttribute('tabindex');
+            var thumb = card.querySelector('.recommended-thumb');
+            if (thumb && article.image) thumb.style.backgroundImage = 'url(' + article.image + ')';
+            var text = card.querySelector('.recommended-text');
+            if (text) text.textContent = article.title;
           });
-
-          html2 += '</div>';
-          section.innerHTML = html2;
-
-          var comments = document.querySelector('.comment-box');
-          var entryFooter = document.querySelector('.entry-footer');
-          if (comments && comments.parentNode) {
-            comments.parentNode.insertBefore(section, comments);
-          } else if (entryFooter && entryFooter.parentNode) {
-            entryFooter.parentNode.insertBefore(section, entryFooter.nextSibling);
+          // 取得数が4未満なら余った枠を撤去
+          for (var k = list.length; k < cards.length; k++) {
+            if (cards[k] && cards[k].parentNode) cards[k].parentNode.removeChild(cards[k]);
           }
+          section.style.visibility = '';  // 表示
         });
       })
       .catch(function(error) {
         console.error('おすすめ記事の読み込みに失敗:', error);
+        removeSection();
       });
   }
 
   // 重い取得・解析は初期描画を邪魔しないようアイドル時に回す（LCP/INP対策）
   if ('requestIdleCallback' in window) {
-    requestIdleCallback(build, { timeout: 3000 });
+    requestIdleCallback(fill, { timeout: 3000 });
   } else {
-    setTimeout(build, 1200);
+    setTimeout(fill, 1200);
   }
 });
 </script>
