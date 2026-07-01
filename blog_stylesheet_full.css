@@ -475,12 +475,15 @@ span.date,
    広告枠・画像の高さを"先に予約"して本文(#content)が飛ぶのを防ぐ。
    ============================================================ */
 
-/* 1) 広告枠の高さを予約（CLSの主因）。
-      ※広告が来るまで下に余白が出るが、シフトよりは無害。微調整可。 */
-.adsense-in-feed,
-ins.adsbygoogle {
-  display: block;
+/* 1) 自分で設置した広告枠"だけ"高さを予約する。
+      ★ins.adsbygoogle を丸ごと指定しないこと！
+        アンカー広告・自動広告まで巻き込んで表示が壊れる（280pxの塊化）。
+        あくまで自作クラスの枠だけに絞る。 */
+.adsense-in-feed {
   min-height: 280px;
+}
+.adsense-in-article {
+  min-height: 250px;
 }
 
 /* 2) 記事上部の広告エリア（本文を下に押し出す本命＝CLSの張本人）。
@@ -490,12 +493,7 @@ ins.adsbygoogle {
   min-height: 250px;
 }
 
-/* 3) 本文中に自動挿入されるAdSense（インフィード以外）。 */
-.entry-content ins.adsbygoogle {
-  min-height: 250px;
-}
-
-/* 4) 画像のアスペクト比を維持（防御的）。遅延読み込みでも場所がズレない。 */
+/* 3) 画像のアスペクト比を維持（防御的）。遅延読み込みでも場所がズレない。 */
 .entry-content img,
 .hatena-fotolife,
 figure img {
@@ -503,7 +501,7 @@ figure img {
   max-width: 100%;
 }
 
-/* 5) 埋め込みカード(iframe)の枠を明示してシフト防止。 */
+/* 4) 埋め込みカード(iframe)の枠を明示してシフト防止。 */
 .embed-card {
   min-height: 155px;
 }

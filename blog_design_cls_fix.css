@@ -9,14 +9,14 @@
    本文ブロック(#content)が押し下げられて飛ぶのを防ぐ。
    ============================================================ */
 
-/* 1) 広告枠の高さを予約（CLSの主因）
-      AdSenseが差し込まれる前から場所を確保しておく。
-      ※広告がまだ来ないと下に余白が出るが、シフトよりは無害。
-        実際の広告高さに合わせて数値は微調整可。 */
-.adsense-in-feed,
-ins.adsbygoogle {
-  display: block;
+/* 1) 自分で設置した広告枠"だけ"高さを予約する。
+      ★ins.adsbygoogle を丸ごと指定してはいけない。
+        アンカー広告・自動広告まで巻き込み、280pxの塊に化けて表示が壊れる。 */
+.adsense-in-feed {
   min-height: 280px;
+}
+.adsense-in-article {
+  min-height: 250px;
 }
 
 /* 記事上部の広告エリア（本文を下に押し出す最有力＝CLSの本命）。
@@ -24,11 +24,6 @@ ins.adsbygoogle {
      予約が足りない→まだ少しズレる／予約しすぎ→ナビと記事の間に空白。
      まず250pxで様子を見て、実際の広告高さに微調整する。 */
 #top-editarea {
-  min-height: 250px;
-}
-
-/* 本文中に自動挿入されるAdSense（インフィード以外）。 */
-.entry-content ins.adsbygoogle {
   min-height: 250px;
 }
 
