@@ -20,10 +20,9 @@ ins.adsbygoogle {
 }
 
 /* 記事上部の広告エリア（本文を下に押し出す最有力）。
-   モバイルのレクタングル/バナーぶんを確保。 */
-.enable-top-editarea .top-editarea {
-  min-height: 100px;
-}
+   ※上部エリアに広告を置いている場合のみ有効化する。
+     広告が無いのに入れると毎ページ空白ができるので、その場合は削除。 */
+/* #top-editarea { min-height: 100px; } */
 
 /* 本文中に自動挿入されるAdSense（インフィード以外）。 */
 .entry-content ins.adsbygoogle {
