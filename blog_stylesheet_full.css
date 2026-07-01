@@ -1,0 +1,509 @@
+/* <system section="theme" selected="8599973812270629022"> */
+@import "https://usercss.blog.st-hatena.com/-/theme/8599973812270629022.css?version=6f6ac2e2c5b886ff583d590873c39b20d98c225a";
+/* </system> */
+
+/* <system section="background" selected="undefined"> */
+
+/* </system> */
+
+div.date,
+span.date,
+.entry-date {
+    display: none !important;
+}
+
+/* スマホのみヘッダー画像を調整 */
+@media (max-width: 600px) {
+  #blog-title-inner {
+    height: auto !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    width: 100% !important;
+    padding-bottom: 28% !important;
+  }
+  #blog-title {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  #header {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #top-editarea {
+    margin-top: 0 !important;
+  }
+}
+
+/* ヘッダー周りの余白を詰める */
+#blog-title {
+  margin-top: 0 !important;
+  padding-top: 10px !important;
+  padding-bottom: 0 !important;
+}
+#header {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+#top-editarea {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ヘッダー画像を画面幅いっぱいに */
+#blog-title-inner {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+#blog-title {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+#header {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* カテゴリナビ(ネイビー・白文字) */
+#header-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 4px 4px;
+  padding: 10px 20px;
+  margin: -50px auto 10px;
+  max-width: max-content;
+  background-color: #2c4d7a;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 0.95rem;
+  position: relative;
+  z-index: 10;
+}
+#header-categories .nav-divider {
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  user-select: none;
+  margin: 0 2px;
+}
+#header-categories a {
+  text-decoration: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  transition: background 0.3s, color 0.3s;
+  font-weight: 500;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+#header-categories a i {
+  font-size: 1.05em;
+}
+#header-categories a:hover {
+  background-color: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+/* Switchの簡易アイコン */
+#header-categories .switch-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+}
+#header-categories .switch-l,
+#header-categories .switch-r {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+}
+#header-categories .switch-l {
+  background: #e60012;
+  border-radius: 3px 0 0 3px;
+}
+#header-categories .switch-r {
+  background: #4ba3ff;
+  border-radius: 0 3px 3px 0;
+}
+
+/* スマホ用ナビ調整 */
+@media (max-width: 600px) {
+  #header-categories {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 2px;
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    margin: -25px 10px 8px;
+    max-width: calc(100% - 20px);
+    width: auto;
+  }
+  #header-categories::-webkit-scrollbar {
+    display: none;
+  }
+  #header-categories .nav-divider {
+    display: inline;
+    margin: 0 4px;
+  }
+  #header-categories a {
+    padding: 4px 8px;
+    flex-shrink: 0;
+  }
+}
+
+/* ============================ */
+/* 下部タブバー */
+/* ============================ */
+#bottom-tabbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  #bottom-tabbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.06);
+    z-index: 9998;
+    padding: 6px 0 calc(6px + env(safe-area-inset-bottom));
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  #bottom-tabbar a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 4px 2px;
+    text-decoration: none;
+    color: #555;
+    font-size: 0.7rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  #bottom-tabbar a i {
+    font-size: 1.2rem;
+  }
+  #bottom-tabbar a:hover,
+  #bottom-tabbar a:active {
+    color: #2c4d7a;
+  }
+  body {
+    padding-bottom: 70px !important;
+  }
+}
+
+/* ============================ */
+/* メニューオーバーレイ */
+/* ============================ */
+#bottom-menu-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  align-items: flex-end;
+}
+#bottom-menu-overlay.open {
+  display: flex;
+  animation: fadeIn 0.25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bottom-menu-panel {
+  width: 100%;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 16px 16px 0 0;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.bottom-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+}
+.bottom-menu-header span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+.bottom-menu-header button {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  color: #888;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 1;
+}
+
+.bottom-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+.bottom-menu-list li {
+  margin: 0;
+  padding: 0;
+}
+.bottom-menu-list li a {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+  transition: background 0.15s;
+}
+.bottom-menu-list li a:hover {
+  background: #f5f8fc;
+  color: #2c4d7a;
+}
+.bottom-menu-list li a i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+  color: #2c4d7a;
+}
+.bottom-menu-list li.sub a {
+  padding-left: 48px;
+  font-size: 0.88rem;
+  color: #555;
+}
+
+/* 区切り */
+.bottom-menu-divider {
+  margin: 16px 20px 8px;
+  font-size: 0.78rem;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+/* 別ブログカード */
+.bottom-menu-otherblog {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 20px 20px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #fff5e0, #ffe8d6);
+  border-radius: 14px;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.bottom-menu-otherblog:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #333;
+}
+.otherblog-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  color: #d68f3a;
+  flex-shrink: 0;
+}
+.otherblog-text {
+  flex: 1;
+}
+.otherblog-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2px;
+}
+.otherblog-desc {
+  font-size: 0.78rem;
+  color: #888;
+}
+.otherblog-arrow {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ============================ */
+/* メニュー内のサイト情報リスト */
+/* ============================ */
+.bottom-menu-list-sub li a {
+  font-size: 0.88rem;
+  color: #666;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.bottom-menu-list-sub li a i {
+  font-size: 1rem;
+  color: #888;
+}
+
+/* 記事中広告のはみ出し対策 */
+.adsense-in-article {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+/* ============================ */
+/* あなたへのおすすめ */
+/* ============================ */
+.recommended-articles {
+  margin: 40px 0;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, #f8fafc, #eef2f7);
+  border-radius: 16px;
+}
+.recommended-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2c4d7a;
+  margin: 0 0 20px;
+  text-align: center;
+}
+.recommended-title i {
+  color: #ffd54a;
+  margin-right: 6px;
+}
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.recommended-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.recommended-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  color: #2c4d7a;
+}
+.recommended-thumb {
+  width: 100%;
+  height: 100px;
+  background-size: cover;
+  background-position: center;
+  background-color: #ddd;
+}
+.recommended-text {
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  flex: 1;
+  font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .recommended-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .recommended-thumb {
+    height: 80px;
+  }
+  .recommended-text {
+    font-size: 0.78rem;
+    padding: 8px 10px;
+  }
+}
+/* PCでは4枚目を非表示 */
+.recommended-card:nth-child(4) {
+  display: none;
+}
+
+/* スマホでは4枚目も表示 */
+@media (max-width: 600px) {
+  .recommended-card:nth-child(4) {
+    display: flex;
+  }
+}
+
+/* ============================================================
+   ★ここから追記：CLS（レイアウトシフト）対策 ― 2026-07-01
+   この上の既存CSSは消さないこと。ここは一番下に足すだけ。
+   広告枠・画像の高さを"先に予約"して本文(#content)が飛ぶのを防ぐ。
+   ============================================================ */
+
+/* 1) 広告枠の高さを予約（CLSの主因）。
+      ※広告が来るまで下に余白が出るが、シフトよりは無害。微調整可。 */
+.adsense-in-feed,
+ins.adsbygoogle {
+  display: block;
+  min-height: 280px;
+}
+
+/* 2) 記事上部の広告エリア（本文を下に押し出す本命＝CLSの張本人）。
+      ★スマホ実機で上部広告の実高さを測り、その値に合わせる。
+        足りない→まだズレる／多すぎ→ナビと記事の間に空白。まず250pxで様子見。 */
+#top-editarea {
+  min-height: 250px;
+}
+
+/* 3) 本文中に自動挿入されるAdSense（インフィード以外）。 */
+.entry-content ins.adsbygoogle {
+  min-height: 250px;
+}
+
+/* 4) 画像のアスペクト比を維持（防御的）。遅延読み込みでも場所がズレない。 */
+.entry-content img,
+.hatena-fotolife,
+figure img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* 5) 埋め込みカード(iframe)の枠を明示してシフト防止。 */
+.embed-card {
+  min-height: 155px;
+}
