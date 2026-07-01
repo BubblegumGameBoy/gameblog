@@ -1,0 +1,120 @@
+<!-- ============================================================
+     フッターから削除したコードのバックアップ（2026-07-01）
+     検索・AdSense急落の調査のため、以下を一旦フッターから外した。
+     復元したい場合はこのファイルから該当ブロックを戻す。
+     ============================================================ -->
+
+<!-- ※ in-feed広告（JS動的注入）は「収益の要」のため削除せず維持。
+     footer_cleaned.html にそのまま残してある。 -->
+
+<!-- ▼【削除2】自作ゲーム導線を光らせるCSS（光るガイコツ） -->
+<style>
+#bottom-tabbar .tab-game{ color:#f4cf2c; }
+#bottom-tabbar .tab-game i{
+  animation:gamePulse 1.6s ease-in-out infinite;
+}
+@keyframes gamePulse{
+  0%,100%{ transform:scale(1); filter:drop-shadow(0 0 0 rgba(244,207,44,0)); }
+  50%{ transform:scale(1.18); filter:drop-shadow(0 0 5px rgba(244,207,44,.8)); }
+}
+</style>
+
+<!-- ▼【削除3】タブバー内の自作ゲーム(skull)リンク -->
+<a href="https://bubblegumgameboy.com/" class="tab-game" title="自作ゲーム">
+  <i class="fa-solid fa-skull"></i>
+  <span>自作ゲーム</span>
+</a>
+
+<!-- ▼【削除4】メニュー内「こちらもどうぞ／バブルガムの読書録」クロス導線 -->
+<div class="bottom-menu-divider">こちらもどうぞ</div>
+<a class="bottom-menu-otherblog" href="https://www.bubble-books.com/" target="_blank" rel="noopener">
+  <div class="otherblog-icon"><i class="fa-solid fa-book-open"></i></div>
+  <div class="otherblog-text">
+    <div class="otherblog-name">バブルガムの読書録</div>
+    <div class="otherblog-desc">読書ブログもやってます 📚</div>
+  </div>
+  <i class="fa-solid fa-arrow-right otherblog-arrow"></i>
+</a>
+
+<!-- ▼【削除5】メニュー内「その他／フィリピン生活」 -->
+<div class="bottom-menu-divider">その他</div>
+<ul class="bottom-menu-list">
+  <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%83%95%E3%82%A3%E3%83%AA%E3%83%94%E3%83%B3%E7%94%9F%E6%B4%BB"><i class="fa-solid fa-earth-asia"></i><span>フィリピン生活</span></a></li>
+</ul>
+
+<!-- ▼【削除6】あなたへのおすすめ（og:image版）＝記事を開くたびに計5ページをfetchする最重量スクリプト。最有力容疑。 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (!document.body.classList.contains('page-entry')) return;
+
+  var categoryLinks = document.querySelectorAll('.entry-categories a, .categories a');
+  if (categoryLinks.length === 0) return;
+
+  var categoryUrl = categoryLinks[0].href;
+  var currentPath = location.pathname;
+
+  fetch(categoryUrl)
+    .then(function(response) { return response.text(); })
+    .then(function(html) {
+      var parser = new DOMParser();
+      var doc = parser.parseFromString(html, 'text/html');
+      var entries = Array.from(doc.querySelectorAll('.archive-entry'));
+
+      entries = entries.filter(function(entry) {
+        var link = entry.querySelector('a.entry-title-link, .entry-title a, h1 a');
+        return link && !link.getAttribute('href').includes(currentPath);
+      });
+
+      if (entries.length === 0) return;
+
+      var shuffled = entries.sort(function() { return 0.5 - Math.random(); });
+      var picked = shuffled.slice(0, 4);
+
+      var articles = picked.map(function(entry) {
+        var link = entry.querySelector('a.entry-title-link, .entry-title a, h1 a');
+        return {
+          title: link ? link.textContent.trim() : '',
+          href: link ? link.href : '#'
+        };
+      });
+
+      Promise.all(articles.map(function(article) {
+        return fetch(article.href)
+          .then(function(r) { return r.text(); })
+          .then(function(html) {
+            var match = html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["']/);
+            article.image = match ? match[1] : '';
+            return article;
+          })
+          .catch(function() {
+            article.image = '';
+            return article;
+          });
+      })).then(function(articlesWithImages) {
+        var section = document.createElement('div');
+        section.className = 'recommended-articles';
+        var html2 = '<h3 class="recommended-title"><i class="fa-solid fa-star"></i> あなたへのおすすめ</h3><div class="recommended-grid">';
+
+        articlesWithImages.forEach(function(article) {
+          html2 += '<a class="recommended-card" href="' + article.href + '">';
+          html2 += '<div class="recommended-thumb"' + (article.image ? ' style="background-image:url(' + article.image + ')"' : '') + '></div>';
+          html2 += '<div class="recommended-text">' + article.title + '</div></a>';
+        });
+
+        html2 += '</div>';
+        section.innerHTML = html2;
+
+        var comments = document.querySelector('.comment-box');
+        var entryFooter = document.querySelector('.entry-footer');
+        if (comments && comments.parentNode) {
+          comments.parentNode.insertBefore(section, comments);
+        } else if (entryFooter && entryFooter.parentNode) {
+          entryFooter.parentNode.insertBefore(section, entryFooter.nextSibling);
+        }
+      });
+    })
+    .catch(function(error) {
+      console.error('おすすめ記事の読み込みに失敗:', error);
+    });
+});
+</script>

@@ -1,0 +1,127 @@
+<!-- ============================================================
+     フッター（軽量版・2026-07-01）
+     「あなたへのおすすめ」5ページfetchスクリプトと光るガイコツ等を撤去。
+     ★in-feed広告（収益の柱）は維持。
+     はてなの「フッタHTML」欄にはHTML編集モードで貼る。
+     ※削除したコードは footer_removed_backup.html に退避済み。
+     ============================================================ -->
+
+<!-- ▼ in-feed広告（index/archiveページ・収益の要のため維持） -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.body.classList.contains('page-index') || document.body.classList.contains('page-archive')) {
+
+        var articles = document.querySelectorAll('.archive-entry');
+        var insertPositions;
+        if (articles.length <= 10) {
+            insertPositions = [3, 8];
+        } else {
+            insertPositions = [3, 10, 20];
+        }
+
+        var adTemplate = `
+            <div class="adsense-in-feed" style="margin: 35px 0; text-align: center; border-top: 1px dotted #ccc; border-bottom: 1px dotted #ccc; padding: 25px 0;">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-format="fluid"
+                     data-ad-layout-key="-fn+1i-5s-la+1o6"
+                     data-ad-client="ca-pub-2203567155161909"
+                     data-ad-slot="7474576938"></ins>
+            </div>
+        `;
+        var reversedPositions = insertPositions.slice().sort(function(a, b) { return b - a; });
+        reversedPositions.forEach(function(pos) {
+            if (articles.length >= pos) {
+                articles[pos - 1].insertAdjacentHTML('afterend', adTemplate);
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            }
+        });
+    }
+});
+</script>
+
+<!-- ▼ 下部タブバー -->
+<nav id="bottom-tabbar" role="navigation" aria-label="下部ナビ">
+  <a href="https://babblegum.hatenablog.com/" title="ホーム">
+    <i class="fa-solid fa-house"></i>
+    <span>ホーム</span>
+  </a>
+  <a href="https://babblegum.hatenablog.com/archive/category/%E3%81%BD%E3%81%93%E3%81%82" title="ぽこあ">
+    <i class="fa-solid fa-bolt"></i>
+    <span>ぽこあ</span>
+  </a>
+  <a href="https://babblegum.hatenablog.com/archive/category/%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%EF%BC%88%E5%91%A8%E8%BE%BA%E6%A9%9F%E5%99%A8%EF%BC%89" title="ガジェット">
+    <i class="fa-solid fa-gear"></i>
+    <span>ガジェット</span>
+  </a>
+  <a href="https://babblegum.hatenablog.com/archive/category/%E3%83%AC%E3%83%88%E3%83%AD%E3%82%B2%E3%83%BC%E3%83%A0" title="レトロ">
+    <i class="fa-solid fa-gamepad"></i>
+    <span>レトロ</span>
+  </a>
+  <a href="#" id="bottom-tabbar-menu-btn" title="メニュー">
+    <i class="fa-solid fa-bars"></i>
+    <span>メニュー</span>
+  </a>
+</nav>
+
+<!-- ▼ メニューオーバーレイ -->
+<div id="bottom-menu-overlay">
+  <div class="bottom-menu-panel">
+    <div class="bottom-menu-header">
+      <span>メニュー</span>
+      <button id="bottom-menu-close-btn" aria-label="閉じる">×</button>
+    </div>
+    <ul class="bottom-menu-list">
+      <li><a href="https://babblegum.hatenablog.com/"><i class="fa-regular fa-newspaper"></i><span>最新記事</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/entry/2021/11/17/211242"><i class="fa-regular fa-user"></i><span>プロフィール</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%82%B2%E3%83%BC%E3%83%A0%E3%83%AC%E3%83%93%E3%83%A5%E3%83%BC"><i class="fa-regular fa-star"></i><span>ゲームレビュー</span></a></li>
+      <li class="sub"><a href="https://babblegum.hatenablog.com/archive/category/Steam"><i class="fa-brands fa-steam"></i><span>Steam</span></a></li>
+      <li class="sub"><a href="https://babblegum.hatenablog.com/archive/category/PS5"><i class="fa-brands fa-playstation"></i><span>PS5</span></a></li>
+      <li class="sub"><a href="https://babblegum.hatenablog.com/archive/category/Switch"><i class="fa-solid fa-gamepad"></i><span>Switch</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%81%BD%E3%81%93%E3%81%82"><i class="fa-solid fa-bolt" style="color:#f4cf2c;"></i><span>ぽこあ</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%82%BF%E3%82%A4%E3%83%94%E3%83%B3%E3%82%B0%E3%82%B2%E3%83%BC%E3%83%A0"><i class="fa-solid fa-keyboard"></i><span>タイピングゲーム</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%83%AC%E3%83%88%E3%83%AD%E3%82%B2%E3%83%BC%E3%83%A0"><i class="fa-solid fa-gamepad"></i><span>レトロゲーム</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E3%81%AE%E6%A3%AE"><i class="fa-solid fa-leaf"></i><span>どうぶつの森</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC"><i class="fa-solid fa-dragon"></i><span>モンスターハンター</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B3"><i class="fa-solid fa-seedling"></i><span>ピクミン</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/archive/category/%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88%EF%BC%88%E5%91%A8%E8%BE%BA%E6%A9%9F%E5%99%A8%EF%BC%89"><i class="fa-solid fa-gear"></i><span>ガジェット</span></a></li>
+    </ul>
+
+    <div class="bottom-menu-divider">サイト情報</div>
+    <ul class="bottom-menu-list bottom-menu-list-sub">
+      <li><a href="https://babblegum.hatenablog.com/about/contact"><i class="fa-regular fa-envelope"></i><span>お問い合わせ</span></a></li>
+      <li><a href="https://babblegum.hatenablog.com/about/privacy-policy"><i class="fa-solid fa-shield-halved"></i><span>プライバシーポリシー</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ▼ メニュー開閉スクリプト（軽量・維持） -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var openBtn = document.getElementById('bottom-tabbar-menu-btn');
+  var closeBtn = document.getElementById('bottom-menu-close-btn');
+  var overlay = document.getElementById('bottom-menu-overlay');
+
+  if (openBtn) {
+    openBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  }
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+});
+</script>
