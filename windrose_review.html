@@ -1,0 +1,253 @@
+<style>
+  h2.section-head { font-size: 118% !important; font-weight: bold !important; background-color: #555555 !important; color: #ffffff !important; padding: 10px 14px !important; border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important; box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff; margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important; }
+  h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
+  .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+  .note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+  .warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+  .warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+  .good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+  .bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+  .story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+  .story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #f9f9f9; }
+  .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+  .verdict-box { border: 2px solid #555555; border-radius: 6px; padding: 16px 20px; margin: 24px 0; background: #fafafa; }
+  .verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
+  .star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+  .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+  .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+  figure { margin: 16px 0; text-align: center; } figure img { max-width: 100%; height: auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+  ul { padding-left: 1.5em; } li { margin-bottom: 6px; line-height: 1.8; } p { margin-bottom: 1.4em; }
+  @media (max-width: 520px) {
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+    .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .data-table td:last-child { border-bottom: none; }
+    .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 74px; max-width: 74px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+    .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+    .data-table tr:nth-child(even) td { background: #ffffff; }
+  }
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "VideoGame",
+    "name": "Windrose",
+    "alternateName": "ウィンドローズ",
+    "gamePlatform": ["PC"],
+    "applicationCategory": "Game",
+    "author": { "@type": "Organization", "name": "Kraken Express" },
+    "publisher": { "@type": "Organization", "name": "Pocketpair Publishing" },
+    "datePublished": "2026-04-14"
+  },
+  "author": { "@type": "Person", "name": "バブルガム" },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+  "reviewBody": "難破船から始まる海賊サバイバルクラフト。建築・クラフト・RPG・海戦が全部入りで、協力プレイの海戦が白眉。早期アクセスながら日本語フルボイス対応、Steamで非常に好評。ヴァルヘイム以来のハマり方をした一本。"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Windroseは日本語に対応していますか？", "acceptedAnswer": { "@type": "Answer", "text": "はい。UI・字幕に加えて音声まで日本語に対応しています。日本での販売はポケットペア（Pocketpair Publishing）が担当しており、早期アクセスとしては珍しく最初から翻訳が手厚いです。" } },
+    { "@type": "Question", "name": "何人で協力プレイできますか？", "acceptedAnswer": { "@type": "Answer", "text": "オンラインで最大8人まで一緒に遊べます。ただし終盤の動作を考えると4人くらいまでが快適です。私は自分とフレンド3人の合計4人で遊びました。" } },
+    { "@type": "Question", "name": "早期アクセスですが、もう十分に遊べますか？", "acceptedAnswer": { "@type": "Answer", "text": "十分遊べます。序盤から中盤のゲームループはほぼ完成しており、ボリュームもたっぷりです。開発元は正式版まで1.5〜2.5年、コンテンツを約1.5倍に増やす予定と公表しています。" } },
+    { "@type": "Question", "name": "戦闘や動作の重さは気になりますか？", "acceptedAnswer": { "@type": "Answer", "text": "戦闘はデモ版から大きく改善されましたが、今も少し浮ついた挙動が残ります。動作は私の環境では快適でしたが、早期アクセスなので環境によってはカクつくこともあるようです。" } }
+  ]
+}
+</script>
+</p>
+<p>フレンドと合流した瞬間、試しに殴ってみたら当たり判定がない。ああ、これはのんびり系のスローライフだな、と正直ナメていました。</p>
+<p>それが数時間後には、3人がかりで大型船を三隻並べて、黒ひげの艦隊に大砲をぶっ放していた。Windrose（ウィンドローズ）は、そういうゲームでした。</p>
+<p>難破船から始まり、無人島でゼロから暮らしを立て直し、船を仕立てて海賊として成り上がっていく。サバイバル、クラフト、RPG、そして海戦。全部入りなのに散らからない。早期アクセスでこの完成度かと、気づけば毎晩ログインしていました。Sea of ThievesもValheimもそれなりに溶かしてきましたが、海賊感でいえばこれが頭ひとつ抜けています。しばらく間をあけつつ、まずは私が実際にたどった航海の記録から。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706145929.png" alt="Windroseのキャラメイク画面" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>キャラメイク。入れ墨はいれない。温泉に入れなくなるかもしれないしね。</figcaption>
+</figure>
+<p>[:contents]</p>
+<h2 class="section-head">Windroseってどんなゲーム？｜ざっくり言うと海賊版のValheim</h2>
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 32%;">タイトル</th><td>Windrose（ウィンドローズ）</td></tr>
+<tr><th scope="row">開発 / 販売</th><td>Kraken Express ／ 日本での販売はポケットペア（Pocketpair Publishing）</td></tr>
+<tr><th scope="row">配信日</th><td>2026年4月14日（Steam早期アクセス）</td></tr>
+<tr><th scope="row">対応機種</th><td>PC（Steam）</td></tr>
+<tr><th scope="row">ジャンル</th><td>オープンワールド・サバイバルクラフト＋海賊アクションRPG</td></tr>
+<tr><th scope="row">協力プレイ</th><td>オンライン最大8人（終盤は4人程度が快適）</td></tr>
+<tr><th scope="row">日本語</th><td>対応（UI・字幕・音声すべて日本語）</td></tr>
+<tr><th scope="row">価格</th><td>定価29.99ドル（日本のSteamでは3,000円前後）</td></tr>
+<tr><th scope="row">Steam評価</th><td>非常に好評（好評率88%・約4.5万件）</td></tr>
+<tr><th scope="row">正式版まで</th><td>開発元いわく1.5〜2.5年、コンテンツ約1.5倍を予定</td></tr>
+</tbody>
+</table>
+<div class="story-box">
+<div class="story-title">世界観ざっくり</div>
+舞台は、ちょっと架空めいた大航海時代。難破した海賊船から目を覚ました主人公は、無人島に流れ着くところからスタートします。木を切り、石を拾い、焚き火を囲んで、ゼロから生活を組み立てる。やがて船を仕立てて海へ出て、密輸人やバッカニアと関わりながら、黒ひげ（ブラックビアード）率いる艦隊に立ち向かっていく。サバイバルの手触りに、海賊活劇のロマンが乗っています。
+</div>
+<p>ジャンルを一言で説明するのが難しいゲームです。サバイバルであり、建築であり、装備を鍛えていくRPGであり、そのうえで船に乗って海戦までやる。近い作品を挙げるなら、やっぱりValheim（ヴァルヘイム）です。開発元も明言していますが、あの「気づいたら深夜」の中毒性を、海賊テーマで再構築したような感触があります。</p>
+<p>海賊ものというと、Sea of Thievesは対人メインの別ジャンルだったし、Skull and Bonesは期待ほど刺さらなかった。硬派なインディーのサバイバル海賊、という枠がぽっかり空いていたんですよね。そこにドンピシャで来たのがWindroseでした。個人的な体感でいうと、Valheimより海賊感が濃い。船を自分の手で仕立てて、それが海戦の主役になる、この一点が大きいです。</p>
+<p>ちなみに日本での販売を担当しているのは、Palworld（パルワールド）で知られるポケットペア。だからかは分かりませんが、早期アクセスなのに最初からUI・字幕・音声まで日本語フル対応です。ここは正直ありがたい。</p>
+<h2 class="section-head">序盤の流れ｜難破船から拠点づくりまで</h2>
+<p>ゲームを始めると、まずは沈みかけの海賊船の上でチュートリアル。基本操作をひととおり覚えたら、お決まりの無人島に放り出されます。木を切り、石を拾い、難破船の残骸からは釘が手に入る。この辺りは王道のサバイバルです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150028.png" alt="Windroseのチュートリアルを進める様子" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>まずはチュートリアルを終わらせる。</figcaption>
+</figure>
+<p>拠点の中心になるのが焚き火です。この焚き火の周りに作業台や道具の工房を並べていく形。少し進めれば窯（キルン）や鍛冶場、錬金台なども置けるようになります。集めた素材はすぐ建築に回せて、テンポがいい。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150400.png" alt="Windroseで作った最初の拠点" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>初拠点。みはらしがいいです。</figcaption>
+</figure>
+<p>建築の自由度は高めです。真上から見おろす視点にも切り替えられて、壁や柵、扉、窓、屋根まで細かく組める。ちゃんとやれば見栄えのいい家が建ちます。私の建築センスがLeonardo da Vinciには程遠いのが、唯一にして最大の制約でした。土台さえ整えば、あとは腕次第で農耕なんかもできます（今回は触れませんが、畑もいけます）。</p>
+<h3 class="sub-head">銅集めからの装備強化が気持ちいい</h3>
+<p>序盤で早めに手をつけたいのが銅鉱山です。とにかく銅が要る。窯で木から炭を作り、それを銅鉱石と合わせて銅のインゴットにする。ここでようやく最初の装備強化ができるようになります。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150320.png" alt="Windroseでイノシシを狩る様子" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>イノシシ狩り。ついでに草を刈ったりも。</figcaption>
+</figure>
+<p>面白いのが、装備は作り直すより「強化していく」方が得な場面が多いこと。基本の剣を延々とアップグレードしていける設計で、上位素材が要る段階になると新しいバイオームまで足を延ばす必要が出てくる。この装備を軸にしたRPGらしい育成が、サバイバルにうまく噛み合っています。キャラのスキルも体力・スタミナ・特定武器の火力・遠距離特化など、自分好みに振れます。私は迷わず銃を伸ばしました。個人的にこのゲーム、銃が強い。</p>
+<p>戦闘はデモ版からかなり手が入っていて、今は複数の敵をまとめて切って怯ませられる。ただ、たまに斬っても怯まず反撃を通してくる場面があって、これはまだ理由がよく分かりません。この辺りは後述します。</p>
+<h2 class="section-head">フレンドと海賊ごっこ｜協力プレイが一番おいしい</h2>
+<p>ここからが本題であり、Windroseの本命だと思っています。協力プレイです。</p>
+<p>チュートリアルを終えると、フレンドと合流できました。ロードは正直ちょっと長かったですが、合流した瞬間に試しに殴ってみたら当たり判定がない。以前ハマった、フレンドを殴ってポケモンを収容していたあのゲームを思い出しました。ああ、これはのんびりできるやつだ、と。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150105.png" alt="Windroseでチュートリアル後にフレンドと合流" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>チュートリアルを終えたら、フレンドと合流できました。ロードは長かった。</figcaption>
+</figure>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F19%2F102029" title="ぽこあポケモンのクラウド島が楽しすぎる。フレンドを殴ってポケモン収容所を作った話 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/03/19/102029">babblegum.hatenablog.com</a></cite>
+<p>別のフレンドとも合流して、みんなで焚き火を囲む。これはスローライフが期待できそう。そんな空気でイノシシを狩り、素材を集めていました。この時点では、まだ。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150225.png" alt="Windroseで別のフレンドと合流して焚き火を組む" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>別のフレンドとも合流して、焚き火を組みます。</figcaption>
+</figure>
+<h3 class="sub-head">海に出て、いきなり返り討ちにあう</h3>
+<p>チュートリアルを進めていたら、ボートに乗れるようになりました。ここから世界が一気に広がります。海に出られる、というだけでワクワクが止まらない。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150457.png" alt="Windroseでボートに乗れるようになった場面" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>チュートリアルを進めていたら、ボートに乗れるように。</figcaption>
+</figure>
+<p>で、調子に乗って海賊船を見つけたので、そのまま突っ込んでみました。結果、あっさり撃沈。無様に敵前逃亡です。スローライフだと油断していた自分が、初めて「あ、これは戦うゲームでもあるんだ」と気づいた瞬間でした。ちゃんとした船と装備がないと海の上では話にならない。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150615.png" alt="Windroseで海賊船に突っ込んで撃沈される様子" width="1047" height="581" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>海賊船があったので突っ込んでみる。果敢に挑むも、撃沈。</figcaption>
+</figure>
+<h3 class="sub-head">大型船を作って、いよいよ海賊らしくなる</h3>
+<p>そんな折、大型船の修復クエストが舞い込みました。ここからが本番。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150710.png" alt="Windroseの大型船の修復クエスト" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>なにやら、大型船の修復クエストが。</figcaption>
+</figure>
+<p>敵陣に殴り込みをかけると、どうやら捕虜を味方に引き込めるらしい。海賊らしい荒っぽい仲間集めです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150740.png" alt="Windroseで敵陣に殴り込み、捕虜を味方にする" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>敵陣に殴り込み。どうやら捕虜を味方にできるらしい。</figcaption>
+</figure>
+<p>そして素材をひたすら集めて、ついに初の大型船が完成。海に浮かべた瞬間の達成感は格別でした。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150845.png" alt="Windroseで初めて大型船が完成した場面" width="1047" height="567" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>素材を頑張って集めて、初の大型船完成！</figcaption>
+</figure>
+<p>海賊王におれはなる。気分はすっかり主人公です。スローライフを期待していた男の面影は、もうどこにもありませんでした。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706150945.png" alt="Windroseで大型船に乗り込み海へ出る" width="1031" height="582" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>海賊王におれはなる！</figcaption>
+</figure>
+<h3 class="sub-head">3人×大型船3隻、黒ひげ艦隊との海戦</h3>
+<p>そして本作のハイライト。黒ひげ船との海戦です。フレンドが3人いるので、大型船が3隻。一隻にみんなで乗り込んで、操舵役・大砲役・斬り込み役で分担して戦うのもよし、3人がバラバラに船を出して数で押すのもよし。この自由度がたまらない。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706151018.png" alt="Windroseで黒ひげ船と大型船3隻で海戦する様子" width="1042" height="582" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>黒ひげ船との戦闘。フレンド3人で大型船が3隻。一隻で戦うもよし、3人バラバラで戦うもよし。</figcaption>
+</figure>
+<p>公式には最大8人まで一緒に遊べます（終盤の動作を考えると4人くらいが快適とのこと）。一隻の船に複数人で乗り込み、誰かが舵を握り、誰かが大砲を撃ち、誰かが敵船に斬り込む。この協力海戦こそ、他の海賊ゲームとWindroseを分ける一番の武器だと思います。ソロでも成立しますが、フレンドと遊ぶと化けるタイプです。</p>
+<p>そのまま別の離島へ渡って、あちこちで海賊をやる。もう完全に生活が海賊です。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260706/20260706151151.png" alt="Windroseで別の離島に渡って海賊行為をする" width="1042" height="586" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>別の離島へ。海賊やってます。</figcaption>
+</figure>
+<h2 class="section-head">探索・戦闘・死にゲー感｜油断すると一撃で死ぬ</h2>
+<p>楽しい話ばかりしてきましたが、このゲーム、けっこう理不尽に死にます。普通に歩いていただけなのに、気づいたらリスポーン画面。たいていは背後から突進してきたイノシシに一撃でやられています。あの突進イノシシ、本当に侮れない。</p>
+<p>そして、この危うさこそが探索の醍醐味でもあります。ちょっと格上のエリアに、装備が足りないまま迷い込む。ゲームが余計な手枷をかけてこないので、行こうと思えばどこへでも行ける。その「準備不足のまま踏み込んだ時」が一番おもしろい。語りたくなる事件は、たいていそこで生まれます。</p>
+<p>島は手続き生成で、ダンジョンや洞窟には隠し部屋もある。正しい壁を掘り抜かないと入れない小部屋があったり、そこを溺死者みたいな敵やカニ型の連中が守っていたり。遺跡、集落、地下ダンジョンと、探索先には事欠きません。手続き生成の島と死にゲー的な緊張が合わさって、どこかローグライク的な手触りもあります。</p>
+<div class="note-box">
+<span class="note-label">攻略メモ：</span>最初のボスは装備が噛み合わないと相当きついです。私はブランダーバス（ラッパ銃）で頭を撃っては逃げ、を繰り返す戦法が安定しました。サーベルで出血を狙うのも比較的やりやすい。あとバナナやココナッツジュースでスタミナを、スパイスクラブ的な料理で体力を盛っておくのが大事。料理のバフが地味に効きます。武器はほかにもレイピアやハルバードなどクセのある選択肢があって、自分の型を探すのが楽しいところです。
+</div>
+<p>広い海を移動するので、ファストトラベル用のベルを各地に置けるのも助かります。8個か10個くらいは設置できたはず。船の上からマップを開いてファストトラベルもできるので、これは覚えておくと快適です。</p>
+<h2 class="section-head">気になるところ｜まだ早期アクセスです</h2>
+<p>手放しで褒めてきましたが、早期アクセスなのは事実で、粗はあります。</p>
+<div class="bad-box">
+<div class="bad-title">正直に気になった点</div>
+<ul>
+<li>戦闘がまだ少し浮ついている。斬ったのに怯まず反撃を通されて理不尽に死ぬ場面が残る</li>
+<li>水の表現がややプルプルしていて、そこだけ安っぽく見える瞬間がある</li>
+<li>敵のバリエーションは控えめ。ざっくり虫・ゾンビ・海賊で、まだ広がりが欲しい（海賊はサーベル使いから幹部、マスケット兵まで種類があるのは救い）</li>
+<li>動作は私の環境では快適でしたが、早期アクセスなので環境次第でカクつく報告もあります</li>
+</ul>
+</div>
+<p>とはいえ、この辺りは「これから良くなる」前提の話です。開発元は正式版まで1.5〜2.5年、コンテンツを約1.5倍に増やすと公表していて、新バイオーム、新ボス、新しい船、そして物語の結末が追加予定。今の時点でこれだけ遊べて、まだ伸びしろが1.5倍あると考えると、むしろ末恐ろしい。マスケット兵に不意打ちされてキレる程度のことは、笑って許せます。</p>
+<h2 class="section-head">こんな人におすすめ／合わないかも</h2>
+<div class="good-box">
+<div class="good-title">おすすめできる人</div>
+<ul>
+<li>フレンドとワイワイ協力プレイをしたい（特に海戦を分担で遊びたい）</li>
+<li>Valheimのような「気づいたら深夜」のサバイバルが好き</li>
+<li>船を自分で仕立てて海賊になるロマンに弱い</li>
+<li>準備不足で踏み込む探索と、死んで学ぶ緊張感を楽しめる</li>
+<li>建築の自由度が高いゲームでじっくり腰を据えたい</li>
+</ul>
+</div>
+<div class="bad-box">
+<div class="bad-title">合わないかもしれない人</div>
+<ul>
+<li>完成され尽くした、隅々まで磨かれた作品しか触りたくない</li>
+<li>理不尽な一撃死がストレスで仕方ない</li>
+<li>アクションゲームとしてのキレのある戦闘を最優先する</li>
+</ul>
+</div>
+<h2 class="section-head">Valheim・Sea of Thievesとどう違う？</h2>
+<p>近いと言われがちな2作と、実際に全部遊んだ立場で並べてみます。ざっくりの早見表として。</p>
+<table class="data-table">
+<thead>
+<tr><th>比較項目</th><th>Windrose</th><th>Valheim</th><th>Sea of Thieves</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="比較項目">舞台</td><td data-label="Windrose">大航海時代風の海と島</td><td data-label="Valheim">北欧神話の煉獄</td><td data-label="Sea of Thieves">カリブ風の海賊世界</td></tr>
+<tr><td data-label="比較項目">コアの遊び</td><td data-label="Windrose">サバイバル＋建築＋海賊RPG</td><td data-label="Valheim">サバイバル＋建築＋ボス攻略</td><td data-label="Sea of Thieves">海賊アクション（対人・PvPvE）</td></tr>
+<tr><td data-label="比較項目">進行</td><td data-label="Windrose">レベルと装備強化のRPG寄り</td><td data-label="Valheim">ボス撃破で進むバイオーム制</td><td data-label="Sea of Thieves">横並び、基本は腕前勝負</td></tr>
+<tr><td data-label="比較項目">建築</td><td data-label="Windrose">自由度高め（壁・柵・屋根まで）</td><td data-label="Valheim">自由度高め（傾き建築が有名）</td><td data-label="Sea of Thieves">ほぼなし（船が主役）</td></tr>
+<tr><td data-label="比較項目">海と船</td><td data-label="Windrose">大型船を作って海戦・拠点移動</td><td data-label="Valheim">船は移動と探索が中心</td><td data-label="Sea of Thieves">操船と海戦が主役</td></tr>
+<tr><td data-label="比較項目">難易度</td><td data-label="Windrose">高め（不意の一撃死あり）</td><td data-label="Valheim">高め（油断すると即死）</td><td data-label="Sea of Thieves">中（対人次第）</td></tr>
+<tr><td data-label="比較項目">ソロ／協力</td><td data-label="Windrose">ソロ可、協力が一番おいしい</td><td data-label="Valheim">ソロ〜10人</td><td data-label="Sea of Thieves">基本オンライン前提</td></tr>
+</tbody>
+</table>
+<p>Valheimが好きな人ほど、Windroseはすっと入れると思います。あの育成とボス攻略のループに、船と海賊のロマンが乗っかった感覚。Valheim愛については別記事で語り尽くしているので、通じる人はこちらもどうぞ。</p>
+<iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2021%2F10%2F15%2F210253" title="【ヴァルヘイム Switch2版発売決定】60時間溶けた廃人が語るValheimの沼｜旧Switch版なし・携帯モード対応まとめ - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2021/10/15/210253">babblegum.hatenablog.com</a></cite>
+<h2 class="section-head">よくある質問</h2>
+<dl class="faq-list">
+<dt>Windroseは日本語に対応していますか？</dt>
+<dd>はい。UI・字幕に加えて音声まで日本語対応です。日本での販売はポケットペア（Pocketpair Publishing）が担当していて、早期アクセスとしては珍しく最初から翻訳が手厚いです。</dd>
+<dt>何人で協力プレイできますか？</dt>
+<dd>オンラインで最大8人まで。ただし終盤の動作を考えると4人くらいまでが快適です。私は自分とフレンド3人の合計4人で遊んで、ちょうどいい賑やかさでした。</dd>
+<dt>早期アクセスですが、もう十分に遊べますか？</dt>
+<dd>十分遊べます。序盤から中盤のループはほぼ完成していて、ボリュームもたっぷり。開発元は正式版まで1.5〜2.5年、コンテンツを約1.5倍に増やす予定と公表しているので、今から始めても長く付き合えます。</dd>
+<dt>戦闘や動作の重さは気になりますか？</dt>
+<dd>戦闘はデモ版から大きく良くなりましたが、今も少し浮ついた挙動が残ります。動作は私の環境では快適でしたが、早期アクセスなので環境によってはカクつくこともあるようです。</dd>
+</dl>
+<h2 class="section-head">まとめ｜ここ最近のサバイバルで一番ハマった</h2>
+<div class="verdict-box">
+<div class="verdict-title">総合評価　<span class="star-rating">★★★★☆</span>　4.5 / 5.0（早期アクセス時点）</div>
+荒削りな部分はたしかにあります。でも、初めて海に出た瞬間のワクワクと、フレンドと大型船を並べて海賊をやっている時間の楽しさが、粗を全部持っていってしまう。ここ最近のサバイバルで、間違いなく一番ハマった一本でした。
+</div>
+<p>スローライフを期待して始めたはずが、気づけば海賊王を名乗って黒ひげの艦隊に突っ込んでいた。振り返ると、この振れ幅こそがWindroseの魅力そのものだったなと思います。のんびりもできるし、荒くれた海賊活劇もできる。しかもそれをフレンドと共有できる。</p>
+<p>早期アクセスなので、まだ完成品ではありません。それでも「これは応援したくなる」と素直に思える作品でした。日本語もフルで入っているので、言葉の壁もない。海に出たくてうずうずしている人は、ぜひ一度、自分の船を仕立ててみてください。私はしばらく、このキャビンから出られそうにありません。</p>
