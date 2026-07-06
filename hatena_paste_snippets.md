@@ -35,11 +35,13 @@
 }
 
 /* ===== 広告CLS対策：枠の高さを予約し、来なかった枠だけ畳む ===== */
-/* min-height は下の2クラスだけに付ける。.adsbygoogle 全体には付けない（アンカー広告が崩れるため） */
+/* min-height は下の3クラスだけに付ける。.adsbygoogle 全体には付けない（アンカー広告が崩れるため） */
+.ad-wrapper-top { min-height: 100px; overflow: hidden; max-width: 100%; text-align: center; margin: 10px 0; }
 .adsense-in-article { min-height: 250px; overflow: hidden; max-width: 100%; margin: 30px 0; text-align: center; }
 .ad-wrapper-bottom { min-height: 300px; overflow: hidden; max-width: 100%; }
 @media (max-width: 600px) { .adsense-in-article { min-height: 280px; } }
 /* 来なかった枠は予約を解除して空白を残さない（!important でインライン高さに勝たせる） */
+.ad-wrapper-top.is-empty,
 .adsense-in-article.is-empty,
 .ad-wrapper-bottom.is-empty { min-height: 0 !important; height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
 ```
@@ -119,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
 (function() {
   function collapseEmptyAds() {
     document.querySelectorAll('.adsbygoogle').forEach(function(ad) {
-      var wrapper = ad.closest('.ad-wrapper-bottom, .adsense-in-article');
+      var wrapper = ad.closest('.ad-wrapper-top, .ad-wrapper-bottom, .adsense-in-article');
       if (!wrapper || wrapper.classList.contains('is-empty')) return;
       var status = ad.getAttribute('data-ad-status');
       if (status === 'unfilled' || (status === 'filled' && ad.offsetHeight < 50)) {
@@ -138,9 +140,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ---
 
-## 注意：上部の性格診断バナー（16タイプ／世界基準の自己分析）について
+## ④ タイトル下 の上部広告に高さ予約を付ける（任意・CLSに効く）
 
-あれは AdSense の自動広告がページ最上部に差し込んでいるもので、上のコード（CSS/フッター）では制御できない。ページ全体を下へ押し下げるので、CLSの残り原因になりやすい。もし数値が改善しきらない場合は、AdSense管理画面 → 広告 → 自動広告 で「ページ上部の大きな広告」やアンカー系をオフにするのが効く。まずは上の3か所を入れて、2〜4週間サーチコンソールの推移を見てから判断で。
+場所：デザイン → カスタマイズ → タイトル下（ヘッダーのカテゴリナビが入っている欄）。
+その中の「上部広告」の `<ins>` を `<div class="ad-wrapper-top">` で挟むだけ。ナビや Font Awesome はそのまま。
+
+```html
+<!-- 上部広告 -->
+<div class="ad-wrapper-top">
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2203567155161909"
+     data-ad-slot="8957021599"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+</div>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+```
+
+注意：この上部広告は `data-ad-format="auto"`（自動サイズ）なので、完璧な高さ予約はできない。控えめに 100px 予約して、来なければ畳む形。ズレは減るがゼロにはならない。ページ最上部なので予約を大きくすると空白が目立つため、あえて控えめにしている（`.ad-wrapper-top` の min-height を増やせば予約は増えるが、空きが出やすくなるトレードオフ）。
+
+## 注意：AdSense 自動広告（別枠）について
+
+上の④は「手貼りの上部広告」の話。これとは別に、AdSense の自動広告がページ上部やアンカー位置に勝手に差し込むことがあり、それは CSS/フッターでは制御できない。もし数値が改善しきらない場合は、AdSense管理画面 → 広告 → 自動広告 で「ページ上部の大きな広告」やアンカー系をオフにするのが効く。まずは①〜④を入れて、2〜4週間サーチコンソールの推移を見てから判断で。
 
 ## 反映後の運用メモ
 

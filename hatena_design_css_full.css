@@ -123,10 +123,12 @@ div.date, span.date, .entry-date { display: none !important; }
 /*   ※ .adsbygoogle 全体には min-height を付けない               */
 /*     （アンカー広告などが崩れるため）。                        */
 /* ============================================================ */
+.ad-wrapper-top { min-height: 100px; overflow: hidden; max-width: 100%; text-align: center; margin: 10px 0; }
 .adsense-in-article { min-height: 250px; overflow: hidden; max-width: 100%; margin: 30px 0; text-align: center; }
 .ad-wrapper-bottom { min-height: 300px; overflow: hidden; max-width: 100%; }
 @media (max-width: 600px) { .adsense-in-article { min-height: 280px; } }
 /* 広告が来なかった枠は予約を解除して空白を残さない（!important でインライン高さに勝たせる） */
+.ad-wrapper-top.is-empty,
 .adsense-in-article.is-empty,
 .ad-wrapper-bottom.is-empty { min-height: 0 !important; height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
 
