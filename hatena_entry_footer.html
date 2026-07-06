@@ -22,6 +22,25 @@
   </div>
 </div>
 
+<!-- ▼ 人気記事を「関連記事」より上（記事本文のすぐ下）へ移動 -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var pop = document.querySelector('.recommended-articles');
+  if (!pop) return;
+  // はてなの関連記事モジュールが見つかればその直前へ
+  var related = document.querySelector('.related-entries, #related-entries, .hatena-module-related-entries, .hatena-module-relation-articles, .customize-recommend');
+  if (related && related.parentNode) {
+    related.parentNode.insertBefore(pop, related);
+    return;
+  }
+  // 見つからなければ記事本文の直後へ（＝footerの各モジュールより上）
+  var content = document.querySelector('.entry-content');
+  if (content && content.parentNode) {
+    content.parentNode.insertBefore(pop, content.nextSibling);
+  }
+});
+</script>
+
 <!-- ▼ 記事内広告の自動挿入（高さ予約はインラインで持たせる＝CSSに依存しない） -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
