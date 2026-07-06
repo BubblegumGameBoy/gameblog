@@ -3,16 +3,6 @@
   h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
   .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
   .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
-  .note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
-  .note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
-  .warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
-  .warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
-  .good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
-  .good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
-  .bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
-  .bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
-  .story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
-  .story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
   .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
   .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
   .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
@@ -20,7 +10,7 @@
   .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
   .verdict-box { border: 2px solid #555555; border-radius: 6px; padding: 16px 20px; margin: 24px 0; background: #fafafa; }
   .verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
-  .star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+  .star-rating { color: #333333; font-size: 18px; letter-spacing: 2px; }
   .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
   .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
   figure { margin: 16px 0; text-align: center; } figure img { max-width: 100%; height: auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; }
@@ -92,8 +82,8 @@
 <tr><th scope="row">正式版まで</th><td>開発元いわく1.5〜2.5年、コンテンツ約1.5倍を予定</td></tr>
 </tbody>
 </table>
-<div class="story-box">
-<div class="story-title">世界観ざっくり</div>
+<div class="point-box">
+<div class="point-title">世界観ざっくり</div>
 舞台は、ちょっと架空めいた大航海時代。難破した海賊船から目を覚ました主人公は、無人島に流れ着くところからスタートします。木を切り、石を拾い、焚き火を囲んで、ゼロから生活を組み立てる。やがて船を仕立てて海へ出て、密輸人やバッカニアと関わりながら、黒ひげ（ブラックビアード）率いる艦隊に立ち向かっていく。サバイバルの手触りに、海賊活劇のロマンが乗っています。
 </div>
 <p>ジャンルを一言で説明するのが難しいゲームです。サバイバルであり、建築であり、装備を鍛えていくRPGであり、そのうえで船に乗って海戦までやる。近い作品を挙げるなら、やっぱりValheim（ヴァルヘイム）です。開発元も明言していますが、あの「気づいたら深夜」の中毒性を、海賊テーマで再構築したような感触があります。</p>
@@ -180,14 +170,15 @@
 <p>楽しい話ばかりしてきましたが、このゲーム、けっこう理不尽に死にます。普通に歩いていただけなのに、気づいたらリスポーン画面。たいていは背後から突進してきたイノシシに一撃でやられています。あの突進イノシシ、本当に侮れない。</p>
 <p>そして、この危うさこそが探索の醍醐味でもあります。ちょっと格上のエリアに、装備が足りないまま迷い込む。ゲームが余計な手枷をかけてこないので、行こうと思えばどこへでも行ける。その「準備不足のまま踏み込んだ時」が一番おもしろい。語りたくなる事件は、たいていそこで生まれます。</p>
 <p>島は手続き生成で、ダンジョンや洞窟には隠し部屋もある。正しい壁を掘り抜かないと入れない小部屋があったり、そこを溺死者みたいな敵やカニ型の連中が守っていたり。遺跡、集落、地下ダンジョンと、探索先には事欠きません。手続き生成の島と死にゲー的な緊張が合わさって、どこかローグライク的な手触りもあります。</p>
-<div class="note-box">
-<span class="note-label">攻略メモ：</span>最初のボスは装備が噛み合わないと相当きついです。私はブランダーバス（ラッパ銃）で頭を撃っては逃げ、を繰り返す戦法が安定しました。サーベルで出血を狙うのも比較的やりやすい。あとバナナやココナッツジュースでスタミナを、スパイスクラブ的な料理で体力を盛っておくのが大事。料理のバフが地味に効きます。武器はほかにもレイピアやハルバードなどクセのある選択肢があって、自分の型を探すのが楽しいところです。
+<div class="point-box">
+<div class="point-title">攻略メモ</div>
+最初のボスは装備が噛み合わないと相当きついです。私はブランダーバス（ラッパ銃）で頭を撃っては逃げ、を繰り返す戦法が安定しました。サーベルで出血を狙うのも比較的やりやすい。あとバナナやココナッツジュースでスタミナを、スパイスクラブ的な料理で体力を盛っておくのが大事。料理のバフが地味に効きます。武器はほかにもレイピアやハルバードなどクセのある選択肢があって、自分の型を探すのが楽しいところです。
 </div>
 <p>広い海を移動するので、ファストトラベル用のベルを各地に置けるのも助かります。8個か10個くらいは設置できたはず。船の上からマップを開いてファストトラベルもできるので、これは覚えておくと快適です。</p>
 <h2 class="section-head">気になるところ｜まだ早期アクセスです</h2>
 <p>手放しで褒めてきましたが、早期アクセスなのは事実で、粗はあります。</p>
-<div class="bad-box">
-<div class="bad-title">正直に気になった点</div>
+<div class="point-box">
+<div class="point-title">正直に気になった点</div>
 <ul>
 <li>戦闘がまだ少し浮ついている。斬ったのに怯まず反撃を通されて理不尽に死ぬ場面が残る</li>
 <li>水の表現がややプルプルしていて、そこだけ安っぽく見える瞬間がある</li>
@@ -197,8 +188,7 @@
 </div>
 <p>とはいえ、この辺りは「これから良くなる」前提の話です。開発元は正式版まで1.5〜2.5年、コンテンツを約1.5倍に増やすと公表していて、新バイオーム、新ボス、新しい船、そして物語の結末が追加予定。今の時点でこれだけ遊べて、まだ伸びしろが1.5倍あると考えると、むしろ末恐ろしい。マスケット兵に不意打ちされてキレる程度のことは、笑って許せます。</p>
 <h2 class="section-head">こんな人におすすめ／合わないかも</h2>
-<div class="good-box">
-<div class="good-title">おすすめできる人</div>
+<h3 class="sub-head">おすすめできる人</h3>
 <ul>
 <li>フレンドとワイワイ協力プレイをしたい（特に海戦を分担で遊びたい）</li>
 <li>Valheimのような「気づいたら深夜」のサバイバルが好き</li>
@@ -206,15 +196,12 @@
 <li>準備不足で踏み込む探索と、死んで学ぶ緊張感を楽しめる</li>
 <li>建築の自由度が高いゲームでじっくり腰を据えたい</li>
 </ul>
-</div>
-<div class="bad-box">
-<div class="bad-title">合わないかもしれない人</div>
+<h3 class="sub-head">合わないかもしれない人</h3>
 <ul>
 <li>完成され尽くした、隅々まで磨かれた作品しか触りたくない</li>
 <li>理不尽な一撃死がストレスで仕方ない</li>
 <li>アクションゲームとしてのキレのある戦闘を最優先する</li>
 </ul>
-</div>
 <h2 class="section-head">Valheim・Sea of Thievesとどう違う？</h2>
 <p>近いと言われがちな2作と、実際に全部遊んだ立場で並べてみます。ざっくりの早見表として。</p>
 <table class="data-table">
