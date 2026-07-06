@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人気記事ブロック プレビュー</title>
+<style>
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; background: #eef2f7; margin: 0; padding: 24px 16px; color: #333; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  .note { font-size: 13px; color: #666; background: #fff; border-radius: 10px; padding: 12px 16px; margin: 0 0 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+
+  /* ===== 人気記事（本番CSSと同一） ===== */
+  .recommended-articles { margin: 40px 0; padding: 24px 20px; background: linear-gradient(135deg, #f8fafc, #eef2f7); border-radius: 16px; }
+  .recommended-title { font-size: 1.1rem; font-weight: 700; color: #2c4d7a; margin: 0 0 20px; text-align: center; }
+  .recommended-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .recommended-card { background: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; color: #333; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; min-width: 0; }
+  .recommended-card:hover { transform: translateY(-3px); box-shadow: 0 6px 14px rgba(0,0,0,0.1); color: #2c4d7a; }
+  .recommended-thumb { display: block; width: 100%; height: 100px; background-size: cover; background-position: center; background-color: #dfe6ee; }
+  .recommended-text { padding: 10px 12px; font-size: 0.82rem; line-height: 1.5; flex: 1; font-weight: 500; word-break: break-word; }
+  .rec-badge { display: inline-block; background: #e60012; color: #fff; font-size: 0.62rem; font-weight: 700; padding: 1px 6px; border-radius: 4px; margin-right: 5px; vertical-align: middle; }
+  @media (max-width: 600px) {
+    .recommended-grid { gap: 8px; }
+    .recommended-thumb { height: 66px; }
+    .recommended-text { font-size: 0.72rem; padding: 7px 8px; line-height: 1.4; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="note">▼ 記事下に入る「人気記事」ブロックのプレビューです（PCは3列／スマホも3列詰め）。画像ははてなCDNから直接読み込むため、環境によっては表示されない場合がありますが、本番のブログでは表示されます。</p>
+
+  <!-- ここから本番HTML（記事下に貼る） -->
+  <div class="recommended-articles">
+    <p class="recommended-title">🔥 人気記事</p>
+    <div class="recommended-grid">
+      <a href="https://babblegum.hatenablog.com/entry/2026/06/12/144156" class="recommended-card">
+        <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260629/20260629164335.png');"></span>
+        <span class="recommended-text"><span class="rec-badge">自作</span>スペースキー連打ゲーム｜ボス撃破で自動化</span>
+      </a>
+      <a href="https://babblegum.hatenablog.com/entry/2025/12/04/111657" class="recommended-card">
+        <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251203/20251203180053.png');"></span>
+        <span class="recommended-text">【2026年版】個人的神ゲーランキングTOP27</span>
+      </a>
+      <a href="https://babblegum.hatenablog.com/entry/2026/03/16/153001" class="recommended-card">
+        <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260314/20260314193445.jpg');"></span>
+        <span class="recommended-text">【Switch2】2026年おすすめゲームランキング22選</span>
+      </a>
+    </div>
+  </div>
+  <!-- ここまで本番HTML -->
+</div>
+</body>
+</html>
