@@ -1,0 +1,80 @@
+<!-- ============================================================ -->
+<!-- この内容を「設定 → 詳細設定 → HTML in entry footer（記事下）」に -->
+<!-- 全部貼る（今入っている広告スクリプト一式を消して、これに差し替え） -->
+<!-- ============================================================ -->
+
+<!-- ▼ 人気記事 -->
+<div class="recommended-articles">
+  <p class="recommended-title">🔥 人気記事</p>
+  <div class="recommended-grid">
+    <a href="https://babblegum.hatenablog.com/entry/2026/06/12/144156" class="recommended-card">
+      <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260629/20260629164335.png');"></span>
+      <span class="recommended-text"><span class="rec-badge">自作</span>スペースキー連打ゲーム｜ボス撃破で自動化</span>
+    </a>
+    <a href="https://babblegum.hatenablog.com/entry/2025/12/04/111657" class="recommended-card">
+      <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251203/20251203180053.png');"></span>
+      <span class="recommended-text">【2026年版】個人的神ゲーランキングTOP27</span>
+    </a>
+    <a href="https://babblegum.hatenablog.com/entry/2026/03/16/153001" class="recommended-card">
+      <span class="recommended-thumb" style="background-image:url('https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260314/20260314193445.jpg');"></span>
+      <span class="recommended-text">【Switch2】2026年おすすめゲームランキング22選</span>
+    </a>
+  </div>
+</div>
+
+<!-- ▼ 記事内広告の自動挿入（高さ予約はインラインで持たせる＝CSSに依存しない） -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (!document.querySelector('.entry-content')) return;
+  var headings = document.querySelectorAll('.entry-content h2, .entry-content h3, .entry-content h4, .entry-content .h4-block, .entry-content .h5-block');
+  if (headings.length < 2) return;
+  var positions = (headings.length >= 5) ? [1, 4] : [1];
+  var adHTML =
+    '<div class="adsense-in-article" style="min-height:250px;margin:30px 0;text-align:center;overflow:hidden;max-width:100%;">' +
+      '<ins class="adsbygoogle"' +
+        ' style="display:block;text-align:center;"' +
+        ' data-ad-layout="in-article"' +
+        ' data-ad-format="fluid"' +
+        ' data-ad-client="ca-pub-2203567155161909"' +
+        ' data-ad-slot="1845067348"></ins>' +
+    '</div>';
+  positions.forEach(function(pos) {
+    if (headings[pos]) {
+      headings[pos].insertAdjacentHTML('beforebegin', adHTML);
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+});
+</script>
+
+<!-- ▼ 下部広告（Multiplex）※高さ予約はインライン。畳みはJSがやる -->
+<div class="ad-wrapper-bottom" style="min-height:280px;margin:0 0 90px 0;padding:0;overflow:hidden;max-width:100%;">
+  <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed" data-ad-client="ca-pub-2203567155161909" data-ad-slot="5529974521"></ins>
+</div>
+<script> (adsbygoogle = window.adsbygoogle || []).push({}); </script>
+
+<!-- ▼ 来なかった広告枠だけ畳む（インライン処理・CSS不要。上部/記事内/下部すべて対象） -->
+<script>
+(function() {
+  function collapseEmptyAds() {
+    document.querySelectorAll('.adsbygoogle').forEach(function(ad) {
+      var w = ad.closest('.ad-wrapper-top, .ad-wrapper-bottom, .adsense-in-article');
+      if (!w || w.dataset.collapsed) return;
+      var s = ad.getAttribute('data-ad-status');
+      if (s === 'unfilled' || (s === 'filled' && ad.offsetHeight < 50)) {
+        w.dataset.collapsed = '1';
+        w.style.minHeight = '0';
+        w.style.height = '0';
+        w.style.margin = '0';
+        w.style.padding = '0';
+        w.style.overflow = 'hidden';
+      }
+    });
+  }
+  window.addEventListener('load', function() {
+    setTimeout(collapseEmptyAds, 1200);
+    setTimeout(collapseEmptyAds, 3000);
+    setTimeout(collapseEmptyAds, 8000);
+  });
+})();
+</script>

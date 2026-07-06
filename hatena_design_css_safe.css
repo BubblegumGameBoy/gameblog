@@ -95,9 +95,13 @@ div.date, span.date, .entry-date { display: none !important; }
 .bottom-menu-list-sub li a { font-size: 0.88rem; color: #666; padding-top: 10px; padding-bottom: 10px; }
 .bottom-menu-list-sub li a i { font-size: 1rem; color: #888; }
 
+/* 記事中広告のはみ出し対策（元のまま。高さ予約は広告HTML側でやるのでCSSでは触らない） */
+.adsense-in-article { overflow: hidden; max-width: 100%; }
+
 /* ============================================================ */
 /* ★人気記事（旧おすすめ）― 2026-07-06 更新                     */
 /*   PC3列／スマホも3列詰め。旧「スマホ4枚目表示」ルールは撤去。 */
+/*   ※広告には一切触っていない（広告が縮む原因を作らないため）。 */
 /* ============================================================ */
 .recommended-articles { margin: 40px 0; padding: 24px 20px; background: linear-gradient(135deg, #f8fafc, #eef2f7); border-radius: 16px; }
 .recommended-title { font-size: 1.1rem; font-weight: 700; color: #2c4d7a; margin: 0 0 20px; text-align: center; }
@@ -115,25 +119,6 @@ div.date, span.date, .entry-date { display: none !important; }
 }
 
 /* ============================================================ */
-/* ★広告CLS対策 ― 2026-07-06                                    */
-/*   2026-07-01で min-height を全撤去したらCLSが悪化したため、   */
-/*   対象を「記事内広告」と「下部広告」の2クラスだけに絞って     */
-/*   高さを予約し直す。埋まらなかった枠はフッターのJSが          */
-/*   .is-empty を付けて畳む。                                    */
-/*   ※ .adsbygoogle 全体には min-height を付けない               */
-/*     （アンカー広告などが崩れるため）。                        */
-/* ============================================================ */
-.ad-wrapper-top { min-height: 100px; overflow: hidden; max-width: 100%; text-align: center; margin: 10px 0; }
-.adsense-in-article { min-height: 250px; overflow: hidden; max-width: 100%; margin: 30px 0; text-align: center; }
-.ad-wrapper-bottom { min-height: 300px; overflow: hidden; max-width: 100%; }
-@media (max-width: 600px) { .adsense-in-article { min-height: 280px; } }
-/* 広告が来なかった枠は予約を解除して空白を残さない（!important でインライン高さに勝たせる） */
-.ad-wrapper-top.is-empty,
-.adsense-in-article.is-empty,
-.ad-wrapper-bottom.is-empty { min-height: 0 !important; height: 0 !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; }
-
-/* ============================================================ */
 /* ★CLS（レイアウトシフト）対策 ― 画像のアスペクト比確保        */
-/*   遅延読み込み画像による本文のズレ(CLS)だけを抑える。         */
 /* ============================================================ */
 .entry-content img, .hatena-fotolife, figure img { height: auto; max-width: 100%; }
