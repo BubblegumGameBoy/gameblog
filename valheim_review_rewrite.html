@@ -1,0 +1,234 @@
+<!-- =====================================================
+     タイトル案（はてなブログの「タイトル」欄に入力・下のタイトル案リスト参照）
+     推奨：【Valheim】Switch2版発売決定。60時間溶けた私が語る、煙で窒息死するヴァイキング生活の沼
+     ===================================================== -->
+<style>
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.verdict-box { border: 2px solid #555555; background: #fafafa; padding: 16px 20px; margin: 24px 0; border-radius: 5px; }
+.verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
+.star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+</style>
+<p><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "VideoGame",
+    "name": "Valheim（ヴァルヘイム）",
+    "author": { "@type": "Organization", "name": "Iron Gate Studio" },
+    "gamePlatform": ["PC", "Nintendo Switch 2", "PlayStation 5", "Xbox"],
+    "genre": "サバイバルクラフト"
+  },
+  "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+  "author": { "@type": "Person", "name": "バブルガム" },
+  "reviewBody": "Steam版を60時間以上プレイしたレビュー。快適度システムと建築・農業・航海が有機的につながるサバイバルクラフトの傑作。Switch2版が2026年内に発売予定。"
+}
+</script></p>
+<p>雨の夜、やっとの思いで建てた小屋の中で焚き火を囲っていたら、視界がだんだん灰色になって、そのまま死にました。死因、煙の充満による窒息。雨に濡れないよう火を壁で囲いすぎたせいです。</p>
+<p>Valheim（ヴァルヘイム）は、そういうゲームです。理不尽に聞こえるかもしれませんが、この瞬間に私はこのゲームに落ちました。気付けば60時間。睡眠時間はどこかに消えました。</p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260709/20260709091722.png" alt="Valheim 建築中の様子" width="977" height="520" loading="lazy" title="" class="hatena-fotolife" itemprop="image" /></p>
+<p>そのValheimに、大きなニュースが来ました。2026年2月5日のNintendo Directで、Nintendo Switch 2版が2026年内に発売されることが正式発表されたのです。さらにPC版は、5年以上続いた早期アクセスを卒業して、正式版1.0が2026年9月にリリース予定。今が間違いなく、このゲームの節目です。</p>
+<p>Switch2版を待つべきか、今Steam版に飛び込むべきか。60時間溶かした立場から、中身を全部書きます。</p>
+<p>[:contents]</p>
+
+<h2 class="section-head">【最新情報】Switch2版とPC正式版1.0、2026年はValheimの年になる</h2>
+<p>まず、現時点で分かっている情報を整理しておきます。</p>
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 34%;">Switch 2版</th><td>2026年内発売予定（ダウンロード版）。価格は未発表</td></tr>
+<tr><th scope="row">PS5版</th><td>2026年内予定（同時期に展開）</td></tr>
+<tr><th scope="row">PC（Steam）版</th><td>発売中。2026年9月に正式版1.0リリース予定</td></tr>
+<tr><th scope="row">正式版1.0の内容</th><td>最後のバイオーム、深き北（Deep North）追加。新ボス・シャベル・グラップリングフックなど</td></tr>
+<tr><th scope="row">マルチプレイ</th><td>最大10人のオンラインプレイ対応</td></tr>
+<tr><th scope="row">Steam版評価</th><td>44万件超のレビューで約94%が高評価「非常に好評」</td></tr>
+<tr><th scope="row">累計販売本数</th><td>1,000万本突破（2022年6月時点）</td></tr>
+</tbody>
+</table>
+<div class="note-box"><span class="note-label">待つ？今買う？</span>PCを持っているなら、Steam版を今買って正式版1.0を待ち構えるのが一番おいしい選択です。後述しますが、Valheimはアップデートでワールドのワイプ（初期化）をしない方針なので、今作った拠点は正式版でもそのまま使えます。一方、携帯モードで寝転がって遊びたい人、友人がSwitch2勢という人は、Switch2版を待つ価値が十分あります。</div>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fstore.steampowered.com%2Fapp%2F892970%2FValheim%2F" title="Valheim on Steam" class="embed-card embed-webcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 155px; max-width: 500px; margin: 10px 0px;"></iframe><cite class="hatena-citation"><a href="https://store.steampowered.com/app/892970/Valheim/">store.steampowered.com</a></cite></p>
+
+<h2 class="section-head">Valheimとはどんなゲームか。説明されない世界に放り出される</h2>
+<p>北欧神話をベースにしたサバイバルクラフトゲームです。プレイヤーは戦死したヴァイキングの魂として第10の世界、Valheimに送り込まれ、オーディンの敵である古き存在たちを討伐していきます。</p>
+<p>と書くと立派なあらすじですが、ゲームはこれをほぼ説明してくれません。浜辺で目を覚ますと、カラスが意味深なヒントをぽつぽつ落としていくだけ。あとは自力です。木を殴り、石を拾い、斧とハンマーを作る。ここから60時間の沼が始まります。</p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260709/20260709091906.png" alt="Valheim モンスターとの戦闘" width="977" height="527" loading="lazy" title="" class="hatena-fotolife" /></p>
+<h3 class="sub-head">底が見えないゲームサイクル</h3>
+<p>やることの流れ自体はシンプルです。素材を集め、拠点を建て、装備と料理を整え、そのバイオームのボスに挑む。ボスを倒すと新しいクラフト素材が解禁され、クールダウン付きの固有パワーも手に入り、次のもっと危険なバイオームへの道が開けます。</p>
+<p>世界は中心が安全で、外側へ行くほど過酷になる作りです。草原から始まり、黒い森、沼、山、平原、霧の地、灰の地と続き、正式版1.0で最後の深き北が加わります。クエストマーカーに従うのではなく、自分の判断で世界の奥へ踏み込んでいく設計が本当にうまい。マップを開くたびに、60時間遊んでもまだ世界のほんの一部しか見えていないことに絶望します。いい意味で。</p>
+<h3 class="sub-head">建築が攻略になる「快適度」システム</h3>
+<p>Valheimの中毒性の核心がこれです。拠点で休むと付与される休息バフは、HPとスタミナの自動回復を大きく強化します。そしてその効果時間は、拠点の快適度、つまり家具の数や種類で伸びる。</p>
+<p>テーブルもイスも敷物も、ただの飾りではなくステータスに直結する。だから拠点作りが自己満足ではなく攻略の一部になります。ボス戦の前に内装を整えている自分に気付いたとき、ああ、もう抜けられないなと思いました。</p>
+
+<h2 class="section-head">物理演算と煙に苦しむ建築。だから面白い</h2>
+<p>冒頭の窒息死の話に戻ります。このゲームの建築は、リアルな物理法則に縛られています。</p>
+<p>まず構造強度。支柱や基礎がないと、建物は自重で崩壊します。屋根を伸ばしすぎるとバキバキと音を立てて崩れ落ちる。次に火と煙。焚き火は雨ざらしだと消えるのに、壁で囲いすぎると今度は煙の逃げ場がなくなって、料理どころか自分が死にます。煙突や換気口を考えて設計するしかない。</p>
+<p>正直、最初はこの仕様をナメていました。結果、屋根の崩落と窒息で何度死んだか分かりません。でもこの試行錯誤の時間こそがValheimの建築で、ちゃんと機能する家が建ったときの達成感は、他のクラフトゲームでは味わえないものがあります。</p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260709/20260709091809.png" alt="Valheim フレンドと建築している様子" width="897" height="435" loading="lazy" title="" class="hatena-fotolife" /></p>
+
+<h2 class="section-head">ヴァイキング生活の実態。拠点、農場、そして海へ</h2>
+<h3 class="sub-head">拠点は要塞でなければならない</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="拠点">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20211015/20211015205205.png" alt="Valheim 筆者の拠点" width="1200" height="675" loading="lazy" class="hatena-fotolife" />
+<figcaption>筆者の実際の拠点。平和に見えるが襲撃は日常</figcaption>
+</figure>
+<p>これが私の拠点です。平和そうに見えますか。とんでもない。グレイリングやトロールが定期的に徒党を組んで襲撃してきます。防壁と堀は生存のための義務。襲撃アラートが鳴った瞬間の心臓の縮み方は、何十時間遊んでも慣れません。</p>
+<h3 class="sub-head">食事がそのまま強さになる。イノシシ牧場と人参畑</h3>
+<p>Valheimでは食事の内容がHPとスタミナの上限に直結します。装備が攻撃力・防御力なら、食事は体力とスタミナ。粗末な飯でボスに挑むと瞬殺されます。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="イノシシハウス">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20211015/20211015205436.png" alt="Valheim イノシシハウス" width="1200" height="675" loading="lazy" class="hatena-fotolife" />
+<figcaption>イノシシハウス。殺伐とした世界での唯一の癒やし</figcaption>
+</figure>
+<p>だから中盤以降は食糧生産が本業になります。野生のイノシシにベリーを与えて手懐け、繁殖させて安定供給。土を耕して人参を植え、収穫を待つ。狼や巨大なロックスも仲間にできます。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="人参畑">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20211015/20211015205713.png" alt="Valheim 人参畑" width="1200" height="675" loading="lazy" class="hatena-fotolife" />
+<figcaption>人参畑。60時間プレイしてもやることが尽きない</figcaption>
+</figure>
+<h3 class="sub-head">帆船で新天地へ。ただし海は甘くない</h3>
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="航海">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20211017/20211017164215.png" alt="Valheim 航海" width="1200" height="675" loading="lazy" class="hatena-fotolife" />
+<figcaption>いざ航海へ。しかし海はリゾートではない</figcaption>
+</figure>
+<p>島の資源が枯れたら、船を作って外海に出るしかありません。イカダから始まり、カヌー、ロングシップと徐々に大型化していく。この航海が最高で、最悪です。巨大なウミヘビが船体を齧りにくるし、嵐で波に呑まれれば積み荷ごと海の底。船が沈めば全ロス確定という緊張感が、冒険の手触りを極限まで濃くしてくれます。</p>
+
+<h2 class="section-head">正直に言う。このゲーム、心が折れる瞬間もある</h2>
+<p>ここまで褒めてきましたが、忖度なしで書きます。Valheimの難しさは、敵の強さよりも制限と罰から来る部分が大きいです。</p>
+<div class="bad-box">
+<div class="bad-title">覚悟しておくべきポイント</div>
+<ul>
+<li>死ぬと持ち物をその場に全部落とし、スキル経験値も減る。回収前にもう一度死ぬと、最初の遺品はほぼ回収不能</li>
+<li>雨に濡れたり凍えたりするとスタミナ回復が落ちる。スタミナ管理のゲームなのでこれが地味に効く</li>
+<li>拳・両手ハンマー・魔法など、面白い武器種ほど解禁が遅い。魔法はボスを複数体倒した後の霧の地から</li>
+<li>チュートリアルがほぼない。最初の数時間は手探り</li>
+</ul>
+</div>
+<p>沼の奥地で死んで、装備一式が毒沼の底、というときの絶望感は本物です。自分のミスじゃない、と言い訳したくなる死も多い。それでも戦闘と探索の根っこが本当に楽しいから、みんな文句を言いながら戻ってくるんですが。</p>
+<div class="note-box"><span class="note-label">救済あり：</span>現在は公式のワールド修正機能がメニューから使えます。難易度、資源のドロップ倍率、襲撃頻度、ポータル制限などを自由に調整可能。ソロなら資源倍率を1.5〜3倍にするだけで、素材集めの苦行がかなり軽くなります。縛りたい人は縛れて、緩めたい人は緩められる。いい時代になりました。</div>
+
+<h2 class="section-head">5年間の大型アプデで別ゲーレベルに進化した</h2>
+<p>2021年の早期アクセス開始から、大型無料アップデートが7回。私が遊び始めた頃とは、もはや別のゲームです。</p>
+<ul>
+<li>食事システムの全面リワークと建築素材のティア追加</li>
+<li>雪山バイオームの専用ダンジョン追加</li>
+<li>霧の地（Mistlands）で杖による魔法システムが実装</li>
+<li>灰の地（Ashlands）で火と溶岩の終盤バイオームと新ボスが追加</li>
+<li>2025年9月には戦闘全体を見直す大型調整。装身具（トリンケット）、回避のジャスト入力、新武器群を追加</li>
+</ul>
+<p>そして2026年9月の正式版1.0で、最後のバイオーム、深き北が来ます。深雪を掘るシャベル、イグルー風の建築、各武器種の最上位ティア、雷の杖を含む新魔法、移動用のグラップリングフック、MOD公式サポート、そして真のエンディング。早期アクセス5年の集大成です。</p>
+<p>繰り返しになりますが、既存ワールドのワイプはありません。今から始めて積み上げた拠点は、正式版でもそのまま使えます。これが「今買っていい」と言い切れる最大の理由です。</p>
+
+<h2 class="section-head">ソロとマルチ、どちらで遊ぶべきか</h2>
+<p>ソロでもクリアできます。できますが、正直修羅の道です。Switch2版も最大10人のオンラインマルチに対応予定なので、誘える友人がいるなら断然マルチをおすすめします。</p>
+<table class="data-table">
+<thead><tr><th>項目</th><th>ソロ</th><th>マルチ（推奨）</th></tr></thead>
+<tbody>
+<tr><td data-label="項目">資材集め</td><td data-label="ソロ">全部一人。時間が溶ける</td><td data-label="マルチ">採掘と伐採を分業して爆速</td></tr>
+<tr><td data-label="項目">建築</td><td data-label="ソロ">大型物件は心が折れる</td><td data-label="マルチ">ワイワイ建てるのが最高のエンタメ</td></tr>
+<tr><td data-label="項目">ボス戦</td><td data-label="ソロ">入念な準備が必須</td><td data-label="マルチ">ターゲット分散で勝機が増える。囮とも言う</td></tr>
+<tr><td data-label="項目">死亡時の回収</td><td data-label="ソロ">単独決死行</td><td data-label="マルチ">仲間が遺品を守ってくれる</td></tr>
+</tbody>
+</table>
+<p>フレンドと夜通し拠点を建てた時間は、ゲーム体験というより思い出に近いです。一人で黙々と自分の王国を育てるのも、それはそれで沼ですが。</p>
+
+<h2 class="section-head">よくある疑問（Switch2版）</h2>
+<dl class="faq-list">
+<dt>Q. 旧Nintendo Switch版は発売されますか？</dt>
+<dd>発売予定はありません。発表されたのはNintendo Switch 2版のみで、旧Switchへの移植は見込めない状況です。</dd>
+<dt>Q. Switch2の携帯モードでも遊べますか？</dt>
+<dd>遊べる見込みです。建築・農業・探索といったValheimのプレイ感は、携帯モードでコツコツ進めるスタイルと相性がいいはずです。</dd>
+<dt>Q. PC版とのクロスプレイはできますか？</dt>
+<dd>クロスプレイ対応は現時点で未発表です。続報が出次第、追記します。</dd>
+</dl>
+<p><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Valheimの旧Nintendo Switch版は発売されますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "発売予定はありません。発表されたのはNintendo Switch 2版のみで、旧Switchへの移植は見込めない状況です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ValheimはSwitch2の携帯モードでも遊べますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "遊べる見込みです。建築・農業・探索といったプレイ感は携帯モードと相性が良いタイプのゲームです。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Switch2版とPC版のクロスプレイはできますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "クロスプレイ対応は現時点で未発表です。" }
+    }
+  ]
+}
+</script></p>
+
+<h2 class="section-head">総合評価：終わりのない沼、ただし最高の沼</h2>
+<div class="verdict-box">
+<div class="verdict-title">Valheim 総合評価</div>
+<p><span class="star-rating">★★★★☆</span>　4.5 / 5.0</p>
+<p style="margin-bottom: 0;">快適度システムで建築が攻略に直結し、農業・航海・ボス戦が有機的につながる。死の罰は重いが、それゆえに冒険の一歩一歩に重みがある。正式版1.0とSwitch2版を控えた今が、始めるのに一番いいタイミング。</p>
+</div>
+<div class="good-box">
+<div class="good-title">こんな人には刺さる</div>
+<ul style="margin-bottom: 0;">
+<li>支柱や排煙などリアルな制限の中で建築沼に沈みたい人</li>
+<li>北欧神話・ヴァイキングの世界観が好きな人</li>
+<li>Switch2で友人と最大10人マルチを遊びたい人</li>
+<li>装備も拠点も、自分の努力が目に見えて強くなるのが好きな人</li>
+</ul>
+</div>
+<div class="bad-box">
+<div class="bad-title">向かないかもしれない人</div>
+<ul style="margin-bottom: 0;">
+<li>死亡ペナルティやアイテムロストに強いストレスを感じる人（緩和設定はあり）</li>
+<li>チュートリアルで丁寧に導いてほしい人</li>
+<li>素材集めの繰り返しがどうしても苦手な人</li>
+</ul>
+</div>
+<p>現実逃避のために、別の世界で過酷な労働をする。字面だけ見ると意味不明ですが、遊べば分かります。Switch2版の続報を待ちながら、私は正式版1.0に向けて拠点の増築を進めておきます。ただし、睡眠時間の確保だけは計画的に。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F12%2F04%2F111657" title="【PS5/Switch/Steam】2026年ゲームランキング。ガチで面白かった神ゲー＆隠れた名作23選 - バブルガムの雑記ブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/12/04/111657">babblegum.hatenablog.com</a></cite></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F30%2F080845" title="Switch 2プロコン実機レビュー！「肉球」の押し心地やホリパッドとの比較、PC接続の注意点を解説 - バブルガムの雑記ブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/30/080845">babblegum.hatenablog.com</a></cite></p>
