@@ -1,0 +1,160 @@
+<style>
+h2.section-head {
+  font-size: 118% !important;
+  font-weight: bold !important;
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important;
+  border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important;
+  font-weight: bold !important;
+  border-left: 5px solid #555555 !important;
+  padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  background-color: #f9f9f9 !important;
+}
+.note-box {
+  background: #fffde6;
+  border: 1px solid #e8d44d;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.8;
+}
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box {
+  background: #fff5f5;
+  border: 1px solid #e0a0a0;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.8;
+}
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+.game-info {
+  display: inline-block;
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0 10px 0;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+.game-info-label { color: #888; margin-right: 4px; font-size: 12px; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn {
+  flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important;
+  font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center;
+  transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+</style>
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム）が含まれます。
+</p>
+<p>PS4のフリープレイに協力ゲーが毎月のように降ってきた時代がありました。Lovers in a Dangerous Spacetime、Broforce。ソファに2人で座って、1つの画面を分け合って遊ぶのが当たり前だったあの頃、店頭で見つけて発売日に飛びついたパッケージがあります。A Way Out。刑務所からの脱獄を、2人で、最初から最後まで協力してやり遂げるゲームです。</p>
+<p>あれから何年も経って、あのゲームを作ったHazelight Studios（ヘイゼライト・スタジオ）は「2人専用ゲームしか作らないスタジオ」として世界的な存在になりました。It Takes TwoはGOTYを獲って3,000万本を突破。最新作Split Fictionは発売1週間で200万本。それでも日本での知名度は、正直まだ実力に追いついていないと感じます。</p>
+<p>3作すべてを2人でクリアした立場から、それぞれがどんなゲームで、どんな2人に向いているのかを書いていきます。</p>
+<p>[:contents]</p>
+<h2 class="section-head">Hazelight Studiosという変なスタジオ</h2>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251023/20251023144139.png" alt="Hazelight Studios" width="442" height="282" loading="lazy" class="hatena-fotolife" itemprop="image" /></p>
+<p>2014年にスウェーデンで設立された小さなスタジオです。率いるのはヨセフ・ファレス（Josef Fares）。もともと映画監督で、ゲーム業界に来てから最初に手がけたのが、Starbreeze時代の「Brothers: A Tale of Two Sons」でした。1つのコントローラーの左右スティックで兄弟2人を同時に操作するという変わったゲームで、静かな美しさと音楽の良さが今でも忘れられません。あの作品の成功が、Hazelight設立の土台になっています。</p>
+<p>A Way Out以降はEAの「EA Originals」レーベルから作品を出していますが、買収されたわけではなく、あくまで独立スタジオです。ファレス自身が「EAは開発に一切口を出さない」と公言していて、実際、作品を遊ぶと大手の型にはまっていない自由さを感じます。</p>
+<p>このスタジオの何が変かというと、全作品が2人専用であること。1人用モードが存在しません。普通に考えればビジネス的に不利なはずですが、「1人でも遊べるように」という妥協を捨てたからこそ、2人でないと絶対に成立しないギミックを全編に詰め込める。ソロプレイの互換性を切り捨てた密度こそが、Hazelightの武器です。</p>
+<h3 class="sub-head">1本買えば2人で遊べる「フレンドパス」</h3>
+<p>Hazelight作品には共通して、フレンドパス（Friend's Pass）という仕組みがあります。ゲームを購入した人が友人を招待すると、相手は無料で全編プレイできる。つまり2人で遊ぶのに、ソフトは1本でいい。</p>
+<p>「一緒にやろうよ」と誘うとき、相手にフルプライスを払わせる心理的ハードルがないのは、協力専用ゲームにとって本当に大きいです。私もこれで何人か沼に引きずり込みました。</p>
+<div class="note-box"><span class="note-label">💡 補足：</span>A Way OutとIt Takes Twoは基本的に同じプラットフォーム同士での利用が前提です。Split Fictionでは仕様が進化して、PS5・Xbox・PC間のクロスプレイでもフレンドパスが使えます（双方EAアカウントでのログインが必要）。</div>
+<h2 class="section-head">A Way Out（2018）：2人で脱獄する映画体験</h2>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS4 / Xbox One / PC｜<span class="game-info-label">プレイ時間</span>6〜8時間｜<span class="game-info-label">日本語</span>コンソール版は非対応（Steam版は日本語テキストあり）</span></p>
+<p><img src="https://m.media-amazon.com/images/I/51pkHNz9KqL._SL500_.jpg" alt="A Way Out" width="500" loading="lazy" class="hatena-fotolife" /></p>
+<p>1970年代のアメリカ。刑務所で出会ったレオとヴィンセントが、脱獄計画を立てるところから物語が始まります。プリズン・ブレイクや大脱走、ああいう脱獄モノの「あるある」が丁寧に詰め込まれていて、映画好きならニヤリとする場面の連続です。</p>
+<p>買った当時、一番驚いたのは画面分割の使い方でした。単に視界が2つあるだけではなく、プレイヤー1が看守と話している間、プレイヤー2は別の場所で工具をくすねている。同じ刑務所の中で2つの物語が同時進行して、それが交差する。重要なシーンでは分割が解けて1画面のシネマティックに切り替わる。この演出の呼吸が完全に映画で、「ああ、監督が作ったゲームだ」と納得しました。</p>
+<p>アクションの多くはQTE中心で、ゲーム的な歯ごたえは正直控えめです。そのぶん誰でも最後まで走り切れるので、普段ゲームをしない相手との「初めての協力プレイ」にも向いています。内容は3作の中で最も大人向けでシリアス。そしてラストは、実際に2人でプレイした者同士にしか共有できない体験が待っています。これ以上は何も言いません。ネタバレを踏まずに行ってください。</p>
+<p>難点は日本語対応。コンソール版は英語のみで、Steam版のみ日本語テキストに対応しています。英語が苦手な相手と遊ぶなら、後述の2作から入るのが無難です。あと個人的に惜しいのは、Switch版が存在しないこと。寝転がって持ち運べたら最高の6時間だったのに。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PC版</span> <a href="https://www.amazon.co.jp/dp/B07F2STWMN?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FA+Way+Out%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=A+Way+Out+PS4" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">It Takes Two（2021）：GOTYを獲った協力ゲーの完成形</h2>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch / PS4・PS5 / Xbox / PC｜<span class="game-info-label">プレイ時間</span>10〜15時間｜<span class="game-info-label">日本語</span>対応｜<span class="game-info-label">受賞</span>The Game Awards 2021 GOTY</span></p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0BG1NG3ZN?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/510h+wp-fQL._SL500_.jpg" class="hatena-asin-detail-image" alt="It Takes Two - Switch" title="It Takes Two - Switch" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0BG1NG3ZN?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">It Takes Two - Switch</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>Electronic Arts</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0BG1NG3ZN?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>離婚寸前の夫婦が娘の魔法で人形にされ、元の姿に戻るために家中を冒険する。設定だけ聞くと絵本ですが、中身は協力ゲーの化け物です。The Game Awards 2021でGOTYを受賞し、累計3,000万本を突破。協力専用ゲームがこの数字を出すこと自体が事件です。</p>
+<p>何が化け物かというと、ステージが変わるたびにゲームのジャンルごと変わること。プラットフォームアクションだったのが、次の章では対戦格闘になり、その次はパズルになる。しかも2人の能力が章ごとに違うので、「自分の画面で見えているもの」と「相方の画面で見えているもの」が常に噛み合ったり噛み合わなかったりする。この贅沢なアイデアの投げ捨て方は、A Way Outから積み上げた経験がないと絶対にできません。1作目のスタジオには作れないゲームです。</p>
+<p>都度チュートリアルが入るので子供や初心者でも遊べて、それでいて後半は大人でも歯ごたえを感じる難所がある。完全日本語対応、Switch版あり（2022年11月発売）、フレンドパス対応。最初の1本に迷ったらこれで間違いありません。</p>
+<p>ひとつだけ愚痴を言うと、私はPC版をサブスク経由で遊んだのですが、起動のたびにEAのランチャーアプリを経由させられるのがとにかく鬱陶しかった。ゲーム自体は文句なしなので、パッケージ派・コンソール派のほうが快適かもしれません。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/dp/B0BG1NG3ZN?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FIt+Takes+Two+Switch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=It+Takes+Two+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/dp/B09YNCBT25?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FIt+Takes+Two+PS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=It+Takes+Two+PS5" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">Split Fiction（2025）：最新作にして最高傑作候補</h2>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS5 / Xbox Series X|S / PC / Switch 2｜<span class="game-info-label">プレイ時間</span>10〜12時間｜<span class="game-info-label">日本語</span>対応｜<span class="game-info-label">発売</span>2025年3月（Switch 2版は2025年6月）</span></p>
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251023/20251023152538.png" alt="Split Fiction" width="675" height="513" loading="lazy" class="hatena-fotolife" /></p>
+<p>SF作家のミオとファンタジー作家のゾーイが、出版社の罠で自分たちの書いた物語の世界に閉じ込められる。SF世界とファンタジー世界を交互に行き来しながらの脱出行です。</p>
+<p>発売2日で100万本、1週間で200万本、累計700万本超。Steamレビューは「圧倒的に好評」。数字が示す通り、遊べば納得の完成度です。It Takes Twoがジャンルの万華鏡だったとすれば、Split Fictionはそこにアクションのスピードと物量を上乗せしてきた。1つのアイデアを使い捨てる贅沢さはそのままに、テンポが明らかに上がっていて、「今この瞬間が楽しい」という時間の密度では3作で一番だと思います。</p>
+<p>個人的に一番好きなのはサイドストーリーの存在。メインルートから逸れた先に、短編小説のような実験的ステージが隠されていて、そこにこそこのスタジオの遊び心が凝縮されています。見つけたら必ず入ってください。</p>
+<p>クロスプレイ対応が進化していて、PS5・Xbox・PC間ならフレンドパスもプラットフォームをまたいで使えます。「自分はPS5、友達はPC」でも1本で遊べる。Switch 2版も2025年6月に出たので、現行の主要ハードはほぼ網羅。ちなみに映画化も決定していて、ハリウッドでの争奪戦の末にAmazon MGMが権利を獲得したというニュースが出るくらいには、世界的な注目作になっています。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/dp/B0DQ58S3LC?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%88%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+PS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%88%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">Switch 2版</span> <a href="https://www.amazon.co.jp/dp/B0F5VW665S?tag=bubblegumkk0d-22&amp;linkCode=ll2&amp;linkId=1de874933a17dcba9de18f0e662b923f&amp;ref_=as_li_ss_tl" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%88%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+Switch2%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%83%97%E3%83%AA%E3%83%83%E3%83%88%E3%83%95%E3%82%A3%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3+Switch2" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">3作品を並べてみる</h2>
+<table class="data-table">
+<thead><tr><th>作品名</th><th>世界観</th><th>プレイ時間</th><th>日本語</th><th>Switch対応</th></tr></thead>
+<tbody>
+<tr><td data-label="作品名">A Way Out</td><td data-label="世界観">脱獄劇・シリアス</td><td data-label="プレイ時間">6〜8時間</td><td data-label="日本語">Steam版のみ</td><td data-label="Switch対応">なし</td></tr>
+<tr><td data-label="作品名">It Takes Two</td><td data-label="世界観">ファンタジー・家族</td><td data-label="プレイ時間">10〜15時間</td><td data-label="日本語">対応</td><td data-label="Switch対応">Switch対応</td></tr>
+<tr><td data-label="作品名">Split Fiction</td><td data-label="世界観">SF×ファンタジー</td><td data-label="プレイ時間">10〜12時間</td><td data-label="日本語">対応</td><td data-label="Switch対応">Switch 2のみ</td></tr>
+</tbody>
+</table>
+<p>どれから買うか。私の答えはシンプルで、迷ったらIt Takes Twoです。日本語完全対応、Switchでも遊べて、値段もこなれていて、フレンドパスで相手の負担ゼロ。ゲーム慣れしていない相手を誘う条件が全部揃っています。</p>
+<p>すでに2人ともゲーマーで、PS5かゲーミングPCがあるなら、いきなりSplit Fictionでも構いません。むしろアクションの手応えはこちらが上です。A Way Outは英語のハードルさえ越えられるなら、3作の中で最も忘れがたい「事件」が起きる作品なので、順番の最後でいいから必ず遊んでほしい。</p>
+<p>2人専用ゲームを買うのは、ゲームを買うというより「誰かとの予定を買う」感覚に近いです。週末の夜、ソファの隣に誰かがいる予定があるなら、Hazelightの3本はその時間を確実に良いものにしてくれます。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2021%2F11%2F15%2F231113" title="友達や恋人と遊びたい！協力プレイで50時間以上ハマった「神ゲー」名作8選！【COOP/Steam/PS/Switch】 - バブルガムの雑記ブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe></p>
+<p> </p>
