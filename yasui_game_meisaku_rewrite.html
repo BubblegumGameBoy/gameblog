@@ -1,0 +1,291 @@
+<style>
+h2.section-head {
+  font-size: 118% !important;
+  font-weight: bold !important;
+  background-color: #555555 !important;
+  color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important;
+  border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important;
+  font-weight: bold !important;
+  border-left: 5px solid #555555 !important;
+  padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important;
+  margin-bottom: 16px !important;
+  background-color: #f9f9f9 !important;
+}
+.note-box {
+  background: #fffde6;
+  border: 1px solid #e8d44d;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #444;
+  line-height: 1.8;
+}
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box {
+  background: #fff5f5;
+  border: 1px solid #e0a0a0;
+  border-radius: 5px;
+  padding: 13px 16px;
+  margin: 16px 0;
+  font-size: 13.5px;
+  color: #333;
+  line-height: 1.8;
+}
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+.game-info {
+  display: inline-block;
+  font-size: 13px;
+  color: #555;
+  margin: 6px 0 10px 0;
+  background: #f5f5f5;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+}
+.game-info-label { color: #888; margin-right: 4px; font-size: 12px; }
+.shop-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 22px 0;
+}
+.shop-btn {
+  flex: 1 1 0;
+  min-width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #555555;
+  color: #ffffff !important;
+  font-size: 13.5px;
+  font-weight: bold;
+  text-decoration: none !important;
+  text-align: center;
+  transition: all 0.18s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.18);
+}
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label {
+  font-size: 12px;
+  font-weight: normal;
+  color: #888;
+  margin-right: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+.mercari-box {
+  background: #fff8f3;
+  border: 1px solid #f0c8a0;
+  border-radius: 6px;
+  padding: 16px 18px;
+  margin: 20px 0;
+}
+.mercari-box .mercari-title { font-weight: bold; font-size: 15px; color: #b8501a; margin-bottom: 10px; }
+.mercari-code {
+  display: inline-block;
+  background: #ffffff;
+  border: 2px dashed #b8501a;
+  border-radius: 4px;
+  padding: 6px 14px;
+  margin: 4px 0;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: #b8501a;
+  letter-spacing: 2px;
+}
+.mercari-disclosure { font-size: 11px; color: #888; margin-top: 8px; line-height: 1.6; }
+.faq-list dt {
+  font-weight: bold;
+  background: #f5f5f5;
+  padding: 10px 14px;
+  margin-top: 12px;
+  border-left: 4px solid #555555;
+  font-size: 14.5px;
+}
+.faq-list dd {
+  padding: 10px 14px 14px 18px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.85;
+  border-bottom: 1px solid #eee;
+}
+</style>
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム、メルカリ招待プログラム）が含まれます。
+</p>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1000円以下で買える面白いゲームは本当にありますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "あります。2026年7月時点で、WILD HEARTS（中古1,000円前後、定価12,000円）、ドラゴンクエストトレジャーズ（中古500円〜）、ドラゴンクエストモンスターズ3（中古1,000円前後）など、ワンコイン〜1,000円台で買えるタイトルが複数あります。発売時の評価と価格は必ずしも比例せず、続編の発売や時間経過で価格は大きく下がります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "なぜ面白いゲームが安く買えるのですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "主な理由は3つです。発売から時間が経過したこと、発売初動の評価が低かったがアップデートで改善されたこと、続編や最新作の発売で前作が値崩れしたこと。内容としては十分楽しめるタイトルが低価格で流通することがあります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "中古ゲームを買うときの注意点は？",
+      "acceptedAnswer": { "@type": "Answer", "text": "オンラインサービスが終了していないか、アップデート後の評価がどうか、DLCや完全版があるかの3点を確認してください。マルチプレイ前提のタイトルでサーバーが閉じていると、ほぼ遊べないケースがあります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "メルカリで中古ゲームを買うのは安全ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "出品者の評価とプロフィールを確認すれば安全に取引できます。メルカリ便（匿名配送）を使えば住所を知らせる必要もありません。相場より極端に安いものは、状態の記載をよく確認してから購入するのがおすすめです。" }
+    }
+  ]
+}
+</script>
+</p>
+<p>モンハンワイルズの発売日に定価で買って、正直ちょっと後悔した時期がありました。同じ月に欲しいソフトが3本重なって、財布が完全に沈黙。そのとき試しにメルカリで過去作の相場を眺めてみたら、定価12,000円だったWILD HEARTSが990円で売られていて、目を疑いました。</p>
+<p>「安いゲーム＝質が低い」とは限りません。発売初動でつまずいて値崩れしただけで、中身はアップデートで改善されているタイトルもあれば、単に発売から時間が経っただけの名作もあります。ここ半年ほど、私はそういう「値段と面白さが釣り合っていないゲーム」ばかり漁っていたので、実際に遊んで良かったものを正直な評価と一緒に紹介します。</p>
+<p>先に断っておくと、ここに並ぶのは全部が全部「神ゲー」ではありません。欠点も普通にあります。ただ、その欠点込みでも「この値段なら十分お釣りが来る」と感じたものだけを選びました。</p>
+<p>[:contents]</p>
+<h2 class="section-head">なぜ面白いゲームが1,000円で買えるのか</h2>
+<h3 class="sub-head">名作が値崩れする3つの理由</h3>
+<p>面白いゲームが安く買えるのには、明確な理由があります。</p>
+<p>1つ目は、発売から時間が経過したこと。どんな話題作でも新作が出れば価格は下がります。2つ目は、初動の評価が低かったタイトル。発売時のバグやパフォーマンス問題で叩かれたゲームは、その後のアップデートで改善されても価格だけが据え置かれるケースが多いです。3つ目は、続編や最新作の発売。シリーズ最新作が出ると、前作は一気に値崩れします。</p>
+<p>逆に言うと、初動で叩かれたゲームは「今の評価」を確認してから買えば、かなりの確率で掘り出し物になります。新作の評判を見てから前作で予習する、というのも賢い遊び方です。</p>
+<h3 class="sub-head">中古ゲームを買う時のチェックポイント</h3>
+<p>安いゲームを選ぶ際、価格だけで判断するのは危険です。私も一度、オンライン前提のソフトを買ってから気づいたことがあります。</p>
+<div class="warn-box"><span class="warn-label">⚠️ オンラインサービス終了に注意</span> マルチプレイ前提のタイトルは、サーバーが閉じているとほぼ遊べません。購入前に公式サイトでサービス状況を確認してください。</div>
+<p>アップデート後の評価も重要です。発売時のレビューだけでなく、最新のユーザー評価を見ると、改善されたかどうかがわかります。Amazonレビューなら日付順に並べ替えて最近の評価を確認するのがおすすめです。</p>
+<p>DLCや完全版の有無も要チェック。中古で本体を買っても、追加コンテンツが別売りで結局高くつくケースもあります。「完全版」「ベスト版」があるならそちらを狙いましょう。</p>
+<h2 class="section-head">ハンティングアクション編：モンハン系の掘り出し物</h2>
+<h3 class="sub-head">Monster Hunter Stories 2（モンスターハンターストーリーズ2）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch / PS4 / PC｜<span class="game-info-label">中古相場</span>約1,500円〜</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150031.png" alt="モンスターハンターストーリーズ2" width="682" height="452" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>「モンハンは好きだけどアクションがキツイ」という方向けの一本。コマンドバトルRPGなので、じっくり考えながら遊べます。</p>
+<p>モンスター（オトモン）を育てて戦う配合システムはよくできていて、気づいたら時間が溶けているタイプの中毒性があります。ただ正直に言うと、戦闘は属性相性のじゃんけんが基本なので、終盤は単調に感じる場面もありました。ストーリーも王道少年漫画的で、大人が読むとやや素直すぎる展開です。それでも配合とオトモン集めだけで数十時間遊べるので、中古2,000円以下なら十分元が取れる良作だと思います。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA2&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA2%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?keyword=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA&amp;afid=6396715167" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">PS4版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA2+PS4&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA2+PS4%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?keyword=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AA%E3%83%BC%E3%82%BA&amp;afid=6396715167" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 class="sub-head">モンスターハンターダブルクロス（XX）Nintendo Switch Ver.</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch｜<span class="game-info-label">中古相場</span>約2,000円〜</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150136.png" alt="モンスターハンターダブルクロス" width="597" height="315" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>「ワイルズはリアルすぎる」と感じた人に薦めたいのが、アニメ調でド派手な狩技が楽しめるクロスシリーズ。</p>
+<p>4つのスタイル×狩技のカスタマイズ性は、今のシリーズにはない自由さです。クエスト数・モンスター数も当時としては過去最大級で、やり込もうと思えば数百時間遊べます。もともと3DS版の移植なので、グラフィックの古さは正直否めません。そこを「味」と受け取れるかで評価が分かれますが、Switchで今も普通に遊べる手軽さと中古2,000円前後という価格を考えると、シリーズファンの2本目としてはかなり手堅い選択です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?keyword=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9&amp;afid=6396715167" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 class="sub-head">WILD HEARTS（ワイルドハーツ）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS5 / Xbox Series X|S / PC｜<span class="game-info-label">中古相場</span>約1,000円前後（定価12,000円）</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150658.png" alt="WILD HEARTS ワイルドハーツ" width="880" height="467" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>今回の一番の掘り出し物枠です。ただし手放しの傑作ではなく、事情を知ったうえで買う「賛否両論の佳作」だということは先に言っておきます。</p>
+<p>発売時はパフォーマンス問題で評価を落とし、その後のアップデートも打ち切られて、開発サポートは事実上終了しました。その結果、定価12,000円のソフトが中古1,000円前後まで暴落。ただ、からくりシステムによる立体的な狩り自体は、モンハンとは別方向の面白さがちゃんとあります。壁を作って突進を防ぎ、櫓を組んで飛びかかる。この建築×狩りの組み合わせは他にありません。和風の世界観も美しく、ソロで一通り遊ぶ分には今でも十分成立します。減点要素込みでも、この価格なら試す価値があると私は思います。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Wild+Hearts&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FWild+Hearts%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?keyword=%E3%83%AF%E3%82%A4%E3%83%AB%E3%83%89%E3%83%8F%E3%83%BC%E3%83%84&amp;afid=6396715167" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">RPG・アドベンチャー編</h2>
+<h3 class="sub-head">FINAL FANTASY XVI（FF16）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS5 / PC｜<span class="game-info-label">中古相場</span>約3,000円〜（定価9,800円）</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150213.png" alt="FF16" width="825" height="453" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>批評家の評価は高い一方、ユーザー評価は割れた作品です。「FFらしいRPG要素が薄い」「サイドクエストが単調」という不満は実際その通りで、従来のFFを期待して買うとがっかりするかもしれません。</p>
+<p>ただ、召喚獣バトルの映像美は本物です。アクションが苦手でもオートモードで進められるので、重厚なダークファンタジーを海外ドラマ感覚で一気見する遊び方が合っています。RPGとしてではなく「遊べる大作映画」として割り切れば、3,000円台は妥当というより安いくらいです。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=FINAL+FANTASY+XVI&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FFINAL+FANTASY+XVI%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=FINAL+FANTASY+XVI" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 class="sub-head">スターオーシャン6 THE DIVINE FORCE</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS4/PS5 / Xbox / PC｜<span class="game-info-label">中古相場</span>約1,500円〜</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150505.png" alt="スターオーシャン6" width="797" height="457" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>ワゴン常連で、世間の評価も「惜しい佳作」あたりに落ち着いている作品です。UIの使いにくさや戦闘バランスの粗さは、遊んでいて私も何度か気になりました。</p>
+<p>それでも推す理由は移動の気持ちよさ。DUMAシステムでフィールドのどこへでも飛んでいける爽快感は、この価格帯のRPGではちょっと他に思いつきません。SFとファンタジーが混ざった世界観も好みが合えば刺さります。定価で買っていたら文句の一つも言いたくなったと思いますが、1,500円なら粗より爽快感が勝ちます。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">PS4版</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36+PS4&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36+PS4%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%AA%E3%83%BC%E3%82%B7%E3%83%A3%E3%83%B36+PS4" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 class="sub-head">Outer Wilds（アウター・ワイルズ）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS4/PS5 / Switch / Xbox / PC｜<span class="game-info-label">中古相場</span>約2,000円〜</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150547.png" alt="Outer Wilds" width="825" height="432" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>この記事で唯一、留保なしで傑作と言い切れる一本です。批評家からもユーザーからも極めて高い評価を受け続けていて、「記憶を消してもう一度遊びたいゲーム」の代名詞になっています。</p>
+<p>22分で滅びる太陽系を舞台にしたタイムループ型探索ゲーム。派手なアクションはなく、序盤は何をすればいいか戸惑うかもしれませんが、宇宙の謎が一本の線につながる瞬間の感動は、私がゲームで味わった中でも上位に入ります。ネタバレを踏む前に、まっさらな状態で遊んでほしい。それだけです。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=Outer+Wilds+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FOuter+Wilds+Switch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Outer+Wilds+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Outer+Wilds+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FOuter+Wilds+PS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Outer+Wilds+PS5" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">ドラクエ・スクエニ編：値崩れ組の実力</h2>
+<h3 class="sub-head">ドラゴンクエスト トレジャーズ 蒼き瞳と大空の羅針盤</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch｜<span class="game-info-label">中古相場</span>約500円〜</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150259.png" alt="ドラクエ トレジャーズ" width="901" height="495" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>「虚無ゲー」と酷評されて価格崩壊した作品です。その評判は半分正しくて、モンスターズのような育成・対戦を期待すると確実に肩透かしを食らいます。世間の評価も「人を選ぶ」で一致しています。</p>
+<p>ただ、何も考えずに大地を掘ってお宝を鑑定する、このシンプルな作業が疲れた脳には妙に心地いいんです。ラジオを聴きながら黙々と掘る、みたいな遊び方が合う人には合う。カミュとマヤの幼少期も可愛く、ワンコインの暇つぶしとしては悪くない選択だと思っています。期待値を正しく設定してから買ってください。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88+%E3%83%88%E3%83%AC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88+%E3%83%88%E3%83%AC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88+%E3%83%88%E3%83%AC%E3%82%B8%E3%83%A3%E3%83%BC%E3%82%BA" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 class="sub-head">ドラゴンクエストモンスターズ3 魔族の王子とエルフの旅</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch｜<span class="game-info-label">中古相場</span>約1,000円前後</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210150359.png" alt="ドラクエモンスターズ3" width="828" height="462" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>発売時はパフォーマンス面で叩かれ、3DS時代からのシリーズファンほど「進化していない」と辛口な作品です。私もジョーカー時代と比べて物足りない部分があるのは否定しません。</p>
+<p>それでも、配合の魔力は健在です。自分だけの最強モンスターを組み上げていく時間は、やっぱり何時間でも没頭できる。アップデートでUI改善とタマゴ厳選の緩和が入り、発売時に指摘されたストレス要素はかなり減りました。シリーズ初挑戦なら不満点は気にならないはずで、1,000円前後まで下がった今はむしろ入りやすいタイミングだと思います。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA3&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA3%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%AF%E3%82%A8%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%82%BA3%E3%80%80switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F10%2F200657" title="【DQM3】中古価格が低い今が買い時？アプデ後の評価と今だからおすすめできる理由 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/10/200657">babblegum.hatenablog.com</a></cite></p>
+<h2 class="section-head">【番外】新しめだけど触れておきたい2本</h2>
+<h3 class="sub-head">Monster Hunter Wilds（モンスターハンターワイルズ）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>PS5 / Xbox Series X|S / PC｜<span class="game-info-label">中古相場</span>約1,500〜2,000円</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210145933.png" alt="モンスターハンターワイルズ" width="883" height="437" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>2025年最大級の話題作でしたが、道のりは平坦ではありませんでした。PC版の最適化不足とコンテンツ不足でSteamレビューが大荒れになり、一時は「圧倒的不評」まで転落。その後のアップデートで持ち直し、直近は「やや好評」まで回復しています。この経緯のせいで、発売1年ちょっとで中古1,500〜2,000円まで値下がりしました。</p>
+<p>私自身は定価で買って、荒れていた時期も含めて遊び続けましたが、今の状態なら普通に楽しめます。グラフィックと生態系描写はシリーズ随一。評価が落ち着いてから安く入る、まさにこの記事の趣旨どおりの買い方ができるタイトルになっています。</p>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=Monster+Hunter+Wilds&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FMonster+Hunter+Wilds%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%A2%E3%83%B3%E3%83%8F%E3%83%B3%E3%83%AF%E3%82%A4%E3%83%AB%E3%82%BA" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F20%2F104254" title="【モンハンワイルズ評価】中古1000円で買える今が始めどき。アプデで改善した「モンハン」らしさ - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/20/104254">babblegum.hatenablog.com</a></cite></p>
+<h3 class="sub-head">ドラゴンクエストIII そして伝説へ……（HD-2D版）</h3>
+<p><span class="game-info"><span class="game-info-label">対応機種</span>Switch / PS5 / Xbox / PC｜<span class="game-info-label">中古相場</span>約4,000円〜（まだ新作枠）</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251210/20251210151404.png" alt="ドラクエ3 HD-2D" width="1200" height="632" loading="lazy" class="hatena-fotolife" itemprop="image" /></figure>
+<p>美しく蘇ったHD-2Dの世界は、ファミコン世代には涙もの。中身のバランスは基本的に昔のままなので、「見た目だけ新しい」と感じる人がいるのも事実ですが、追加のオルテガ関連エピソードは素直に良かったです。トレジャーズやモンスターズ3のような安さはまだないので、急がないなら値下がり待ちもありです。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Switch版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88III+HD-2D&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88III+HD-2D%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%883+HD-2D" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="shop-buttons"><span class="shop-btn-label">PS5版</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88III+HD-2D+PS5&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88III+HD-2D+PS5%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%89%E3%83%A9%E3%82%B4%E3%83%B3%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%883+HD-2D+PS5" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head">中古を安く買うなら、私はメルカリをよく使っています</h2>
+<p>今回紹介したタイトルは、Amazon・楽天・メルカリのどこでも中古在庫がありますが、私が実際に見比べた範囲では、最安はメルカリであることが多いです。個人出品が中心で、中古ゲームショップの仕入れマージンが乗らないぶん安くなる、という単純な理屈です。</p>
+<div class="note-box"><span class="note-label">💡 ヒント：</span>同じソフトでも、フリマアプリかオークションサイトか、店舗系ECかで価格差がけっこう出ます。急がないソフトなら、いくつか見比べてから買うのがおすすめです。</div>
+<h3 class="sub-head">メルカリ未登録なら、招待コードで500円分のポイントがもらえます</h3>
+<p>メルカリ未登録の方は、招待コード経由で新規登録すると500円分のポイントが付与されます。1,000円前後のソフトが多い今回のラインナップだと、実質半額くらいになる計算です。</p>
+<div class="mercari-box">
+<div class="mercari-title">🎁 メルカリ招待コード（500円分ポイントプレゼント）</div>
+<p style="margin: 0 0 8px 0;">新規登録時に下記のコードを入力すると、登録完了後に500円分のメルペイポイントが付与されます。</p>
+<p style="margin: 8px 0;">招待コード：<span class="mercari-code">YRCNMN</span></p>
+<p style="margin: 8px 0; font-size: 13px;">▶ <a href="https://link.jp.mercari.com/70tO/lpthbfqe" target="_blank" rel="sponsored noopener">メルカリの登録ページはこちら</a></p>
+<div class="mercari-disclosure">※招待コード経由で登録されると、登録者本人と紹介者（私）にそれぞれ500円分のポイントが付与される、メルカリ公式の友達紹介プログラムです。</div>
+</div>
+<div class="warn-box"><span class="warn-label">⚠️ 注意：</span>招待コードは新規登録時の最初の画面でしか入力できません。登録完了後に後から入力することはできないので、必ず登録前にコードを控えておいてください。</div>
+<h2 class="section-head">よくある質問（FAQ）</h2>
+<dl class="faq-list">
+<dt>Q1. 1000円以下で買える面白いゲームは本当にありますか？</dt>
+<dd>あります。2026年7月時点で、WILD HEARTS（中古1,000円前後、定価12,000円）、ドラゴンクエストトレジャーズ（中古500円〜）、ドラゴンクエストモンスターズ3（中古1,000円前後）など、ワンコイン〜1,000円台で買えるタイトルが複数あります。相場は日々変動するので、購入前に最新価格を確認してください。</dd>
+<dt>Q2. なぜ面白いゲームが安く買えるのですか？</dt>
+<dd>主な理由は3つです。発売から時間が経過したこと、発売初動の評価が低かったがアップデートで改善されたこと、続編や最新作の発売で前作が値崩れしたこと。内容としては十分楽しめるタイトルが低価格で流通することがあります。</dd>
+<dt>Q3. 中古ゲームを買うときの注意点は？</dt>
+<dd>オンラインサービスが終了していないか、アップデート後の評価がどうか、DLCや完全版があるかの3点を確認してください。マルチプレイ前提のタイトルでサーバーが閉じていると、ほぼ遊べないケースがあります。</dd>
+<dt>Q4. メルカリで中古ゲームを買うのは安全ですか？</dt>
+<dd>出品者の評価とプロフィールを確認すれば安全に取引できます。メルカリ便（匿名配送）を使えば住所を知らせる必要もありません。相場より極端に安いものは、状態の記載をよく確認してから購入するのがおすすめです。</dd>
+</dl>
+<h2 class="section-head">まとめ：欠点込みで「値段以上」を選ぶ</h2>
+<p>正直に振り返ると、今回挙げた中で手放しの傑作はOuter Wildsくらいで、あとは何かしらの欠点を抱えた作品ばかりです。でも、それでいいと思っています。定価9,800円で欠点に目をつぶるのはつらいけれど、1,000円なら「この粗はまあ許せるか」と笑って流せる。中古で安く買う一番のメリットは、この心の余裕かもしれません。</p>
+<p>迷ったら、まずはワンコイン圏のトレジャーズかWILD HEARTSあたりで「値崩れゲー漁り」の面白さを体験してみてください。合わなくても数百円、刺されば数十時間。この賭けの分の悪くなさが、一度知るとやめられないんです。</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F12%2F04%2F111657" title="【PS5/Switch/Steam】2026年ゲームランキング。ガチで面白かった神ゲー＆隠れた名作23選 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/12/04/111657">babblegum.hatenablog.com</a></cite></p>
+<p> </p>
