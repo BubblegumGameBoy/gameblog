@@ -1,0 +1,144 @@
+<style>
+  h2.section-head { font-size: 118% !important; font-weight: bold !important; background-color: #555555 !important; color: #ffffff !important; padding: 10px 14px !important; border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important; box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff; margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important; }
+  h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
+  .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 20px 0; }
+  .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #f9f9f9; }
+  .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+  .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+  .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+  figure { margin: 16px 0; text-align: center; } figure img { max-width: 100%; height: auto; } figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+  ul { padding-left: 1.5em; } ol { padding-left: 1.6em; } li { margin-bottom: 6px; line-height: 1.8; } p { margin-bottom: 1.4em; }
+  @media (max-width: 520px) {
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+    .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .data-table td:last-child { border-bottom: none; }
+    .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+    .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+    .data-table tr:nth-child(even) td { background: #ffffff; }
+  }
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Windrose アイテムの売り方｜密輸業者の解禁フロー",
+  "description": "Windrose（ウィンドローズ）で売却品を売る方法。拠点では売れず、メインクエストをトルトゥーガまで進めて派閥クエストUnderground Networkで密輸業者の隠れ家を解禁する必要がある。",
+  "step": [
+    { "@type": "HowToStep", "name": "メインクエストを進める", "text": "序盤のメインクエストを進めて、交易ハブのトルトゥーガに到達する。" },
+    { "@type": "HowToStep", "name": "派閥クエストを受ける", "text": "トルトゥーガで派閥（バッカニア）系のクエストラインを進め、Underground Network（地下ネットワーク）を受注する。" },
+    { "@type": "HowToStep", "name": "密輸業者の隠れ家へ", "text": "クエストマーカーに従って密輸業者の島の洞窟へ。マリータと話す。" },
+    { "@type": "HowToStep", "name": "バイヤーに売る", "text": "マリータの左隣に立っているバイヤーに話しかけると売却メニューが開く。以降はトルトゥーガでも密輸業者向けの品を売れるようになる。" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Windroseで拾った売却品は拠点で売れますか？", "acceptedAnswer": { "@type": "Answer", "text": "売れません。自分の拠点の作業台やNPCには売却機能がなく、クエストを進めて密輸業者などの買取NPC（バイヤー）を解禁する必要があります。" } },
+    { "@type": "Question", "name": "密輸業者の島はどこにありますか？", "acceptedAnswer": { "@type": "Answer", "text": "ワールドは手続き生成なので、島の位置はワールドごとに違います。他人のマップ画像は当てにならないため、クエストUnderground Networkのマーカーに従うのが確実です。" } },
+    { "@type": "Question", "name": "トルトゥーガでは売れないのですか？", "acceptedAnswer": { "@type": "Answer", "text": "最初は売れません。トルトゥーガは購入と評判のハブで、買取は派閥ごとのバイヤーが担当します。密輸業者の隠れ家を一度解禁すると、以降はトルトゥーガ側にも密輸業者のバイヤーが現れて売却できるようになります。" } }
+  ]
+}
+</script>
+</p>
+<p>インベントリが「売却できそうな」財宝やガラクタでパンパンなのに、どこに持っていっても売れない。拠点に帰っても売れない。Windroseを始めて最初にぶつかった壁が、まさかの「店がない」でした。</p>
+<p>結論から言うと、このゲームの売却はクエストで解禁する仕組みです。メインクエストをトルトゥーガまで進めて、派閥クエストのUnderground Network（地下ネットワーク）で密輸業者の隠れ家にたどり着くと、ようやくアイテムが売れるようになります。序盤に必ず通る道なのに分かりにくいので、正式なフローをまとめておきます。</p>
+<p>[:contents]</p>
+<h2 class="section-head">先に結論｜売却は密輸業者クエストで解禁</h2>
+<div class="point-box">
+<div class="point-title">売却解禁までの流れ（これだけでOK）</div>
+<ol>
+<li>メインクエストを進めて、交易ハブの<span style="font-weight: bold">トルトゥーガ</span>に到達する</li>
+<li>トルトゥーガで派閥（バッカニア）系クエストを進め、<span style="font-weight: bold">Underground Network（地下ネットワーク）</span>を受注</li>
+<li>マーカーに従って<span style="font-weight: bold">密輸業者の島の洞窟</span>へ行き、マリータと話す</li>
+<li>マリータの<span style="font-weight: bold">左隣にいるバイヤー</span>に話しかけると売却メニューが開く</li>
+</ol>
+一度解禁すれば、以降はトルトゥーガ側にも密輸業者のバイヤーが出現して、ハブで売れるようになります。
+</div>
+<p>大事なポイントがもうひとつ。自分の拠点では何も売れません。作業台をいくら漁っても売却の項目は出てこないので、拠点で売ろうとして詰まっている人は、そもそも探す場所が違います。私はこれでかなりの時間を溶かしました。</p>
+<h2 class="section-head">密輸業者の場所｜マップは人によって違う</h2>
+<p>これが私のワールドでの密輸業者の島です。ただし、この位置を覚えても意味がありません。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713170735.png" alt="Windrose 密輸業者の島のマップ位置（ワールドごとに異なる）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>私のワールドでの密輸業者の位置。フレンドと検証したところ、島の場所は人によって違いました。</figcaption>
+</figure>
+<p>フレンドのワールドと見比べて検証したのですが、島の配置がそもそも別物でした。Windroseのワールドは手続き生成なので、マップはワールドごとに違います。つまり攻略サイトの「ここにあります」というマップ画像は、あなたのワールドでは当てになりません。素直にUnderground Networkのクエストマーカーに従ってください。それが正式な道案内です。</p>
+<p>島に着くと、洞窟の入り口があります。隠れ家というだけあって、知らないと素通りしそうな見た目です。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713170805.png" alt="Windrose 密輸業者の隠れ家の洞窟前" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>密輸業者の隠れ家、洞窟前。</figcaption>
+</figure>
+<p>洞窟の中に入って、マリータの隣にいるバイヤーに話しかければ、ようやく売却メニューが開きます。長かった。溜め込んだ財宝を一気に換金する瞬間は、ちょっとしたボーナスタイムです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713171154.png" alt="Windrose 密輸業者のバイヤー（アイテム売却画面）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>商人の前。ここでアイテムを売却できます！</figcaption>
+</figure>
+<div class="point-box">
+<div class="point-title">私の環境で起きたバグ（参考まで）</div>
+なぜか私のワールドではキーになるクエストが発動せず、先に解禁済みのフレンドのワールドに連れて行ってもらって売却しました。協力プレイなら、フレンドのワールドのバイヤーでも普通に売れます。クエストが進まなくて困っている人は、この回避策も覚えておくと役に立つかもしれません。
+</div>
+<h2 class="section-head">どこで何が売れるか｜買取先は派閥ごとに分かれている</h2>
+<p>売却が解禁されてから分かったのですが、このゲーム、買取先が派閥ごとに分かれています。アイテムの説明文に「どの派閥が欲しがるか」が書いてあるので、それに合わせて持ち込む形です。</p>
+<table class="data-table">
+<thead>
+<tr><th>買取先</th><th>売れるもの</th><th>解禁タイミング</th></tr>
+</thead>
+<tbody>
+<tr><td data-label="買取先">密輸業者（ポートロイヤル）</td><td data-label="売れるもの">財宝・密輸品・骨董品・花瓶・タリスマンなどの貴重品</td><td data-label="解禁タイミング">Underground Networkでマリータの隣のバイヤー解禁</td></tr>
+<tr><td data-label="買取先">バッカニアの本拠地</td><td data-label="売れるもの">動物の頭などのトロフィー・酒・軍需品</td><td data-label="解禁タイミング">バッカニア系クエストラインの3段階目あたり</td></tr>
+<tr><td data-label="買取先">トルトゥーガの人々の本拠地</td><td data-label="売れるもの">食料・医薬品などの物資</td><td data-label="解禁タイミング">バッカニア系クエストラインの2段階目あたり</td></tr>
+</tbody>
+</table>
+<p>ややこしいのが、トルトゥーガの街そのものは最初、買取をしてくれないこと。あそこは購入と評判管理のハブで、売却は各派閥のバイヤーの仕事です。財宝を抱えてトルトゥーガをうろついても売り先はないので、まずは密輸業者の解禁を最優先にするのがおすすめです。通貨はピアストルが基本で、密輸業者ではギニーが絡む取引もあります。</p>
+<h2 class="section-head">コラム：やばい島をみつけた｜古代の村とイノシシの笛</h2>
+<p>ここからは完全に余談ですが、序盤の金策・探索と同じくらい役に立った発見なので紹介させてください。トウモロコシを探して旅をしていたところ、山麓エリアで「古代の村」という島に着きました。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713170305.png" alt="Windrose 古代の村のマップ位置" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>古代の村。トウモロコシを探して旅をしていたら着きました。</figcaption>
+</figure>
+<p>村の中心に、石像に挟まれた祭壇があります。調べると、供物をささげる必要があるとのこと。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713171332.png" alt="Windrose 古代の村の祭壇（供物をささげる）" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>供物をささげる必要がある。</figcaption>
+</figure>
+<p>必要な供物は、生肉20個と儀式のオイル3個。オイルは祭壇の周囲に点在する3つの遺跡で1個ずつ手に入ります。それぞれ番人がいて、私が回った感じだと配置はこんな具合でした。</p>
+<ul>
+<li>南西の遺跡：暗い部屋の中の古代のチェスト。レベル8前後のオオカミが守っている</li>
+<li>南東の遺跡：崩れた建物の中央に置いてある。ヤギがうろついているので注意</li>
+<li>北東の遺跡：一番いやらしい隠し方。正面の斜めになった壁を登った先の小部屋にある</li>
+</ul>
+<p>供物をささげると、報酬でこのイノシシの笛がもらえます。見た目は地味。でもこれがやばい。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713171513.png" alt="Windrose 報酬でもらえるイノシシの笛" width="57" height="66" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>報酬でもらえるイノシシの笛。レジェンダリー品です。</figcaption>
+</figure>
+<p>なんと使うと、イノシシのトリュフを召喚できるようになります。しかもただのペットではなく、ちゃんと戦ってくれる。普通に強めです。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260713/20260713171538.png" alt="Windrose イノシシの笛で召喚したトリュフが戦ってくれる様子" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>イノシシのトリュフを召喚。戦ってくれるうえに普通に強め。これは探索が捗る。</figcaption>
+</figure>
+<p>トリュフを出すと近くの敵のターゲットがイノシシに向かうので、実質タンク役になってくれます。このゲーム、数の暴力で死ぬことが多いので、囲まれがちなソロ探索では特にありがたい。笛は使い捨てではなく再使用できるタイプで、クールタイムはトリュフが消えてから3分ほど。序盤に取れる装備としては破格の性能だと思います。古代の村を見かけたら、生肉を20個握りしめて寄り道する価値ありです。</p>
+<h2 class="section-head">よくある質問</h2>
+<dl class="faq-list">
+<dt>拾った売却品は拠点で売れますか？</dt>
+<dd>売れません。自分の拠点には売却機能がなく、クエストを進めて密輸業者などの買取NPC（バイヤー）を解禁する必要があります。売却品はそれまでチェストに溜めておきましょう。</dd>
+<dt>密輸業者の島はどこにありますか？</dt>
+<dd>ワールドは手続き生成なので、島の位置はワールドごとに違います。他人のマップ画像ではなく、Underground Networkのクエストマーカーに従うのが確実です。</dd>
+<dt>トルトゥーガでは売れないのですか？</dt>
+<dd>最初は売れません。トルトゥーガは購入と評判のハブです。ただし密輸業者の隠れ家を一度解禁すると、以降はトルトゥーガ側にも密輸業者のバイヤーが現れて、ハブから売却できるようになります。</dd>
+</dl>
+<h2 class="section-head">まとめ</h2>
+<p>Windroseの売却は「店を探す」のではなく「クエストで解禁する」もの。これさえ分かっていれば、序盤の迷子はだいぶ減るはずです。トルトゥーガまでメインクエストを進めて、Underground Networkで密輸業者の隠れ家へ。売却品はそれまでチェストに溜めておいて、解禁後にまとめて換金。これが正解ルートでした。</p>
+<p>Windroseの攻略記事は他にも書いています。同じ山麓エリアの宝箱で迷った人はこちらもどうぞ。</p>
+<!-- ▼「黒ひげの遺跡発掘現場」攻略記事の公開後、URLを差し替えて有効化してください
+<iframe src="https://hatenablog-parts.com/embed?url=【遺跡発掘現場攻略記事のURLをURLエンコードして貼る】" title="Windrose攻略 黒ひげの遺跡発掘現場 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="【遺跡発掘現場攻略記事のURL】">babblegum.hatenablog.com</a></cite>
+-->
