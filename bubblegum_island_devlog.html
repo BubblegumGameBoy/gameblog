@@ -14,23 +14,15 @@
   PCの大画面iframeと、その直後の広告枠は既存記事の構成を維持。
 -->
 <style>
-  /* サイドバーだけ隠して本文を広く使う。
-     wrapper/container の max-width は上書きしない（＝ページ全体の左右余白を残す）。 */
-  #box2, .sidebar {
-    display: none !important;
-  }
-  #main {
-    width: 100% !important;
-  }
-  /* iframe はビューポート基準で全幅にはみ出す。
-     wrapper が中央寄せのままなので margin-left の計算が正しく効く。 */
+  /* ゲームiframeは本文カラム内に収める。
+     サイドバー非表示や全幅はみ出しは行わない（＝ページ全体の左右余白を保つ）。 */
   .full-iframe {
-    width: 100vw;
-    height: 105vh;
-    margin-left: calc(50% - 50vw + 25px);
+    display: block;
+    width: 100%;
+    height: 80vh;
+    min-height: 520px;
+    margin: 0 auto;
     border: none;
-    transform: scale(0.85);
-    transform-origin: top center;
     background: #ffffff;
   }
   h2.section-head {
@@ -176,12 +168,8 @@
   }
   @media (max-width: 768px) {
     .full-iframe {
-      display: block !important;
-      width: 100% !important;
-      height: 88vh;
-      min-height: 540px;
-      margin-left: 0 !important;
-      transform: none !important;
+      height: 82vh;
+      min-height: 480px;
     }
     .post-iframe-ad {
       margin-top: 16px !important;
