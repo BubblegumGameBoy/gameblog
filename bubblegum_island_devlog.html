@@ -160,6 +160,16 @@
   }
   p {
     margin-bottom: 1.4em;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  /* スマホ崩れ防止：画像・埋め込みが幅を超えないよう共通で制限 */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .embed-card {
+    max-width: 100%;
   }
   .mobile-play-cta {
     display: none;
@@ -239,7 +249,7 @@
 <p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F07%2F21%2F140911" title="【個人開発のオンラインゲーム】クリーチャー育成キット - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/07/21/140911">babblegum.hatenablog.com</a></cite></p>
 <p>クリーチャー育成キット。<br />作成期間は1か月くらいです。<br />最初に作ろうとしていたのは、<span style="font-weight: bold">人の顔を持った海の生きものを育てて話せるゲーム</span>でした。</p>
 <p>かなり「シーマン」にインスパイアされました。卵の中に顔が浮かび、その顔を引き継いだまま、スライムやウミウシのような姿へ進化していく。最終形の案では、青い海洋生物の正面に、妙に現実的な人間の顔がついていました。</p>
-<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/01-seaman-concept.jpg" alt="開発初期に制作した、人の顔を持つ海洋生物のデザイン案" width="1400" height="1400" loading="eager" />
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/01-seaman-concept.jpg" alt="開発初期に制作した、人の顔を持つ海洋生物のデザイン案" width="463" height="463" loading="eager" />
 <figcaption>開発初期のデザイン案。この顔のまま育成ゲームを作るつもりでした。</figcaption>
 </figure>
 <p>この案もかなり気に入っていたのですが、試作を続けるうちにゲームの方向は大きく変わりました。3Dモデルに、Rigを付けてモーションを作る作業があるのですが、これが難しい。昆虫感を出したアオウミウシを作りたかったのですが、虫っぽいカサカサ感がなかなか出せない。</p>
