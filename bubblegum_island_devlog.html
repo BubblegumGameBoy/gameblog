@@ -1,0 +1,308 @@
+<!--
+  はてなブログ「HTML編集」貼り付け用
+
+  推奨タイトル：
+  【個人開発】人面の生きものを育てるつもりが、カニの島になった。「Bubblegum Island」制作記
+
+  タイトル案：
+  1. シーマンみたいなペットを作っていたら、知らない誰かの手紙が届く島になった
+  2. 人面魚の企画からWebGL公開まで。個人開発ゲーム「Bubblegum Island」ができるまで
+  3. ペットは脱皮し、手紙は海を渡る。無料ブラウザゲームを個人開発しました
+  4. 【無料ブラウザゲーム】小さな島でカニを育てる「Bubblegum Island」を公開しました
+
+  画像は公開ゲームと同じGitHub Pages上に配置済みのURLを使用。
+  PCの大画面iframeと、その直後の広告枠は既存記事の構成を維持。
+-->
+<style>
+  /* サイドバーだけ隠して本文を広く使う。
+     wrapper/container の max-width は上書きしない（＝ページ全体の左右余白を残す）。 */
+  #box2, .sidebar {
+    display: none !important;
+  }
+  #main {
+    width: 100% !important;
+  }
+  /* iframe はビューポート基準で全幅にはみ出す。
+     wrapper が中央寄せのままなので margin-left の計算が正しく効く。 */
+  .full-iframe {
+    width: 100vw;
+    height: 105vh;
+    margin-left: calc(50% - 50vw + 25px);
+    border: none;
+    transform: scale(0.85);
+    transform-origin: top center;
+    background: #ffffff;
+  }
+  h2.section-head {
+    font-size: 118% !important;
+    font-weight: bold !important;
+    background-color: #555555 !important;
+    color: #ffffff !important;
+    padding: 10px 14px !important;
+    border-top: 4px solid #aaaaaa !important;
+    border-bottom: 4px solid #aaaaaa !important;
+    box-shadow: inset 0 1px 0 #ffffff, inset 0 -1px 0 #ffffff;
+    margin-top: 48px !important;
+    margin-bottom: 20px !important;
+    border-left: none !important;
+  }
+  .note-box {
+    background: #fffde6;
+    border: 1px solid #e8d44d;
+    border-radius: 5px;
+    padding: 13px 16px;
+    margin: 16px 0;
+    font-size: 13.5px;
+    color: #444444;
+    line-height: 1.8;
+  }
+  .note-box .note-label {
+    font-weight: bold;
+    color: #555555;
+    margin-right: 4px;
+  }
+  .lang-notice {
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 7px 12px;
+    margin: 0 0 14px 0;
+    color: #444444;
+    font-size: 13px;
+  }
+  .article-figure {
+    margin: 24px auto 30px;
+    text-align: center;
+  }
+  .article-figure img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .article-figure figcaption,
+  .concept-item figcaption {
+    margin-top: 8px;
+    color: #777777;
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 22px 0 30px;
+  }
+  .concept-item {
+    margin: 0;
+    text-align: center;
+  }
+  .concept-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .data-table td,
+  .data-table th[scope="row"] {
+    padding: 9px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 1.7;
+    vertical-align: top;
+  }
+  .data-table td {
+    background: #ffffff;
+  }
+  .data-table tr:nth-child(even) td {
+    background: #f9f9f9;
+  }
+  .data-table th[scope="row"] {
+    background: #f5f5f5;
+    color: #333333;
+    font-weight: bold;
+    white-space: nowrap;
+    text-align: left;
+  }
+  .play-btn-wrap {
+    text-align: center;
+    margin: 26px 0;
+  }
+  .play-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: #2f765f;
+    color: #ffffff !important;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none !important;
+    font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.18);
+  }
+  .play-btn-sub {
+    display: block;
+    font-size: 12px;
+    color: #888888;
+    margin-top: 8px;
+  }
+  ul, ol {
+    padding-left: 1.5em;
+  }
+  li {
+    margin-bottom: 6px;
+    line-height: 1.8;
+  }
+  p {
+    margin-bottom: 1.4em;
+  }
+  .mobile-play-cta {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .full-iframe {
+      display: block !important;
+      width: 100% !important;
+      height: 88vh;
+      min-height: 540px;
+      margin-left: 0 !important;
+      transform: none !important;
+    }
+    .post-iframe-ad {
+      margin-top: 16px !important;
+    }
+    .mobile-play-cta {
+      display: none !important;
+    }
+    .concept-grid {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  }
+  @media (max-width: 520px) {
+    .data-table, .data-table tbody, .data-table tr, .data-table td,
+    .data-table th[scope="row"] {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .data-table tr {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .data-table th[scope="row"] {
+      padding: 6px 10px;
+      font-size: 11px;
+      color: #666666;
+    }
+    .data-table td {
+      padding: 7px 10px;
+      font-size: 13px;
+    }
+    .play-btn {
+      font-size: 16px;
+      padding: 13px 24px;
+    }
+  }
+</style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Bubblegum Island",
+  "alternateName": "バブルガム・アイランド",
+  "description": "小さな海辺の島でペットを育て、ほかのプレイヤーと匿名の手紙を交換できる無料ブラウザゲーム。",
+  "url": "https://play.bubblegumgameboy.com/Creature-raisingkit/",
+  "genre": ["育成ゲーム", "放置ゲーム", "箱庭ゲーム"],
+  "gamePlatform": ["Web Browser", "PC", "Smartphone"],
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "playMode": ["SinglePlayer", "MultiPlayer"],
+  "inLanguage": ["ja", "en"],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY",
+    "availability": "https://schema.org/InStock"
+  }
+}
+</script>
+</p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F07%2F21%2F140911" title="【個人開発のオンラインゲーム】クリーチャー育成キット - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/07/21/140911">babblegum.hatenablog.com</a></cite></p>
+<p>クリーチャー育成キット。<br />作成期間は1か月くらいです。<br />最初に作ろうとしていたのは、<span style="font-weight: bold">人の顔を持った海の生きものを育てて話せるゲーム</span>でした。</p>
+<p>かなり「シーマン」にインスパイアされました。卵の中に顔が浮かび、その顔を引き継いだまま、スライムやウミウシのような姿へ進化していく。最終形の案では、青い海洋生物の正面に、妙に現実的な人間の顔がついていました。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/01-seaman-concept.jpg" alt="開発初期に制作した、人の顔を持つ海洋生物のデザイン案" width="1400" height="1400" loading="eager" />
+<figcaption>開発初期のデザイン案。この顔のまま育成ゲームを作るつもりでした。</figcaption>
+</figure>
+<p>この案もかなり気に入っていたのですが、試作を続けるうちにゲームの方向は大きく変わりました。3Dモデルに、Rigを付けてモーションを作る作業があるのですが、これが難しい。昆虫感を出したアオウミウシを作りたかったのですが、虫っぽいカサカサ感がなかなか出せない。</p>
+<p>最終的に完成したのは、砂浜の小さな島でカニのような生きものを育て、知らない誰かとボトルメールを交換する放置育成ゲームです。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/00-final-game.png" alt="完成した無料ブラウザゲーム Bubblegum Island の島" width="520" height="325" loading="lazy" />
+<figcaption>完成版の島</figcaption>
+</figure>
+<h2 class="section-head">人面ペットから始まった</h2>
+<p>初期案では、進化しても同じ顔が残り続ける設計でした。</p>
+<p>卵の奥に人影が見える段階、丸いスライムになって目だけが現れる段階、角やヒレのついたウミウシのような段階。見た目が変わっても「あの顔が中にいる」とわかる進化を考えていました。でも、見た目が可愛すぎたのでNGです。</p>
+<div class="concept-grid">
+<figure class="concept-item"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/02-egg-concept.jpg" alt="人面ペットの卵段階の初期案" width="900" height="900" loading="lazy" />
+<figcaption>卵段階。中に顔らしきものが見える。</figcaption>
+</figure>
+<figure class="concept-item"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/03-slime-concept.jpg" alt="人面ペットのスライム段階の初期案" width="900" height="900" loading="lazy" />
+<figcaption>スライム段階。まず目だけが出てくる。</figcaption>
+</figure>
+<figure class="concept-item"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/04-seaslug-concept.jpg" alt="人面ペットのウミウシ段階の初期案" width="900" height="900" loading="lazy" />
+<figcaption>ウミウシ段階。かなり生きものらしくなった。</figcaption>
+</figure>
+</div>
+<p>こうして並べると、これはこれで一本のゲームになりそうです。ただ、Unityで島を作り、実際のゲームカメラから眺めてみると、デザイン画だけではわからなかったことも見えてきました。</p>
+<p>プレイヤーが長い時間眺めるのは顔のアップではなく、島の中を歩き回る小さなシルエットです。そこで、顔を見せることよりも、歩き方や大きさの変化で成長がわかる方向へ寄せていきました。</p>
+<h2 class="section-head">最初の島は、まだ茶色かった</h2>
+<p>島も最初から今の形だったわけではありません。初期のスクリーンショットは、茶色い地面と水面、岩と植物、白い卵だけ。箱庭の外周も目立ち、砂浜というより水槽の試作品に近い状態でした。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/05-early-island.jpg" alt="Bubblegum Island開発初期の茶色い島と白い卵" width="1400" height="788" loading="lazy" />
+<figcaption>初期の島。白い卵だけが置かれ、浜辺もまだ茶色い。</figcaption>
+</figure>
+<p>そこから砂の色、浅瀬と深い海の見え方、波打ち際、岩の配置、木陰、鳥や魚の動きを何度も調整しました。</p>
+<p>画面を派手にするというより、何も操作していない時間にも、少しだけ眺めていられる場所にすることを目指しています。</p>
+<h2 class="section-head">成長は、レベルアップではなく脱皮にした</h2>
+<p>最終的なペットはカニを中心に組み直しました。えさを食べると成長が進み、条件を満たしても、その場ですぐには変身しません。</p>
+<p>しばらく島で落ち着いて過ごしたあと、ふいに脱皮して姿が変わります。数字が上がるだけではなく、「さっきまでと違うものが島を歩いている」と感じられる進化にしたかったからです。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/06-crab-growth.jpg" alt="Bubblegum Islandで成長した青いカニ" width="900" height="506" loading="lazy" />
+<figcaption>試作中の成長したカニ。</figcaption>
+</figure>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/07-molting.jpg" alt="Bubblegum Islandのペットが脱皮して進化する場面" width="900" height="506" loading="lazy" />
+<figcaption>脱皮演出のテスト。古い殻を残して、新しい姿が現れます。</figcaption>
+</figure>
+<h2 class="section-head">島に、知らない誰かの手紙が届く</h2>
+<p>育成だけでは、島が自分のブラウザの中で閉じてしまいます。そこで追加したのが、海から流れ着くボトルメールです。</p>
+<p>届くのは、同じゲームを遊んでいる別のプレイヤーが書いた手紙です。相手を指定するチャットではありません。海へ流した言葉がどこかの島に着き、返事が来ると、また赤いリボンのボトルが流れ着きます。この辺は、どうぶつの森っぽくしたかった・・。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/08-mailbox.jpg" alt="Bubblegum Islandの砂浜にある赤いポスト" width="900" height="506" loading="lazy" />
+<figcaption>砂浜の赤いポスト。手紙が届くと旗が上がります。</figcaption>
+</figure>
+<p>知らない人との通信なので、NGワード判定、送信回数の制限、通報機能も入れました。本名や住所などの個人情報は書かないよう、ゲーム内と記事内の両方で案内しています。</p>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/09-letter-compose.jpg" alt="Bubblegum Islandの手紙入力画面" width="1400" height="788" loading="lazy" />
+<figcaption>手紙を書く画面。日本語入力に対応し、PCもスマホも画面内でそのまま入力できます。</figcaption>
+</figure>
+<figure class="article-figure"><img src="https://play.bubblegumgameboy.com/Creature-raisingkit/article-images/10-letter-reader.jpg" alt="別のプレイヤーから届いた手紙を読む画面" width="1400" height="788" loading="lazy" />
+<figcaption>届いた手紙には返事を書けます。読み終えた手紙は海へ返します。</figcaption>
+</figure>
+<h2 class="section-head">最後の敵はWebGLビルドだった</h2>
+<p>ゲームの機能ができたあと、最後に待っていたのがWebGL版のビルドでした。</p>
+<p>ビルドを始めると、エラーメッセージを出すのではなくUnity Editor自体が落ちる。しかも二度続けて同じ場所で落ち、公開用フォルダは空のまま。ゲームコードではなく、シーンに残った素材や参照を解析する段階でのネイティブクラッシュでした。</p>
+<p>不要になった素材、レンダーパイプラインの違うマテリアル、テクスチャ容量、シーンから参照されるプレハブを一つずつ調べました。最終的にはWebGLビルドを最後まで通し、GitHub PagesからHTTPSで配信し、はてなブログのiframe内で起動できるところまで確認しています。</p>
+<p>さらに、公開後の実ブラウザで、手紙入力のBackspace、日本語入力、オンライン通信、PC表示を確認しました。スマホ向けには1本指でのカメラ回転と2本指のピンチ操作も入れています。</p>
+<h2 class="section-head">完成したゲームについて</h2>
+<p>人面の海洋生物から始まった企画は、ずいぶん違う場所へ着地しました。</p>
+<p>でも、サーバー立てて、手紙をオンライン化するところまではできたので、試験的に、</p>
+<p>この島の中でプレイヤーがキャラを動かして、尚且つきもいモンスターを使いつつ、島の中でチャットができるようになったら面白いなーと。</p>
+<p>オンライン色強めにアプデを重ねていこうと思ってます。</p>
+<h2 class="section-head">他自作ゲームの紹介</h2>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F06%2F06%2F124954" title="【自作ゲーム】ソルジャータイピング。タイピングで戦う無料ゲーム - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/06/06/124954">babblegum.hatenablog.com</a></cite></p>
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F06%2F16%2F191027" title="【放置型タイピングゲーム】ポップコーンタイピング - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/06/16/191027">babblegum.hatenablog.com</a></cite></p>
+<p>感想や要望、不具合報告はコメント欄で受け付けています。どんな姿まで育ったか、どんな手紙が届いたかも、よければ教えてください。</p>
