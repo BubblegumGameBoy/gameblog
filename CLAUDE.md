@@ -79,7 +79,7 @@ SEO対策は「やりすぎない」ことが、結果的に最もSEOに効く�
 
 - 結論ボックス（k-conclusion-box）：原則デフォルトでは置かない。価格比較や「結局どれを買えばいいか」が主目的の実用記事など、読者が結論を急いでいることが明確な場合のみ。
 - FAQ：検索で実際に問われ、本文で拾いきれない疑問がある場合のみ。2〜3問でもよい。数を優先しない。
-- good-box / bad-box：適性が分かれるレビューで有効。日記的記事では不要なことも多い。
+- good-box / bad-box：適性が分かれるレビューで有効。日記的記事では不要なことも多い。**色は付けない（グレー統一。緑・赤の使用は禁止）**。
 - 星評価（verdict-box）：明確に評価をくだすレビュー記事のみ。
 - Schema.org：型が明確に当てはまる場合のみ。FAQPageは実際にFAQを置いたときだけ。
 
@@ -367,8 +367,8 @@ p { margin-bottom: 1.4em; }
 | k-conclusion-box | 先に結論（※デフォルト廃止。結論を急ぐ実用記事のみ） | #f0f7ff |
 | note-box | 補足・情報 | #fffde6 |
 | warn-box | 注意・警告 | #fff5f5 |
-| good-box | 良い点・おすすめ | #f0f7f4 |
-| bad-box | 気になる点・向かない | #fdf3f0 |
+| good-box | 良い点・おすすめ | #f9f9f9（グレー。色付け禁止） |
+| bad-box | 気になる点・向かない | #f9f9f9（グレー。色付け禁止） |
 | verdict-box | 総合評価・星評価 | #fafafa |
 | story-box | ゲームあらすじ・体験談 | #f7f9fc |
 | supplement-box | 補足（読書ブログ） | #f9f9f9 |
@@ -380,10 +380,10 @@ p { margin-bottom: 1.4em; }
 ```css
 .k-conclusion-box { background: #f0f7ff; border: 2px solid #4a90b8; border-radius: 6px; padding: 18px 20px; margin: 20px 0 28px 0; }
 .k-conclusion-box .k-conclusion-title { font-weight: bold; font-size: 16px; color: #2277aa; margin-bottom: 12px; border-bottom: 1px solid #c0d8e8; padding-bottom: 8px; }
-.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
-.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
-.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
-.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.good-box { background: #f9f9f9; border-left: 4px solid #555555; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #333333; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #f9f9f9; border-left: 4px solid #aaaaaa; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #333333; font-size: 14px; margin-bottom: 8px; }
 .verdict-box { border: 2px solid #555555; background: #fafafa; padding: 16px 20px; margin: 24px 0; border-radius: 5px; }
 .verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
 .star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
@@ -418,6 +418,16 @@ p { margin-bottom: 1.4em; }
 | メルカリ | #FF0211（ボタン背景のみ） |
 
 ストア識別カラーはshop-btnの背景色のみで使う例外。他は全てグレー統一を維持。
+
+### ★色を使ってよい箇所の限定（再指摘が多い項目）
+
+カラーを載せてよいのは次の3つだけ。それ以外はグレー（#555555 / #aaaaaa / #f9f9f9 / #333333）で組む。
+
+1. shop-btn の背景色（Amazon・楽天・メルカリのコーポレートカラー）
+2. note-box（黄）・warn-box（赤系）・mercari-box（招待コード）といった、注意喚起そのものが役割のボックス
+3. star-rating の星（#e8a800）
+
+**good-box / bad-box は色を付けない。** 緑（#27ae60）や赤（#c0392b）で良し悪しを塗り分けるのは禁止。良い点と惜しい点の区別は、見出しの文言と左ボーダーの濃さ（good=#555555、bad=#aaaaaa）だけで表現する。テーブルも同様に、良否や可否をセルの背景色で塗り分けない。
 
 ---
 
