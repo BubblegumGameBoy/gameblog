@@ -1,0 +1,350 @@
+<style>
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn {
+  flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 13px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important;
+  font-size: 14px; font-weight: bold; text-decoration: none !important; text-align: center;
+  transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-raid { background: #8B1E1E; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+.cta-note { font-size: 11.5px; color: #999; margin: -14px 0 24px 0; line-height: 1.7; }
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 12px 6px; font-size: 13px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+</style>
+
+<p style="font-size: 12.5px; color: #666666; margin: 0 0 20px 0; padding: 10px 14px; background: #f5f5f5; border-radius: 4px; line-height: 1.7;"><span style="font-weight: bold; color: #333333;">PR</span>　本記事は広告を含みます。RAID: Shadow Legends のプロモーションとして、成果報酬型の広告リンクを掲載しています。プレイ内容と感想はすべて筆者自身のものです。<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"RAID: Shadow Legends","alternateName":"レイド: Shadow Legends","genre":["RPG","ターン制RPG","ガチャRPG"],"gamePlatform":["PC","iOS","Android"],"applicationCategory":"Game","publisher":{"@type":"Organization","name":"Plarium"},"datePublished":"2018-07-29","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY","description":"基本プレイ無料（アプリ内課金あり）"}}</script></p>
+
+<p>ガチャを回したら、槍を持った男が出てきました。</p>
+
+<p>名前はパイクマン。レアリティは、下から数えたほうが早い。装備欄はスカスカで、顔つきも「そのへんの兵隊」以上のものではありません。</p>
+
+<p>それなのに私は、この男に所持金の全額と、他の英雄たちの命を注ぎ込むことになります。</p>
+
+<p>[:contents]</p>
+
+<h2 class="section-head">始まって3分で、味方が全滅する</h2>
+
+<p>RAID: Shadow Legends。名前だけは前から知っていました。YouTubeを見ていれば嫌でも入ってくるので。ずっと「いつか見る広告」の枠に入っていたゲームです。</p>
+
+<p>配信は2018年。もともとスマホ発のタイトルで、そこから7年以上、途切れずに新しい英雄とイベントが追加され続けています。今回私が触ったのはPC版ですが、母体はあくまでモバイル。あれだけ広告を打ち続けられる規模で回っている以上、遊んでいる人の数は相当なものなんだろうと思います。</p>
+
+<p>で、実際に起動してみたわけですが。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728131413.png" width="1162" height="757" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>冒頭の戦闘。この時点ではまだ順調でした</figcaption>
+</figure>
+
+<p>絵は思っていたよりずっと硬派です。西洋のダークファンタジー、バルダーズ・ゲートあたりの画風に近い。オークもエルフもゴツくて、日本のスマホRPGの絵柄を想像していると面食らいます。ここはたぶん、好みがはっきり分かれるところ。</p>
+
+<p>そして序盤のボス、ドラゴンが出てきます。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728131514.png" width="1142" height="730" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>いい感じのドラゴン。この直後に事件が起きます</figcaption>
+</figure>
+
+<p>いきなり味方が食われてワロタ。</p>
+
+<p>チュートリアルで自己紹介していたパーティ全員、あっという間に壊滅します。名前を覚える暇もなかった。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728131614.png" width="1182" height="766" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>全滅した仲間の中から1人だけ選べるとのこと。こういうゲームは脳筋が一番強いので、迷わずオークを選択</figcaption>
+</figure>
+
+<p>全滅した仲間の中から1人だけ蘇らせられる、という導入です。こういうゲームは脳筋が一番強い。異論は認めません。オークを選びました。</p>
+
+<p>ここから15分ほど、チュートリアルが続きます。編成、装備、強化、ランクアップ、属性相性。次々に説明が飛んできて、全部覚えているかと言われると自信がない。そして一通り終わったところで、スターターパックの案内が出ます。チュートリアルが終わった瞬間に、というのが正確です。ここでこのゲームの体質は、だいたい分かります。</p>
+
+<h2 class="section-head">キャンペーンを回す。敵を倒す。物が落ちる</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728131741.png" width="1200" height="704" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>メインとなるキャンペーンモード</figcaption>
+</figure>
+
+<p>本編にあたるのがキャンペーンモード。マップを選んで、部隊を編成して、あとは戦うだけ。ターン制で、属性の相性がはっきりある、いわゆる王道の作りです。</p>
+
+<p>ストーリーは一応通っています。話の筋が破綻しているわけではないし、演出も丁寧。ただ、終わってみると内容がほとんど頭に残っていません。悪いというより、記憶に引っかかるフックがない、という感じ。RAIDを長く遊んでいる人も、たぶんここを目当てにはしていないはずです。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728131954.png" width="1200" height="752" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>敵を倒すと装備が落ちる。このドロップ感はローグライクに近い</figcaption>
+</figure>
+
+<p>敵を倒すと装備がぼろぼろ落ちます。この「倒す、落ちる、拾う、また倒す」のループはローグライクに近い快感があって、正直ここは気持ちいい。落ちた装備を眺めてニヤニヤする時間は、たしかにあります。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728132325.png" width="1200" height="655" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>チャットもあります。MMOっぽい。とりあえず私もクランに参加してみました</figcaption>
+</figure>
+
+<p>チャット欄があって、クラン機能があって、この辺はかなりMMOっぽい。ソロで黙々と進めるゲームだと思っていたので、これは意外でした。とりあえず適当なクランに入りました。人の気配があるだけで、少し空気が変わります。</p>
+
+<h2 class="section-head">ガチャで、槍の男が出た</h2>
+
+<p>そして運命のガチャです。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728132803.png" width="1200" height="717" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>出てきたのがこの男。パイクマン</figcaption>
+</figure>
+
+<p>パイクマン。</p>
+
+<p>槍。以上。</p>
+
+<p>肩書きもなければ二つ名もない。「槍の人」がそのまま名前になっているタイプの英雄です。RAIDには800体を超える英雄がいるらしいのですが、その中でこの引きは、控えめに言って地味です。</p>
+
+<p>でも、なんか強そうじゃないですか。この男。</p>
+
+<p>顔つきに一切の気負いがない。余計なことを考えてなさそう。私が最初に選んだのがオークだったことを思い出してください。私はそういう男が好きなんです。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">PC・スマホ対応</span>
+  <a href="https://t.afi-b.com/visit.php?a=c13539H-8443506S&amp;p=T978457x" class="shop-btn shop-btn-raid" target="_blank" rel="sponsored noopener">RAID: Shadow Legends を無料で始める</a>
+</div>
+<p class="cta-note">基本プレイ無料（アプリ内課金あり）。PCはPlarium Play、スマホはApp Store／Google Playから。</p>
+
+<h2 class="section-head">パイクマンに全財産を注ぐ</h2>
+
+<p>ここから私の頭がおかしくなります。</p>
+
+<p>ガチャで、明らかにパイクマンには過ぎた業物が出ました。エピック装備。本来なら、もっとレアリティの高い英雄に持たせるべきものです。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728133236.png" width="320" height="692" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ガチャで出た強そうなエピック武器。これをパイクマンに注ぎ込みます</figcaption>
+</figure>
+
+<p>パイクマンに持たせました。</p>
+
+<p>効率とか、育成の定石とか、そういうものは一旦置いておく。強い装備を、弱い男に持たせる。これはロマンです。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728133612.png" width="936" height="547" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>装備を最大強化するため、全てのお金を彼に注ぐ</figcaption>
+</figure>
+
+<p>強化には金がかかります。所持金を全部使いました。全部です。他の英雄に回す分は残っていません。</p>
+
+<p>この時点で私のアカウントは、実質「パイクマン一点賭け」の状態になりました。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728133423.png" width="967" height="695" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>パイクマン初出撃</figcaption>
+</figure>
+
+<p>こりゃあ強いぞ。パイクマン。</p>
+
+<h2 class="section-head">パイクマン、死ぬ</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728135258.png" width="540" height="752" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>パイクマンしんだ</figcaption>
+</figure>
+
+<p>死にました。</p>
+
+<p>装備がいくら良くても、本体のレベルとステータスが追いついていなければ、敵の攻撃は普通に通ります。当たり前です。当たり前なんですが、全財産を注ぎ込んだ直後にこれをやられると、けっこう効きます。</p>
+
+<p>ここで普通のプレイヤーは学習します。「レアリティの高い英雄を育てよう」と。</p>
+
+<p>私は違いました。</p>
+
+<h2 class="section-head">仲間を、食わせる</h2>
+
+<p>RAIDには、英雄のレベル上限を引き上げる仕組みがあります。ランクアップと呼ばれるやつで、これをやるには他の英雄を素材として捧げる必要があります。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728135412.png" width="1200" height="757" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>他の英雄を犠牲に、パイクマンのレベルを上げる。血肉を注がれた最強のパイクマンを目指す</figcaption>
+</figure>
+
+<p>捧げました。手持ちを、片っ端から。</p>
+
+<p>物語の冒頭で颯爽と登場した仲間たちも、ガチャで出てきた見どころのある新人も、全員パイクマンの糧になりました。彼らはパイクマンになったのです。ある意味では生き続けている。そう思うことにしました。</p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728135502.png" width="925" height="696" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>嬉しそうなパイクマン。レア度の高い英雄は美味いのだろうか</figcaption>
+</figure>
+
+<p>嬉しそうな顔をしています。レア度が高い英雄ほど得られる経験値も多いのですが、味も違うんでしょうか。</p>
+
+<div class="story-box">
+<p class="story-title">この時点での私の編成</p>
+<p style="margin-bottom: 0;">パイクマン、以上。あとは頭数を揃えるための、装備なし・レベルなしの残り物。ゲームが想定している遊び方から、完全に外れた場所に来ていました。</p>
+</div>
+
+<p>ただ、ここで壁にぶつかります。素材にする英雄が、尽きるんです。</p>
+
+<p>英雄を増やすには召喚するしかなく、召喚には専用のクリスタルが要る。クリスタルは各所からぽつぽつ手に入りますが、当然すぐには貯まりません。つまり、育成を進めたければ召喚を回す、召喚を回すにはクリスタルを待つ、待ちたくなければ買う、という流れになっています。</p>
+
+<p>この循環に気づいた瞬間、なるほどそういうことか、とはなりました。ここを理解した上で「待つ側」に回れるかどうかが、たぶんこのゲームと長く付き合えるかの分かれ目です。</p>
+
+<h2 class="section-head">ボス戦で、いきり散らかすパイクマン</h2>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728135625.png" width="977" height="742" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ボス戦でいきり散らかすパイクマン</figcaption>
+</figure>
+
+<p>強い。</p>
+
+<p>仲間の血肉と全財産を吸ったパイクマンは、明確に強くなっていました。ボスの前で堂々と槍を振り回しています。あの、序盤で死んだ男が。</p>
+
+<p>正直に言うと、RAIDのバトルそのものにはあまりのめり込めませんでした。属性の相性を見て編成を組めば、あとはオート戦闘に任せて画面を眺めているだけの時間が長い。手が動いていないのに勝敗が決まっていく感じは、人によってはかなり退屈だと思います。私はそうでした。</p>
+
+<p>それでも最後まで起動を続けられたのは、この一点だけです。</p>
+
+<p>パイクマンがどこまで行けるのか。</p>
+
+<p>ゲームが提示してくる目標ではなく、自分で勝手に立てた目標。これがあるかないかで、この手のゲームの寿命はまったく変わります。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">あなたのパイクマンを探す</span>
+  <a href="https://t.afi-b.com/visit.php?a=c13539H-8443506S&amp;p=T978457x" class="shop-btn shop-btn-raid" target="_blank" rel="sponsored noopener">RAID: Shadow Legends を無料で始める</a>
+</div>
+
+<h2 class="section-head">英語音声のまま、日本語UIにできる</h2>
+
+<p>ここからは実用の話です。</p>
+
+<p>RAIDは日本語に対応していますが、ボイスは英語のまま。つまり、字幕とUIは日本語で読めて、耳から入ってくるのは英語という状態が作れます。</p>
+
+<p>これ、意図せず英語のリスニング教材になっています。</p>
+
+<p>戦闘中の掛け声やスキル発動時の短いセリフは、同じものが何度も繰り返されるので、聞き流しているうちに勝手に耳に残ります。ストーリーの語りもナレーション調で聞き取りやすい。オート戦闘で手が空いている時間が長いのも、この用途に限れば逆に都合がいい。</p>
+
+<p>ゲームとしての体験を英語学習に転用できるかというと、そこまで本格的なものではありません。あくまで副産物です。ただ、洋ゲーの英語ボイスに耳を慣らす入口としては、無料で試せる分だけ気軽ではあります。</p>
+
+<h3 class="sub-head">言語設定の変え方（PC版）</h3>
+
+<p>PC版はPlarium Playというランチャー経由で起動します。言語の切り替えはゲーム内ではなく、このランチャー側でやるのがポイントです。</p>
+
+<ul>
+<li>Plarium Play を起動する</li>
+<li>設定（歯車のアイコン）を開く</li>
+<li>言語の項目を日本語に変更する</li>
+<li>ゲームを起動し直す</li>
+</ul>
+
+<p>ランチャーの言語設定が、そのままゲーム内の言語に反映されます。最初に英語のまま始めてしまって「日本語がない」と思い込むパターンがありますが、探す場所が違うだけです。</p>
+
+<div class="note-box"><span class="note-label">補足</span>スマホ版は端末の言語設定に追従します。日本語端末なら、インストールした時点で日本語になっているはずです。</div>
+
+<h2 class="section-head">向いてる人、向いてない人</h2>
+
+<div class="good-box">
+<p class="good-title">向いてる人</p>
+<ul style="margin-bottom: 0;">
+<li>西洋ダークファンタジーの重たい絵柄が好き。バルダーズ・ゲート系の顔つきに抵抗がない</li>
+<li>装備がぼろぼろ落ちて、それを取捨選択する時間が好き</li>
+<li>オート戦闘を回しながら、別のことをしていられる</li>
+<li>効率の悪い育成を、自分の意思でやりたい</li>
+</ul>
+</div>
+
+<div class="bad-box">
+<p class="bad-title">向いてない人</p>
+<ul style="margin-bottom: 0;">
+<li>1手1手を自分で操作して勝ちたい。手応えのある戦闘を求めている</li>
+<li>ガチャで手に入る当たり外れが、そのまま進行速度に直結するのが嫌い</li>
+<li>起動するたびに販売のお知らせが出てくるのが気になる</li>
+<li>「あと少しで報酬」に付き合わされるのが苦手</li>
+<li>日本のスマホRPGの絵柄に慣れている</li>
+</ul>
+</div>
+
+<p>正直に書いておくと、起動のたびにパックの案内が出ます。メニューに戻るたびにも出ます。これはこの手の基本無料ゲームの作法として珍しいものではありませんが、頻度は多いほうだと感じました。気にならない人はまったく気にならないし、気になる人はここで降ります。</p>
+
+<p>もうひとつ、その日のプレイ時間に応じて報酬がもらえる仕組みがあります。一定時間遊ぶと受け取れるやつです。これが厄介で、そろそろやめようと思ったタイミングで「あと少し」が見えてしまう。滞在時間を伸ばすための設計として、非常によくできています。よくできているな、と思いながら私は居座りました。</p>
+
+<p>期間限定のイベントやモードも定期的に来ます。内容そのものはキャンペーンと似た遊び方の使い回しに近いのですが、「今しかない」と言われると開いてしまう。この辺の作りに乗せられる自覚がある人は、時間の使い方だけ先に決めておいたほうがいいです。</p>
+
+<div class="warn-box"><span class="warn-label">注意</span>英雄の入手はランダムです。狙った英雄が確実に手に入る仕組みではないので、特定のキャラ目当てで課金するのは避けたほうが無難です。私のように、出てきた英雄を勝手に気に入るスタイルのほうが精神衛生上いいと思っています。</div>
+
+<h2 class="section-head">基本情報</h2>
+
+<table class="data-table">
+<tbody>
+<tr><th scope="row" style="width: 30%;">タイトル</th><td>RAID: Shadow Legends（レイド: Shadow Legends）</td></tr>
+<tr><th scope="row">ジャンル</th><td>ターン制RPG（英雄収集型）</td></tr>
+<tr><th scope="row">対応機種</th><td>PC（Plarium Play／Steam）、iOS、Android</td></tr>
+<tr><th scope="row">価格</th><td>基本プレイ無料（アプリ内課金あり）</td></tr>
+<tr><th scope="row">配信元</th><td>Plarium</td></tr>
+<tr><th scope="row">配信開始</th><td>2018年7月</td></tr>
+<tr><th scope="row">言語</th><td>日本語UI・字幕対応／音声は英語</td></tr>
+</tbody>
+</table>
+
+<h2 class="section-head">パイクマンは今日も槍を持っている</h2>
+
+<p>ゲームとして万人に勧められるかというと、そこは正直迷います。オート戦闘に身を任せる時間の長さは、能動的な手応えを求める人には確実に退屈です。</p>
+
+<p>ただ、この手のゲームの面白さは、ゲームが用意した目標をこなすところにはないのかもしれない、とも思いました。</p>
+
+<p>私にとってのRAIDは、800体を超える英雄がいるダークファンタジーRPGではなく、「槍を持った男に全財産を注ぎ込んだらどこまで行けるか」という個人的な実験でした。仲間を食わせ、金を使い切り、そうやって作り上げた一体が、ボスの前で堂々と槍を振り回している。</p>
+
+<p>この光景を見るためだけに、たぶんもう少し起動します。</p>
+
+<p>無料なので、あなたも自分のパイクマンを見つけてください。私のより弱そうなやつが出たら、それはそれで正解です。</p>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">PC・スマホ対応</span>
+  <a href="https://t.afi-b.com/visit.php?a=c13539H-8443506S&amp;p=T978457x" class="shop-btn shop-btn-raid" target="_blank" rel="sponsored noopener">RAID: Shadow Legends を無料で始める</a>
+</div>
+<p class="cta-note">基本プレイ無料（アプリ内課金あり）。PC版はPlarium Playのインストールが必要です。</p>
