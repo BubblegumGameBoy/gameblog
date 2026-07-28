@@ -1,0 +1,485 @@
+<style>
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+figure { margin: 16px 0; }
+figure img { max-width: 100%; height: auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+
+.steps { margin: 20px 0; }
+.step { display: flex; gap: 14px; margin-bottom: 14px; align-items: flex-start; }
+.step-num { min-width: 30px; height: 30px; background: #555555; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 13px; flex-shrink: 0; margin-top: 3px; }
+.step-body { flex: 1; min-width: 0; }
+.step-body .step-title { display: block; font-size: 14.5px; font-weight: bold; margin-bottom: 3px; color: #222; }
+.step-body p { font-size: 13.5px; color: #555; margin: 0; line-height: 1.8; }
+
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+
+.tag-free { display: inline-block; background: #f0f7f4; color: #27ae60; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px; }
+.tag-paid { display: inline-block; background: #fdf3f0; color: #c0392b; font-size: 11px; font-weight: bold; padding: 2px 8px; border-radius: 3px; }
+
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn {
+  flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center;
+  padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important;
+  font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center;
+  transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+}
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+.mercari-box { background: #fff8f3; border: 1px solid #f0c8a0; border-radius: 6px; padding: 16px 18px; margin: 20px 0; }
+.mercari-box .mercari-title { font-weight: bold; font-size: 15px; color: #b8501a; margin-bottom: 10px; }
+.mercari-code { display: inline-block; background: #ffffff; border: 2px dashed #b8501a; border-radius: 4px; padding: 6px 14px; margin: 4px 0; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; color: #b8501a; letter-spacing: 2px; }
+</style>
+
+<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
+※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム、メルカリ招待プログラム）が含まれます。
+</p>
+
+<p><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ぽこあポケモン クラウド島の作り方",
+  "description": "ぽこあポケモンでクラウド島を作成し、フレンドを招待するまでの手順。",
+  "totalTime": "PT10M",
+  "step": [
+    { "@type": "HowToStep", "name": "環境レベルを2に上げる", "text": "パサパサ荒野の街の環境レベルを2に上げてマルチプレイを解放する。Nintendo Switch Onlineへの加入も必要。" },
+    { "@type": "HowToStep", "name": "パソコンから通信で遊ぶを選ぶ", "text": "ポケモンセンターのパソコンを調べ、通信で遊ぶ、クラウド島で遊ぶの順に選択する。" },
+    { "@type": "HowToStep", "name": "新しいクラウド島を作る", "text": "地形の決め方をおまかせ（ランダム）かおまじない（9桁の数値指定）から選ぶ。" },
+    { "@type": "HowToStep", "name": "島の名前と公開設定を決める", "text": "島名を決め、みんなに公開かあいことば制限かを選ぶ。" },
+    { "@type": "HowToStep", "name": "住所とあいことばを共有する", "text": "クラウド島内のパソコンで住所とあいことばを確認し、フレンドに伝える。" }
+  ]
+}
+</script></p>
+
+<p><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "まっさらな街とクラウド島は何が違いますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "まっさらな街はストーリーの街と地続きにある自分のデータ内のマップで、ホストがゲームを開いていないと入れません。クラウド島はストーリーから切り離されたオンライン専用の島で、Nintendo Switch Onlineに加入していればホスト不在でも24時間入れます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "まっさらな街はホストがいないと遊べませんか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "遊べません。まっさらな街はホストのセーブデータの一部なので、ホストがゲームを起動して部屋を開いている間だけ入れます。ホスト不在でも遊びたい場合はクラウド島を使います。" }
+    },
+    {
+      "@type": "Question",
+      "name": "クラウド島から持ち帰れるものは何ですか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "アイテムと素材は帰るときにパソコンへ回収されるため持ち帰れません。出会ったポケモンも連れて帰れず、図鑑登録もその場限りです。新しく覚えたレシピだけは自分のデータに持ち帰れます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "クラウド島は2つ以上作れますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "作れません。クラウド島は1度に1つまでです。別の地形で作り直したい場合は、今の島を削除する必要があります。削除前におまじない（9桁の数値）を控えておけば同じ地形を再現できます。" }
+    },
+    {
+      "@type": "Question",
+      "name": "旧Switchのフレンドも一緒に遊べますか？",
+      "acceptedAnswer": { "@type": "Answer", "text": "おすそわけ通信を使えば、旧Switchの本体からまっさらな街に参加できます。ただしローカル通信限定で、インターネット経由のおすそわけ通信はSwitch2同士のみです。クラウド島はオンライン機能のため旧Switch単体では遊べません。" }
+    }
+  ]
+}
+</script></p>
+
+<p>フレンドに「住所送るから待ってて」と伝えたあと、パソコンの前で5分ほど固まりました。</p>
+
+<p>住所が、どこにも出てこない。</p>
+
+<p>それもそのはずで、住所を発行できるのはクラウド島のほうでした。私がそのとき立っていたのは、まっさらな街です。名前の響きも、何もない土地を開拓するという遊び方も似ているせいで、私はしばらくこの2つを同じものだと思い込んでいました。</p>
+
+<p>結論から言うと、まっさらな街とクラウド島は別の遊び場です。ここを取り違えたまま集合すると、フレンドがいつまで経っても入れず、待ち合わせだけで30分溶けます。実際に溶かしました。</p>
+
+<p>[:contents]</p>
+
+<h2 class="section-head">まっさらな街とクラウド島の違い</h2>
+
+<p>いちばん大きな差は、ホストが必要かどうかです。まっさらな街はホストのセーブデータの中にある土地なので、ホストがゲームを開いていないと誰も入れません。クラウド島は自分のSwitchの外、クラウド側に置かれた島です。だから作った本人が寝ていても、住所を知っている人はいつでも入れます。</p>
+
+<table class="data-table">
+<thead>
+<tr><th>項目</th><th>まっさらな街</th><th>クラウド島</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td data-label="項目">場所</td>
+  <td data-label="まっさら">ストーリーの街と地続き（パサパサ荒野の西の道の先）</td>
+  <td data-label="クラウド">ストーリーから切り離された専用の島</td>
+</tr>
+<tr>
+  <td data-label="項目">必要なもの</td>
+  <td data-label="まっさら">ローカル通信なら本体とソフトだけ <span class="tag-free">無料</span></td>
+  <td data-label="クラウド">Nintendo Switch Online <span class="tag-paid">有料</span></td>
+</tr>
+<tr>
+  <td data-label="項目">ホスト</td>
+  <td data-label="まっさら">ホストがゲームを開いている間だけ入れる</td>
+  <td data-label="クラウド">ホスト不在でも24時間入れる（みんなに公開の場合）</td>
+</tr>
+<tr>
+  <td data-label="項目">合流に使う情報</td>
+  <td data-label="まっさら">あいことば</td>
+  <td data-label="クラウド">住所（＋あいことば）</td>
+</tr>
+<tr>
+  <td data-label="項目">人数</td>
+  <td data-label="まっさら">最大4人</td>
+  <td data-label="クラウド">同時に最大4人。入れ替わりは無制限</td>
+</tr>
+<tr>
+  <td data-label="項目">持ち帰り</td>
+  <td data-label="まっさら">ホストは自分のデータなので自由。ゲストは持ち帰り不可</td>
+  <td data-label="クラウド">アイテム・素材・ポケモンは不可。レシピのみ可</td>
+</tr>
+<tr>
+  <td data-label="項目">向いている遊び方</td>
+  <td data-label="まっさら">自分の街の続きとして、フレンドと同時に建築する</td>
+  <td data-label="クラウド">住所を公開して、都合の合わない相手とも一緒に育てる</td>
+</tr>
+</tbody>
+</table>
+
+<p>もうひとつ地味に効いてくるのが、データの置き場所の違いです。まっさらな街で建てたものはホストの手元に残りますが、クラウド島で拾った素材は帰り際にすべてパソコンへ回収されます。せっせと掘った鉱石が全部消えるので、初日は少し切なくなります。</p>
+
+<h3 class="sub-head">結局どちらで遊べばいいのか</h3>
+
+<p>フレンドと予定を合わせて同じ時間に集まれるなら、まっさらな街で十分です。無料ですし、ホストの持ち物を持ち込めるので建築が早い。友達と休日に半日こもる、という遊び方ならこちらが快適です。</p>
+
+<p>逆に、社会人同士でログイン時間がまるで噛み合わない場合はクラウド島一択になります。私が結局こちらに落ち着いたのも理由は単純で、深夜にひとりで整地しておくと、翌朝フレンドが勝手に続きを作ってくれるからです。交換日記みたいな進み方をします。</p>
+
+<div class="note-box"><span class="note-label">迷ったら：</span>同じ時間に集まれるかどうかで決めて問題ありません。両方作っても干渉しないので、まずは無料のまっさらな街を試して、時間が合わないと分かった時点でクラウド島に移るのが安全です。</div>
+
+<h2 class="section-head">まっさらな街への行き方</h2>
+
+<p>まっさらな街は西の道の先、と書かれていることが多いのですが、初見だと道が途中で途切れていて引き返してしまいます。私も一度、行き止まりだと判断して戻りました。画像で順番に追っていきます。</p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body"><span class="step-title">もじゃんぼがいる洞窟を抜ける</span>
+<p>序盤のチュートリアルを進めながら、ポケモンセンターのある方向へ向かいます。</p>
+</div>
+</div>
+</div>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319094709.png" alt="ゲーム再序盤　洞窟から抜けた後" width="1200" height="675" loading="lazy" class="hatena-fotolife" /></p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body"><span class="step-title">ポケモンセンターの左側、橋が欠けた場所を探す</span>
+<p>ポケモンセンターに着いたら左手に回り込みます。橋が途中で欠けている場所があるので、その奥へ進みます。</p>
+</div>
+</div>
+</div>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319094758.png" alt="ポケモンセンター ぽこあポケモン" width="951" height="573" loading="lazy" class="hatena-fotolife" /> <img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319095004.png" alt="ポケモンセンター付近 ぽこあポケモン" width="1200" height="685" loading="lazy" class="hatena-fotolife" /></p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body"><span class="step-title">高速道路のような構造物まで進む</span>
+<p>そのまま奥へ歩いていくと、高速道路の跡のような大きな道が見えてきます。ここで合っています。</p>
+</div>
+</div>
+</div>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319095109.png" alt="高速道路 ぽこあポケモン" width="1200" height="685" loading="lazy" class="hatena-fotolife" /></p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body"><span class="step-title">欠けた部分の砂を壊して道をつなぐ</span>
+<p>道は途中で崩れていて、そのままでは通れません。周りの砂ブロックを壊して足場を作り、自分で道を開通させます。</p>
+</div>
+</div>
+</div>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319095216.png" alt="高速道路 ぽこあポケモン 修理" width="787" height="500" loading="lazy" class="hatena-fotolife" /></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="こんな感じ">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260319/20260319095314.png" alt="高速道路完成 ぽこあポケモン" width="1200" height="675" loading="lazy" class="hatena-fotolife" />
+<figcaption class="mceEditable">こんな感じ。ここまで来れば開通です</figcaption>
+</figure>
+
+<p>道がつながった先が、まっさらな街です。着いてしまえば拍子抜けするほど広く、何もありません。</p>
+
+<h2 class="section-head">まっさらな街でフレンドと遊ぶ手順</h2>
+
+<p>マルチプレイはパサパサ荒野の街の環境レベルを2に上げると解放されます。ゲーム開始から1時間ほどが目安なので、初日の夜には届く範囲です。</p>
+
+<p><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260307/20260307132618.png" alt="マルチプレイ ぽこあポケモン" width="1100" height="687" loading="lazy" class="hatena-fotolife" /></p>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body"><span class="step-title">まっさらな街まで移動する</span>
+<p>建築を伴うマルチの舞台はまっさらな街です。ほかの街に招待しても、ゲストは見学モードになりわざもアイテムも使えません。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body"><span class="step-title">パソコンから「通信で遊ぶ」を選ぶ</span>
+<p>ホスト側は「自分の街を見に来てもらう」を選びます。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body"><span class="step-title">通信方法を選んであいことばを決める</span>
+<p>同じ部屋で遊ぶなら「近くの人と」。離れた相手とはインターネット通信を選び、あいことばを伝えます。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body"><span class="step-title">ゲストが入室する</span>
+<p>ゲスト側は「ともだちの街を見に行く」からあいことばを入力します。ここで最大4人。ホストがゲームを終了すると全員解散になるので、抜けるときは一声かけたほうが平和です。</p>
+</div>
+</div>
+</div>
+
+<h3 class="sub-head">通信方法ごとの必要なもの</h3>
+
+<table class="data-table">
+<thead>
+<tr><th>プレイ方法</th><th>必要なもの</th><th>人数</th><th>費用</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td data-label="方法">ローカル通信</td>
+  <td data-label="必要">全員がSwitch2とソフトを所持</td>
+  <td data-label="人数">最大4人</td>
+  <td data-label="費用"><span class="tag-free">無料</span></td>
+</tr>
+<tr>
+  <td data-label="方法">インターネット通信</td>
+  <td data-label="必要">Nintendo Switch Online加入</td>
+  <td data-label="人数">最大4人</td>
+  <td data-label="費用"><span class="tag-paid">有料</span></td>
+</tr>
+<tr>
+  <td data-label="方法">おすそわけ通信（Switch2同士）</td>
+  <td data-label="必要">ホストがSwitch2とソフトを所持</td>
+  <td data-label="人数">最大2人</td>
+  <td data-label="費用"><span class="tag-free">無料</span></td>
+</tr>
+<tr>
+  <td data-label="方法">おすそわけ通信（旧Switch）</td>
+  <td data-label="必要">ソフト側はSwitch2。ゲストは旧Switchでも可</td>
+  <td data-label="人数">最大2人</td>
+  <td data-label="費用"><span class="tag-free">無料</span></td>
+</tr>
+</tbody>
+</table>
+
+<div class="warn-box"><span class="warn-label">注意：</span>旧Switchからおすそわけ通信で参加する場合はローカル通信限定です。インターネット経由のおすそわけ通信はSwitch2同士のみ対応しています。離れて住むフレンドが旧Switchの場合、残念ですが合流はできません。</div>
+
+<h2 class="section-head">クラウド島の作り方（ホスト側）</h2>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body"><span class="step-title">環境レベル2とオンライン加入を済ませる</span>
+<p>解放条件はまっさらな街と同じ環境レベル2ですが、クラウド島はNintendo Switch Onlineへの加入が必須です。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body"><span class="step-title">パソコンから「クラウド島で遊ぶ」を選ぶ</span>
+<p>ポケモンセンターのパソコンを調べ、「通信で遊ぶ」から進みます。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">3</div>
+<div class="step-body"><span class="step-title">「新しいクラウド島を作る」を選ぶ</span>
+<p>地形の決め方を、おまかせ（ランダム）かおまじない（9桁の数値を指定）から選択します。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">4</div>
+<div class="step-body"><span class="step-title">島の名前と公開設定を決める</span>
+<p>「みんなに公開」ならホスト不在でも誰でも入れます。「あいことばを設定する」を選べば、知っている人だけに絞れます。身内だけで遊ぶならこちらが安心です。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">5</div>
+<div class="step-body"><span class="step-title">住所とあいことばを共有する</span>
+<p>住所とあいことばは、クラウド島内のポケモンセンターのパソコンからいつでも確認できます。冒頭で私が探し回ったのは、まさにここです。</p>
+</div>
+</div>
+</div>
+
+<h3 class="sub-head">フレンドのクラウド島に入る（ゲスト側）</h3>
+
+<div class="steps">
+<div class="step">
+<div class="step-num">1</div>
+<div class="step-body"><span class="step-title">「クラウド島で遊ぶ」から島を探す</span>
+<p>パソコンの「通信で遊ぶ」を開き、「新しいクラウド島を探す」を選びます。</p>
+</div>
+</div>
+<div class="step">
+<div class="step-num">2</div>
+<div class="step-body"><span class="step-title">住所とあいことばを入力する</span>
+<p>ホストから聞いた住所を入力します。2回目以降は「以前行った島を探す」から一発で入れるので、住所を覚える必要はありません。</p>
+</div>
+</div>
+</div>
+
+<h2 class="section-head">クラウド島で先に知っておきたい仕様</h2>
+
+<div class="point-box">
+<div class="point-title">これだけ押さえれば大丈夫</div>
+<ul>
+<li>同時に最大4人。抜ければ別の人が入れるので、入れ替わりなら人数制限は実質なし</li>
+<li>「みんなに公開」ならホスト不在でも24時間入れる</li>
+<li>アイテムと素材は帰るときにパソコンへ回収され、持ち帰れない</li>
+<li>新しく覚えたレシピはホスト・ゲストとも持ち帰れる</li>
+<li>出会ったポケモンは連れて帰れず、図鑑登録もその場限り</li>
+<li>本体の時間変更が効かない（建築の時短テクニックは使えない）</li>
+<li>期間限定イベントはクラウド島では遊べない</li>
+<li>クラウド島は1つまで。作り直すには今の島を削除する必要がある</li>
+</ul>
+</div>
+
+<p>持ち帰りの話は、最初にがっかりするポイントでもあり、実は狙い目でもあります。素材が消える一方で、レシピだけは自分のデータに残るからです。しかもクラウド島のショップはソロの街と品揃えが別枠で日替わりなので、ログインついでに覗いておくとレシピの回収が一気に進みます。私は今、素材を掘る目的よりレシピ確認のために顔を出している日のほうが多いです。</p>
+
+<div class="warn-box"><span class="warn-label">作り直す前に：</span>クラウド島を削除すると建てたものは戻りません。地形が気に入らないという理由だけで消す前に、おまじない（9桁の数値）を控えておいてください。同じ地形をあとから再現できます。</div>
+
+<h2 class="section-head">おまじないで地形を固定する</h2>
+
+<p>島を作るときに入力する9桁の数値がおまじないです。いわゆるシード値で、同じ数値を入れれば何度でも同じ地形の島が作れます。おまかせで作ったあとでも、島内のパソコンの「せってい」から自分の島のおまじないを確認できます。</p>
+
+<p>地形の当たり外れは実際のプレイにそこまで響きませんが、ポケモンセンターが島の中央付近にあると移動がかなり楽になります。厳選したい人向けに、ポケモンセンターが中央に来るおまじないを別記事にまとめました。</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F30%2F180146" title="【ぽこポケ】おすすめシード値4選｜ポケセン中央配置のおまじない厳選ガイド【クラウド島リセマラ】 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/03/30/180146">babblegum.hatenablog.com</a></cite></p>
+
+<h2 class="section-head">入らずに眺めるだけ、という選択肢</h2>
+
+<p>環境レベル3で買えるなぞのゴーグルを使うと、住所を入れるだけで他人のクラウド島をバーチャルモードで見学できます。あいことばは不要で、建築はできません。公式のクラウド島もこれで覗けます。</p>
+
+<p>ちなみに私の島は住所「TX699DP0」で見学できます。地下の収容所も天界の牢獄もそのままです。ゴーグルの入手方法と公式島の住所一覧は、こちらにまとめてあります。</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F06%2F17%2F150908" title="なぞのゴーグルの使い方と公式クラウド島まとめ【ぽこあポケモン】 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/06/17/150908">babblegum.hatenablog.com</a></cite></p>
+
+<figure class="figure-image figure-image-fotolife mceNonEditable" title="私の島の住所">
+<img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260321/20260321072804.png" alt="クラウド島の住所確認画面 ぽこあポケモン" width="1200" height="720" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption class="mceEditable">住所は島内のパソコンから確認できます</figcaption>
+</figure>
+
+<h2 class="section-head">よくある質問</h2>
+
+<dl class="faq-list">
+<dt>まっさらな街とクラウド島は何が違いますか？</dt>
+<dd>まっさらな街はストーリーの街と地続きにある、自分のセーブデータ内のマップです。ホストがゲームを開いている間しか入れません。クラウド島はストーリーから切り離されたオンライン専用の島で、Nintendo Switch Onlineに加入していればホスト不在でも24時間入れます。</dd>
+
+<dt>まっさらな街はホストがいなくても遊べますか？</dt>
+<dd>遊べません。ホストのデータの一部なので、ホストが部屋を開いている間だけ入れます。時間が合わない相手と遊ぶならクラウド島を使ってください。</dd>
+
+<dt>クラウド島から持ち帰れるものは？</dt>
+<dd>アイテムと素材は帰り際にパソコンへ回収されるため持ち帰れません。ポケモンも連れて帰れず、図鑑登録もその場限りです。新しく覚えたレシピだけが自分のデータに残ります。</dd>
+
+<dt>クラウド島は2つ以上作れますか？</dt>
+<dd>作れません。1度に1つまでです。別の地形にしたい場合は今の島を削除することになるので、削除前におまじないを控えておきましょう。</dd>
+
+<dt>旧Switchのフレンドも一緒に遊べますか？</dt>
+<dd>おすそわけ通信を使えば、旧Switchの本体からまっさらな街に参加できます。ただしローカル通信限定です。クラウド島はオンライン機能なので、旧Switch単体では遊べません。</dd>
+
+<dt>マルチプレイはいつから解放されますか？</dt>
+<dd>パサパサ荒野の街の環境レベルが2になった時点です。ゲーム開始から1時間ほどが目安になります。</dd>
+</dl>
+
+<h2 class="section-head">まとめ</h2>
+
+<div class="point-box">
+<div class="point-title">迷ったときの判断だけ持ち帰ってください</div>
+<ul>
+<li>同じ時間に集まれるなら、無料のまっさらな街</li>
+<li>時間が合わないなら、住所を配れるクラウド島（Nintendo Switch Online必須）</li>
+<li>まっさらな街はパサパサ荒野の西、崩れた高速道路を自分でつないだ先</li>
+<li>クラウド島の持ち帰りはレシピだけ。素材は消える前提で掘る</li>
+<li>クラウド島は1つまで。作り直す前におまじないを控える</li>
+</ul>
+</div>
+
+<p>私自身は、時間の合わないフレンドと交換日記のように島を育てる遊び方に落ち着きました。そちらの顛末は元の記事に書いています。この記事は、その記事から手順部分を切り出して整理し直したものです。</p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F19%2F102029" title="ぽこあポケモンのクラウド島が楽しすぎる。フレンドを殴ってポケモン収容所を作った話 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/03/19/102029">babblegum.hatenablog.com</a></cite></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2026%2F03%2F28%2F171536" title="【ぽこあポケモン】おすすめクラウド島／住所一覧・感想まとめ - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2026/03/28/171536">babblegum.hatenablog.com</a></cite></p>
+
+<p><iframe src="https://hatenablog-parts.com/embed?url=https%3A%2F%2Fbabblegum.hatenablog.com%2Fentry%2F2025%2F11%2F12%2F141752" title="「ぽこあ ポケモン」解説：なぜメタモンなのか？セキチクシティ説とポストアポカリプス考察 - バブルガムのゲームブログ" class="embed-card embed-blogcard" scrolling="no" frameborder="0" style="display: block; width: 100%; height: 190px; max-width: 500px; margin: 10px 0px;" loading="lazy"></iframe><cite class="hatena-citation"><a href="https://babblegum.hatenablog.com/entry/2025/11/12/141752">babblegum.hatenablog.com</a></cite></p>
+
+<h3 class="sub-head">ソフトを探している方へ</h3>
+
+<div class="shop-buttons">
+  <span class="shop-btn-label">Switch2版</span>
+  <a href="https://www.amazon.co.jp/s?k=%E3%81%BD%E3%81%93%E3%81%82%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a>
+  <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%81%BD%E3%81%93%E3%81%82%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a>
+  <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%81%BD%E3%81%93%E3%81%82%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3+switch2" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a>
+</div>
+
+<div class="mercari-box">
+<div class="mercari-title">メルカリを初めて使う方へ</div>
+<p style="margin-bottom: 8px;">登録時に招待コードを入力すると、双方に500ポイントが付与されます。中古ソフト代の足しにどうぞ。</p>
+<div class="mercari-code">YRCNMN</div>
+</div>
+
+<div class="hatena-asin-detail">
+<a href="https://www.amazon.co.jp/dp/B0FZPRPVKC?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51zjZZWvAfL._SL500_.jpg" class="hatena-asin-detail-image" alt="ぽこ あ ポケモン -Switch2" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0FZPRPVKC?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">ぽこ あ ポケモン -Switch2</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>ポケモン(Pokemon)</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0FZPRPVKC?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a>
+</div>
+</div>
