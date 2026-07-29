@@ -1,0 +1,359 @@
+
+  
+    <style><!--
+h2.section-head { font-size: 118% !important; font-weight: bold !important; background-color: #555555 !important; color: #ffffff !important; padding: 10px 14px !important; border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important; box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff; margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important; }
+  h3.sub-head { font-size: 108% !important; font-weight: bold !important; border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important; margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important; }
+  .point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+  .note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+  .note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+  .warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+  .warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+  .good-box { background: #f9f9f9; border-left: 4px solid #555555; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .good-box .good-title { font-weight: bold; color: #333333; font-size: 14px; margin-bottom: 8px; }
+  .bad-box { background: #f9f9f9; border-left: 4px solid #aaaaaa; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+  .bad-box .bad-title { font-weight: bold; color: #333333; font-size: 14px; margin-bottom: 8px; }
+  .story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+  .story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+  .verdict-box { border: 2px solid #555555; background: #fafafa; padding: 16px 20px; margin: 24px 0; border-radius: 5px; }
+  .verdict-box .verdict-title { font-weight: bold; font-size: 16px; color: #333; margin-bottom: 10px; }
+  .star-rating { color: #e8a800; font-size: 18px; letter-spacing: 2px; }
+  .mercari-box { background: #fff8f3; border: 1px solid #f0c8a0; border-radius: 6px; padding: 16px 18px; margin: 20px 0; }
+  .mercari-box .mercari-title { font-weight: bold; font-size: 15px; color: #b8501a; margin-bottom: 10px; }
+  .mercari-code { display: inline-block; background: #ffffff; border: 2px dashed #b8501a; border-radius: 4px; padding: 6px 14px; margin: 4px 0; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; color: #b8501a; letter-spacing: 2px; }
+  .faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+  .faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+  .data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+  .data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+  .data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+  .data-table tr:nth-child(even) td { background: #f9f9f9; }
+  .data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+  .shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+  .shop-btn { flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important; font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center; transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+  .shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+  .shop-btn-amazon { background: #FF9900; }
+  .shop-btn-rakuten { background: #BF0000; }
+  .shop-btn-mercari { background: #FF0211; }
+  .shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+  figure { margin: 16px 0; text-align: center; }
+  figure img { max-width: 100%; height: auto; }
+  figcaption { font-size: 12px; color: #888; margin-top: 5px; }
+  ul { padding-left: 1.5em; }
+  li { margin-bottom: 6px; line-height: 1.8; }
+  p { margin-bottom: 1.4em; }
+  @media (max-width: 520px) {
+    .data-table thead { display: none; }
+    .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+    .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+    .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; }
+    .data-table td:last-child { border-bottom: none; }
+    .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 70px; max-width: 70px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+    .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+    .data-table tr:nth-child(even) td { background: #ffffff; }
+    .shop-buttons { gap: 6px; }
+    .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+    .shop-btn-label { display: none; }
+  }
+--></style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Review",
+      "name": "冒険家エリオットの千年物語 2人プレイ（協力プレイ）レビュー",
+      "itemReviewed": {
+        "@type": "VideoGame",
+        "name": "冒険家エリオットの千年物語",
+        "alternateName": "The Adventures of Elliot: The Millennium Tales",
+        "gamePlatform": ["Nintendo Switch 2", "PlayStation 5", "Xbox Series X|S", "PC"],
+        "applicationCategory": "Game",
+        "publisher": { "@type": "Organization", "name": "スクウェア・エニックス" },
+        "datePublished": "2026-06-18",
+        "playMode": ["SinglePlayer", "CoOp"]
+      },
+      "author": { "@type": "Person", "name": "バブルガム" },
+      "reviewRating": { "@type": "Rating", "ratingValue": "3.5", "bestRating": "5", "worstRating": "1" },
+      "reviewBody": "2人目はエリオットではなく妖精フェイを操作するローカル専用の協力プレイ。ゲーム開始直後には解放されず、フェイが最初の魔法を覚えるまで進める必要がある。無敵の2Pがアイテム回収と着火を担当でき、補助としては優秀だが完全に対等な協力プレイではない。"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "冒険家エリオットの千年物語はオンラインで2人プレイできますか",
+          "acceptedAnswer": { "@type": "Answer", "text": "できません。2人プレイはローカル専用で、同じ本体に2つのコントローラーをつないで遊ぶ形式です。PS5のシェアプレイを使えば離れた相手を2Pとして参加させられますが、これはゲーム側のオンライン機能ではなく本体機能です。" }
+        },
+        {
+          "@type": "Question",
+          "name": "2人プレイのメニューが見つからないのはなぜですか",
+          "acceptedAnswer": { "@type": "Answer", "text": "ストーリーを進めてフェイが最初の魔法を覚えるまで、ふたりでプレイの項目そのものが表示されないためです。まっすぐ進めても1時間から2時間ほどかかります。" }
+        },
+        {
+          "@type": "Question",
+          "name": "2人プレイにソフトは2本必要ですか",
+          "acceptedAnswer": { "@type": "Answer", "text": "必要ありません。1本のソフトと1台の本体、コントローラー2つで遊べます。2P側にアカウントを用意する必要もありません。" }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</p>
+<p>2人プレイができると聞いて買ったのに、メニューのどこを探しても2人プレイの項目がない。設定にもない。タイトル画面にもない。コントローラーの2台目を接続して、意味もなく十字キーを押してみたりして、そのうち本気で「これ、パッケージの記載が間違ってるのでは」と疑い始めました。</p>
+<p>でも、私が悪かったです。冒険家エリオットの千年物語の2人プレイは、ゲームを始めた瞬間には存在しません。ストーリーをある程度進めて、妖精のフェイが最初の魔法を覚えたところで、ようやくメニューの中に生えてきます。</p>
+<h2 class="section-head" id="冒険家エリオットの2人プレイはまずここでつまずく">冒険家エリオットの2人プレイは、まずここでつまずく</h2>
+<p>この作品の2人プレイは、エリオットが2人になるタイプではありません。1Pが主人公のエリオット、2Pが相棒の妖精フェイ。ソロだと1Pがフェイもまとめて操作しているので、その操作を丸ごと2人目に渡す、という考え方です。</p>
+<p>そして冒頭で書いたとおり、この機能は最初からは開いていません。フェイが仲間になり、彼女がチャッカ、つまり火を点ける魔法を覚えたあたりで、メニューに項目が追加されます。ストーリーをまっすぐ追っても1時間から2時間。私みたいに宝箱が気になって寄り道するタイプだと、3時間以上かかることもあります。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728110459.png" width="772" height="431" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>探索中。</figcaption>
+</figure>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728111320.png" width="772" height="437" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>こういう雑魚戦でも普通に削られるけど、2人プレイだと安定しやすい</figcaption>
+</figure>
+<div class="warn-box"><span class="warn-label">注意</span>誰かと一緒に遊ぶつもりで買った日、いきなり2人で始めることはできません。最初の1〜2時間は1Pがひとりで進める時間になります。友達や家族を呼ぶ日を決めているなら、前日までに解放だけ済ませておくのがおすすめです。</div>
+<h2 class="section-head" id="2人プレイのやり方PS5Switch-2">2人プレイのやり方（PS5・Switch 2）</h2>
+<p>解放さえされていれば、手順そのものは3ステップで終わります。分かってしまえば拍子抜けするくらい簡単です。</p>
+<h3 class="sub-head" id="手順1メニューを開いてフェイのページへ">手順1：メニューを開いてフェイのページへ</h3>
+<p>フィールドでメニューを開き、フェイの専用ページまで移動します。装備でもアイテムでもなく、フェイのページです。ここが分かりにくい。私はステータス画面と設定画面ばかり見ていて、フェイのページを開くという発想がありませんでした。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728105814.jpg" width="640" height="360" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>フェイのページを開くと、画面の隅にふたりでプレイの案内が出ます（PS5版）</figcaption>
+</figure>
+<h3 class="sub-head" id="手順21Pがふたりでプレイのボタンを押す">手順2：1Pがふたりでプレイのボタンを押す</h3>
+<p>フェイのページの隅に、ふたりでプレイの表示が出ています。ここで1P側のコントローラーで対応ボタンを押します。押すボタンは機種で違います。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>機種</th>
+<th>1Pが押すボタン</th>
+<th>2Pの参加方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="機種">PlayStation 5</td>
+<td data-label="ボタン">L1</td>
+<td data-label="2P参加">2P側のコントローラーで決定ボタン（✕）</td>
+</tr>
+<tr>
+<td data-label="機種">Nintendo Switch 2</td>
+<td data-label="ボタン">L</td>
+<td data-label="2P参加">2P側のコントローラーで決定ボタン</td>
+</tr>
+</tbody>
+</table>
+<div class="note-box"><span class="note-label">補足</span>Xbox Series X|SとPC版も導線は同じで、フェイのページから呼び出す形です。押すボタンは画面の隅に必ず出ているので、そこの表記に従ってください。うちにあるのはPS5版なので、他機種の細かい表記までは確認できていません。</div>
+<h3 class="sub-head" id="手順32P側が参加を押す">手順3：2P側が参加を押す</h3>
+<p>1Pがボタンを押すと、2P募集中の画面に切り替わります。あとは2P側のコントローラーで参加すれば完了です。参加した瞬間に短い操作説明が出るので、初めての人はここを一緒に読んでおくと事故が減ります。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728110102.png" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>参加待ちの画面。2P側でボタンを押すと、そのままフェイの操作説明が始まります</figcaption>
+</figure>
+<p>やめるときも同じ場所です。フェイのページからもう一度操作すれば1人プレイに戻ります。2Pが席を立ったのに操作権が残っていて動けない、というときはここを見てください。</p>
+<h3 class="sub-head" id="Switch-2はおすそわけでもいける">Switch 2はおすそわけでもいける</h3>
+<p>Switch 2で遊ぶ場合、コントローラーの追加購入は必須ではありません。本体付属のJoy-Con 2を左右に分ける、いわゆるおすそわけで参加できます。フェイ側は移動と攻撃と魔法くらいしか使わないので、横持ちの少ないボタンでも操作は足ります。</p>
+<p>とはいえ、長く遊ぶなら2P側にもプロコンかJoy-Con 2の2本持ちを渡したほうが快適です。フェイは空を飛び回るぶんスティック操作の時間が長く、横持ちだと手が疲れます。</p>
+<h2 class="section-head" id="2Pフェイは何ができるのか">2P（フェイ）は何ができるのか</h2>
+<p>2Pの仕事は、ざっくり言うと3つです。飛び回ってアイテムを拾う。敵を小突く。そして魔法を撃つ。エリオットのように武器を振り回して戦うことはできません。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728105939.png" width="802" height="516" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>参加直後に出るフェイの操作説明。覚えることは多くありません</figcaption>
+</figure>
+<p>ただし、フェイは無敵です。ここが2人プレイの性格を決めています。どれだけ敵の真ん中に突っ込んでも死なないし、リトライの原因にもならない。ゲームが苦手な人にコントローラーを渡しても、進行の足を引っ張ることがまず起きません。</p>
+<h3 class="sub-head" id="フェイの魔法5種と2人プレイでの使いどころ">フェイの魔法5種と、2人プレイでの使いどころ</h3>
+<p>物語を進めると、フェイの魔法は最終的に5つまで増えます。2P側の面白さは、正直この魔法の数に比例します。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>魔法</th>
+<th>できること</th>
+<th>2人プレイでの使いどころ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="魔法">チャッカ</td>
+<td data-label="できること">火を点ける、凍結を溶かす、起爆する</td>
+<td data-label="使いどころ">最初に手に入る魔法。敵にも点くので、これだけで戦力になります</td>
+</tr>
+<tr>
+<td data-label="魔法">シッソー</td>
+<td data-label="できること">エリオットを高速で移動させる</td>
+<td data-label="使いどころ">移動が一気に楽になる反面、1Pの操作を2Pが奪う形になります</td>
+</tr>
+<tr>
+<td data-label="魔法">ワープ</td>
+<td data-label="できること">エリオットをフェイの位置へ移動させる</td>
+<td data-label="使いどころ">段差の攻略や緊急回避。2Pが道を先に見つけて呼ぶ動きが強い</td>
+</tr>
+<tr>
+<td data-label="魔法">キューイン</td>
+<td data-label="できること">竜巻で敵やアイテムを引き寄せる</td>
+<td data-label="使いどころ">散らばった敵をまとめる係。1Pの攻撃が当てやすくなります</td>
+</tr>
+<tr>
+<td data-label="魔法">コピー</td>
+<td data-label="できること">エリオットと同じ動きを再現する</td>
+<td data-label="使いどころ">単純に手数が倍。ボス戦で効いてきます</td>
+</tr>
+</tbody>
+</table>
+<p>個人的な感想を言うと、最初にもらえるチャッカが最後まで一番おいしい。連打で火を点け続けるだけで、雑魚の集団がまとめて溶けていきます。ソロで使っても強いのですが、2人プレイだと1Pが殴っている間ずっと点火し続けられるので、火力の伸びが分かりやすい。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728110316.png" width="635" height="367" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>2人プレイ中。炎の連打が想像以上に強いです</figcaption>
+</figure>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728111228.png" width="762" height="401" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ボス戦。2Pが火を点け続けてくれるので、1Pは回避に集中できます</figcaption>
+</figure>
+<p>戦闘以外だと、フェイの魔法は謎解きの鍵にもなります。松明に火を点けて扉を開ける、凍った何かを溶かす、離れた仕掛けを起動する。このあたりはゼルダを遊んだことがある人なら、見た瞬間にやることが分かる作りです。仕掛けの前で1Pが待って、2Pが撃つ。この役割分担が地味に楽しい。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728111159.png" width="782" height="437" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>謎解きの構造はゼルダに近い。2人だと解答役と実行役に分かれます</figcaption>
+</figure>
+<p>魔法は撃ち続けると専用のゲージが切れます。空になったら回復待ち。2P側が退屈する一番の原因がこれなので、ゲージを気にせず撃てるようになる回復手段を手に入れたら、2人で遊ぶ日は必ず持っておいたほうがいいです。撃てない時間が減るだけで、2P側の満足度がまるで違います。</p>
+<h3 class="sub-head" id="ソロのときのフェイとは少しだけ別物">ソロのときのフェイとは、少しだけ別物</h3>
+<p>細かいところですが、2人プレイのフェイはソロのフェイと挙動が違います。分かりやすいのが樽や壺で、ソロだとフェイは壊せないのに、2人プレイだと壊せる。1Pが素通りした道の壊し物を2Pが片っ端から割って中身を拾う、という分担がそのまま成立します。</p>
+<p>攻撃も、ソロは自動で出るのに対して2人プレイでは自分で撃つ形になります。魔法の切り替えも2人プレイのほうが速い。この切り替えの速さのおかげで、キューインで敵を集めてから爆弾を落として、着地の瞬間にチャッカで点火する、みたいな連携が現実的な速度でできます。ソロだと同じことをするのに指が足りません。</p>
+<div class="story-box">
+<div class="story-title">1人で全部やろうとすると、こうなる</div>
+ソロのときの私はフェイをほとんど使っていませんでした。エリオットを動かしながら妖精まで狙って飛ばすのが面倒で、結局は殴るだけになる。2Pに渡して初めて、この妖精こんなに働けたのかと気づきました。2人プレイの一番の収穫はそこかもしれません。</div>
+<h2 class="section-head" id="聖剣伝説の2人プレイを想像しているとたぶん肩透かしを食う">聖剣伝説の2人プレイを想像していると、たぶん肩透かしを食う</h2>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B000092PBG?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/411NNqyvMGL._SL500_.jpg" class="hatena-asin-detail-image" alt="聖剣伝説ファイナルファンタジー外伝" title="聖剣伝説ファイナルファンタジー外伝" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B000092PBG?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">聖剣伝説ファイナルファンタジー外伝</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>SquareSoft</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B000092PBG?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>↑に関して。初代聖剣伝説３がアマゾンにないか確認したのですが、３が見つからなかったです。プレミア付いてて、購入できないかもしれません。（リメイクは協力プレイできないので注意）</p>
+<p>正直に言うと、私がエリオットの2人プレイに期待していたのは、聖剣伝説でした。スーパーファミコンの2と3。2人目がコントローラーを持った瞬間、パーティーの仲間がそのまま自分のキャラになる、あの感じです。武器も装備もレベルも自分のもの。1Pと同じ土俵で殴り合える。</p>
+<p>エリオットの2人プレイは、そこではありません。2Pが受け持つのは妖精のフェイであって、パーティーの誰かではない。装備もレベルも持たず、無敵な代わりに主役でもない。同じスクウェア・エニックスの2人プレイでも、設計思想がまるで違います。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>比べるところ</th>
+<th>聖剣伝説2・3</th>
+<th>冒険家エリオット</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="比較">2Pが持つもの</td>
+<td data-label="聖剣">パーティーの仲間キャラそのもの</td>
+<td data-label="エリオット">妖精のフェイ（1Pの相棒）</td>
+</tr>
+<tr>
+<td data-label="比較">装備とレベル</td>
+<td data-label="聖剣">2Pのキャラにも武器と成長がある</td>
+<td data-label="エリオット">なし。強化はエリオット側に集約</td>
+</tr>
+<tr>
+<td data-label="比較">やられるか</td>
+<td data-label="聖剣">やられるので、2Pにも緊張感がある</td>
+<td data-label="エリオット">無敵。死なない代わりに責任もない</td>
+</tr>
+<tr>
+<td data-label="比較">始められる時期</td>
+<td data-label="聖剣">仲間が加入した時点ですぐ</td>
+<td data-label="エリオット">最初の魔法を覚えるまでお預け</td>
+</tr>
+<tr>
+<td data-label="比較">2Pの立ち位置</td>
+<td data-label="聖剣">対等な相棒</td>
+<td data-label="エリオット">かなり有能な補助</td>
+</tr>
+</tbody>
+</table>
+<p>どちらが優れているという話ではありません。無敵で死なないフェイは、ゲームが苦手な人にとっては聖剣伝説より遥かに優しい。あちらは2Pがやられれば復活の手間がかかるし、装備を整える知識も要ります。渡した相手が置いていかれない、という一点でエリオットの設計は正しい。</p>
+<p>それでも、と思ってしまうのがこの記事の本音です。物語の終盤にはNPCと肩を並べて戦うクエストもあって、その画面を見ながら、ここに2Pが入れたらどんなに良かったかと考えていました。常時、ちゃんとしたキャラクターを2人で動かしたかった。聖剣伝説を通ってきた人ほど、この物足りなさは残ると思います。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728111402.png" width="767" height="420" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>終盤のNPCと共闘するクエスト。ここが2Pだったら、と何度も思いました</figcaption>
+</figure>
+<h2 class="section-head" id="離れて住んでいる相手と2人プレイはできるのか">離れて住んでいる相手と2人プレイはできるのか</h2>
+<p>ここが一番よく聞かれるところだと思います。先に答えを書くと、この作品にオンライン協力プレイはありません。2人プレイはローカル、つまり同じ本体に2つのコントローラーをつないだときだけの機能です。</p>
+<p>そのうえで、本体側の機能を使う抜け道はあります。ただし機種によって事情がまったく違います。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>手段</th>
+<th>2人プレイ</th>
+<th>条件と注意点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="手段">PS5のリモートプレイ</td>
+<td data-label="2人プレイ">できない</td>
+<td data-label="条件">映像を別の端末に飛ばす機能で、コントローラーを2台ぶん受け付ける仕組みではありません。手元のPS5の画面を寝室のスマホで見る、といった使い方は快適です</td>
+</tr>
+<tr>
+<td data-label="手段">PS5のシェアプレイ</td>
+<td data-label="2人プレイ">できる</td>
+<td data-label="条件">一緒にプレイを選べば、離れた相手が2Pとして参加できます。ホストとビジターの両方がPS Plusに加入していること、1回のセッションが1時間で自動終了することに注意</td>
+</tr>
+<tr>
+<td data-label="手段">Switch 2</td>
+<td data-label="2人プレイ">できない</td>
+<td data-label="条件">遠隔の相手にコントローラー操作を渡す仕組みがありません。Switch 2で2人プレイをするなら、同じ部屋に集まる必要があります</td>
+</tr>
+</tbody>
+</table>
+<p>シェアプレイの1時間で自動終了という仕様は、この作品と相性が良くありません。区切りのいいところで切れてくれるわけではないので、ダンジョンの途中で強制的にひとりに戻されます。再接続すればまた1時間遊べますが、そのたびに操作を渡し直す手間はかかります。</p>
+<div class="note-box"><span class="note-label">補足</span>PC版は所有していないため、Steamのリモートプレイ一緒にプレイが使えるかどうかは確認できていません。確認でき次第、この項目を更新します。</div>
+<h2 class="section-head" id="2人プレイの良かったところ惜しかったところ">2人プレイの良かったところ、惜しかったところ</h2>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728110422.png" width="777" height="420" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>エリオットとフェイ。この2人の距離感が、そのまま2人プレイの設計になっています</figcaption>
+</figure>
+<div class="good-box">
+<div class="good-title">良かったところ</div>
+<ul>
+<li>2Pが無敵なので、ゲームが苦手な人に渡しても全滅の原因にならない</li>
+<li>アイテム拾いと壊し物の担当を丸ごと任せられて、探索のとりこぼしが減る</li>
+<li>チャッカの連打が普通に強い。補助のつもりが立派な火力になります</li>
+<li>魔法の切り替えが速く、集める、落とす、点けるの連携が気持ちよく決まる</li>
+<li>ソロでは持て余していたフェイの性能を、ようやく使い切れる</li>
+</ul>
+</div>
+<div class="bad-box">
+<div class="bad-title">惜しかったところ</div>
+<ul>
+<li>解放が遅い。最初の1〜2時間は2人で遊べません</li>
+<li>シッソーを2Pが握るため、行きたい方向と違うところへエリオットが飛んでいく事故が起きます</li>
+<li>水中ではフェイの操作ができなくなり、2Pはただ肩に乗っているだけになります</li>
+<li>エリオットから離れられる距離に制限があり、2Pが自由に探索することはできません</li>
+<li>1Pが装備や魔石をいじっている間、2Pにやることがない</li>
+<li>やり直しを選ぶと2Pの接続が切れます</li>
+</ul>
+</div>
+<p>いちばん引っかかったのはシッソーです。1Pの移動そのものを2Pに預ける設計なので、うまくかみ合えば快適な反面、噛み合わないとひたすら壁に激突します。渡す相手によっては、この魔法を意識的に使わないほうが平和かもしれません。</p>
+<h2 class="section-head" id="結局この2人プレイは誰と遊ぶものか">結局、この2人プレイは誰と遊ぶものか</h2>
+<div class="verdict-box">
+<div class="verdict-title">2人プレイ部分の評価</div>
+<p style="margin-bottom: 6px;"><span class="star-rating">★★★☆☆</span> <span style="font-size: 13px; color: #666;">3.5 / 5.0</span></p>
+<p style="margin-bottom: 0;">おまけの補助モードだと思って触ったら、想像よりずっと働けるようになっていた。ただし対等ではないし、そこへ辿り着くまでが長い。2人プレイ目当てだけで買うゲームではありません。</p>
+</div>
+<p>向いているのは、コントローラーを握るのに慣れていない人と遊ぶ場合です。小さい子ども、普段ゲームをしない家族、アクションが苦手な友達。無敵で、やることが分かりやすくて、それでいてちゃんと戦況に影響する。この条件を満たす2Pは実はそんなに多くありません。</p>
+<p>逆に、2人が同じだけ主役をやりたいタイプの協力プレイを探しているなら、この作品は答えになりません。フェイはあくまで相棒で、物語も操作量もエリオット側に寄っています。聖剣伝説の並んで戦う感覚を求めて買うと、たぶん納得できません。</p>
+<p>ただ、ソロで遊ぶ前提で言えば、このゲーム自体はよくできています。武器は7種類あって手触りが全部違うし、魔石を差し替えて自分好みに育てる楽しさもある。エンドロールまで走り切って、遊んでよかったと素直に思える一本でした。2人プレイは、その上に乗っているおまけの喜びだと思っておくくらいが、ちょうどいい距離感かもしれません。</p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728111107.png" width="757" height="416" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>エンドロール。2人プレイの不満は残りましたが、走り切った満足感はありました</figcaption>
+</figure>
+<div class="mercari-box">
+<div class="mercari-title">中古を狙うならメルカリも</div>
+<p style="margin-bottom: 10px;">発売から1か月が過ぎて、パッケージ版の出品が増えてきました。ダウンロード版と違って売り買いができるのがパッケージの強みなので、遊び終わったら手放す前提の人には中古が向いています。</p>
+<p style="margin-bottom: 6px;">メルカリを使ったことがない方は、招待コードの入力で500ポイントもらえます。</p>
+<div class="mercari-code">YRCNMN</div>
+</div>
+<div class="shop-buttons"><span class="shop-btn-label">両機種</span> <a href="https://www.amazon.co.jp/s?k=%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 class="section-head" id="よくある質問">よくある質問</h2>
+<dl class="faq-list">
+<dt>2人プレイにソフトは2本必要ですか</dt>
+<dd>必要ありません。ソフト1本、本体1台、コントローラー2つで遊べます。2P側にアカウントを作る必要もなく、参加ボタンを押すだけです。</dd>
+<dt>2人プレイの項目がどこにもありません</dt>
+<dd>進行度が足りていない可能性が高いです。フェイが最初の魔法を覚えるまで、項目そのものが表示されません。設定画面をいくら探しても見つからないので、ストーリーを進めてください。</dd>
+<dt>途中で2Pが抜けたり、また入ったりできますか</dt>
+<dd>できます。フェイのページから同じように操作すれば、1人プレイに戻したり、もう一度2Pを呼んだりできます。ただし、やられてやり直しを選んだときは自動的に2Pの接続が切れるので、そのつど呼び直す必要があります。</dd>
+<dt>2Pの経験値やアイテムはどうなりますか</dt>
+<dd>セーブデータはエリオットのものひとつだけです。2Pが拾ったアイテムもお金も、すべてエリオット側に入ります。2P専用の育成要素はありません。</dd>
+</dl>
