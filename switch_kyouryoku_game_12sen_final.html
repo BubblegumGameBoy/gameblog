@@ -1,0 +1,399 @@
+<style><!--
+/* ===== 見出し ===== */
+h2.section-head {
+  font-size: 118% !important; font-weight: bold !important;
+  background-color: #555555 !important; color: #ffffff !important;
+  padding: 10px 14px !important;
+  border-top: 4px solid #aaaaaa !important; border-bottom: 4px solid #aaaaaa !important;
+  box-shadow: inset 0px 1px 0px #ffffff, inset 0px -1px 0px #ffffff;
+  margin-top: 48px !important; margin-bottom: 20px !important; border-left: none !important;
+}
+h3.sub-head {
+  font-size: 108% !important; font-weight: bold !important;
+  border-left: 5px solid #555555 !important; padding: 10px 0 10px 15px !important;
+  margin-top: 36px !important; margin-bottom: 16px !important; background-color: #f9f9f9 !important;
+}
+/* ===== ボックス ===== */
+.point-box { border: 1px solid #dddddd; padding: 15px 18px; margin: 20px 0; border-radius: 5px; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+.point-box .point-title { color: #333333; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+.note-box { background: #fffde6; border: 1px solid #e8d44d; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #444; line-height: 1.8; }
+.note-box .note-label { font-weight: bold; color: #555; margin-right: 4px; }
+.warn-box { background: #fff5f5; border: 1px solid #e0a0a0; border-radius: 5px; padding: 13px 16px; margin: 16px 0; font-size: 13.5px; color: #333; line-height: 1.8; }
+.warn-box .warn-label { font-weight: bold; color: #c0392b; margin-right: 6px; }
+.good-box { background: #f0f7f4; border-left: 4px solid #27ae60; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.good-box .good-title { font-weight: bold; color: #27ae60; font-size: 14px; margin-bottom: 8px; }
+.bad-box { background: #fdf3f0; border-left: 4px solid #c0392b; padding: 14px 18px; margin: 16px 0; border-radius: 0 5px 5px 0; }
+.bad-box .bad-title { font-weight: bold; color: #c0392b; font-size: 14px; margin-bottom: 8px; }
+.story-box { background: #f7f9fc; border-left: 4px solid #555555; padding: 14px 18px; margin: 20px 0; border-radius: 0 5px 5px 0; }
+.story-box .story-title { font-weight: bold; font-size: 14px; color: #444; margin-bottom: 8px; }
+.mercari-box { background: #fff8f3; border: 1px solid #f0c8a0; border-radius: 6px; padding: 16px 18px; margin: 20px 0; }
+.mercari-box .mercari-title { font-weight: bold; font-size: 15px; color: #b8501a; margin-bottom: 10px; }
+.mercari-code { display: inline-block; background: #ffffff; border: 2px dashed #b8501a; border-radius: 4px; padding: 6px 14px; margin: 4px 0; font-family: 'Courier New', monospace; font-size: 16px; font-weight: bold; color: #b8501a; letter-spacing: 2px; }
+.kanren-block { background-color: #f9f9f9; padding: 14px 16px; border-left: 5px solid #555555; margin: 22px 0; border-radius: 0 4px 4px 0; }
+.kanren-block p { margin: 0; padding: 4px 0; font-size: 14px; }
+.kanren-block .kanren-label { font-weight: bold; color: #555; font-size: 13px; }
+.kanren-block a { font-weight: bold; color: #2277aa; }
+.faq-list dt { font-weight: bold; background: #f5f5f5; padding: 10px 14px; margin-top: 12px; border-left: 4px solid #555555; font-size: 14.5px; }
+.faq-list dd { padding: 10px 14px 14px 18px; margin: 0; font-size: 14px; line-height: 1.85; border-bottom: 1px solid #eee; }
+/* ===== 機種ラベル ===== */
+.game-info { font-size: 12px; color: #666; margin: 0 0 12px 0; display: inline-block; background: #f5f5f5; padding: 4px 10px; border-radius: 4px; border: 1px solid #e0e0e0; }
+.type-tag { display: inline-block; font-size: 11px; font-weight: bold; color: #ffffff; background: #555555; padding: 2px 8px; border-radius: 3px; margin-left: 6px; vertical-align: middle; letter-spacing: 0.04em; }
+/* ===== テーブル ===== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 16px 0; }
+.data-table th { background: #555555; color: #333333; padding: 9px 12px; text-align: left; font-weight: bold; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid #e0e0e0; line-height: 1.7; background: #fff; vertical-align: top; }
+.data-table tr:nth-child(even) td { background: #f9f9f9; }
+.data-table th[scope="row"] { background: #f5f5f5; color: #333333; font-weight: bold; white-space: nowrap; vertical-align: top; }
+.data-table a { color: #2277aa; font-weight: bold; text-decoration: none; }
+.data-table a:hover { text-decoration: underline; }
+@media (max-width: 520px) {
+  .data-table thead { display: none; }
+  .data-table, .data-table tbody, .data-table tr, .data-table td { display: block; width: 100%; box-sizing: border-box; }
+  .data-table tr { border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 10px; overflow: hidden; }
+  .data-table td { display: flex; align-items: flex-start; padding: 7px 10px; border-bottom: 1px solid #f0f0f0; font-size: 13px; word-break: break-word; }
+  .data-table td:last-child { border-bottom: none; }
+  .data-table td::before { content: attr(data-label); font-weight: bold; font-size: 11px; color: #666; background: #f5f5f5; min-width: 76px; max-width: 76px; flex-shrink: 0; padding: 2px 8px 2px 0; margin-right: 10px; border-right: 2px solid #dddddd; line-height: 1.6; }
+  .data-table th[scope="row"] { display: block; width: 100%; box-sizing: border-box; padding: 6px 10px; font-size: 11px; color: #666; background: #f5f5f5; border-bottom: 1px solid #f0f0f0; }
+  .data-table tr:nth-child(even) td { background: #ffffff; }
+}
+/* ===== ストアボタン ===== */
+.shop-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 22px 0; }
+.shop-btn { flex: 1 1 0; min-width: 100px; display: inline-flex; align-items: center; justify-content: center; padding: 11px 12px; border: none; border-radius: 5px; background: #555555; color: #ffffff !important; font-size: 13.5px; font-weight: bold; text-decoration: none !important; text-align: center; transition: all 0.18s; box-shadow: 0 1px 2px rgba(0,0,0,0.12); }
+.shop-btn:hover { opacity: 0.88; transform: translateY(-1px); box-shadow: 0 3px 6px rgba(0,0,0,0.18); }
+.shop-btn-amazon { background: #FF9900; }
+.shop-btn-rakuten { background: #BF0000; }
+.shop-btn-mercari { background: #FF0211; }
+.shop-btn-label { font-size: 12px; font-weight: normal; color: #888; margin-right: 8px; flex-shrink: 0; display: flex; align-items: center; }
+@media (max-width: 520px) {
+  .shop-buttons { gap: 6px; }
+  .shop-btn { padding: 10px 6px; font-size: 12px; min-width: 0; }
+  .shop-btn-label { display: none; }
+}
+/* ===== Amazonカード ===== */
+.hatena-asin-detail { margin: 16px 0; padding: 12px; border: 1px solid #ddd; border-radius: 4px; background: #fafafa; }
+.hatena-asin-detail-title { font-weight: bold; margin-bottom: 6px; }
+.hatena-asin-detail-meta { list-style: none; padding: 0; font-size: 13px; color: #666; }
+.asin-detail-buy { display: inline-block; margin-top: 8px; padding: 4px 14px; background: #555; color: #fff; border-radius: 3px; text-decoration: none; font-size: 13px; }
+figure { margin: 16px auto; max-width: 720px; }
+figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figcaption { font-size: 12px; color: #888; margin-top: 5px; text-align: center; }
+img { max-width: 100%; height: auto; }
+ul { padding-left: 1.5em; }
+li { margin-bottom: 6px; line-height: 1.8; }
+p { margin-bottom: 1.4em; line-height: 1.8; }
+--></style>
+<p>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Switchが1台、ソフトが1本でも2人プレイできますか",
+      "acceptedAnswer": { "@type": "Answer", "text": "タイトルによります。ゼルダ無双 封印戦記やマリオカート ワールド、ピクミン4のように1台1本で2人遊べるものと、モンスターハンターダブルクロスのように人数分のソフトと本体が必要なものがあります。パッケージの2人プレイ対応という表記だけでは判別できないため、ローカル協力なのか通信協力なのかを購入前に確認してください。" }
+    },
+    {
+      "@type": "Question",
+      "name": "Joy-Conのおすそわけだけで2人プレイできますか",
+      "acceptedAnswer": { "@type": "Answer", "text": "おすそわけプレイに対応しているタイトルなら追加のコントローラーを買わずに遊べます。ただし横持ちはボタンが少なく手も疲れるため、数時間続けて遊ぶならプロコンかJoy-Conの2本持ちを2P側に渡したほうが快適です。" }
+    },
+    {
+      "@type": "Question",
+      "name": "離れて住んでいる相手とSwitchで2人プレイできますか",
+      "acceptedAnswer": { "@type": "Answer", "text": "オンライン協力に対応したタイトルであれば可能で、その場合はNintendo Switch Onlineへの加入が必要です。画面分割のローカル協力専用タイトルは、同じ部屋に集まる必要があります。" }
+    },
+    {
+      "@type": "Question",
+      "name": "ゲームが苦手な家族と遊ぶならどのタイトルがいいですか",
+      "acceptedAnswer": { "@type": "Answer", "text": "2Pが死んでも進行に影響しないサポート型が向いています。ピクミン4の2Pはカーソル操作の援護射撃、冒険家エリオットの千年物語の2Pは無敵の妖精で、どちらも足を引っ張ることがまず起きません。" }
+    },
+    {
+      "@type": "Question",
+      "name": "2人プレイ対応と書いてあれば、どれを買っても2人で楽しめますか",
+      "acceptedAnswer": { "@type": "Answer", "text": "楽しめるとは限りません。2Pがカーソルしか動かせないもの、片方が置いていかれる構造のもの、おまけ程度の機能しかないものが混ざっています。実際に何本も2人でクリアしてみて、最後まで対等に遊べたものは半分程度でした。" }
+    }
+  ]
+}
+</script>
+</p>
+<p>妻とゼルダ無双 封印戦記を、最初から最後まで画面分割の2人プレイで通しました。25時間。ピクミン4も最後まで2人。星のカービィ ディスカバリーも、モンハンダブルクロスも、ついこの間は冒険家エリオットの千年物語も。だいたい週末の夜、缶ビールを1本開けたあたりから始まって、気づけば日付が変わっています。</p>
+<p>そうやって何本も2人でクリアしていくうちに、はっきり分かったことがあります。パッケージに書いてある2人プレイ対応の6文字、中身が全然違う。</p>
+<p>片方はカーソルしか動かせない。片方は無敵だけど武器を振れない。そもそもソフトが2本必要で、その日は遊べなかった。ゲームが得意な人と苦手な人が並んで座るとき、この違いは楽しさを左右します。だから今回は、遊べるかどうかではなく<span style="font-weight: bold;">2人が対等に遊べるかどうか</span>で仕分けました。</p>
+<p>先に言っておくと、本数は12本しかありません。もっと候補はあったのですが、実際に2人で触ってみると、協力プレイがおまけ程度で終わっているものが想像以上に多かった。数を並べても意味がないので、胸を張って人にすすめられるものだけ残しています。</p>
+<p>[:contents]</p>
+<h2 id="Switchの2人プレイ対応は3種類ある" class="section-head">Switchの2人プレイ対応は、じつは3種類ある</h2>
+<p>先に分類だけ渡しておきます。この3つのどれなのかが分かれば、買ってから、あれ、思ってたのと違う、が起きません。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>タイプ</th>
+<th>2P側の立場</th>
+<th>向いている相手</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="タイプ">対等型</td>
+<td data-label="2P側">1Pと同じことができる。どちらが上手いかがそのまま出る</td>
+<td data-label="向く相手">お互いにゲームを遊ぶ人。腕が近い相手</td>
+</tr>
+<tr>
+<td data-label="タイプ">サポート型</td>
+<td data-label="2P側">補助役。死なない、または進行を止められない設計</td>
+<td data-label="向く相手">ゲームが苦手な人、子ども、たまにしか触らない人</td>
+</tr>
+<tr>
+<td data-label="タイプ">別本体型</td>
+<td data-label="2P側">対等だが、本体もソフトも人数分いる</td>
+<td data-label="向く相手">お互いにSwitchを持っている相手、離れて住む相手</td>
+</tr>
+</tbody>
+</table>
+<p>いちばん事故が多いのは3つめです。2人で遊ぶつもりで1本だけ買って、その日の夜に気づく。うちも一度やりました。</p>
+<div class="note-box"><span class="note-label">補足</span>Switch 2で増えたおすそわけ通信は、この分類をまたぎます。1本のソフトで、近くの人とも、ゲームチャット中の離れた人とも遊べる仕組みです。対応しているかどうかは商品ページの対応プレイ人数の欄に書かれています。</div>
+<h2 id="対等型2人が同じ土俵で遊べる7本" class="section-head">対等型。2人が同じ土俵で遊べる7本</h2>
+<p>どちらが1Pでもいい、という状態になれるやつです。腕が近い相手と遊ぶなら、迷わずここから。</p>
+<h3 id="ゼルダ無双-封印戦記" class="sub-head">① ゼルダ無双 封印戦記<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch 2 / Switch ｜ ローカル2人・画面分割 ｜ 本体1台・ソフト1本</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260730/20260730083245.png" alt="ゼルダ無双 封印戦記の2人プレイ画面" width="486" height="259" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>画面分割でもヌルヌル動くのが、この作品の一番の強み</figcaption>
+</figure>
+<p>妻と25時間かけて2人でクリアしました。今のところ、うちの2人プレイ史でいちばん満足度が高いのがこれです。</p>
+<p>理由は単純で、画面分割してもヌルヌル動くから。無双系の画面分割は歴代けっこう厳しくて、処理が重くなった瞬間に戦略の話が消えて、とにかく殴るだけになりがちでした。それがない。だから、こっちの砦は任せた、そっち先に潰して、みたいな役割分担が最後まで成立します。隣に座っているのに、無線で連絡を取り合っているようなライブ感が出るんです。</p>
+<p>25時間というボリュームも、週末に集まって遊ぶにはちょうどいい密度でした。長すぎない。</p>
+<div class="warn-box"><span class="warn-label">注意</span>ハード難易度は2人プレイと相性が悪いです。1人プレイを強制される場面が頻発して、そのたびに片方が手持ち無沙汰になります。ボス戦で回復アイテムも枯れます。うちは途中でノーマルに落としました。</div>
+<div class="shop-buttons"><span class="shop-btn-label">ゼルダ無双</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%BC%E3%83%AB%E3%83%80%E7%84%A1%E5%8F%8C+%E5%B0%81%E5%8D%B0%E6%88%A6%E8%A8%98&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%BC%E3%83%AB%E3%83%80%E7%84%A1%E5%8F%8C%2B%E5%B0%81%E5%8D%B0%E6%88%A6%E8%A8%98%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%BC%E3%83%AB%E3%83%80%E7%84%A1%E5%8F%8C+%E5%B0%81%E5%8D%B0%E6%88%A6%E8%A8%98" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/01/28/185254">【協力プレイ感想】 ゼルダ無双 封印戦記は面白い？カラモのケツにすべてもっていかれた話</a></p>
+</div>
+<h3 id="マリオカート-ワールド" class="sub-head">② マリオカート ワールド<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch 2 ｜ 1台で画面分割2人〜4人 ｜ 本体1台・ソフト1本</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260730/20260730083338.png" alt="マリオカート ワールドの画面分割プレイ" width="419" height="228" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>説明がいらないゲームは、それ自体が価値だと思っています</figcaption>
+</figure>
+<p>2人プレイの安全牌。メニューのみんなでから人数を2人にすれば、それで終わりです。説明がいらないゲームは、それ自体が価値だと思っています。ゲームをしない相手を座らせて、10分で成立するのはこの手のレースゲームだけ。</p>
+<p>しかし、このマリオカートというゲーム、初心者と上級者でかなり差が分かれます。スタートダッシュ、ミニターボくらいであればある程度認知されていますが、今作はウォールランができて、ショートカットが豊富すぎる。自由度が高すぎるということは、どうしてもプレイスキルの差が生まれてしまいます。対戦ゲームとしてはかなり面白いですが、格差が付きすぎると楽しめないかもしれません。</p>
+<div class="note-box"><span class="note-label">補足</span>広い世界を自由に走るフリーランは画面分割に対応していません。2人でフリーランをしたい場合は、本体2台のローカル通信か、オンラインでグループを作る形になります。</div>
+<div class="shop-buttons"><span class="shop-btn-label">マリオカート</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%9E%E3%83%AA%E3%82%AA%E3%82%AB%E3%83%BC%E3%83%88+%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%9E%E3%83%AA%E3%82%AA%E3%82%AB%E3%83%BC%E3%83%88%2B%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%9E%E3%83%AA%E3%82%AA%E3%82%AB%E3%83%BC%E3%83%88+%E3%83%AF%E3%83%BC%E3%83%AB%E3%83%89" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 id="It-Takes-Two" class="sub-head">③ It Takes Two<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch / PS / Xbox / PC ｜ 画面分割2人・オンライン2人 ｜ 2人専用</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260730/20260730083425.png" alt="It Takes Twoの2人プレイ画面" width="907" height="512" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>ステージごとに2人の能力がまるごと入れ替わります</figcaption>
+</figure>
+<p>1人では絶対に遊べない、2人専用として作られたゲームです。離婚寸前の夫婦が人形になって、元に戻るために協力する。テーマがそれなので、夫婦で遊ぶと妙な気まずさが一瞬走りますが、そこを越えると強い。</p>
+<p>2人の能力が毎ステージまったく違うので、片方が上手いという構図がそもそも生まれません。どちらか一方だけでは進めない設計。上手い下手ではなく、伝わったか伝わらなかったかの話になります。これが対等型の理想形で、ソフト一本で2人プレイができる。万人におすすめできます。</p>
+<div class="shop-buttons"><span class="shop-btn-label">It Takes Two</span> <a href="https://www.amazon.co.jp/s?k=It+Takes+Two+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FIt%2BTakes%2BTwo%2BSwitch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=It+Takes+Two+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/23/152726">2人専用ゲームしか作らないスタジオの話。Hazelight 3作を全部クリアして</a></p>
+</div>
+<h3 id="Overcooked-2" class="sub-head">④ Overcooked 2<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch / PS / Xbox / PC ｜ ローカル2人〜4人・オンラインあり ｜ 本体1台・ソフト1本</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260730/20260730083616.png" alt="Overcooked 2の協力プレイ画面" width="1200" height="668" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>2人の連携がいちばん短時間で育つのがこれ</figcaption>
+</figure>
+<p>時間内に食材を切って、焼いて、盛り付けて出すだけ。それだけなのに、ステージが進むとキッチンが動き、川で分断され、溶岩が流れてきます。</p>
+<p>喧嘩しないゲームではあるが、喧嘩したくなるゲームでもある、という絶妙な立ち位置。でもうまく噛み合った回の達成感は格別で、2人の連携がいちばん短時間で育ちます。険悪になりかけたら、素直に一段やさしいステージへ戻るのがコツです。</p>
+<div class="shop-buttons"><span class="shop-btn-label">オーバークック2</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%AF%E3%83%83%E3%82%AF2+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%AF%E3%83%83%E3%82%AF2%2BSwitch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%AA%E3%83%BC%E3%83%90%E3%83%BC%E3%82%AF%E3%83%83%E3%82%AF2+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 id="Human-Fall-Flat" class="sub-head">⑤ Human Fall Flat<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch / PS / Xbox / PC ｜ ローカル2人・オンラインあり ｜ 本体1台・ソフト1本</span></p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B08725FPQS?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51+iPxB84fL._SL500_.jpg" class="hatena-asin-detail-image" alt="ヒューマンフォールフラット -Switch" title="ヒューマンフォールフラット -Switch" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B08725FPQS?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">ヒューマンフォールフラット -Switch</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>テヨンジャパン</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B08725FPQS?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>ぐにゃぐにゃの人形を動かして謎解きをします。操作が思った通りに効かないのが仕様で、下手なほど面白い。上手い下手の構図が最初から壊れているので、ゲームを触らない相手に渡すならこれです。うちでも笑い声の総量はこれが一番でした。</p>
+<div class="shop-buttons"><span class="shop-btn-label">Human Fall Flat</span> <a href="https://www.amazon.co.jp/s?k=Human+Fall+Flat+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FHuman%2BFall%2BFlat%2BSwitch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Human+Fall+Flat+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 id="スーパーマリオブラザーズ-ワンダー" class="sub-head">⑥ スーパーマリオブラザーズ ワンダー<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch ｜ 1台でローカル最大4人 ｜ 本体1台・ソフト1本</span></p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0GJB559FL?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51Kp+BhpPBL._SL500_.jpg" class="hatena-asin-detail-image" alt="スーパーマリオブラザーズ ワンダー Nintendo Switch 2 Edition + みんなでリンリンパーク -Switch2" title="スーパーマリオブラザーズ ワンダー Nintendo Switch 2 Edition + みんなでリンリンパーク -Switch2" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0GJB559FL?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">スーパーマリオブラザーズ ワンダー Nintendo Switch 2 Edition + みんなでリンリンパーク -Switch2</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0GJB559FL?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>1台に4人まで乗れる、家に人が来た日の定番。落ちても風船になって戻ってくるので、下手な人が沈黙する時間が短いのが偉い。</p>
+<p>ただし正直に書いておくと、実はこのゲーム、うちは2人でクリアできませんでした。操作スキルに格差がありすぎると、片方のキャラクターが置いていかれる構造になっているので、追いつこうとして焦って、また落ちる。ストレスがたまります。腕が近い2人なら最高、離れているとつらい。対等型のなかでは、いちばん相手を選ぶ1本です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">マリオワンダー</span> <a href="https://www.amazon.co.jp/s?k=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%9E%E3%83%AA%E3%82%AA%E3%83%96%E3%83%A9%E3%82%B6%E3%83%BC%E3%82%BA+%E3%83%AF%E3%83%B3%E3%83%80%E3%83%BC&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%9E%E3%83%AA%E3%82%AA%E3%83%96%E3%83%A9%E3%82%B6%E3%83%BC%E3%82%BA%2B%E3%83%AF%E3%83%B3%E3%83%80%E3%83%BC%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%83%9E%E3%83%AA%E3%82%AA%E3%83%96%E3%83%A9%E3%82%B6%E3%83%BC%E3%82%BA+%E3%83%AF%E3%83%B3%E3%83%80%E3%83%BC" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h3 id="ピクミン3-デラックス" class="sub-head">⑦ ピクミン3 デラックス<span class="type-tag">対等型</span></h3>
+<p><span class="game-info">Switch ｜ ローカル2人（ストーリーモード対応） ｜ 本体1台・ソフト1本</span></p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B08FC9ZRW1?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51ah6ekeecL._SL500_.jpg" class="hatena-asin-detail-image" alt="ピクミン3 デラックス -Switch" title="ピクミン3 デラックス -Switch" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B08FC9ZRW1?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">ピクミン3 デラックス -Switch</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B08FC9ZRW1?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<p>ピクミンで2人が対等に遊べるのは、実はこの3のデラックス版です。ストーリーモードを2人で進められて、それぞれが自分のリーダーを動かして自分のピクミンに指示を出す。次に出てくるピクミン4とは、ここが決定的に違います。</p>
+<p>ピクミンの2人プレイを探してこの記事に来た人は、まずこちらを見てください。対等に指示を出し合いたいなら3、片方に援護してもらいたいなら4です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">ピクミン3DX</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B33+%E3%83%87%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B33%2B%E3%83%87%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B33+%E3%83%87%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<h2 id="サポート型ゲームが苦手な人に渡すならこっち" class="section-head">サポート型。ゲームが苦手な人に渡すならこっち（3本）</h2>
+<p>ここからは、2Pが明確に補助役になるタイプ。対等ではないぶん、2P側が絶対に足を引っ張らないという安心感があります。うちの妻とやってきて分かったのは、これは欠点ではなく用途の違いだということです。</p>
+<h3 id="ピクミン4" class="sub-head">⑧ ピクミン4<span class="type-tag">サポート型</span></h3>
+<p><span class="game-info">Switch ｜ ローカル2人 ｜ 本体1台・ソフト1本</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20251030/20251030155422.png" alt="ピクミン4の2人プレイ画面" width="410" height="322" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>1P側は異常に快適になります</figcaption>
+</figure>
+<p>2Pはキャラクターを動かしません。動かせるのはカーソルだけ。そのカーソルで援護射撃を撃って敵を削り、壁やキノコを壊し、埋まったものを掘り出し、運搬中のピクミンを叩いて速度を上げます。バクダンなど2P専用アイテムもあります。</p>
+<p>つまり2Pは、司令塔かつ砲台です。1P側からすると異常に快適で、これがあるとないとで難易度が変わります。逆に言えば、2P側が対等に遊びたい人だと物足りない。うちも最後まで2人でクリアしましたが、途中で2Pがシューティングゲームをしている顔になっていました。本気で張り合いたい日は、対戦のダンドリバトルに移ったほうが健全です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">ピクミン4</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B34&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B34%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%94%E3%82%AF%E3%83%9F%E3%83%B34" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/30/160329">【ピクミン4】2Pはつまらない？最後まで2人でクリアしたゲームレビュー【2人プレイのやり方も解説】</a></p>
+</div>
+<h3 id="星のカービィ-ディスカバリー" class="sub-head">⑨ 星のカービィ ディスカバリー<span class="type-tag">サポート型</span></h3>
+<p><span class="game-info">Switch ｜ ローカル2人 ｜ 本体1台・ソフト1本</span></p>
+<div class="freezed">
+<div class="hatena-asin-detail"><a href="https://www.amazon.co.jp/dp/B0F5WXT1CQ?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="hatena-asin-detail-image-link" target="_blank" rel="sponsored noopener"><img src="https://m.media-amazon.com/images/I/51unqLYyzYL._SL500_.jpg" class="hatena-asin-detail-image" alt="星のカービィ ディスカバリー Nintendo Switch 2 Edition ＋ スターリーワールド -Switch2" title="星のカービィ ディスカバリー Nintendo Switch 2 Edition ＋ スターリーワールド -Switch2" /></a>
+<div class="hatena-asin-detail-info">
+<p class="hatena-asin-detail-title"><a href="https://www.amazon.co.jp/dp/B0F5WXT1CQ?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" target="_blank" rel="sponsored noopener">星のカービィ ディスカバリー Nintendo Switch 2 Edition ＋ スターリーワールド -Switch2</a></p>
+<ul class="hatena-asin-detail-meta">
+<li>任天堂</li>
+</ul>
+<a href="https://www.amazon.co.jp/dp/B0F5WXT1CQ?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="asin-detail-buy" target="_blank" rel="sponsored noopener">Amazon</a></div>
+</div>
+</div>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260107/20260107121226.png" alt="星のカービィ ディスカバリーの2人プレイ画面" width="1157" height="660" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>1Pがカービィ、2Pがバンダナワドルディ。槍だけで戦います</figcaption>
+</figure>
+<p>2Pはバンダナワドルディ。槍で戦えて、ホバリングもできます。ただしコピー能力はなし。つまりこのゲームの一番おいしい部分は、最後まで1Pのものです。</p>
+<p>もっと効いてくるのがカメラで、常に1P中心。2Pは画面の端に押しつけられて、自由に動けません。ほおばりヘンケイでは背中に乗るだけ。トレジャーロードは1P専用。ここは正直、2P側にとってつらい時間があります。</p>
+<p>それでもボス戦になると話が変わります。カメラが固定されて、格差が消える。ここだけは最高のタッグになれます。釣りなどのミニゲームも対等。2P側の満足度は、この山と谷を許せるかどうかで決まります。</p>
+<div class="shop-buttons"><span class="shop-btn-label">カービィ</span> <a href="https://www.amazon.co.jp/s?k=%E6%98%9F%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%93%E3%82%A3+%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E6%98%9F%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%93%E3%82%A3%2B%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E6%98%9F%E3%81%AE%E3%82%AB%E3%83%BC%E3%83%93%E3%82%A3+%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AB%E3%83%90%E3%83%AA%E3%83%BC" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/01/07/135734">【星のカービィ ディスカバリー】2人プレイ感想｜協力プレイはつまらない？メリット・デメリットをレビュー</a></p>
+</div>
+<h3 id="冒険家エリオットの千年物語" class="sub-head">⑩ 冒険家エリオットの千年物語<span class="type-tag">サポート型</span></h3>
+<p><span class="game-info">Switch 2 / PS5 / Xbox / PC ｜ ローカル2人 ｜ 本体1台・ソフト1本</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260728/20260728110316.png" alt="冒険家エリオットの千年物語の2人プレイ画面" width="635" height="367" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>2Pのチャッカ連打が想像以上に強い</figcaption>
+</figure>
+<p>2Pは妖精のフェイ。武器は振れませんが、無敵です。どれだけ敵の真ん中に突っ込んでも死なないし、やり直しの原因にもならない。ゲームが苦手な人にコントローラーを渡して、進行の足を引っ張ることがまず起きません。</p>
+<p>最初にもらえるチャッカ、つまり火を点ける魔法が最後までいちばん強くて、1Pが殴っている間ずっと点火し続けられます。2P側にちゃんと仕事があるタイプのサポート型です。ゲーム慣れしていない人とのプレイにおすすめ。</p>
+<div class="warn-box"><span class="warn-label">注意</span>2人プレイは最初から解放されていません。フェイが最初の魔法を覚えるまで、メニューに項目そのものが出ません。まっすぐ進めても1時間から2時間。誰かを呼ぶ日が決まっているなら、前日に解放だけ済ませておいてください。</div>
+<div class="shop-buttons"><span class="shop-btn-label">エリオット</span> <a href="https://www.amazon.co.jp/s?k=%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E5%86%92%E9%99%BA%E5%AE%B6%E3%82%A8%E3%83%AA%E3%82%AA%E3%83%83%E3%83%88%E3%81%AE%E5%8D%83%E5%B9%B4%E7%89%A9%E8%AA%9E" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/07/28/114356">冒険家エリオットの千年物語、2人プレイの始め方と感想</a></p>
+</div>
+<h2 id="別本体型ソフトも本体も人数分いる2本" class="section-head">別本体型。ソフトも本体も人数分いる2本</h2>
+<p>いちばん事故が起きるのがここです。2人プレイ対応と書いてあるのに、1本では2人で遊べない。買う前に必ず確認してください。</p>
+<h3 id="モンスターハンターダブルクロス" class="sub-head">⑪ モンスターハンターダブルクロス<span class="type-tag">別本体型</span></h3>
+<p><span class="game-info">Switch（Switch 2でも動作） ｜ ローカル通信・インターネット通信で最大4人 ｜ 人数分の本体とソフトが必要</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260216/20260216162722.png" alt="モンハンダブルクロスの通信プレイメニュー" width="1200" height="672" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>通信プレイのメニュー。ローカルもインターネットも選べますが、どちらもソフトは人数分です</figcaption>
+</figure>
+<p>Switch 2でも完全に動きます。ロードが速くなって画質も上がりますが、旧型でも普通にサクサク動くので、そこは大きな差ではありません。</p>
+<p>肝心なのは、おすそわけ非対応だということ。2人で遊ぶならソフト2本、本体2台です。うちは2本買いました。妻はモンハン初心者でしたが、回復薬飲んで、尻尾切るぞ、と声を掛け合っているうちに完全にハマっていました。この掛け声の応酬が、モンハンの協力プレイの本体だと思います。</p>
+<p>セール時の安さもあって、2本買っても懐が痛まないのが強い。離れた相手と遊ぶ場合はNintendo Switch Onlineが必要で、ローカル通信なら不要です。</p>
+<div class="shop-buttons"><span class="shop-btn-label">モンハンXX</span> <a href="https://www.amazon.co.jp/s?k=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9+Switch&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9%2BSwitch%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%83%A2%E3%83%B3%E3%82%B9%E3%82%BF%E3%83%BC%E3%83%8F%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%80%E3%83%96%E3%83%AB%E3%82%AF%E3%83%AD%E3%82%B9+Switch" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/02/16/163914">【Switch2×Switch互換】モンハンダブルクロスは一緒にプレイできる？500円セールで協力プレイした結果</a></p>
+</div>
+<h3 id="ぽこ-あ-ポケモン" class="sub-head">⑫ ぽこ あ ポケモン<span class="type-tag">別本体型</span></h3>
+<p><span class="game-info">Switch 2 / Switch ｜ おすそわけ通信・オンライン ｜ 構成によって必要なものが変わる</span></p>
+<figure class="figure-image figure-image-fotolife mceNonEditable"><img src="https://cdn-ak.f.st-hatena.com/images/fotolife/B/Babblegum/20260412/20260412102937.png" alt="ぽこ あ ポケモンのおすそわけ通信の説明画面" width="1200" height="675" loading="lazy" class="hatena-fotolife" itemprop="image" />
+<figcaption>おすそわけ通信中はまっさらな街だけ。制限がかなり多い</figcaption>
+</figure>
+<p>うちはSwitch 2と旧型Switchの2台持ちで、おすそわけ通信を実際に試しましたが、正直に言って失敗でした。おすそわけ通信中はまっさらな街でしか遊べず、別のエリアにも移動できない。本当におまけ程度の要素しかありません。</p>
+<p>このゲームで協力プレイをちゃんとやりたいなら、Switch 2が2台、ソフトも2本。そこまで揃える前提の作品だと思ったほうがいいです。</p>
+<div class="shop-buttons"><span class="shop-btn-label">ぽこ あ ポケモン</span> <a href="https://www.amazon.co.jp/dp/B0FZPRPVKC?tag=bubblegumkk0d-22&amp;linkCode=osi&amp;th=1&amp;psc=1" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%E3%81%BD%E3%81%93%2B%E3%81%82%2B%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=%E3%81%BD%E3%81%93+%E3%81%82+%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="kanren-block">
+<p><span class="kanren-label">あわせて読みたい</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/04/12/105054">【ぽこあポケモン】Switch2＋旧型Switchでおすそわけ通信を実際にやってみた。家族2機持ちを検討中の人へ正直レビュー</a></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/07/27/104430">【ぽこあポケモン】クラウド島とまっさらな街の違い。作り方・行き方とマルチの使い分け</a></p>
+</div>
+<h2 id="今回リストから外した4本" class="section-head">今回、リストから外した4本</h2>
+<p>候補には挙がったのに、書いているうちに落とした4本です。2人プレイ対応と書いてあるからといって、人にすすめられるとは限らないという話でもあります。</p>
+<table class="data-table">
+<thead>
+<tr>
+<th>タイトル</th>
+<th>外した理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td data-label="タイトル">ドンキーコング バナンザ</td>
+<td data-label="理由">1Pドンキー、2Pポリーンのおすそわけ通信対応で、仕様としては良さそう。ただし、うちではまだ2人プレイまで手が回っていません。触っていないものを人にすすめたくないので今回は外しました。遊んだら追記します</td>
+</tr>
+<tr>
+<td data-label="タイトル">あつまれ どうぶつの森</td>
+<td data-label="理由">1台で最大4人が同じ島の住民として遊べますが、2人が別々の島を持ちたいなら本体もソフトも人数分。同じ島をシェアする生活に耐えられる関係でないと厳しい</td>
+</tr>
+<tr>
+<td data-label="タイトル">PowerWash Simulator</td>
+<td data-label="理由">協力がオンライン専用で、同じ部屋で1台を分けて遊ぶ用途に向きません。離れて住む相手と無言で建物を洗う夜には最高ですが、この記事の趣旨とは別物です</td>
+</tr>
+<tr>
+<td data-label="タイトル">Core Keeper</td>
+<td data-label="理由">面白いのですが、Switch版は人数分の本体とソフトが必要。ハードルの高さのわりに、2人プレイならではの体験が薄めでした</td>
+</tr>
+</tbody>
+</table>
+<p>こうして並べてみると、Switchで2人プレイ対応をうたっているソフトのうち、本当に最後まで2人で楽しめるものは、思っていたより少ない。数だけ多いリストにしなかったのは、そのためです。</p>
+<h2 id="買う前に確認する3つ" class="section-head">買う前に確認する3つ</h2>
+<p>ここまでの12本を通して、うちで実際につまずいたのはだいたいこの3点です。</p>
+<table class="data-table">
+<tbody>
+<tr>
+<th style="width: 30%;" scope="row">ソフトは1本で足りるか</th>
+<td>商品ページの対応プレイ人数の欄を見る。ローカル協力なら1本、通信協力なら人数分と考えるとほぼ合っています。</td>
+</tr>
+<tr>
+<th scope="row">2P用のコントローラー</th>
+<td>おすそわけ対応ならJoy-Conを分けるだけで足ります。ただし横持ちは手が疲れるので、数時間遊ぶならプロコンを2P側に。</td>
+</tr>
+<tr>
+<th scope="row">解放条件があるか</th>
+<td>Switch 2世代は最初から2人プレイができない作品が増えました。人を呼ぶ日が決まっているなら前日に解放しておく。</td>
+</tr>
+</tbody>
+</table>
+<p>2P側のコントローラーは、うちでは結局プロコンに落ち着きました。横持ちで3時間やった日の妻の手つきを見て、素直に買い足しました。</p>
+<div class="shop-buttons"><span class="shop-btn-label">2P用コントローラー</span> <a href="https://www.amazon.co.jp/s?k=Joy-Con+2&amp;tag=bubblegumkk0d-22" class="shop-btn shop-btn-amazon" target="_blank" rel="sponsored noopener">Amazon</a> <a href="https://hb.afl.rakuten.co.jp/hgc/4ef94133.1f1592cd.4ef94134.ad13b72f/?pc=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FJoy-Con%2B2%2F&amp;link_type=text&amp;ut=eyJwYWdlIjoic2VhcmNoIiwidHlwZSI6InRleHQiLCJjb2wiOjF9" class="shop-btn shop-btn-rakuten" target="_blank" rel="sponsored noopener">楽天</a> <a href="https://jp.mercari.com/search?afid=6396715167&amp;keyword=Joy-Con+2" class="shop-btn shop-btn-mercari" target="_blank" rel="sponsored noopener">メルカリ中古を探す</a></div>
+<div class="mercari-box">
+<div class="mercari-title">中古で揃えるなら</div>
+<p>2人プレイ用にソフトを2本買う場面では、中古の相場がそのまま効いてきます。メルカリを初めて使うなら、下の招待コードで双方に500ポイント入ります。</p>
+<p><span class="mercari-code">YRCNMN</span></p>
+<p style="font-size: 13px; color: #666; margin-bottom: 0;">新規登録時の招待コード入力欄に入れてください。</p>
+</div>
+<h2 id="よくある質問" class="section-head">よくある質問</h2>
+<dl class="faq-list">
+<dt>Switchが1台、ソフトが1本でも2人プレイできますか</dt>
+<dd>タイトルによります。ゼルダ無双 封印戦記、マリオカート ワールド、ピクミン4、カービィ ディスカバリーは1台1本で遊べます。モンハンダブルクロスやぽこ あ ポケモンは人数分必要です。パッケージの2人プレイ対応という表記だけでは判別できないので、ローカル協力か通信協力かを見てください。</dd>
+<dt>Joy-Conのおすそわけだけで足りますか</dt>
+<dd>対応タイトルなら追加購入なしで遊べます。ただし横持ちはボタンが少なく、スティックを長時間使うゲームだと手が疲れます。3時間を超えるならプロコンを2P側に渡したほうが平和です。</dd>
+<dt>離れて住んでいる相手と2人プレイできますか</dt>
+<dd>オンライン協力対応のタイトルなら可能で、Nintendo Switch Onlineへの加入が必要です。画面分割専用のタイトルは同じ部屋に集まる必要があります。Switch 2のおすそわけ通信は、ゲームチャット中の離れた相手にも使えるので、ここの選択肢が広がりました。</dd>
+<dt>ゲームが苦手な家族と遊ぶなら、どれから始めればいいですか</dt>
+<dd>サポート型からどうぞ。2Pが死んでも進行が止まらないので、責める理由が生まれません。ピクミン4かエリオットが入り口として穏当です。逆にお互いゲームを遊ぶ人同士なら、ゼルダ無双 封印戦記が満足度が高いです。</dd>
+<dt>2人プレイ対応と書いてあれば、どれを買っても2人で楽しめますか</dt>
+<dd>そうとは限りません。2Pがカーソルしか動かせないもの、片方が置いていかれる構造のもの、おまけ程度の機能で終わっているものが混ざっています。実際に何本も2人でクリアしてみて、最後まで対等に遊べたのは半分程度でした。だからこの記事は12本しかありません。</dd>
+</dl>
+<h2 id="2人でクリアしたゲームは記憶の残り方が違う" class="section-head">2人でクリアしたゲームは、記憶の残り方が違う</h2>
+<p>ひとりでクリアしたゲームは、内容を覚えています。2人でクリアしたゲームは、そのとき隣で何が起きていたかを覚えています。ゼルダ無双のラスボスの技よりも、その日に妻が言ったひと言のほうを思い出す。</p>
+<p>だから対等型かサポート型かというのは、優劣の話ではありません。誰と、どんな時間を過ごしたいかの話です。今週末に誰かを呼ぶ予定があるなら、解放条件だけは先に済ませておいてください。それだけで、その夜の30分が救われます。</p>
+<div class="kanren-block">
+<p><span class="kanren-label">協力プレイのほかの記事</span></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/11/11/141716">【Steam】協力ゲーム39選。VC必須ホラーからじっくりサバイバルまで(Co-op)</a></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/12/01/140232">【カップル向け】喧嘩しない協力ゲーム7選／PS Plus対応・初心者OKなCoopゲームまとめ</a></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2025/10/23/152726">2人専用ゲームしか作らないスタジオの話。Hazelight 3作を全部クリアして</a></p>
+<p><a href="https://babblegum.hatenablog.com/entry/2026/03/16/153001">【Switch2】2026年おすすめゲームランキング34選。スローライフ・RPG・アクション別に厳選</a></p>
+</div>
