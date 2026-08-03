@@ -174,12 +174,9 @@ https://jp.mercari.com/search?afid=6396715167&keyword=[URLエンコードした�
 - afid付きリンク：既存ユーザー向け（購入経由報酬）。
 - 中古推し記事は両方併用が標準。
 
-メルカリ使用時の開示文（記事冒頭）：
-```html
-<p style="font-size: 12px; color: #888888; margin: 0 0 16px 0; padding: 8px 12px; background: #f5f5f5; border-radius: 3px;">
-※本記事には広告（Amazon・楽天アフィリエイト、メルカリアンバサダープログラム、メルカリ招待プログラム）が含まれます。
-</p>
-```
+### ★広告の開示文は記事本文に書かない
+
+**記事HTMLに広告開示文（「※本記事には広告が含まれます」等）を入れない。** はてなブログ側で自動挿入される設定になっているため、本文に書くと二重表示になる。Amazon・楽天・メルカリのいずれを使う場合も同じで、記事冒頭に開示文のブロックを置かないこと。
 
 ### Audible / Kindle Unlimited（成果報酬）
 **汎用URLはトラッキングが落ちる。Associates Central / SiteStripe経由の正規URLを使う。**
